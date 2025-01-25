@@ -1,0 +1,137 @@
+\documentclass[a4paper]{article}
+\usepackage{asymptote}
+
+\input{preamble.tex}
+\input{letterfont.tex}
+\input{macros.tex}
+
+% \renewcommand{\arraystretch}{1.25} % space out table rows
+% \setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+% \linespread{1} % 1.3 for one-and-half spacing, 1.6 for double spacing
+
+\rhead{}
+
+\begin{document}
+\subsection*{Lecture 1} % tue jan 14
+\section{Introduction}
+\subsection{Quadratic polynomials}
+\begin{example}[n=3]
+ \(  \)
+\end{example}
+
+\begin{definition}[Symmetric function]
+  Let \( \phi(x_1, \ldots, x_n) \) be a function. Then \( \phi \) is \tit{symmetric} if \( \forall \) permutations \( \omega\in S_n \), \( \phi(x_1,\ldots, x_n) = \phi(x_{\omega(1)},\ldots,x_{\omega(n)})\)
+\end{definition}
+
+\begin{definition}[Elementary symmetric functino in \( x_1,\ldots, x_n \)]
+  \begin{align*}
+    \sigma_1 &= \sigma_1(x_1,\ldots, x_n)= x_1+\ldots+x_n \\
+    \sigma_2 &= \sigma_2(x_1,\ldots, x_n)= x_1x_2+x_1x_3+\cdots+x_1x_n+x_2x_3+\cdots+x_{n-1}x_n \\
+    \sigma_n &= \sigma_n(x_1,\ldots, x_n)= \sum_{i_1<\ldots<i_k} x_{i_1}\cdots x_{i_k} \quad \text{(\# of terms is \( \binom{n}{k} \))}
+  \end{align*}
+\end{definition}
+
+\begin{theorem}\
+  \begin{enumerate}
+    \item For \( \forall \) symmetric function \( \phi \) \( \exists ! \) polynomial \( P(t_1,
+      \ldots,t_n) \) such that \( \phi(x_1,\ldots,x_n) =P(\sigma_1,\ldots,\sigma_n)\)
+    \item Moreover, if \( \phi \) is a polynomial with coefficients in a ring \( R \) (\( \phi\in R[x_1,\ldots, x_n] \)) then \( P\in R[x_1,\ldots, x_n] \)
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Vieta Formula]
+  \begin{align*}
+    x^n+a_1x^{n-1}+\ldots+a_n &= (x-x_1)\cdots(x-x_n) \\
+    &= x^n-\sigma_1(x_1,\ldots, x_n)x^{n-1}+\sigma_2(x_1,\ldots, x_n)x^{n-2}+\cdots+(-1)^n\sigma_n(x_1,\ldots, x_n)
+  \end{align*}
+\end{theorem}
+
+\begin{corollary}
+  The discriminant \( D=P(a_1,\ldots, a_n) \) is a polynomial
+\end{corollary}
+
+\subsection{Cubic polynomials}
+If \( ax^3+bx^2+cx+d = 0 \), then one solution is
+\begin{align*}
+  \begin{array}{l}
+  x = \sqrt[3]{-\frac{1}{2} \left(\frac{2b^3 - 9abc + 27a^2d}{27a^3}\right) + \sqrt{\left(\frac{1}{2} \left(\frac{2b^3 - 9abc + 27a^2d}{27a^3}\right)\right)^2 + \left(\frac{3ac - b^2}{9a^2}\right)^3}} \\[10pt]
+  \quad + \sqrt[3]{-\frac{1}{2} \left(\frac{2b^3 - 9abc + 27a^2d}{27a^3}\right) - \sqrt{\left(\frac{1}{2} \left(\frac{2b^3 - 9abc + 27a^2d}{27a^3}\right)\right)^2 + \left(\frac{3ac - b^2}{9a^2}\right)^3}}
+  \end{array}
+\end{align*}
+
+\begin{align*}
+  x^3+Ax^2+Bx+C &= \lt(x+\frac{A}{3}\rt)^3+p\lt(x+\frac{A}{3}\rt) + q \\
+  \implies x^3+px+q &= 0
+\end{align*}
+
+\begin{align*}
+  (\underbrace{a+b}_x)^3 = 3ab(a+b) + a^3+b^3 \\
+  x^3-3abx-a^3-b^3 = 0,\ \ x_1= a_b
+\end{align*}
+
+\begin{align*}
+  x_1+x_2+x_3 = 0 &\imp x_2+x_3 = -a-b \\
+  x_1x_2+x_1x_3+x_2x_3 = a^3+b^3 &\imp x_2x_3 = \frac{a^3+b^3}{x_1} = \frac{a^3+b^3}{a+b} = a^2-ab+b^2
+\end{align*}
+
+\begin{theorem}[Inverse Vieta Theorem]
+
+\end{theorem}
+
+\begin{example}[Root of unity]
+  \( \veps \)
+\end{example}
+
+\begin{example}
+  What about \( x^3+px+q=0 \)?
+\end{example}
+
+\subsection{Quadric Method}
+Let \( f(x) = x^4+ax^2+bx+c = 0 \). \begin{enumerate}
+  \item If \( b=0, \) it is simply a quadratic equation.
+  \item If \( x^4-g^2(x) = 0 \imp x^2 = g(x), x^2 = -g(x) \)
+\end{enumerate}
+\begin{align*}
+  f(x) &= \lt(x^2+\frac{y}{2}\rt)^2 + (a-y)x^2+bx+c - \lt(\frac{y^2}{4}\rt) \\
+  D &= b^2 - 4(a-y)(c-\frac{y^2}{4}) = 0
+\end{align*}
+\begin{definition}[Ferrari's Resolvent]
+  \( y^3-ay^2-4cy+4ac-b^2 = 0 \)
+\end{definition}
+\begin{align*}
+  g(x) &= Ax+B \\
+  0 = f(x) &= \lt(x^2+\frac{y}{2}\rt)^2 - (Ax+B)^2 \\
+           &= \lt(x^2+\frac{y}{2}-Ax-B\rt)\lt(x^2+\frac{y}{2}+Ax+B\rt) \\
+\end{align*}
+\begin{align*}
+  x_1+x_2 = A;\ x_1x_2 = \frac{y}{2}-B  \\
+  x_3+x_4 = -A;\ x_3x_4 = \frac{y}{2}+B
+\end{align*}
+\begin{align*}
+  x_1x_2+x_3x_4 &= y_1 \\
+  x_1x_3+x_2x_4 &= y_2 \\
+  x_1x_4+x_2x_3 &= y_3 \\
+  x_1+x_2+x_3+x_4 &= 0
+\end{align*}
+Suppose we have some quadric equation \( f(x) = x^4+ax^2+bx+c \). Then we have unknown roots \( x_1, x_2, x_3, \) and \( x_4 \).
+\begin{claim}
+  \( y_1, y_2, y_3 \) are roots of a cubic equation
+\end{claim}
+\( y_1+y_2+y_3 = \sigma_2(x_1,x_2,x_3,x_4) = a\) \\
+\( \sigma_2(y_1,y_2,y_3) = \phi(x_1,x_2,x_3,x_4) = x_1x_2 + x_3x_4 \)
+
+\begin{example}
+  Consider the polynomial \( \phi(x_1,x_2,x_3,x_4) = x_1+x_2-x_3-x_4 \)
+
+  \begin{align*}
+    \lt\{
+      \begin{array}{l}
+      z_1=(x_1+x_2-x_3-x_4)^2\\
+      z_2=(x_1-x_2+x_3-x_4)^2\\
+      z_3=(x_1-x_2-x_3+x_4)^2
+      \end{array}
+      \rt.
+  \end{align*}
+\end{example}
+\end{document}
