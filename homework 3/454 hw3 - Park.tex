@@ -58,16 +58,16 @@ Take $ g=t+1 $ and prove the set $ \{0,g,g^2,\ldots,g^7\} $ coincides with $ L $
 
 \begin{solution}
 Obviously this set has 8 elements, which agrees with our result in Exercise 3.1.2. It remains to show that each element corresponds to a unique equivalence class from above (taken mod $ f $).
-\begin{align*}
-  0   &\equiv 0\pmod f \qimp 0 \in [0] \\
-  g   &\equiv t+1\pmod f \qimp g\in [t+1] \\
-  g^2 &\equiv t\sq+1\pmod f \qimp g^2\in [t\sq+1] \\
-  g^3 &\equiv t^2 \pmod f \qimp g^3\in [t\sq] \\
-  g^4 &\equiv t^2+t+1 \pmod f \qimp g^4\in [t^2+t+1] \\
-  g^5 &\equiv t^2+t+1 \pmod f \qimp g^4\in [t] \\
-  g^6 &\equiv t\sq+t \pmod f \qimp g^4\in [t^2+t] \\
-  g^7 &\equiv 1 \pmod f \qimp g^4\in [1]
-\end{align*}
+\[\begin{array}{lll}
+  0   \equiv 0       &\!\!\!\!\!\!\!\!\pmod f \imp 0 \in [0] \\
+  g   \equiv t+1     &\!\!\!\!\!\!\!\!\pmod f \imp g \in [t+1] \\
+  g^2 \equiv t^2+1   &\!\!\!\!\!\!\!\!\pmod f \imp g^2 \in [t^2+1] \\
+  g^3 \equiv t^2     &\!\!\!\!\!\!\!\!\pmod f \imp g^3 \in [t^2] \\
+  g^4 \equiv t^2+t+1 &\!\!\!\!\!\!\!\!\pmod f \imp g^4 \in [t^2+t+1] \\
+  g^5 \equiv t       &\!\!\!\!\!\!\!\!\pmod f \imp g^5 \in [t] \\
+  g^6 \equiv t^2+t   &\!\!\!\!\!\!\!\!\pmod f \imp g^6 \in [t^2+t] \\
+  g^7 \equiv 1       &\!\!\!\!\!\!\!\!\pmod f \imp g^7 \in [1]
+\end{array}\]
 Thus there is a clear bijection between the set $ \{0,g,g\sq,\ldots,g^7\} $ and $ L $.
 \end{solution}
 
@@ -76,9 +76,23 @@ Thus there is a clear bijection between the set $ \{0,g,g\sq,\ldots,g^7\} $ and 
 Let $K$ be a field and $p, q \in K[t]$ be irreducible polynomials over $K$, $\pid p \neq \pid q$ (this is equivalent to the statement that $p$ is coprime to $q$). Consider the field $\bbF := K(t)$ and the polynomial $g(x) = x^n + px + pq \in \bbF[x]$. Prove that $g$ is irreducible over $\bbF$.
 \end{exercise}
 
+\begin{solution}
+From lecture, $ F[t] $ is a Euclidean domain for any field $ F $ and any Euclidean domain is also a unique factorization domain, so $ \bbF[x] $ is a UFD. Next, it is easy to see that $ \gcd(g(x)) = \gcd(1, p, pq) = 1 $. Notice that for the irreducible polynomial $ p \in \bbF $, we have that $ p \divs p $, $ p\divs pq $, $ p\ndivs 1 $ and obviously $ p\sq \ndivs pq $ (otherwise $ p\sq\divs pq \imp p\divs q $ contradicts that they are coprime). Thus by Eisenstein's Criterion $ g $ is irreducible over $ \bbF $.
+\end{solution}
+
 \begin{exercise}
 Prove that $ t^2 -7 $ is irreducible over $ \bbQ(\sqrt 5) $.
 \end{exercise}
+
+\begin{solution}
+Let $ f(t) = t\sq - 7 $. Assume for the sake of contradiction that $ f $ is reducible. By definiton of reducible, $ f $ must equal the product of polynomials with strictly lower degree, so $ f=gh \imp \deg(g) = \deg(h) = 1 $. This means $ g\tand h $ are linear factors, which implies that $ \exists x\in \bbQ(\sqrt 5) $ such that $ f(x) = 0 $. Since $ x\in \bbQ(\sqrt 5) \imp x=a+b\sqrt 5$ for $ a,b\in \bbQ $, notice \begin{align*}
+  f(x) = 0 &\imp (a+b\sqrt{5})\sq - 7 = 0 \\
+  &\imp a\sq + 2ab\sqrt 5 + 5b\sq - 7 = 0 \\
+  &\imp a\sq + 5b\sq - 7 = - 2ab\sqrt 5 \\
+  &\imp \frac{a\sq + 5b\sq - 7}{-2ab} = \sqrt 5 \imp \sqrt 5\in \bbQ
+\end{align*}
+which is obviously a contradiction. Thus $ f(t) = t\sq - 7 $ is irreducible over $ \bbQ(\sqrt 5) $.
+\end{solution}
 
 \stepcounter{exercise}
 \begin{subexercise}
@@ -86,6 +100,31 @@ Let $ \alpha=2^{1/6} $ and $ \veps_3^3=1 $, $ \veps_3\neq 1 $. Find the minimal 
   a)\ \bbQ, \quad b)\ \bbQ(\alpha), \quad c)\ \bbQ(\alpha\sq), \quad d)\ \bbQ(\alpha\veps_3).
 \end{align*}
 \end{subexercise}
+
+\begin{solution}
+\begin{enumerate}[label=\alph*)]
+  \item In $ \bbQ $, \begin{align*}
+    \alpha = 2^{1/6} &\imp \alpha^6 = 2 \\
+    &\imp \alpha^6 - 2 = 0.
+  \end{align*}
+  Let $ f(x) = x^6-2 $. By Eisenstein (using $ p=2 $), $ f $ is irreducible. Thus $ \mu_\alpha^\bbQ (x) = x^6 - 2 $.
+
+  \item In $ \bbQ(\alpha)=\bbQ(2^{1/6}) $, \begin{align*}
+    \alpha = 2^{1/6} &\imp \alpha - 2^{1/6} = 0.
+  \end{align*}
+  Let $ g(x) = x-2^{1/6} $. Since $ \deg(x-2^{1/6}) = 1 $, it can not be decomposed into  polynomials of smaller degree and is therefore irreducible by definition. Thus $ \mu_\alpha^{\bbQ(\alpha)} (x) = x - 2^{1/6} $.
+
+  \item In $ \bbQ(\alpha\sq)=\bbQ(2^{1/3}) $, \begin{align*}
+    \alpha = 2^{1/6} &\imp \alpha\sq = 2^{1/3} \\
+    &\imp \alpha\sq - 2^{1/3} = 0
+  \end{align*}
+  Let $ h(x) = x\sq-2^{1/3} $. Assuming $ h $ is reducible, it must decompose into linear factors. However, notice $ h $ does not have any roots in $ \bbQ(2^{1/3}) $, since $ h $ only has 2 solutions by the Fundamental Theorem of Algebra, but $ \pm\alpha\not\in \bbQ(2^{1/3}) $. Thus $ h $ can not be reduced into linear factors, whence $ \mu_\alpha^{\bbQ(\alpha^2)}(x) = x^2-2^{1/3} $.
+
+  \item In $ \bbQ(\alpha\veps_3) $, \begin{align*}
+    \alpha = 2^{1/6}
+  \end{align*}
+\end{enumerate}
+\end{solution}
 
 \begin{subexercise}
 In each case (a--d), find the conjugate elements of all roots of $ x^6-2 $.
