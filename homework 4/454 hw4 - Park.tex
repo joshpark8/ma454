@@ -7,17 +7,132 @@
 \input{macros}
 
 \fancyhead[L]{\tbo{Josh Park \\ Prof. Shkredov}}
-\fancyhead[C]{\tbo{MA 45401-H01 \\ Galois Theory Honors}}
-\fancyhead[R]{\tbo{Spring 2025 \\ Homework 4}}
+\fancyhead[C]{\tbo{MA 45401-H01 -- Galois Theory Honors \\ Homework 4}}
+\fancyhead[R]{\tbo{Spring 2025 \\ Page \thepage}}
 
 \begin{document}
 
 \setcounter{section}{4}
 % \setcounter{exercise}{1}
 \begin{exercise}
+  For each of the following polynomials, construct a splitting field $ L $ over $ \bbQ $ and compute the degree $ \index{L}{\bbQ} $
+\end{exercise}
+
+\begin{enumerate}
+\item $ t^4+7t^2+12 $
+\begin{solution}
+  We notice $ f(t) = t^4+7t\sq+12 = (t^2+3)(t^2+4) $, so let $ g(t) = t^2+3 $ and $ h(t) = t^2+4 $.
+  We have that $ h=(t-2i)(t+2i) $, and by the rational root test $ h $ is irreducible over $ \bbQ $.
+  Then $ h = \mu_{2i}^\bbQ $ and $ \bbQ(i)=M:\bbQ $ is the \sfe for $ h $ with degree 2.
+  Next, we have $ g = (t-i\sqrt 3)(t+i\sqrt 3) $, and by Eisenstein's criterion with $ p=3 $, $ g $ is irreducible.
+  Let $ L:M $ be the \sfe for $ g $.
+  We already have that $ i\in M $, so $ L=M(\sqrt 3) $ and $ \fdeg L M = 2 $.
+  Thus, $ L=\bbQ(i,\sqrt 3):\bbQ $ is the \sfe for $ f $ and by the Tower Law, $ \fdeg L \bbQ = \fdeg L M \fdeg M \bbQ = 2\cdot 2 = 4. $
+\end{solution}
+
+\item $ t^4+t^2+12 $
+\begin{solution}
+  We notice $ f(t) = t^4+t^2+12 = (t^2-3)(t^2+4) $, so let $ g(t) = t^2-3 $ and $ h(t) = t^2+4 $.
+  These are the same polynomials as in part 1, but this time the roots of $ g $ do not have an imaginary factor.
+  However, we note that this did not have any impact on our argument in part 1, whence $ L = \bbQ(i,\sqrt 3):\bbQ $ is again the \sfe for $ f $ and $ \fdeg{L}{\bbQ} = 4 $.
+\end{solution}
+
+\item $ t^{2n}-2^n $, where $ n=3,4 $.
+
+\begin{proof}[Solution.] $ (n=3) $
+  We have that $ f(t) = t^6 - 2^3 $.
+  Then, $ t = (2^3)^{1/6} $ and $t = \sqrt{2}\cdot \veps_6^k, $ where $ k\in\Zsi $ and $ \veps_6=\exp(i\frac{2\pi}{6})=\exp(i\frac{\pi}{3}) $.
+    We know the minimum polynomial of $ \veps_6 $ over $ \bbQ $ is the sixth cyclotomic polynomial $ \Phi_6 $, which has degree $ \phi(6) = \phi(2)\phi(3) = 2 $.
+  Thus $ \fdeg{\bbQ(\veps_6)}{\bbQ} = 2 $.
+  Now, $ \sqrt 2\not\in \bbQ(\veps_6) $, so $ L=\bbQ(\sqrt 2, \veps_6)=\bbQ(\veps_6)(\sqrt 2) $.
+  Trivially, the minimum polynomial of $ \sqrt 2 $ has degree 2, hence $ \fdeg{L}{\bbQ(\veps_6)} = 2 $ and by the Tower Law, $ \fdeg{L}{\bbQ}=\fdeg{L}{\bbQ(\veps_6)}\fdeg{\bbQ(\veps_6)}{\bbQ} = 2\cdot 2 = 4. $
+
+  $ (n=4) $ We have that $ f(t) = t^8 - 2^4 $.
+  Then, $ t = (2^4)^{1/8}$ and $t = \sqrt{2}\cdot \veps_8^k$, where $ k\in\Zei $ and $ \veps_8=\exp(i\frac{2\pi}{8})=\exp(i\frac{\pi}{4}) $.
+  We know the minimum polynomial of $ \veps_8 $ over $ \bbQ $ is the eighth cyclotomic polynomial $ \Phi_8 $, which has degree $ \phi(8) = 2^3-2^2 = 4 $.
+  Thus $ \fdeg{\bbQ(\veps_8)}{\bbQ} = 4 $.
+  Now, notice $ \veps_8 = \frac{\sqrt 2}{2}+i\frac{\sqrt 2}{2} $ and $ \veps_8\inv = \frac{\sqrt 2}{2}+i\frac{\sqrt 2}{2} $.
+  So, $ \veps_8 + \veps_8\inv = \frac{\sqrt 2}{2} + \frac{\sqrt 2}{2} = \sqrt 2 \in \bbQ(\veps_8) $.
+  Thus $ L = \bbQ(\veps_8) $ is the \sf for $ f $ over $ \bbQ $ and $ \fdeg{L}{\bbQ} = 4 $.
+\end{proof}
+
+\item $ t^{14}-1 $
+\begin{solution}
+  Obviously, $ f(t) = t^{14} - 1 $ has root $ \veps_{14}^k $ for $ k\in \ZZ{14} $, so $ L = \bbQ(\veps_{14}) $
+  The minimum polynomial for $ \veps_{14} $ is $ \Phi_{14} $, whence $ \fdeg{L}{\bbQ} = \phi(14) = \phi(7)\phi(2)=6 $.
+\end{solution}
+\end{enumerate}
+
+\begin{exercise}
+  Let $ K-L-M $ be a field extension and $ K-L $, $ L-M $ are algebraic extensions.
+  Prove that $ K-M $ is also an algebraic extension.
 \end{exercise}
 
 \begin{solution}
+Suppose $ k\in K $ with $ \mu_k^L = x^n + \ell_{n-1}x^{n-1} + \cdots + \ell_0 $ for $ \ell_i\in L $.
+Then by definition, $ k $ is algebraic over $ M(\ell_0,\ldots,\ell_{n-1}) $.
+By theorem, we know that for some field extension $ F_1:F_2 $, $ \alpha\in F_1 $ is algebraic over $ F_2 $ \iff $ \fdeg{F_2(\alpha)}{F_2}<\infty $.
+Thus, we have that \begin{align*}
+  \fdeg{M(\ell_0,\ldots,\ell_{n-1})(k)}{M(\ell_0,\ldots,\ell_{n-1})} = \fdeg{\underbrace{M(\ell_0,\ldots,\ell_{n-1},k)}_{M''}}{\underbrace{M(\ell_0,\ldots,\ell_{n-1})}_{M'}} < \infty.
+\end{align*}
+Using a corollary from lecture, we also know that $ \fdeg{M'}{M} < \infty $.
+Then by the Tower Law, we have $ \fdeg{M''}{M} = \fdeg{M''}{M'}\fdeg{M'}{M} < \infty $.
+From a result in homework 2, any finite extension is necessarily algebraic.
+Thus, $ k $ is algebraic over $ M $ for arbitrary $ k \in K $ \imp $ K-M $ is algebraic.
 \end{solution}
 
+\begin{exercise}
+  Let $ \alpha $ be transcendental over a field $ K\subset \bbC $.
+  Show that $ K(\alpha) $ is not algebraically closed (hint: consider the polynomial $ t\sq-\alpha $).
+\end{exercise}
+
+\begin{solution}
+Consider the polynomial $ t\sq-\alpha \in K(\alpha) $.
+Assume ad absurdum that $ f $ is reducible over $ K(\alpha) $. Then, there is some $ \beta\in K(\alpha) $ such that $ \beta\sq = \alpha $.
+By definition of $ K(\alpha) $, we have that $ \beta = \frac{g(\alpha)}{h(\alpha)} $ for some $ g(t),h(t)\in K[t] $ such that $ h(\alpha) \neq 0 $.
+Thus, $ \beta\sq = \frac{g(\alpha)\sq}{h(\alpha)\sq} = \alpha $ and $ g(\alpha)\sq - \alpha h(\alpha)\sq = 0 $.
+\begin{claim}
+  $ g(x)\sq - x h(x)\sq $ is a nontrivial polynomial in $ K[x] $
+\end{claim}
+\begin{subproof}
+  Assume ad absurdum that $ g(x)\sq - xh(x) \equiv 0 $ (the trivial polynomial).
+  Now, let $ m = \deg (g) $ and $ n = \deg (h) $.
+  By definition, $ m $ and $ n $ must be integers.
+  Obviously, $ \deg(g\sq) = 2m $ and $ \deg(h\sq) = 2n $, so $ \deg(x h\sq) = 2n+1 $.
+  If we let $ g(x)\sq - x h(x)\sq = 0 $, then $ g(x)\sq = xh(x)\sq $.
+  However, $ \deg(g(x)\sq) = \deg(xh(x)\sq) \iff 2m = 2n+1 $, but $ 2m $ is even and $ 2n+1 $ is odd, an obvious contradiction.
+  Thus $ g(x)\sq - x h(x)\sq \in K[x] $ must be nontrivial.
+\end{subproof}
+Notice that the claim above contradicts that $ \alpha $ is transcendental over $ K $ by definition.
+Thus $ K(\alpha) $ is not algebraically closed.
+\end{solution}
+
+\begin{exercise}
+  Let $ L:K $ be a splitting field extension for a non-constant polynomial $ f\in K[t] $.
+  Prove that $ \index{L}{K} $ divides $ (\deg f)! $ (hint: at the very end look at some binomial coefficients).
+\end{exercise}
+
+\begin{solution}
+We prove this statement by induction on $ \deg f = n $.
+The base case, $ \deg f = n = 1 $ is trivial, there is nothing to prove.
+Now assume we have shown $ \fdeg{L}{K}\divs (\deg f)! $ for all $ 1\leq\deg f<n $.
+We have two cases, one in which $ f $ is reducible and one in which it is not.
+\begin{subproof}[Case 1 ($ f $ is irreducible).]
+Let $ \alpha $ be a root of $ f $.
+Then $ f $ factors as $ (t-\alpha)g $ for some polynomial $ g\in K(\alpha)[t] $ such that $ \deg g = n-1 $.
+Furthermore, we can see that $ L:K(\alpha) $ is a \sfe for $ g $.
+By our inductive hypothesis, $ \fdeg{L}{K(\alpha)} $ divides $ (n-1)! $.
+By lemma, the irreducibility of $ f $ implies $ f=\lambda\mu_\alpha^{K} $ for some constant $ \lambda\in K $, so $ \deg f = \deg \mu_\alpha^K = n $ and $ \fdeg{K(\alpha)}{K}=n $.
+Then by using the Tower Law, we can see that $ \fdeg{L}{K(\alpha)}\fdeg{K(\alpha)}{K} = \fdeg{L}{K}$ divides $ n(n-1)! = n! $.
+\end{subproof}
+\begin{subproof}[Case 2 ($ f $ is reducible).]
+  Let $ f = gh $ for polynomials $ g,h\in K[t] $,  $ M:K $ be a \sfe for $ g $, and $ L:M $ be a \sfe for $ h $.
+  Then we can say $ \deg g = d $ for some $ 1\leq d < n $ by def degree, hence $ \deg h = n-d $.
+  By our inductive hypothesis, $ \fdeg{M}{K} $ divides $ d! $ and $ \fdeg{L}{M} $ divides $ (n-d)! $.
+  Then by use of the Tower Law again, we can easily see that $ \fdeg{L}{M}\fdeg{M}{K} = \fdeg{L}{K} $ divides $ d!(n-d)! $.
+  Notice that $ \frac{n!}{d!(n-d)!} $ is exactly the binomial coefficient $ \binom{n}{d} $, which we know to be an integer for integers $ n,d $.
+  Thus we can say that $ d!(n-d)! $ divides $ n! $ so finally we can conclude that, $ \fdeg{L}{M} $ divides $ n! $.
+\end{subproof}
+Since our inductive hypothesis holds in both cases for reducible and irreducible $ f $, we may conclude that it holds for all $ \deg f \geq 1 $ and hence any non-constant polynomial $ f\in K[t] $.
+\end{solution}
 \end{document}
