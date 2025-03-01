@@ -13,63 +13,133 @@
 \begin{document}
 
 \setcounter{section}{5} % HW NUMBER
-% \setcounter{exercise}{1}
 \begin{exercise}
 Which of the following field extensions are normal? Justify your answers.
 \end{exercise}
 \begin{enumerate}
-  \item $ \Q(i):\Q $
-  \begin{solution}
+\item $ \Q(i):\Q $ % PROBLEM 5.1.1
+\begin{solution}
+Normal.
+By theorem, we know that any finite extension $ L:K $ is normal \iff $ L $ is a \sfe for some non-constant $ f\in K[t] $.
+Hence, since $ \Q(i) $ is the splitting field for $ t\sq+1 $ over $ \Q $, the extension $ \Q(i):\Q $ is normal.
+\end{solution}
 
-  \end{solution}
+\item $ \Q(2^{1/4}):\Q $ % PROBLEM 5.1.2
+\begin{solution}
+Not normal.
+By definition, an extension $L:K$ is normal if $ \forall \alpha\in L $, the minimum polynomial of $ \alpha$ over $ K $, $ \mu_\alpha^K(t) $, splits over $ L[t] $.
+Obviously, $ \sqrt[4]2 \in \Q(2^{1/4}) $ by construction.
+However, notice that for $ \alpha=\sqrt[4]2 $, \begin{align*}
+  \mu_\alpha^\Q(t) &= t^4-2 \\
+  &= (t\sq+\sqrt 2)(t\sq-\sqrt 2) \\
+  &= (t+i\sqrt[4]2)(t-i\sqrt[4]2)(t+\sqrt[4]2)(t-\sqrt[4]2),
+\end{align*}
+but the linear factors $(t+i\sqrt[4]2)$ and $(t-i\sqrt[4]2)$ are not in $ \Q(2^{1/4})[t] $. Hence, the extension $ \Q(2^{1/4}):\Q $ is not normal by definition.
+\end{solution}
 
-  \item $ \Q(2^{1/4}):\Q $
-  \begin{solution}
+\item $ \Q(2^{1/4},i):\Q $ % PROBLEM 5.1.3
+\begin{solution}
+Normal.
+Consider the polynomial $ f(t) = (t^4-2)(t^2-1) \in \Q(2^{1/4},i)[t] $.
+Then, \begin{align*}
+  f(t) &= (t+i\sqrt[4]2)(t-i\sqrt[4]2)(t+\sqrt[4]2)(t-\sqrt[4]2)(t+i)(t-i),
+\end{align*}
+whence $ \Q(2^{1/4},i):\Q $ is a splitting field extension for $ f $.
+By applying the same theorem as in part 1, this extension is normal.
+\end{solution}
 
-  \end{solution}
+\item $ \Q(2^{1/4},i,\sqrt 5):\Q $ % PROBLEM 5.1.4
+\begin{solution}
+Normal.
+Consider the polynomial $ f(t) = (t^4-2)(t\sq-1)(t\sq-5) \in \Q(2^{1/4},i,\sqrt 5)[t] $.
+Then, \begin{align*}
+  f(t) &= (t+i\sqrt[4]2)(t-i\sqrt[4]2)(t+\sqrt[4]2)(t-\sqrt[4]2)(t+i)(t-i)(t-\sqrt 5)(t+\sqrt 5),
+\end{align*}
+whence $ \Q(2^{1/4},i,\sqrt 5):\Q $ is a \sfe for $ f $.
+By applying the same theorem as in part 1, this extension is normal.
+\end{solution}
 
-  \item $ \Q(2^{1/4},i):\Q $
-  \begin{solution}
-
-  \end{solution}
-
-  \item $ \Q(2^{1/4},i,\sqrt 5):\Q $
-  \begin{solution}
-
-  \end{solution}
-
-  \item $ \Q(3^{1/3},i,\sqrt 3):\Q $
-  \begin{solution}
-
-  \end{solution}
+\item $ \Q(3^{1/3},i,\sqrt 3):\Q $ % PROBLEM 5.1.5
+\begin{solution}
+Normal.
+Consider the polynomial $ f(t) = (t\sq-3)(t\cb-3) $.
+Then, \begin{align*}
+  f(t) &= (t+\sqrt 3)(t-\sqrt 3)(t-\cbrt 3)(t-\veps_3\cbrt 3)(t-\veps_3^2\cbrt 3),
+\end{align*}
+where $ \veps_3 = \exp\lt(\frac{2\pi}{3}i\rt)$. Notice, \begin{align*}
+  \veps_3 &= \cos\lt(\frac{2\pi}{3}\rt) + i\sin\lt(\frac{2\pi}{3}\rt)    & \veps_3^2 &= \cos\lt(\frac{4\pi}{3}\rt) + i\sin\lt(\frac{4\pi}{3}\rt) \\
+          &= -\frac{1}{2}+i\frac{\sqrt 3}{2} & &= -\frac{1}{2}-i\frac{\sqrt 3}{2}\in \Q(3^{1/3},i,\sqrt 3) \\
+          &= \frac{1}{2}\lt(-1+i\sqrt 3\rt)\in \Q(3^{1/3},i,\sqrt 3) & &= \frac{1}{2}\lt(-1-i\sqrt 3\rt) \in \Q(3^{1/3},i,\sqrt 3).
+\end{align*}
+Thus $ \Q(3^{1/3},i,\sqrt 3):\Q $ is a \sfe for $ f $, whence must be normal by the same theorem as part 1.
+\end{solution}
 \end{enumerate}
 
-\begin{exercise}
+\begin{exercise} % PROBLEM 5.2
   Let $ \psi:L \to M $ be a homomorphism, suppose that $ L $ is algebraically closed.
   Prove that $ \psi(L) $ is algebraically closed.
 \end{exercise}
 \begin{solution}
-
+  Let $ g\in \psi(L)[t] $ be some irreducible polynomial over $ \psi(L) $.
+  Then, we have some $ f \in L[t] $ such that $ g=\psi f $ with $ \deg g = \deg f $.
+  Now, assume ad absurdum that $ g $ has a degree greater than 1.
+  Then $ \deg f > 1 $.
+  By \ac of $ L $, any irreducible polynomials must be linear.
+  Since $ \deg f \neq 1 $, $ f $ must be reducible and thus $ f = h\ell $ for some $ h,\ell\in L[t] $ such that $ \deg h \geq 1 $ and $ \deg \ell \geq 1 $.
+  Since $ \psi $ must preserve operations, this implies that $ \exists \hat h,\hat \ell\in \psi(L) $ such that $ g=\hat h\hat \ell $, where $ \deg \hat h \geq 1 $ and $ \deg\hat\ell \geq 1 $.
+  However, this contradicts the fact that $ g $ is irreducible, so our assumption that $ \deg g > 1 $ must be false and hence $ \deg g = 1 $.
+  Therefore, $ \psi(L) $ is algebraically closed.
 \end{solution}
 
-\begin{exercise}
+\begin{exercise} % PROBLEM 5.3
   Let $ L:K $ be a field extension. Then $ \bar K $ is isomorphic to $ \bar L $.
   In addition, if $ K\ss L \sseq \bar L $, then $ \bar K = \bar L $.
 \end{exercise}
 \begin{solution}
+  Let $ \vphi_1:K\to L $ and $ \vphi_2:L\to \bar L $ be the monomorphisms corresponding to the field extensions $ L:K \tand \bar L:L$, respectively.
+  Then $ \bar L:K $ is the field extension relative to the composition $ \vphi_2\circ \vphi_1 $.
+  By \ac of $ \bar L $, it must be an \ac for $ K $.
+  By theorem from lecture, we know that any two algebraic closures for the same field must be isomorphic to one another.
+  Thus, $ \bar L\iso \bar K $.
 
+  Assume ad absurdum that we have some \ac $ \bar K $ of $ K $ such that $ \order{\bar K} < \order{\bar L}$.
+  By definition of algebraic closure, we know that $ \bar K $ and $ \bar L $ are both algebraic extensions of $ K $, so $ K\sseq \bar K $ and $ K\sseq \bar L $.
+  Let $ \psi:K\hookrightarrow\bar L $ be the monomorphism corresponding to the extension $ \bar L:K $.
+  By theorem, since $ \bar K:K $ is an algebraic extension, there exists an extension of $ \psi $ to another mono from $ \bar K \to \bar L $.
+  Hence $ \bar L:\bar K $ is an algebraic extension with degree greater than 1, since $ \bar K $ is smaller than $ \bar L $.
+  However, this contradicts the algebraic closure of $ \bar K $, since the only algebraic extension of an algebraically closed field is itself.
+  Thus, $ \bar K = \bar L $.
 \end{solution}
 
-\begin{exercise}
+\begin{exercise} % PROBLEM 5.4
   Let $ K-L $ be a normal extension, $ K\sseq L\sseq \Kbar $.
   Then for any $ K $-\homo $ \tau:L\to \Kbar $ one has $ \tau(L) = L $.
 \end{exercise}
 \begin{solution}
-
+  Suppose we have some $ K $-\homo $ \tau:L\to\bar K $, and let $ \ell\in L $.
+  By definition of normal extension, $ K-L $ must be algebraic, whence $ \mu_\ell^K $ exists.
+  Since $ \tau $ fixes all elements of $ K $ and $ \mu_\ell^K $ is a polynomial with coefficients in $ K $, we can see that $ \tau(\mu_\ell^K(\ell)) = \mu_\ell^K(\tau(\ell)) = 0 $.
+  By theorem, the normality of $ L:K $ implies that all algebraic conjugates of $ \ell $ are in $ L $.
+  Thus, we have that $ \tau(\ell)\in L $.
+  Since $ \ell $ is an arbitrary element of $ L $, this implies that $ \tau(L) \sseq L $.
+  By theorem, since $ L $ extends $ K $ and $ \tau:L\to L $ is a $ K $-homomorphism, we have that $ \tau $ is an automorphism of $ L $.
+  Thus $ \tau(L) = L $.
 \end{solution}
 
-\begin{exercise}
+\begin{exercise} % PROBLEM 5.5
   Put $ K=\Ftw(t) $ and consider $ L=K(t^{1/3}) $.
   Prove that the extension $ L:K $ is algebraic but not normal.
 \end{exercise}
+
+\begin{solution}
+Obviously since $ K(t^{1/3}):K $ is a finite field extension, it is algebraic.
+Suppose $ x\in \bar K $ solves the equation $ x^3-t=0 $.
+Then, $ x = t^{1/3} $ \imp $ \lt(\frac{x}{t^{1/3}}\rt)\cb=1 $ \imp $ x=yt^{1/3} $ such that $ y^3 = 1 $.
+Then we have $ y^3-1 = (y-1)(y^2+y+1) = 0$, so either $y=1$ or $y$ is a root of $y^2+y+1=0$.
+Notice that $ y\sq+y+1 $ is irreducible over $K$, since neither 0 nor 1 are roots.
+If we suppose there was some $ z\in L\setminus K $ such that $ z^2+z+1=0 $, then that implies that there exists some $ f\in K[t] $ with $ f(t^{1/3}) = 0 $.
+However, $ t $ is obviously transcendental over $ K $, forcing a contradiction.
+Thus, the only solution to the cubic $ x\cb - t $ in $ L $ is $ x=1 $, whence the minimum polynomial for $ t^{1/3} \in L $ does not split over $ L $.
+Therefore $ L:K $ does not meet the requirements to be a normal field extension.
+\end{solution}
 \end{document}
