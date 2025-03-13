@@ -20,15 +20,24 @@ Prove that $ L:K $ and $ L:M $ are normal but $ M:K $ is not normal.
 We know that a field extension $ F_1:F_2 $ is normal iff it is a \sfe for some $ f\in F_2[t] $.
 
 \end{solution}
+\pagebreak
 
 \stepcounter{exercise}
 \begin{subexercise}
-  Let $ K-L $ be algebraic, $ a\in L $ and $ \sigma:K\to \bar K $ be a homomorphism.
-  Prove that $ \mu_\alpha^K $ is separable over $ K $ iff $ \sigma(\mu_\alpha^K) $ is seperable over $ \sigma(K) $.
+  Let $ K-L $ be algebraic, $ \alpha\in L $ and $ \sigma:K\to \bar K $ be a homomorphism.
+  Prove that $ \mu_\alpha^K $ is separable over $ K $ iff $ \sigma(\mu_\alpha^K) $ is separable over $ \sigma(K) $.
 \end{subexercise}
 \begin{solution}
-
+  Since we have a homomorphism from $ K\to \bar K $, we know that the extension $ \Kbar:K $ exists.
+  Moreover, it is obviously algebraic by definition of $ \Kbar $.
+  Thus there exists some homomorphism $ \bar\sigma:\Kbar\to\Kbar $ extending $ \sigma $, and we note that $ \bar\sigma|_{K} = \sigma $.
+  Since $ K-L $ is algebraic we know that $ \mu_\alpha^K $ exists.
+  Further, since all coefficients of $ \mu_\alpha^K $ are in $ K $ and $ K \sseq \Kbar $, we can say $ \mu_\alpha^K(t)\in \Kbar[t] $.
+  By definition of algebraic closure, observe that we can split $ \mu_\alpha^K $ over $ \Kbar[t] $ in the following form: \begin{align*}
+    \mu_\alpha^K(t) = \prod_{i=1}^{d}(t-\alpha_i)^{r_i},\quad r\in \N
+  \end{align*}
 \end{solution}
+\pagebreak
 
 \begin{subexercise}
   Let $ L:K $ be a splitting field for $ f\in K[t] $.
@@ -37,6 +46,7 @@ We know that a field extension $ F_1:F_2 $ is normal iff it is a \sfe for some $
 \begin{solution}
 
 \end{solution}
+\pagebreak
 
 \begin{exercise}
   Let $ L:K $ be a \sfe for a polynomial $ f\in K[t] $.
@@ -45,6 +55,7 @@ We know that a field extension $ F_1:F_2 $ is normal iff it is a \sfe for some $
 \begin{solution}
 
 \end{solution}
+\pagebreak
 
 \begin{exercise}
   Let $ K-M-L $ be an algebraic extension.
