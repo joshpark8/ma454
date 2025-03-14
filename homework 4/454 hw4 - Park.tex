@@ -15,26 +15,26 @@
 \setcounter{section}{4}
 % \setcounter{exercise}{1}
 \begin{exercise}
-  For each of the following polynomials, construct a splitting field $ L $ over $ \bbQ $ and compute the degree $ \index{L}{\bbQ} $
+  For each of the following polynomials, construct a splitting field $ L $ over $ \Q $ and compute the degree $ \index{L}{\Q} $
 \end{exercise}
 
 \begin{enumerate}
 \item $ t^4+7t^2+12 $
 \begin{solution}
   We notice $ f(t) = t^4+7t\sq+12 = (t^2+3)(t^2+4) $, so let $ g(t) = t^2+3 $ and $ h(t) = t^2+4 $.
-  We have that $ h=(t-2i)(t+2i) $, and by the rational root test $ h $ is irreducible over $ \bbQ $.
-  Then $ h = \mu_{2i}^\bbQ $ and $ \bbQ(i)=M:\bbQ $ is the \sfe for $ h $ with degree 2.
+  We have that $ h=(t-2i)(t+2i) $, and by the rational root test $ h $ is irreducible over $ \Q $.
+  Then $ h = \mu_{2i}^\Q $ and $ \Q(i)=M:\Q $ is the \sfe for $ h $ with degree 2.
   Next, we have $ g = (t-i\sqrt 3)(t+i\sqrt 3) $, and by Eisenstein's criterion with $ p=3 $, $ g $ is irreducible.
   Let $ L:M $ be the \sfe for $ g $.
   We already have that $ i\in M $, so $ L=M(\sqrt 3) $ and $ \fdeg L M = 2 $.
-  Thus, $ L=\bbQ(i,\sqrt 3):\bbQ $ is the \sfe for $ f $ and by the Tower Law, $ \fdeg L \bbQ = \fdeg L M \fdeg M \bbQ = 2\cdot 2 = 4. $
+  Thus, $ L=\Q(i,\sqrt 3):\Q $ is the \sfe for $ f $ and by the Tower Law, $ \fdeg L \Q = \fdeg L M \fdeg M \Q = 2\cdot 2 = 4. $
 \end{solution}
 
 \item $ t^4+t^2+12 $
 \begin{solution}
   We notice $ f(t) = t^4+t^2+12 = (t^2-3)(t^2+4) $, so let $ g(t) = t^2-3 $ and $ h(t) = t^2+4 $.
   These are the same polynomials as in part 1, but this time the roots of $ g $ do not have an imaginary factor.
-  However, we note that this did not have any impact on our argument in part 1, whence $ L = \bbQ(i,\sqrt 3):\bbQ $ is again the \sfe for $ f $ and $ \fdeg{L}{\bbQ} = 4 $.
+  However, we note that this did not have any impact on our argument in part 1, whence $ L = \Q(i,\sqrt 3):\Q $ is again the \sfe for $ f $ and $ \fdeg{L}{\Q} = 4 $.
 \end{solution}
 
 \item $ t^{2n}-2^n $, where $ n=3,4 $.
@@ -42,24 +42,24 @@
 \begin{proof}[Solution.] $ (n=3) $
   We have that $ f(t) = t^6 - 2^3 $.
   Then, $ t = (2^3)^{1/6} $ and $t = \sqrt{2}\cdot \veps_6^k, $ where $ k\in\Zsi $ and $ \veps_6=\exp(i\frac{2\pi}{6})=\exp(i\frac{\pi}{3}) $.
-    We know the minimum polynomial of $ \veps_6 $ over $ \bbQ $ is the sixth cyclotomic polynomial $ \Phi_6 $, which has degree $ \phi(6) = \phi(2)\phi(3) = 2 $.
-  Thus $ \fdeg{\bbQ(\veps_6)}{\bbQ} = 2 $.
-  Now, $ \sqrt 2\not\in \bbQ(\veps_6) $, so $ L=\bbQ(\sqrt 2, \veps_6)=\bbQ(\veps_6)(\sqrt 2) $.
-  Trivially, the minimum polynomial of $ \sqrt 2 $ has degree 2, hence $ \fdeg{L}{\bbQ(\veps_6)} = 2 $ and by the Tower Law, $ \fdeg{L}{\bbQ}=\fdeg{L}{\bbQ(\veps_6)}\fdeg{\bbQ(\veps_6)}{\bbQ} = 2\cdot 2 = 4. $
+    We know the minimum polynomial of $ \veps_6 $ over $ \Q $ is the sixth cyclotomic polynomial $ \Phi_6 $, which has degree $ \phi(6) = \phi(2)\phi(3) = 2 $.
+  Thus $ \fdeg{\Q(\veps_6)}{\Q} = 2 $.
+  Now, $ \sqrt 2\not\in \Q(\veps_6) $, so $ L=\Q(\sqrt 2, \veps_6)=\Q(\veps_6)(\sqrt 2) $.
+  Trivially, the minimum polynomial of $ \sqrt 2 $ has degree 2, hence $ \fdeg{L}{\Q(\veps_6)} = 2 $ and by the Tower Law, $ \fdeg{L}{\Q}=\fdeg{L}{\Q(\veps_6)}\fdeg{\Q(\veps_6)}{\Q} = 2\cdot 2 = 4. $
 
   $ (n=4) $ We have that $ f(t) = t^8 - 2^4 $.
   Then, $ t = (2^4)^{1/8}$ and $t = \sqrt{2}\cdot \veps_8^k$, where $ k\in\Zei $ and $ \veps_8=\exp(i\frac{2\pi}{8})=\exp(i\frac{\pi}{4}) $.
-  We know the minimum polynomial of $ \veps_8 $ over $ \bbQ $ is the eighth cyclotomic polynomial $ \Phi_8 $, which has degree $ \phi(8) = 2^3-2^2 = 4 $.
-  Thus $ \fdeg{\bbQ(\veps_8)}{\bbQ} = 4 $.
+  We know the minimum polynomial of $ \veps_8 $ over $ \Q $ is the eighth cyclotomic polynomial $ \Phi_8 $, which has degree $ \phi(8) = 2^3-2^2 = 4 $.
+  Thus $ \fdeg{\Q(\veps_8)}{\Q} = 4 $.
   Now, notice $ \veps_8 = \frac{\sqrt 2}{2}+i\frac{\sqrt 2}{2} $ and $ \veps_8\inv = \frac{\sqrt 2}{2}+i\frac{\sqrt 2}{2} $.
-  So, $ \veps_8 + \veps_8\inv = \frac{\sqrt 2}{2} + \frac{\sqrt 2}{2} = \sqrt 2 \in \bbQ(\veps_8) $.
-  Thus $ L = \bbQ(\veps_8) $ is the \sf for $ f $ over $ \bbQ $ and $ \fdeg{L}{\bbQ} = 4 $.
+  So, $ \veps_8 + \veps_8\inv = \frac{\sqrt 2}{2} + \frac{\sqrt 2}{2} = \sqrt 2 \in \Q(\veps_8) $.
+  Thus $ L = \Q(\veps_8) $ is the \sf for $ f $ over $ \Q $ and $ \fdeg{L}{\Q} = 4 $.
 \end{proof}
 
 \item $ t^{14}-1 $
 \begin{solution}
-  Obviously, $ f(t) = t^{14} - 1 $ has root $ \veps_{14}^k $ for $ k\in \ZZ{14} $, so $ L = \bbQ(\veps_{14}) $
-  The minimum polynomial for $ \veps_{14} $ is $ \Phi_{14} $, whence $ \fdeg{L}{\bbQ} = \phi(14) = \phi(7)\phi(2)=6 $.
+  Obviously, $ f(t) = t^{14} - 1 $ has root $ \veps_{14}^k $ for $ k\in \ZZ{14} $, so $ L = \Q(\veps_{14}) $
+  The minimum polynomial for $ \veps_{14} $ is $ \Phi_{14} $, whence $ \fdeg{L}{\Q} = \phi(14) = \phi(7)\phi(2)=6 $.
 \end{solution}
 \end{enumerate}
 
@@ -82,7 +82,7 @@ Thus, $ k $ is algebraic over $ M $ for arbitrary $ k \in K $ \imp $ K-M $ is al
 \end{solution}
 
 \begin{exercise}
-  Let $ \alpha $ be transcendental over a field $ K\subset \bbC $.
+  Let $ \alpha $ be transcendental over a field $ K\subset \C $.
   Show that $ K(\alpha) $ is not algebraically closed (hint: consider the polynomial $ t\sq-\alpha $).
 \end{exercise}
 

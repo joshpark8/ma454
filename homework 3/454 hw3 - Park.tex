@@ -79,59 +79,59 @@ Thus by Eisenstein's Criterion $ g $ is irreducible over $ \bbF $.
 \end{solution}
 
 \begin{exercise}
-Prove that $ t^2 -7 $ is irreducible over $ \bbQ(\sqrt 5) $.
+Prove that $ t^2 -7 $ is irreducible over $ \Q(\sqrt 5) $.
 \end{exercise}
 
 \begin{solution}
 Let $ f(t) = t\sq - 7 $.
 Assume for the sake of contradiction that $ f $ is reducible.
 By definiton of reducible, $ f $ must equal the product of polynomials with strictly lower degree, so $ f=gh \imp \deg(g) = \deg(h) = 1 $.
-This means $ g\tand h $ are linear factors, which implies that $ \exists x\in \bbQ(\sqrt 5) $ such that $ f(x) = 0 $.
-Since $ x\in \bbQ(\sqrt 5) \imp x=a+b\sqrt 5$ for $ a,b\in \bbQ $, notice \begin{align*}
+This means $ g\tand h $ are linear factors, which implies that $ \exists x\in \Q(\sqrt 5) $ such that $ f(x) = 0 $.
+Since $ x\in \Q(\sqrt 5) \imp x=a+b\sqrt 5$ for $ a,b\in \Q $, notice \begin{align*}
   f(x) = 0 &\imp (a+b\sqrt{5})\sq - 7 = 0 \\
   &\imp a\sq + 2ab\sqrt 5 + 5b\sq - 7 = 0 \\
   &\imp a\sq + 5b\sq - 7 = - 2ab\sqrt 5 \\
-  &\imp \frac{a\sq + 5b\sq - 7}{-2ab} = \sqrt 5 \imp \sqrt 5\in \bbQ
+  &\imp \frac{a\sq + 5b\sq - 7}{-2ab} = \sqrt 5 \imp \sqrt 5\in \Q
 \end{align*}
 which is obviously a contradiction.
-Thus $ f(t) = t\sq - 7 $ is irreducible over $ \bbQ(\sqrt 5) $.
+Thus $ f(t) = t\sq - 7 $ is irreducible over $ \Q(\sqrt 5) $.
 \end{solution}
 
 \stepcounter{exercise}
 \begin{subexercise}
 Let $ \alpha=2^{1/6} $ and $ \veps_3^3=1 $, $ \veps_3\neq 1 $. Find the minimal polynomials of $ \alpha $ over \begin{align*}
-  a)\ \bbQ, \quad b)\ \bbQ(\alpha), \quad c)\ \bbQ(\alpha\sq), \quad d)\ \bbQ(\alpha\veps_3).
+  a)\ \Q, \quad b)\ \Q(\alpha), \quad c)\ \Q(\alpha\sq), \quad d)\ \Q(\alpha\veps_3).
 \end{align*}
 \end{subexercise}
 
 \begin{solution}
 \begin{enumerate}[label=\alph*)]
-\item In $ \bbQ $, \begin{align*}
+\item In $ \Q $, \begin{align*}
   \alpha = 2^{1/6} &\imp x = 2^{1/6}\\
   &\imp x^6 = 2 \\
   &\imp x^6 - 2 = 0.
 \end{align*}
 Let $ f(x) = x^6-2 $.
 By Eisenstein (using $ p=2 $), $ f $ is irreducible.
-Thus $ \mu_\alpha^\bbQ (x) = x^6 - 2 $.
+Thus $ \mu_\alpha^\Q (x) = x^6 - 2 $.
 
-\item In $ \bbQ(\alpha)=\bbQ(2^{1/6}) $, \begin{align*}
+\item In $ \Q(\alpha)=\Q(2^{1/6}) $, \begin{align*}
   \alpha = 2^{1/6} &\imp x=2^{1/6} \\
   &\imp x - 2^{1/6} = 0.
 \end{align*}
 Let $ g(x) = x-2^{1/6} $.
 Since $ \deg(x-2^{1/6}) = 1 $, it can not be decomposed into  polynomials of smaller degree and is therefore irreducible by definition.
-Thus $ \mu_\alpha^{\bbQ(\alpha)} (x) = x - 2^{1/6} $.
+Thus $ \mu_\alpha^{\Q(\alpha)} (x) = x - 2^{1/6} $.
 
-\item In $ \bbQ(\alpha\sq)=\bbQ(2^{1/3}) $, \begin{align*}
+\item In $ \Q(\alpha\sq)=\Q(2^{1/3}) $, \begin{align*}
   \alpha\sq = 2^{1/3} &\imp x\sq = 2^{1/3} \\
   &\imp x\sq - 2^{1/3} = 0.
 \end{align*}
 Let $ h(x) = x\sq-2^{1/3} $. Assuming $ h $ is reducible, it must decompose into linear factors.
-However, notice $ h $ does not have any roots in $ \bbQ(2^{1/3}) $, since $ h $ only has 2 solutions by the Fundamental Theorem of Algebra, but $ \pm\alpha\not\in \bbQ(2^{1/3}) $.
-Thus $ h $ can not be reduced into linear factors, whence $ \mu_\alpha^{\bbQ(\alpha^2)}(x) = x^2-2^{1/3} $.
+However, notice $ h $ does not have any roots in $ \Q(2^{1/3}) $, since $ h $ only has 2 solutions by the Fundamental Theorem of Algebra, but $ \pm\alpha\not\in \Q(2^{1/3}) $.
+Thus $ h $ can not be reduced into linear factors, whence $ \mu_\alpha^{\Q(\alpha^2)}(x) = x^2-2^{1/3} $.
 
-\item Let $ \beta=\alpha\veps_3 $. In $ \bbQ(\beta) $, \begin{align*}
+\item Let $ \beta=\alpha\veps_3 $. In $ \Q(\beta) $, \begin{align*}
   \beta = \alpha\veps_3 &\imp \beta\cb = \alpha\cb \veps\cb \\
   &\imp \alpha\cb - \beta\cb = 0 \\
   &\imp x\cb - \beta\cb = 0 \\
@@ -140,8 +140,8 @@ Thus $ h $ can not be reduced into linear factors, whence $ \mu_\alpha^{\bbQ(\al
 Let $ p(x) = x-\beta $ and $ q(x) = x\sq+\beta x + \beta\sq $.
 We know $ \alpha $ must satisfy at least one of these, but notice $ \alpha-\beta = 0 \imp \alpha = \beta $, which is obviously a contradiction since $ \beta=\alpha\veps_3 $ and $ \veps_3 \neq 1 $.
 Thus $ \alpha $ satisfies $ q(x) $ and not $ p(x) $. Now, supposing $ q(x) $ is reducible, it must decompose into linear factors.
-However, we can easily see that the only roots of $ q(x) $ are $ \pm \alpha$ but $ \pm\alpha\not\in \bbQ(\beta) $, otherwise $ \veps_3 \in \bbQ(\beta) $ which is obviously not true.
-Therefore $ q(x) =  x\sq+\beta x + \beta\sq $ must be irreducible over $ \bbQ(\beta) = \bbQ(\alpha\veps_3) $, whence $ \mu_\alpha^{\bbQ(\alpha\veps_3)}(x) =  x\sq+\beta x + \beta\sq = x\sq+\alpha\veps_3x + \alpha\sq\veps_3\sq$.
+However, we can easily see that the only roots of $ q(x) $ are $ \pm \alpha$ but $ \pm\alpha\not\in \Q(\beta) $, otherwise $ \veps_3 \in \Q(\beta) $ which is obviously not true.
+Therefore $ q(x) =  x\sq+\beta x + \beta\sq $ must be irreducible over $ \Q(\beta) = \Q(\alpha\veps_3) $, whence $ \mu_\alpha^{\Q(\alpha\veps_3)}(x) =  x\sq+\beta x + \beta\sq = x\sq+\alpha\veps_3x + \alpha\sq\veps_3\sq$.
 \end{enumerate}
 \end{solution}
 
@@ -151,19 +151,19 @@ In each case (a---d), find the conjugate elements of all roots of $ x^6-2 $.
 
 \begin{solution}
 \begin{enumerate}[label=\alph*)]
-  \item In $ \bbQ $, we have that $ \mu_\alpha^{\bbQ}(x) = x^6-2 $.
+  \item In $ \Q $, we have that $ \mu_\alpha^{\Q}(x) = x^6-2 $.
   By the Fundamental Theorem of Algebra, this equation has 6 solutions.
-  Thus, the conjugates of $ \alpha $ over $ \bbQ $ are $ \{\alpha\veps_6^k \st 0\leq k < 6 \} $, where $ \veps_6 = \exp(\frac{i\pi}{3}) = \frac{1}{2}+\frac{i\sqrt 3}{2} $.
+  Thus, the conjugates of $ \alpha $ over $ \Q $ are $ \{\alpha\veps_6^k \st 0\leq k < 6 \} $, where $ \veps_6 = \exp(\frac{i\pi}{3}) = \frac{1}{2}+\frac{i\sqrt 3}{2} $.
 
-  \item In $ \bbQ(\alpha) $, we have that $ \mu_\alpha^{\bbQ(\alpha)}(x) =  x - 2^{1/6} $.
+  \item In $ \Q(\alpha) $, we have that $ \mu_\alpha^{\Q(\alpha)}(x) =  x - 2^{1/6} $.
   By FTA, this equation only has one solution.
-  Thus the sole conjuage of $ \alpha $ over $ \bbQ(\alpha) $ is itself, $ \alpha $.
+  Thus the sole conjuage of $ \alpha $ over $ \Q(\alpha) $ is itself, $ \alpha $.
 
-  \item In $ \bbQ(\alpha\sq) $, we have that $ \mu_\alpha^{\bbQ(\alpha\sq)}(x) = x^2-2^{1/3} $.
+  \item In $ \Q(\alpha\sq) $, we have that $ \mu_\alpha^{\Q(\alpha\sq)}(x) = x^2-2^{1/3} $.
   By FTA, this equation has 2 solutions.
-  It is trivial to see that the conjuates of $ \alpha $ over $ \bbQ(\alpha\sq) $ are $ \pm\alpha $.
+  It is trivial to see that the conjuates of $ \alpha $ over $ \Q(\alpha\sq) $ are $ \pm\alpha $.
 
-  \item In $ \bbQ(\alpha\veps_3) $, we have that $ \mu_\alpha^{\bbQ(\alpha\veps_3)}(x) = x\sq+\alpha\veps_3x + \alpha\sq\veps\sq $.
+  \item In $ \Q(\alpha\veps_3) $, we have that $ \mu_\alpha^{\Q(\alpha\veps_3)}(x) = x\sq+\alpha\veps_3x + \alpha\sq\veps\sq $.
   By FTA, this equation has 2 solutions.
   We know that one solution to this equation is $ x_1 = \alpha $, so by Vieta's formulae we have $ x_2 = -\alpha\veps_3 - \alpha = -\alpha(\veps_3+1) $.
   Notice that $ \veps_3^3 = 1 \imp \veps_3^3-1=0 $.
