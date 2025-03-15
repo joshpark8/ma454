@@ -18,9 +18,34 @@ Prove that $ L:K $ and $ L:M $ are normal but $ M:K $ is not normal.
 \end{exercise}
 \begin{solution}
 We know that a field extension $ F_1:F_2 $ is normal iff it is a \sfe for some $ f\in F_2[t] $.
+Consider the polynomial $ f(t) = (t^2-3)(t^2+1) $.
+Then, \begin{align*}
+  f(t) &= (t+\sqrt 3)(t-\sqrt 3)(t+i)(t-i),
+\end{align*}
+whence $ L:M $ is a \sfe for $ f $.
 
+Next, consider $ g(t) = (t^2-3)(t^2+1)(t^3-2) $.
+Then, \begin{align*}
+  f(t) &= (t+\sqrt 3)(t-\sqrt 3)(t+i)(t-i)(t-\cbrt 2)(t-\veps_3\cbrt 2)(t-\veps_3^2\cbrt 2),
+\end{align*}
+where $ \veps_3 = \exp\lt(\frac{2\pi}{3}i\rt)$.
+Notice, \begin{align*}
+  \veps_3 &= \cos\lt(\frac{2\pi}{3}\rt) + i\sin\lt(\frac{2\pi}{3}\rt)    & \veps_3^2 &= \cos\lt(\frac{4\pi}{3}\rt) + i\sin\lt(\frac{4\pi}{3}\rt) \\
+          &= -\frac{1}{2}+i\frac{\sqrt 3}{2} & &= -\frac{1}{2}-i\frac{\sqrt 3}{2}\in \Q(2^{1/3},i,\sqrt 3) \\
+          &= \frac{1}{2}\lt(-1+i\sqrt 3\rt)\in \Q(3^{1/3},i,\sqrt 3) & &= \frac{1}{2}\lt(-1-i\sqrt 3\rt) \in \Q(2^{1/3},i,\sqrt 3).
+\end{align*}
+Thus $ L:K$ is a \sfe for $ f $, hence it is normal.
+
+By definition, an extension $M:K$ is normal if $ \forall \alpha\in M $, the minimum polynomial of $ \alpha$ over $ K $, $ \mu_\alpha^K(t) $, splits over $ M[t] $.
+Obviously, $ \sqrt[3]2 \in \Q(2^{1/3}) $ by construction.
+However, notice that for $ \alpha=\sqrt[3]2 $, \begin{align*}
+  \mu_\alpha^K(t) &= t^3-2 \\
+  &= (t-\cbrt 2)(t-\veps_3\cbrt 2)(t-\veps_3^2\cbrt 2),
+\end{align*}
+where $ \veps_3 = \exp\lt(\frac{2\pi}{3}i\rt)$.
+However, we just showed that $ \veps_3 $ and $ \veps_3^2 $ are complex numbers and thus the linear factors $ (t-\veps_3\cbrt 2)\tand (t-\veps_3^2\cbrt 2) $ do not lie in $ M[t] $.
+Thus $ M:K $ is not a normal extension by definiton.
 \end{solution}
-\pagebreak
 
 \stepcounter{exercise}
 \begin{subexercise}
@@ -30,39 +55,98 @@ We know that a field extension $ F_1:F_2 $ is normal iff it is a \sfe for some $
 \begin{solution}
   Since we have a homomorphism from $ K\to \bar K $, we know that the extension $ \Kbar:K $ exists.
   Moreover, it is obviously algebraic by definition of $ \Kbar $.
-  Thus there exists some homomorphism $ \bar\sigma:\Kbar\to\Kbar $ extending $ \sigma $, and we note that $ \bar\sigma|_{K} = \sigma $.
+  Thus there exists some isomorphism $ \bar\sigma:\Kbar\to\Kbar $ extending $ \sigma $, and we note that $ \bar\sigma|_{K} = \sigma $.
   Since $ K-L $ is algebraic we know that $ \mu_\alpha^K $ exists.
   Further, since all coefficients of $ \mu_\alpha^K $ are in $ K $ and $ K \sseq \Kbar $, we can say $ \mu_\alpha^K(t)\in \Kbar[t] $.
   By definition of algebraic closure, observe that we can split $ \mu_\alpha^K $ over $ \Kbar[t] $ in the following form: \begin{align*}
     \mu_\alpha^K(t) = \prod_{i=1}^{d}(t-\alpha_i)^{r_i},\quad r\in \N
   \end{align*}
+  Since $ \bar\sigma|_{K} = \sigma $, we have that $ \bar\sigma(\mu_\alpha^K) = \sigma(\mu_\alpha^K) $ and $ \bar\sigma(K) = \sigma(K) $.
+  We know homomorphisms preserve operations, whence
+  \begin{align*}
+    \bar\sigma\left(\mu_\alpha^K(t)\right) = \prod_{i=1}^{d}(t-\bar\sigma(\alpha_i))^{r_i} = \prod_{i=1}^{d}(t-\sigma(\alpha_i))^{r_i}.
+  \end{align*}
+  Furthermore, any field homomorphism must be injective, so each $ \bar\sigma(\alpha_i) $ is necessarily distinct.
+  Hence $ \mu_\alpha^K $ has multiple roots \iff $ \bar\sigma(\mu_\alpha^K)=\sigma(\mu_\alpha^K) $ has multiple roots.
+  Moreover by irreducibility of $ \mu_\alpha^K $ over $ K $, we have that $ \bar\sigma(\mu_\alpha^K) = \sigma(\mu_\alpha^K) $ is irreducible over the image of $ K $.
+  Thus $ \mu_\alpha^K $ is separable over $ K $ \iff $ \sigma(\mu_\alpha^K) $ is separable over $ \sigma(K) $.
 \end{solution}
-\pagebreak
 
-\begin{subexercise}
+\begin{subexercise} \label{ex:sfe1}
   Let $ L:K $ be a splitting field for $ f\in K[t] $.
   Prove that if $ f $ is separable, then $ L:K $ is separable.
 \end{subexercise}
 \begin{solution}
-
+  We are given that $ L:K $ is a \sfe for $ f $, and by theorem we know $ L=K(\llist{\alpha}{1}{n}) $ where $ \alpha_j\in L $ is a root of $ f $ for $ 1\leq j\leq n $.
+  Then for each $ j $ the minimum polynomial of $ \alpha_j $ must divide $ f $, and thus $ \mu_{\alpha_j}^K $ is separable over $ K $ by separability of $ f $ and the definition of separable.
+  Then $ \alpha_j $ is separable over $ K $ for each $ j $ and hence $ L:K $ is separable by theorem.
 \end{solution}
-\pagebreak
 
 \begin{exercise}
   Let $ L:K $ be a \sfe for a polynomial $ f\in K[t] $.
   Then $ L:K $ is separable iff $ f $ is separable over $ K $.
 \end{exercise}
 \begin{solution}
-
+  We saw in \ref{ex:sfe1} that separability of $ f $ implies separability of $ L:K $.
+  Hence it is enough to show that the separability of $ L:K $ implies the separability of $ f $.
+  Similarly to the previous problem, we have that $ L=K(\llist{\alpha}{1}{n}) $ where $ \alpha_j\in L $ is a root of $ f $ for $ 1\leq j\leq n $.
+  By theorem, the separability of $ L:K $ implies that each $ \alpha_j $ is separable over $ K $.
+  Thus by definition of separability of $ \alpha_j $, we have that $ \mu_{\alpha_j}^K $ is separable.
+  Then since $ \alpha_j $ is a root of $ f $, we know $ \mu_{\alpha_j}^K \divs f $ for all $ j $.
+  Assume ad absurdum that $ f $ is not separable.
+  Then upon splitting over $ L $, there must be some linear factor $ (t-\alpha_k) $ raised to the power of at least 2.
+  By uniqueness of $ \mu_{\alpha_k}^K $ this tells us that $ \mu_{\alpha_k}^K $ must also have a repeated root, contradicting the separability of $ \mu_{\alpha_k}^K $.
+  Hence $ f $ must be separable over $ K $.
 \end{solution}
-\pagebreak
 
 \begin{exercise}
   Let $ K-M-L $ be an algebraic extension.
   Prove that $ K-L $ is separable iff $ K-M $ and $ M-L $ are separable.
 \end{exercise}
 \begin{solution}
+  (\imp) Suppose $ K-L $ is separable.
+  Then $ \alpha $ is separable (i.e. algebraic and $ \mu_\alpha^K $ separable) over $ K $ for all $ \alpha\in L $.
+  Since $ M\sseq L $, we have that $ \beta $ is separable over $ K $ for all $ \beta\in M $, whence $ K-M $ is separable.
+  It remains to show that $ M-L $ is separable.
+  Suppose $ \gamma\in M $.
+  Since $ \gamma\in L $, we have that $ \mu_\gamma^K $ is separable.
+  Consider $ \mu_\gamma^M $.
+  We have by lemma that $ \mu_\gamma^M\divs \mu_\gamma^K $ in $ M[t] $.
+  Since $ \mu_\gamma^K $ splits into distinct linear factors, this means $ \mu_\gamma^M $ must have distinct roots as well.
+  So $ \mu_\gamma^M $ is separable and thus $ \gamma $ is separable for all $ \gamma\in L $.
+  Thus by definition $ L:M $ is separable.
 
+  (\pmi) Assume that both $K-M$ and $M-L$ are separable.
+  We wish to show that $L$ is separable over $K$.
+  Let $\alpha\in L$. By separability of $L:M$, we have that $\mu_{\alpha}^{M}(t)$ is separable.
+  Since $\alpha$ is algebraic over $K$, its minimal polynomial over $K$, $\mu_{\alpha}^{K}(t)\in K[t]$, exists.
+  Moreover, because $K\subset M$, we can view $\mu_{\alpha}^{K}(t)$ as a polynomial in $M[t]$.
+  Since $ \mu_\alpha^K $ and $ \mu_\alpha^M $ share a root, we have that $ \mu_{\alpha}^{M}(t)\mid \mu_{\alpha}^{K}(t) $ in $ M[t] $.
+  That is, there exists some $h(t)\in M[t]$ such that $ \mu_{\alpha}^{K}(t)=\mu_{\alpha}^{M}(t) h(t) $.
+
+  Now, assume ad absurdum that $\mu_{\alpha}^{K}(t)$ is not separable.
+  Then in its factorization over an algebraic closure some linear factor appears with multiplicity $ \geq $ 2.
+  That is, there exists some $\gamma$ such that $(t-\gamma)^n$ divides $\mu_{\alpha}^{K}(t)$ with $ n\geq 2 $.
+  We know $ \mu_{\alpha}^{M}(t) $ has distinct roots, so $ (t-\gamma) $ must be a factor of $ h(t) $ with multiplicity $ \geq 1 $.
+  Notice that \begin{align}
+    D(\mu_\alpha^K(t)) &= D(\mu_{\alpha}^{M}(t)) h(t)+\mu_{\alpha}^{M}(t) D(h(t)), \\
+    \intertext{and if we let $ t=\gamma $,}
+    D(\mu_\alpha^K(\gamma)) &= D(\mu_{\alpha}^{M}(\gamma)) h(\gamma)+\mu_{\alpha}^{M}(\gamma) D(h(\gamma)).
+  \end{align}
+  Since $ \gamma $ is a repeated root of $ \mu_\alpha^K $, we have that $ D(\mu_\alpha^K(\gamma))=0 $.
+  Also since $ \mu_\alpha^K(\gamma) = \mu_{\alpha}^{M}(\gamma) h(\gamma) = 0 $, either $ \mu_{\alpha}^{M}(\gamma) = 0 $ or $ h(\gamma) = 0 $ must be true.
+  \begin{subproof}[Case 1 ($ \mu_{\alpha}^{M}(\gamma) = 0 $).]
+    In this case, equation (2) simplifies to $ 0 = D(\mu_{\alpha}^{M}(\gamma)) h(\gamma) $.
+    If $ h(\gamma) \neq 0 $ then $ \gamma $ must be a repeated root of $ \mu_\alpha^M $, contradicting its separability.
+  \end{subproof}
+  \begin{subproof}[Case 2 ($ h(\gamma) = 0 $).]
+    In this case, equation (2) simplifies to $ 0 = \mu_{\alpha}^{M}(\gamma) D(h(\gamma)) $.
+    We know $\mu_{\alpha}^{M}(\gamma) \neq 0$ otherwise we return to case 1 and reach a contradiction.
+    Thus $ D(h(\gamma)) = 0 $ must be true, whence $ \gamma $ is a repeated root of $ h(t) $.
+  \end{subproof}
+  Thus a repeated root in $ \mu_\alpha^K $ forces one of its factors with coefficients in $ M $ to have a repeated root and thus be inseparable.
+  But then $ \gamma $ would become inseparable since the minimum polynomial of $ \gamma $ over $ M $ must divide $ h $, which contradicts the fact that $ L:M $ is separable.
+  Thus $ \mu_\alpha^K $ must be separable over $ L $ for arbitrary $ \alpha $, whence $ L:K $ is separable.
 \end{solution}
 
 \end{document}
