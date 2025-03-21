@@ -13,9 +13,9 @@
 \begin{document}
 
 \setcounter{section}{5} % HW NUMBER
-\begin{exercise}
+\begin{bexercise}
 Which of the following field extensions are normal? Justify your answers.
-\end{exercise}
+\end{bexercise}
 \begin{enumerate}
 \item $ \Q(i):\Q $ % PROBLEM 5.1.1
 \begin{solution}
@@ -76,34 +76,34 @@ Thus $ \Q(3^{1/3},i,\sqrt 3):\Q $ is a \sfe for $ f $, whence must be normal by 
 \end{solution}
 \end{enumerate}
 
-\begin{exercise} % PROBLEM 5.2
+\begin{bexercise} % PROBLEM 5.2
   Let $ \psi:L \to M $ be a homomorphism, suppose that $ L $ is algebraically closed.
   Prove that $ \psi(L) $ is algebraically closed.
-\end{exercise}
+\end{bexercise}
 \begin{solution}
   Let $ g\in \psi(L)[t] $ be some irreducible polynomial over $ \psi(L) $.
   Then, we have some $ f \in L[t] $ such that $ g=\psi f $ with $ \deg g = \deg f $.
   Now, assume ad absurdum that $ g $ has a degree greater than 1.
   Then $ \deg f > 1 $.
-  By \ac of $ L $, any irreducible polynomials must be linear.
+  By algebraic closure of $ L $, any irreducible polynomials must be linear.
   Since $ \deg f \neq 1 $, $ f $ must be reducible and thus $ f = h\ell $ for some $ h,\ell\in L[t] $ such that $ \deg h \geq 1 $ and $ \deg \ell \geq 1 $.
   Since $ \psi $ must preserve operations, this implies that $ \exists \hat h,\hat \ell\in \psi(L) $ such that $ g=\hat h\hat \ell $, where $ \deg \hat h \geq 1 $ and $ \deg\hat\ell \geq 1 $.
   However, this contradicts the fact that $ g $ is irreducible, so our assumption that $ \deg g > 1 $ must be false and hence $ \deg g = 1 $.
   Therefore, $ \psi(L) $ is algebraically closed.
 \end{solution}
 
-\begin{exercise} % PROBLEM 5.3
+\begin{bexercise} % PROBLEM 5.3
   Let $ L:K $ be a field extension. Then $ \bar K $ is isomorphic to $ \bar L $.
   In addition, if $ K\ss L \sseq \bar L $, then $ \bar K = \bar L $.
-\end{exercise}
+\end{bexercise}
 \begin{solution}
   Let $ \vphi_1:K\to L $ and $ \vphi_2:L\to \bar L $ be the monomorphisms corresponding to the field extensions $ L:K \tand \bar L:L$, respectively.
   Then $ \bar L:K $ is the field extension relative to the composition $ \vphi_2\circ \vphi_1 $.
-  By \ac of $ \bar L $, it must be an \ac for $ K $.
+  By algebraic closure of $ \bar L $, it must be an algebraic closure for $ K $.
   By theorem from lecture, we know that any two algebraic closures for the same field must be isomorphic to one another.
   Thus, $ \bar L\iso \bar K $.
 
-  Assume ad absurdum that we have some \ac $ \bar K $ of $ K $ such that $ \order{\bar K} < \order{\bar L}$.
+  Assume ad absurdum that we have some algebraic closure $ \bar K $ of $ K $ such that $ \order{\bar K} < \order{\bar L}$.
   By definition of algebraic closure, we know that $ \bar K $ and $ \bar L $ are both algebraic extensions of $ K $, so $ K\sseq \bar K $ and $ K\sseq \bar L $.
   Let $ \psi:K\hookrightarrow\bar L $ be the monomorphism corresponding to the extension $ \bar L:K $.
   By theorem, since $ \bar K:K $ is an algebraic extension, there exists an extension of $ \psi $ to another mono from $ \bar K \to \bar L $.
@@ -112,10 +112,10 @@ Thus $ \Q(3^{1/3},i,\sqrt 3):\Q $ is a \sfe for $ f $, whence must be normal by 
   Thus, $ \bar K = \bar L $.
 \end{solution}
 
-\begin{exercise} % PROBLEM 5.4
+\begin{bexercise} % PROBLEM 5.4
   Let $ K-L $ be a normal extension, $ K\sseq L\sseq \Kbar $.
   Then for any $ K $-\homo $ \tau:L\to \Kbar $ one has $ \tau(L) = L $.
-\end{exercise}
+\end{bexercise}
 \begin{solution}
   Suppose we have some $ K $-\homo $ \tau:L\to\bar K $, and let $ \ell\in L $.
   By definition of normal extension, $ K-L $ must be algebraic, whence $ \mu_\ell^K $ exists.
@@ -127,10 +127,10 @@ Thus $ \Q(3^{1/3},i,\sqrt 3):\Q $ is a \sfe for $ f $, whence must be normal by 
   Thus $ \tau(L) = L $.
 \end{solution}
 
-\begin{exercise} % PROBLEM 5.5
+\begin{bexercise} % PROBLEM 5.5
   Put $ K=\Ftw(t) $ and consider $ L=K(t^{1/3}) $.
   Prove that the extension $ L:K $ is algebraic but not normal.
-\end{exercise}
+\end{bexercise}
 
 \begin{solution}
 Obviously since $ K(t^{1/3}):K $ is a finite field extension, it is algebraic.
