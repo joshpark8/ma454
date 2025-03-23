@@ -60,7 +60,7 @@ Then, $ D(x_1,\cdots,x_n) $ is a \tit{symmetric} polynomial, e.g. \begin{align*}
   D(x_1,x_2) = (x_1-x_2)^2 = D(x_2,x_1) = b^2-4ac.
 \end{align*}
 
-\begin{definition}[Elementary symmetric polynomials in \( x_1,\ldots, x_n \)]
+\begin{tdefinition}[Elementary symmetric polynomials in \( x_1,\ldots, x_n \)]
   \begin{align*}
     \sigma_1 &= \sigma_1(x_1,\ldots, x_n)= x_1+\ldots+x_n \\
     \sigma_2 &= \sigma_2(x_1,\ldots, x_n)= x_1x_2+x_1x_3+\cdots+x_1x_n+x_2x_3+\cdots+x_{n-1}x_n \\
@@ -69,36 +69,36 @@ Then, $ D(x_1,\cdots,x_n) $ is a \tit{symmetric} polynomial, e.g. \begin{align*}
     \vdots \\
     \sigma_n &= \sigma_n(x_1,\ldots, x_n)= \prod_{i=1}^{n} x_i
   \end{align*}
-\end{definition}
+\end{tdefinition}
 
 If we consider the group $ S_n $ of all permutations on $ n $ symbols, then $ \forall k, \forall w\in S_n $, \begin{align*}
   \sigma_k(x_1,\ldots,x_n) = \sigma_k(x_{w(1)},\ldots,x_{w(n)}).
 \end{align*}
 More generally,
-\begin{definition}[Symmetric function]
+\begin{tdefinition}[Symmetric function]
   Let \( \phi(x_1, \ldots, x_n) \) be a function. Then \( \phi \) is \tit{symmetric} if \( \forall \) permutations \( \omega\in S_n \), \( \phi(x_1,\ldots, x_n) = \phi(x_{\omega(1)},\ldots,x_{\omega(n)})\).
-\end{definition}
+\end{tdefinition}
 
-\begin{theorem} For \( \forall \) symmetric function \( \phi \) \( \exists ! \) polynomial \( P(t_1, \ldots,t_n) \) such that \( \phi(x_1,\ldots,x_n) =P(\sigma_1,\ldots,\sigma_n)\).
+\begin{ttheorem} For \( \forall \) symmetric function \( \phi \) \( \exists ! \) polynomial \( P(t_1, \ldots,t_n) \) such that \( \phi(x_1,\ldots,x_n) =P(\sigma_1,\ldots,\sigma_n)\).
 
 Moreover, if \( \phi \) is a polynomial with coefficients in a ring \( R \) (\( \phi\in R[x] \)) then \( P\in R[x] \).
-\end{theorem}
+\end{ttheorem}
 
 \begin{example}
   Let $ n=2 $, $ \phi(x_1,x_2) = x_1\sq+x_2\sq = (x_1\sq+x_2\sq)\sq - 2x_1x_2 $.
 \end{example}
 
-\begin{theorem}[Vieta Formula]
+\begin{ttheorem}[Vieta Formula]
 \begin{align*}
   x^n+a_1x^{n-1}+\ldots+a_n &= (x-x_1)\cdots(x-x_n) \\
   &= x^n-\sigma_1(x_1,\ldots, x_n)x^{n-1}+\sigma_2(x_1,\ldots, x_n)x^{n-2}+\cdots\\
   &\quad+(-1)^n\sigma_n(x_1,\ldots, x_n)
 \end{align*}
-\end{theorem}
+\end{ttheorem}
 
-\begin{corollary}
+\begin{tcorollary}
   If $ f\in R[x] $ where $ R $ is a ring and $ f(x) = x^n + a_{1}x^{n-1} + \cdots + a_{n-1}x + a_n $, then $ D(f)\in R[a_1,\ldots,a_n] $. That is, the discriminant is a polynomial in $ a_1,\ldots,a_n $ with coefficients from $ R $.
-\end{corollary}
+\end{tcorollary}
 
 \subsection{Cubic polynomials}
 If \( ax^3+bx^2+cx+d = 0 \), then one solution is
@@ -124,9 +124,9 @@ for some $ p,q $, so we can simply consider the equation $ x^3+px+q = 0 $
   x_1x_2+x_1x_3+x_2x_3 = a^3+b^3 &\imp x_2x_3 = \frac{a^3+b^3}{x_1} = \frac{a^3+b^3}{a+b} = a^2-ab+b^2
 \end{align*}
 
-\begin{theorem}[Inverse Vieta Theorem]
+\begin{ttheorem}[Inverse Vieta Theorem]
 
-\end{theorem}
+\end{ttheorem}
 
 \begin{example}[Root of unity]
   \( \veps \)
@@ -145,9 +145,9 @@ Let \( f(x) = x^4+ax^2+bx+c = 0 \). \begin{enumerate}
   f(x) &= \lt(x^2+\frac{y}{2}\rt)^2 + (a-y)x^2+bx+c - \lt(\frac{y^2}{4}\rt) \\
   D &= b^2 - 4(a-y)(c-\frac{y^2}{4}) = 0
 \end{align*}
-\begin{definition}[Ferrari's Resolvent]
+\begin{tdefinition}[Ferrari's Resolvent]
   \( y^3-ay^2-4cy+4ac-b^2 = 0 \)
-\end{definition}
+\end{tdefinition}
 \begin{align*}
   g(x) &= Ax+B \\
   0 = f(x) &= \lt(x^2+\frac{y}{2}\rt)^2 - (Ax+B)^2 \\

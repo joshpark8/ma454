@@ -1,0 +1,478 @@
+\documentclass{article}
+
+\input{preamble}
+\input{macros}
+\input{letterfont}
+\usepackage{subfiles}
+
+\fancyhead[L]{\tbo{Josh Park \\ Prof. Ilya Shkredov}}
+\fancyhead[C]{\tbo{MA 45401-H01 -- Galois Theory Honors \\ List of theorems/definitions}}
+\fancyhead[R]{\tbo{Spring 2025 \\ Page \thepage}}
+
+
+\begin{document}
+\subfile{lectures/lec1.tex}
+\subfile{lectures/lec2.tex}
+\subfile{lectures/lec3.tex}
+\subfile{lectures/lec4.tex}
+\subfile{lectures/lec5.tex}
+\subfile{lectures/lec6.tex}
+\subfile{lectures/lec7.tex}
+\subfile{lectures/lec8.tex}
+\subfile{lectures/lec9.tex}
+\subfile{lectures/lec10.tex}
+\subfile{lectures/lec11.tex}
+\subfile{lectures/lec12.tex}
+\subfile{lectures/lec13.tex}
+\subfile{lectures/lec14.tex}
+\subfile{lectures/lec15.tex}
+\vspace{10em}
+
+% \subsection{Algebraic elements}
+\begin{tproposition}
+  Suppose that $K$ and $L$ are fields and that $\vphi : K \to L$ is a \homo. With $t$ and $y$ denoting indeterminates, extend the \homo~$ \vphi $ to the mapping $\psi: K[t] \to L[y]$ by defining \begin{align*}
+    \psi(a_0 + a_1t+\cdots + a_n t^n) = \vphi(a_0) + \vphi(a_1)y+\cdots + \vphi(a_n)y^n.
+  \end{align*}
+  Then $ \psi:K[t]\to L[y] $ is an injective \homo.
+  Also, when $ \vphi:K\to L $ is surjective, then $\psi: K[t]\to L[y]$ is surjective and maps irreducible polynomials in $K[t]$ to irreducible polynomials in $L[y]$.
+\end{tproposition}
+
+\begin{tproposition}
+  Suppose $L: K$ is a field extension with $K \sseq L$, and $\alpha\in L$.  Then $E_\alpha$ is a ring \homo.
+\end{tproposition}
+
+\begin{tproposition}
+  Let $L : K$ be a field extension with $K \sseq L$, and suppose that $\alpha\in L$ is algebraic over $K$.
+  Then \begin{align*}
+    I = ker(E_\alpha) = {f \in K[t] : f(\alpha) = 0}
+  \end{align*}
+  is a nonzero ideal of $K[t]$, and there is a unique monic polynomial $\mu_\alpha^K \in K[t]$ that generates $I$.
+\end{tproposition}
+
+
+\begin{ttheorem}
+  Suppose that $L : K$ is a field extension, and that $\alpha\in L $ is algebraic over $K$.
+  Let $g$ be the minimal polynomial $\mu_\alpha^K$ of $ \alpha $ over $ K $.
+  Then $ g $ is irreducible over $ K $, and $\qg{K[t]}{(g)}$ is a field.
+\end{ttheorem}
+
+\begin{ttheorem}
+  Let $ K $ be a field, and suppose that $ f\in K[t] $ is irreducible.
+  Then there exists a field extension $ L:K $, with associated embedding $ \vphi:K[t]\to L[y] $, having the property that $ L $ contains a root of $ \vphi(f) $.
+\end{ttheorem}
+
+\begin{tproposition}
+  Let $ L:K $ be a field extension with $ K\sseq L $.
+  Let $ A\sseq L $ and \begin{align*}
+    \mcC=\lt\{ C\sseq A : C \text{ is a finite set} \rt\}.
+  \end{align*}
+  Then $ K(A)=\cup_{C\in\mcC}K(C) $.
+  Further, when $ \fdeg{K(C)}{K}<\infty $ for all $ C\in \mcC $, then $ K(A):K $ is an algebraic extension.
+\end{tproposition}
+
+\begin{tproposition}
+  Let $L : K$ be a field extension with $K \sseq L$, and suppose that $\alpha\in L$.
+  Then \begin{align*}
+    K[\alpha] = \lt\{ c_0 + c_1\alpha+\cdots+c_d \alpha^d : d\in \ZZ{\leq 0},\ c_0,\ldots,c_d\in K \rt\}
+  \end{align*}
+  and \begin{align*}
+    K(\alpha) = \lt\{ f/g : f,g\in K[\alpha], g\neq 0 \rt\}.
+  \end{align*}
+\end{tproposition}
+
+\begin{tproposition}
+  Let $L : K$ be a field extension with $K \sseq L$, and suppose that $\alpha\in L$.
+  Then $ \alpha $ is algebraic over $ K $ if and only if $ \fdeg{K(\alpha)}{K}<\infty $.
+\end{tproposition}
+
+% \subsection{Review of finite fields and tests for irreducibility}
+\begin{tdefinition}[Characteristic]
+  Let $K$ be a field with additive identity $0_K$ and multiplicative identity $1_K$.
+  When $n\in \N$, we write $n\cdot 1_K$ to denote $1_K+\ldots+ 1_K$ (as an $n$-fold sum).
+  We define the \tul{characteristic} of $K$, denoted by $\char K$, to be the smallest positive integer $m$ with the property that $m\cdot 1_K = 0_K$;
+  if no such integer $m$ exists, we define the characteristic of K to be 0.
+\end{tdefinition}
+
+\begin{tproposition}
+  Let $ K $ be a field with $ \char{K} > 0 $. Then $ \char K $ is equal to a prime number $ p $, and then for all $ x\in K $ one has $ p\cdot x=0 $.
+\end{tproposition}
+
+\begin{ttheorem}
+  Suppose that $ \char K = p > 0 $, and put $ F=\lt\{ c\cdot 1_K : c\in \Z \rt\} $.
+  Then $ F $ is a subfield (called the prime subfield) of $ K $, and $ F\iso \qg{\Z}{p\Z} $.
+\end{ttheorem}
+
+\begin{ttheorem}[Localisation principle]
+  Let $ R $ be an integral domain, and let $ I $ be a prime ideal of $ R $.
+  Define $ \vphi:R[X]\to (\qg{R}{I})[X] $ by putting \begin{align*}
+    \vphi(a_0+a_1X+\cdots+a_nX^n) =\bar a_0+\bar a_1X+\cdots+\bar a_nX^n,
+  \end{align*}
+  where $ \bar a_j = a_j + I $.
+  Then $ \varphi $ is a surjective \homo.
+  Moreover, if $ f\in R[X] $ is primitive with leading coefficient not in $ I $, then $ f $ is irreducible in $ R[X] $ whenever $ \vphi(f) $ is irreducible in $ (\qg{R}{I})[X] $.
+\end{ttheorem}
+
+\tbo{Note:}\quad Proposition 3.1 tells us that when $ f\in K[t] $ and $ \sigma\in \Gal(L:K) $, the mapping $ \sigma $ permutes the roots of $ f $ that lie in $ L $.
+
+\begin{ttheorem}
+  Suppose that $ L:K $ is an algebraic extension, and $ \sigma:L\to L $ is a $ K $-\homo.
+  Then $ \sigma $ is an automorphism of $ L $.
+\end{ttheorem}
+
+\begin{ttheorem}
+  If $ L:K $ is a finite extension, then $ \order{\Gal(L:K)}\leq \fdeg{L}{K} $.
+\end{ttheorem}
+
+\begin{tcorollary}
+  Suppose that $ L:F $ and $ L:F' $ are finite extensions with $ F\sseq L\ tand F'\sseq L $, and further that $ \psi:F\to F' $ is an isomorphism.
+  Then there are at most $ \fdeg{L}{F} $ ways to extend $ \psi $ to a \homo~from $ L $ into $ L $.
+\end{tcorollary}
+
+\begin{tcorollary}
+  Let $ L:K $ be a finite extension with $ K\sseq L $.
+  Suppose that $ \llist{\alpha}{1}{n}\in L $ and put $ L=K(\llist{\alpha}{1}{n}) $.
+  Let $ K_0 = K $, and for $ 1\leq i\leq n $, let $ K_i = K_{i-1}(\alpha_i) $.
+  Then every automorphism $ \tau \in \Gal(L:K) $ corresponds to a sequence of \homo s $ \llist{\sigma}{1}{n} $, having the property that $ \sigma_0:K\to L $ is the inclusion map, one has $ \sigma_n=\tau $, and for $ 1\leq i\leq n $, the map $ \sigma_i : K_i\to L $ is a \homo~extending $ \sigma_{i-1}:K_{i-1}\to L $.
+\end{tcorollary}
+
+\section{Algebraic closures}
+% \subsection{The definition of an algebraic closure, and Zorn's Lemma}
+
+% \subsection{The existence of an algebraic closure}
+
+\begin{tcorollary}
+  When $ K $ is a field, the field $ \Kbar $ is a maximal algebraic extension of $ K $.
+\end{tcorollary}
+
+% \subsection{Properties of algebraic closures}
+
+\begin{tcorollary}
+  Suppose that $ \Kbar $ is an algebraic closure of $ K $, and assume that $ K\sseq \Kbar $.
+  Take $ \alpha\in \Kbar $ and suppose that $ \sigma:K\to \Kbar $ is a homomorphism.
+  Then the number of distinct roots of $ \mu_\alpha^K $ in $ \Kbar $ is equal to the number of distinct roots of $ \sigma(\mu_\alpha^K) $ in $ \Kbar $.
+\end{tcorollary}
+
+\begin{tproposition}
+  Suppose that $L$ and $M$ are fields having the property that $L$ is algebraically closed, and $\psi : L \to M $ is a homomorphism.
+  Then $\psi(L)$ is algebraically closed.
+\end{tproposition}
+
+\begin{tproposition}
+  If $ L:K $ is an algebraic extension, then $ \Lbar $ is an algebraic closure of $ K $, and hence $ \Lbar\iso\Kbar $.
+  If in addition $ K\sseq L\sseq \Lbar $, then we can take $ \Kbar = \Lbar $.
+\end{tproposition}
+
+\section{Splitting field extensions}
+\begin{tdefinition}[Splitting field, \sfe]
+  Suppose that $ L:K $ is a field extension relative to the embedding $ \vphi : K\to L$, and $ f\in K[t]\setminus K $. \begin{enumerate}[label=(\roman*)]
+    \item We say that \tul{$ f $ splits over $ L $} if $ \vphi(f)=\lambda(t-\alpha_1)\cdots(t-\alpha_n) $, for some $ \lambda\in \vphi(K) $ and $ \llist{\alpha}{1}{n}\in L $.
+    \item Suppose that $ f $ splits over $ L $, and let $ M $ be a field with $ \vphi(K)\sseq M\sseq L $.
+      We say that \tul{$ M:K $ is a splitting field extension for $ f $} if $ M $ is the smallest subfield of $ L $ containing $ \vphi(K) $ over which $ f $ splits.
+    \item More generally, suppose that $ S\sseq K[t]\setminus K $ has the property that every $ f\in S $ splits over $ L $.
+      Let $ M $ be a field with $ \vphi(K)\sseq M\sseq L $.
+      We say that \tul{M:K is a \sfe~for $ S $} if $ M $ is the smallest subfield of $ L $ containing $ \vphi(K) $ over which every polynomial $ f\in S $ splits.
+  \end{enumerate}
+\end{tdefinition}
+
+\begin{tproposition}
+  Suppose that $ L:K $ is a \sfe~for the polynomial $ f\in K[t]\setminus K $ with associated embedding $ \vphi:K\to L $.
+  Let $ \llist{\alpha}{1}{n}\in L $ be the roots of $ \varphi(f) $.
+  Then $ L=\vphi(K)(\llist{\alpha}{1}{n}) $.
+\end{tproposition}
+
+\begin{tproposition}
+  Suppose that $ L:K $ is a \sfe~for the polynomial $ f\in K[t]\setminus K $.
+  Then $ \fdeg{L}{K}\leq (\deg f)! $
+\end{tproposition}
+
+\begin{tproposition}
+  Given $ S\sseq K[t]\setminus K $, there exists a \sfe~$ L:K $ for $ S $, and $ L:K $ is an algebraic extension.
+  More explicitly, suppose that $ \Kbar $ is an algebraic closure of $ K $, and that $ \Kbar:K $ is an extension relative to the embedding $ \vphi:\Kbar\to K $. Let
+  \begin{align*}
+    A=\lt\{ \alpha\in \Kbar : \alpha\text{ is a root of $ \vphi(f) $, for some } f\in S \rt\}.
+  \end{align*}
+  Put $ K'=\vphi(K) $.
+  Then $ K'(A):K $ is a \sfe~for $ S $.
+\end{tproposition}
+
+\begin{ttheorem}
+  Let $ f\in K[t]\setminus K $, and suppose that $ L:K $ and $ M:K $ are \sfe s for $ f $.
+  Then $ L\iso M $, and thus $ \fdeg{L}{K}=\fdeg{M}{K} $.
+\end{ttheorem}
+
+\begin{ttheorem}
+  Suppose that $ S\sseq K[t]\setminus K $, and suppose that $ L:K $ and $ M:K $ are \sfe s for $ S $.
+  Then $ L\iso M\tand \fdeg{L}{K}=\fdeg{M}{K} $.
+\end{ttheorem}
+
+\section{Normal extensions and composita}
+% \subsection{Normal extensions and splitting field extensions}
+
+\begin{tproposition}
+  Suppose that $ L:M:K $ is a tower of field extensions and $ L:K $ is a normal extension.
+  Then $ L:M $ is also a normal extension.
+\end{tproposition}
+
+% \subsection{Normal closures}
+\begin{ttheorem}
+  Suppose that $ M:L:K $ is a tower of field extensions having the property that $ M:K $ is normal.
+  Assume that $ K\sseq L\sseq M $.
+  Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
+    \item the field extension $ L:K $ is normal;
+    \item any $ K $-\homo~of $ L $ into $ M $ is an automorphism of $ L $;
+    \item whenever $ \sigma:M\to M $ is a $ K $-automorphism, then $ \sigma(L)\sseq L $.
+  \end{enumerate}
+\end{ttheorem}
+
+% \subsection{Composita of field extensions}
+\begin{tdefinition}[Compositum]
+  Let $ K_1 $ and $ K_2 $ be fields contained in some field $ L $.
+  The \tul{compositum} of $ K_1 $ and $ K_2 $ in $ L $, denoted by $ K_1K_2 $, is the smallest subfield of $ L $ containing both $ K_1 $ and $ K_2 $.
+\end{tdefinition}
+
+\begin{tproposition}
+  Suppose that $ E:K $ and $ F:K $ are finite extensions having the property that $ K,\ E\tand F $ are contained in a field $ L $.
+  Then $ EF:K $ is a finite extension.
+\end{tproposition}
+
+\begin{ttheorem}
+  Let $ E:K $ and $ F:K $ be finite extensions having the property that $ K,\ E\tand F $ are contained in a field $ L $. \begin{enumerate}[label=(\alph*)]
+    \item When $ E:K $ is normal, then $ EF:F $ is normal.
+    \item When $ E:K $ and $ F:K $ are both normal, then $ EF:K $ and $ E\cap F:K $ are normal.
+  \end{enumerate}
+\end{ttheorem}
+
+% \subsection{Normal closures (non-examinable)}
+
+\section{Separability} % 7
+% No bolded subsections appear in this section
+\setcounter{tdefinition}{24}
+
+\begin{ttheorem}
+  Suppose that $ L:M:K $ is a tower of algebraic extensions.
+  Then $ L:K $ is separable if and only if $ L:M $ and $ M:K $ are both separable.
+\end{ttheorem}
+
+\begin{ttheorem}
+  Suppose tht $ E:K $ and $ F:K $ are finite extensions with $ E\sseq L $ and $ F\sseq L $, where $ L $ is a field. \begin{enumerate}[label=(\alph*)]
+    \item When $ E:K $ is separable, then so too is $ EF:F $;
+    \item When $ E:K $ and $ F:K $ are both separable, then so too are $ EF:K $ and $ E\cap F:K $.
+  \end{enumerate}
+\end{ttheorem}
+
+\section{Inseparable polynomials, differentiation, and the Frobenius map}
+% \subsection{Inseparable polynomials and differentiation}
+\begin{tdefinition}[Inseparable]
+  A polynomial $f \in K[t]$ is \tul{inseparable over $K$} if $f$ is not separable over $K$, meaning that $f$ has an irreducible factor $g \in K[t]$ having the property that $g$ has fewer than $\deg g$ distinct roots in $K$.
+\end{tdefinition}
+
+\begin{tdefinition}[Formal derivative]
+  We define the \tul{derivative operator} $ \mcD:K[t]\to K[t] $ by \begin{align*}
+    \mcD\lt(\sum_{k=0}^{n}a_kt^k\rt) = \sum_{k=1}^{n}ka_kt^{k-1}.
+  \end{align*}
+\end{tdefinition}
+
+\begin{ttheorem}
+  Let $ f\in K[t]\setminus K $, and let $ L:K $ be a \sfe~for $ f $.
+  Assume that $ K\sseq L $.
+  Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
+    \item The polynomial $ f $ has a repeated root over $ L $;
+    \item There is some $ \alpha\in L $ for which $ f(\alpha)=0=(\mcD f)(\alpha) $;
+    \item There is some $ g\in K[t] $ having the property that $ \deg g \geq 1 $ and $ g $ divides both $ f $ and $ \mcD f $.
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{ttheorem}
+  Suppose that $ f\in K[t] $ is irreducible over $ K $.
+  Then $ f $ is inseparable over $ K $ if and only if $ \char K=p>0 $, and $ f \in K[t^p]$, which is to say that $ f=a_0+a_1t^p+\cdots+a_mt^{mp} $, for some $ \llist{a}{0}{m}\in K $.
+\end{ttheorem}
+
+\begin{tcorollary}
+  Suppose that $ \char K = 0 $.
+  Then all polynomials in $ K[t] $ are separable over $ K $.
+\end{tcorollary}
+
+% \subsection{The Frobenius map}
+\begin{tdefinition}[Frobenius map]
+  Suppose that $ \char K = p > 0 $.
+  The \tul{Frobenius map} $ \phi:K\to K $ is defined by $ \phi(\alpha)=\alpha^p $.
+\end{tdefinition}
+
+\tbo{Note: } $ \Fix_\phi(K)=\lt\{ \alpha\in K:\phi(\alpha)=\alpha \rt\} $.
+
+\begin{ttheorem}
+  Suppose that $ \char K = p>0 $, and let $ F $ be the prime subfield of $ K $.
+  Let $ \phi:K\to K $ denote the Frobenius map.
+  Then $ \phi $ is an injective homomorphism, and $ \Fix_\phi(K) = F $.
+\end{ttheorem}
+
+\begin{tcorollary}
+  Suppose that $ \char K = p > 0 $ and $ K $ is algebraic over its prime subfield.
+  Then the Frobenius map is an automorphism of $ K $.
+\end{tcorollary}
+
+\begin{tcorollary}
+  Suppose that $ \char K = p > 0 $ and $ K $ is algebraic over its prime subfield.
+  Then all polynomials in $ K[t] $ are separable over $ K $.
+\end{tcorollary}
+
+\begin{ttheorem}
+  Suppose that $ \char K = p > 0 $. Let \begin{align*}
+    f(t) = g(t^p) = a_0+a_1t^p+\cdots+a_{n-1}t^{(n-1)p}+t^{np}
+  \end{align*}
+  be a non-constant monic polynomial over $ K $.
+  Then $ f(t) $ is irreducible in $ K[t] $ if and only if $ g(t) $ is irreducible in $ K[t] $ and not all the coefficients $ a_i $ are $ p $-th powers in $ K $.
+\end{ttheorem}
+
+\section{The Primitive Element Theorem}
+}
+
+\section{Fixed fields and Galois extensions}
+\begin{tdefinition}[Fixed field]
+  Let $ L:K $ be a field extension.
+  When $ G $ is a subgroup of $ \Aut(L) $, we define the fixed field of $ G $ to be \begin{align*}
+    \Fix_L(G) = \lt\{ \alpha\in L : \sigma(\alpha) = \alpha \text{ for all } \sigma\in G \rt\}.
+  \end{align*}
+\end{tdefinition}
+
+\begin{tproposition}
+  Let $ K,\ M \tand L $ be fields with $ K\sseq L $ and $ M\sseq L $.
+  Suppose that $ G\tand H $ are subgroups of $ \Aut(L) $.
+  Then one has the following: \begin{enumerate}[label=(\alph*)]
+    \item if $ K\sseq M $, then $ \Gal(L:K) \geqslant \Gal(L:M) $;
+    \item if $ G\sgp H $, then $ \Fix_L(G)\supseteq \Fix_L(H) $;
+    \item one has $ K\sseq \Fix_L(\Gal(L:K)) $;
+    \item one has $ G\sgp\Gal(L:\Fix_L(G)) $;
+    \item one has $ \Gal(L:K) = \Gal(L:\Fix_L(\Gal(L:K))) $;
+    \item one has $ \Fix_L(G) = \Fix_L(\Gal(L:\Fix_L(G))) $.
+  \end{enumerate}
+\end{tproposition}
+
+\begin{tdefinition}[Galois extension]
+  When $ L:K $ is a field extension, we say that $ L:K $ is a \tul{Galois extension} if it is an extension that is normal and separable.
+\end{tdefinition}
+
+\begin{ttheorem}
+  Suppose that $ L:K $ is an algebraic extension.
+  Then $ L:K $ is Galois if and only if $ K=\Fix_L(\Gal(L:K)) $.
+\end{ttheorem}
+
+\begin{ttheorem}
+  Suppose that $ L $ is a field and $ G $ is a finite subgroup of $ \Aut(L) $, and put $ K=\Fix_L(G) $.
+  Then $ L:K $ is a finite Galois extension with $ \fdeg{L}{K}=\order{\Gal(L:K)} $, and furthermore $ G=\Gal(L:K) $.
+\end{ttheorem}
+
+\begin{ttheorem}
+  Suppose that $ L:K $ is a finite extension.
+  Then, if $ L:K $ is a Galois extension, one has $ \order{\Gal(L:K)}=\fdeg{L}{K} $ and $ K=\Fix_L(\Gal(L:K)) $.
+  If $ L:K $ is not Galois, meanwhile, one has $ \order{\Gal(L:K)}<\fdeg{L}{K} $ and $ K $ is a proper subfield of $ \Fix_L(\Gal(L:K)) $.
+\end{ttheorem}
+
+\begin{tproposition}
+  Suppose that $ L:K $ is a Galois extension, and further that $ L:M:K $ is a tower of field extensions.
+  Then $ L:M $ is a Galois extension.
+\end{tproposition}
+
+\section{The main theorems of Galois theory}
+% \subsection{The Fundamental Theorem}
+\begin{tdefinition}
+  Suppose that $ L:K $ is a field extension.
+  When $ G $ is a subgroup of $ \Aut(L) $, we write $ \phi(G) $ for $ \Fix_L(G) $, and when $ L:M:K_0 $ is a tower of field extensions with $ K_0=\phi(\Gal(L:K)) $, we write $ \gamma(M) $ for $ \Gal(L:M) $.
+\end{tdefinition}
+
+\begin{ttheorem}[The Fundamental Theorem of Galois Theory]
+  Suppose that $ L:K $ is a finite extension, let $ G=\Gal(L:K) $, and put $ K_0=\phi(G) $.
+  Then one has the following: \begin{enumerate}[label=(\alph*)]
+    \item the map $ \phi $ is a bijection from the set of subgroups of $ G $ onto the set of fields $ M $ intermediate between $ L $ and $ K_0 $, and $ \gamma $ is the inverse map;
+    \item if $ H \sgp G $, then $ H\idl G $ if and only if $ \phi(H):K_0 $ is a normal extension;
+    \item if $ H\idl G $, one has $ \Gal(\phi(H):K_0) \iso \qg{G}{H} $.
+      In particular, if $ \sigma\in G $, one has $ \sigma|_{\phi(H)} \in \Gal(\phi(H):K_0) $, and the map $ \sigma\mapsto\sigma|_{\phi(H)} $ is a homomorphism of $ G $ onto $ \Gal(\phi(H):K_0) $ with kernel $ H $.
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{tdefinition}[Galois group of polynomial]
+  When $ f\in K[t] $ and $ L:K $ is a \sfe~for $ f $, we define the \tul{Galois group of the polynomial $ f $ over $ K $} to be $ \Gal_K(f) = \Gal(L:K) $.
+\end{tdefinition}
+
+% \subsection{Non-examinable: consequences for composita and intersections}
+
+\section{Finite fields}
+\begin{ttheorem}
+  Let $ p $ be a prime, and let $ q=p^n $ for some $ n\in \N $.
+  Then: \begin{enumerate}[label=(\alph*)]
+    \item There exists a field $ \F_q $ of order $ q $, and this field is unique up to isomorphism.
+    \item All elements of $ \F_q $ satisfy the equation $ t^q=t $, and hence $ \F_q:\F_p $ is a \sfe~for $ t^q-t $.
+    \item There is a unique copy of $ \F_q $ inside any algebraically closed field containing $ \F_p $.
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{ttheorem}
+  Let $ p $ be a prime, and suppose that $ q=p^n $ for some natural number $ n $.
+  Then: \begin{enumerate}[label=(\alph*)]
+    \item the field extension $ \F_q:\F_p $ is Galois with $ \Gal(\F_q:\F_p)\iso \qg{\Z}{n\Z} $;
+    \item The field $ \F_q $ contains a subfield of order $ p^d $ if and only if $ d\divs n $.
+      When $ d\divs n $, moreover, there is a unique subfield of $ \F_q $ of order $ p^d $.
+  \end{enumerate}
+\end{ttheorem}
+
+\section{Solvability and solubility}
+\begin{tdefinition}[Soluble group]
+  A finite group $ G $ is \tul{soluble} if there is a series of groups \begin{align*}
+    \lt\{ \nf{id} \rt\} = G_0 \sgp G_1 \sgp \cdots\sgp G_n = G,
+  \end{align*}
+  with the property that $ G_i \nsgp G_{i+1} $ and $ \qg{G_{i+1}}{G_i} $ is abelian ($ 0\leq i < n $).
+\end{tdefinition}
+
+\begin{ttheorem}
+  Let $ K $ be a field of characteristic 0.
+  Then $ f\in K[t] $ is solvable by radicals if and only if $ \Gal_K(f) $ is soluble.
+\end{ttheorem}
+
+\begin{tlemma}
+  Suppose $ \char K = 0 $ and $ L:K $ is a radical extension.
+  Then there exists an extension $ N:L $ such that $ N:K $ is normal and radical.
+\end{tlemma}
+
+\begin{tdefinition}[Cyclic extension]
+  The extension $ L:K $ is \tul{cyclic} if $ L:K $ is a Galois extension and $ \Gal(L:K) $ is a cyclic group.
+\end{tdefinition}
+
+\begin{tlemma}
+  Suppose that $ \char K = 0 $ and let $ p $ be a prime number.
+  Also, let $ L:K $ be a \sfe~for $ t^p-1 $.
+  Then $ \Gal(L:K) $ is cyclic, and hence $ L:K $ is a cyclic extension.
+\end{tlemma}
+
+\begin{tlemma}
+  Let $ \char K = 0 $ and suppose that $ n $ is an integer such that $ t^n-1 $ splits over $ K $.
+  Let $ L:K $ be a \sfe~for $ t^n-a $, for some $ a\in K $.
+  Then $ \Gal(L:K) $ is abelian.
+\end{tlemma}
+
+\begin{ttheorem}
+  Let $ \char K = 0 $ and suppose that $ L:K $ is Galois.
+  Suppose that there is an extension $ M:L $ with the property that $ M:K $ is radical.
+  Then $ \Gal(L:K) $ is soluble.
+\end{ttheorem}
+
+\begin{tcorollary}
+  Suppose that $ \char K = 0 $.
+  Then $ \Gal_K(f) $ is soluble whenever $ f\in K[t] $ is soluble by radicals.
+\end{tcorollary}
+
+\begin{tcorollary}
+  There exist quintic polynomials in $ \Q[t] $ with insoluble Galois groups, such as $ f(t) = t^5-4t+2 $, and which are not solvable by radicals.
+\end{tcorollary}
+
+\begin{tlemma}
+  Let $ \char K = 0 $, and suppose that $ L:K $ is a cyclic extension of degree $ n $.
+  Suppose also that $ K $ contains a primitive $ n $-th root of 1.
+  Then there exists $ \theta \in K$ having the property that $ t^n -\theta $ is irreducible over $ K $, and $ L:K $ is a \sf~for $ t^n-\theta $.
+  Further, if $ \beta $ is a root of $ t^n-\theta $ over $ L $, then $ L=K(\beta) $.
+\end{tlemma}
+
+\begin{ttheorem}
+  Let $ \char K = 0 $, and suppose that $ f\in K[t]\setminus K $.
+  Then $ f $ is solvable by radicals whenever $ \Gal_K(f) $ is soluble.
+\end{ttheorem}
+\end{document}

@@ -1,0 +1,44 @@
+\documentclass[a4paper]{article}
+\usepackage{asymptote}
+
+\input{preamble.tex}
+\input{letterfont.tex}
+\input{macros.tex}
+
+% \renewcommand{\arraystretch}{1.25} % space out table rows
+% \setlength{\parindent}{0pt}
+% \setlength{\parskip}{1em}
+% \linespread{1} % 1.3 for one-and-half spacing, 1.6 for double spacing
+
+\begin{document}
+\section{Galois Groups I}
+\begin{tdefinition}[Galois group of polynomial]
+  Let \(L=K(\alpha_1,\ldots,\alpha_n)\) and let \(P(\alpha_1,\ldots,\alpha_n)\) where \(P\in K[\alpha_1,\ldots,\alpha_n]\) is an element of \(L\).
+  Then we define \begin{align*}
+    \Gal_K(f)=\left\{\sigma\in S_n\mid \forall P\in K[\alpha_1,\ldots,\alpha_n], \text{ if } P(\alpha_1,\ldots,\alpha_n)=0 \text{ then } P(\alpha_{\sigma(1)},\ldots,\alpha_{\sigma(n)})\right\}
+  \end{align*}
+\end{tdefinition}
+
+\begin{tlemma}
+  \( \Gal_K(f) \sgp S_n \)
+\end{tlemma}
+
+\begin{tlemma}
+  If \( K_1:K \), then \( \Gal_{K_1}(f)\sgp \Gal_K(f) \).
+\end{tlemma}
+
+\begin{tdefinition}
+  Let \( L:K \) be a field extension.
+  Then \begin{align*}
+    \Gal_K(L) = \Gal(L:K) = \lt\{ \vphi\in\Aut(L) : \vphi\text{ is a K-\homo} \rt\}
+  \end{align*}
+\end{tdefinition}
+
+\begin{tlemma}
+  Suppose that $ M:K $ is a normal extension.
+  Then: \begin{enumerate}[label=(\alph*)]
+    \item for any $ \sigma\in\Gal(M:K) $ and $ \alpha\in M $, we have $ \mu_{\sigma(\alpha)}^K=\mu_\alpha^K $;
+    \item for any $ \alpha,\beta\in M $ with $ \mu_\alpha^K=\mu_\beta^K $, there exists $ \tau\in\Gal(M:K) $ having the property that $ \tau(\alpha)=\beta $.
+  \end{enumerate}
+\end{tlemma}
+\end{document}

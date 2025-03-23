@@ -1,0 +1,37 @@
+\documentclass[a4paper]{article}
+\usepackage{asymptote}
+
+\input{preamble.tex}
+\input{letterfont.tex}
+\input{macros.tex}
+
+\begin{document}
+\section{Algebraic Closure II}
+\begin{ttheorem}
+  Let $ E $ be an algebraic extension of $ K $ with $ K\sseq E $, and let $ \Kbar $ be an algebraic closure of $ K $.
+  Given a homomorphism $ \vphi:K\to \Kbar $, the map $ \vphi $ can be extended to a homomorphism from $ E $ into $ \Kbar $.
+\end{ttheorem}
+
+\begin{ttheorem}
+  If $L$ and $M$ are both algebraic closures of $K$, then $L \iso M$.
+\end{ttheorem}
+
+\begin{tcorollary}
+  Let $ L:K $ be an extension with $ K\sseq L $.
+  Suppose that $ g\in L[t] $ is irreducible over $ L $, and that $ g\divs f $ in $ L[t] $, where $ f\in K[t]\setminus \lt\{ 0 \rt\} $.
+  The $ g $ divides a factor of $ f $ that is irreducible over $ K $.
+  Thus, there exists an irreducible $ h\in K[t] $ having the property that $ h\divs f $ in $ K[t] $, and $ g\divs h $ in $ L[t] $.
+\end{tcorollary}
+
+\begin{tdefinition}[Normal extension]
+  The extension $ L:K $ is \tul{normal} if it is algebraic, and every irreducible polynomial $ f\in K[t] $ either splits over $ L $ or has no root in $ L $.
+\end{tdefinition}
+
+\begin{ttheorem}
+  \( K(\alpha):K \) is normal \iff all conjugates of \( \alpha \) are contained in \( K(\alpha) \).
+\end{ttheorem}
+
+\begin{ttheorem}
+  A finite extension \( L:K \) is normal \iff \( L \) is a \sfe~for some \( f\in K[t]\setminus K \).
+\end{ttheorem}
+\end{document}

@@ -7,200 +7,200 @@
 \begin{document}
 \section{Field extensions and algebraic elements}
 \subsection{Field extensions}
-  \begin{definition}[Field extension]
-    When $ K \tand L $ are fields, we say that $L$ is an \tun{extension} of $K$ if
-  there is a \homo~$\vphi: K \to L$. We then talk about the \tun{field extension}
+  \begin{tdefinition}[Field extension]
+    When $ K \tand L $ are fields, we say that $L$ is an \tul{extension} of $K$ if
+  there is a \homo~$\vphi: K \to L$. We then talk about the \tul{field extension}
   $(\vphi,K,L)$.
-  \end{definition}
+  \end{tdefinition}
 
-  \begin{definition}[Degree, finite extension]
+  \begin{tdefinition}[Degree, finite extension]
     Suppose that $L:K$ is a field extension.
-    We define the \tun{degree} of $L:K$ to be the dimension of $L$ as a vector space over $K$.
+    We define the \tul{degree} of $L:K$ to be the dimension of $L$ as a vector space over $K$.
     We use the notation $[L : K]$ to denote the degree of $L : K$.
-    Further, we say that $L : K$ is a \tun{finite extension} if $[L: K] <\infty$.
-  \end{definition}
+    Further, we say that $L : K$ is a \tul{finite extension} if $[L: K] <\infty$.
+  \end{tdefinition}
 
-  \begin{definition}[Tower, intermediate field]
-    We say that $M : L : K$ is a \tun{tower} of field extensions if $M : L \tand L: K$ are field extensions, and in this case we say that $L$ is an \tun{intermediate field} (relative to the extension $M : K$)
-  \end{definition}
+  \begin{tdefinition}[Tower, intermediate field]
+    We say that $M : L : K$ is a \tul{tower} of field extensions if $M : L \tand L: K$ are field extensions, and in this case we say that $L$ is an \tul{intermediate field} (relative to the extension $M : K$)
+  \end{tdefinition}
 
 \subsection{Algebraic elements}
-  \begin{definition}[Algebraic/transcendental element]
+  \begin{tdefinition}[Algebraic/transcendental element]
     Suppose that $L: K$ is a field extension with associated embedding $ \vphi $.
     Suppose also that $\alpha\in L$. \begin{enumerate}[label=(\roman*)]
-      \item We say that $ \alpha $ is \tun{algebraic} over $K$ when $ \alpha $ is the root of $\vphi(f)$ for some non-zero polynomial $f \in K[t]$.
-      \item If $\alpha$ is not algebraic over $K$, then we say $ \alpha $ is \tun{transcendental} over $K$.
+      \item We say that $ \alpha $ is \tul{algebraic} over $K$ when $ \alpha $ is the root of $\vphi(f)$ for some non-zero polynomial $f \in K[t]$.
+      \item If $\alpha$ is not algebraic over $K$, then we say $ \alpha $ is \tul{transcendental} over $K$.
       \item When every element of $L$ is algebraic over $K$, we say that the field $L$ is algebraic over $K$.
     \end{enumerate}
-  \end{definition}
+  \end{tdefinition}
 
-  \begin{definition}[Evaluation map]
+  \begin{tdefinition}[Evaluation map]
     Suppose that $L: K$ is a field extension with $K \sseq L$, and that $ \alpha\in L $.
-    We define the \tun{evaluation map} $E_\alpha : K[t] \to L$ by putting $E_\alpha(f) = f(\alpha)$ for each $f \in K[t]$.
-  \end{definition}
+    We define the \tul{evaluation map} $E_\alpha : K[t] \to L$ by putting $E_\alpha(f) = f(\alpha)$ for each $f \in K[t]$.
+  \end{tdefinition}
 
-  \begin{definition}[Minimal polynomial]
+  \begin{tdefinition}[Minimal polynomial]
     Suppose that $L : K$ is a field extension with $K \sseq L$, and suppose that $\alpha\in L$ is algebraic over $K$.
     Then the minimal polynomial of $ \alpha $ over $K$ is the unique monic polynomial $m_\alpha(K)$ in $K[t]$ having the property that $ \ker(E_\alpha) = (m_\alpha(K))$.
-  \end{definition}
+  \end{tdefinition}
 
-  \begin{definition}[Smallest subring/subfield]
+  \begin{tdefinition}[Smallest subring/subfield]
     Let $L:K$ be a field extension with $K\sseq L$. \begin{enumerate}[label=(\roman*)]
-      \item When $\alpha\in L$, we denote by $K[\alpha]$ the \tun{smallest subring of $L$ containing $K$ and $\alpha$}, and by $K(\alpha)$ the \tun{smallest subfield of $L$ containing $K$ and $\alpha$};
-      \item More generally, when $A\sseq L$, we denote by $K[A]$ the \tun{smallest subring of $L$ containing $K \tand A$}, and by $K(A)$ the \tun{smallest subfield of $L$ containing $K \tand A$}.
+      \item When $\alpha\in L$, we denote by $K[\alpha]$ the \tul{smallest subring of $L$ containing $K$ and $\alpha$}, and by $K(\alpha)$ the \tul{smallest subfield of $L$ containing $K$ and $\alpha$};
+      \item More generally, when $A\sseq L$, we denote by $K[A]$ the \tul{smallest subring of $L$ containing $K \tand A$}, and by $K(A)$ the \tul{smallest subfield of $L$ containing $K \tand A$}.
     \end{enumerate}
-  \end{definition}
+  \end{tdefinition}
 
 \section{Review of finite fields and tests for irreducibility}
-  \begin{definition}[Characteristic]
+  \begin{tdefinition}[Characteristic]
     Let $K$ be a field with additive identity $0_K$ and multiplicative identity $1_K$.
     When $n\in \N$, we write $n\cdot 1_K$ to denote $1_K+\ldots+ 1_K$ (as an $n$-fold sum).
-    We define the \tun{characteristic} of $K$, denoted by $\char K$, to be the smallest positive integer $m$ with the property that $m\cdot 1_K = 0_K$;
+    We define the \tul{characteristic} of $K$, denoted by $\char K$, to be the smallest positive integer $m$ with the property that $m\cdot 1_K = 0_K$;
     if no such integer $m$ exists, we define the characteristic of $K$ to be 0.
-  \end{definition}
+  \end{tdefinition}
 
-  \begin{definition}[Highest common factor, content, primitive]
-    Let $R$ be a UFD. When $ \llist{a}{0}{n}\in R $ are not all 0, we define as a \tun{highest common factor} of $\llist{a}{0}{n}$ (written hcf($\llist{a}{0}{n}$)) any element $c\in R$ satisfying \begin{enumerate}[label=(\roman*)]
+  \begin{tdefinition}[Highest common factor, content, primitive]
+    Let $R$ be a UFD. When $ \llist{a}{0}{n}\in R $ are not all 0, we define as a \tul{highest common factor} of $\llist{a}{0}{n}$ (written hcf($\llist{a}{0}{n}$)) any element $c\in R$ satisfying \begin{enumerate}[label=(\roman*)]
       \item $ c\divs a_i\ (0\leq i\leq n) $, and
       \item whenever $ d\divs a_i\ (0\leq i\leq n) $, then $ d\divs c $.
     \end{enumerate}
-    When $f=a_0+a_1X+\ldots +a_nX^n$ is a non-zero polynomial in $R[X]$, we define a \tun{content} of $f$ to be any hcf($\llist{a}{0}{n}$).
-    We say that $f\in R[X]$ is \tun{primitive} if $f\neq 0$ and the content of $f$ is divisible only by units of $R$.
-  \end{definition}
+    When $f=a_0+a_1X+\ldots +a_nX^n$ is a non-zero polynomial in $R[X]$, we define a \tul{content} of $f$ to be any hcf($\llist{a}{0}{n}$).
+    We say that $f\in R[X]$ is \tul{primitive} if $f\neq 0$ and the content of $f$ is divisible only by units of $R$.
+  \end{tdefinition}
 
 \section{Extending field \homo s and the Galois group of an extension}
-\setcounter{definition}{15}
+\setcounter{tdefinition}{15}
 \setcounter{section}{2}
   \section{Extending field \homo s and the Galois group of an extension}
-  \begin{definition}[Extension of field \homo, isomorphic field extensions]
+  \begin{tdefinition}[Extension of field \homo, isomorphic field extensions]
     For $i = 1 \tand 2$, let $L_i : K_i$ be a field extension relative to the embedding $\vphi_i : K_i\to L_i$.
     Suppose that $ \sigma :K_1\to K_2 $ and $ \tau:L_1\to L_2 $ are isomorphisms.
-    We say that \tun{$\tau$ extends $\sigma$} if $ \tau\circ\vphi_1 = \vphi_2\circ\sigma $.
-    In such circumstances, we say that $L_1 : K_1 \tand L_2 : K_2$ are \tun{isomorphic field extensions}.
+    We say that \tul{$\tau$ extends $\sigma$} if $ \tau\circ\vphi_1 = \vphi_2\circ\sigma $.
+    In such circumstances, we say that $L_1 : K_1 \tand L_2 : K_2$ are \tul{isomorphic field extensions}.
 
-    When $ \sigma:K_1\to K_2 $ and $ \tau:L_1\to L_2 $ are \homo s (instead of isomorphisms), then \tun{$ \tau $ extends $ \sigma $ as a} \tun{\homo~of fields} when the isomorphism $ \tau:L_1\to L_1' = \tau(L_1) $ extends the isomorphism $ \sigma:K_1\to K_1' = \sigma(K_1) $.
-  \end{definition}
+    When $ \sigma:K_1\to K_2 $ and $ \tau:L_1\to L_2 $ are \homo s (instead of isomorphisms), then \tul{$ \tau $ extends $ \sigma $ as a} \tul{\homo~of fields} when the isomorphism $ \tau:L_1\to L_1' = \tau(L_1) $ extends the isomorphism $ \sigma:K_1\to K_1' = \sigma(K_1) $.
+  \end{tdefinition}
 
-  \begin{definition}[$F$-\homo]
+  \begin{tdefinition}[$F$-\homo]
     Let \(L : K\) be a field extension relative to the embedding \(\vphi : K \to L\), and let \(M\) be a subfield of \(L\) containing \(\vphi(K)\).
-    Then, when \(\sigma : M \to L\) is a \homo, we say that \(\sigma\) is a \tun{\(K\)-\homo} if \(\sigma\) leaves \(\vphi(K)\) pointwise fixed, which is to say that for all \(\alpha \in \vphi(K)\), one has $\sigma(\alpha) = \alpha$.
-  \end{definition}
+    Then, when \(\sigma : M \to L\) is a \homo, we say that \(\sigma\) is a \tul{\(K\)-\homo} if \(\sigma\) leaves \(\vphi(K)\) pointwise fixed, which is to say that for all \(\alpha \in \vphi(K)\), one has $\sigma(\alpha) = \alpha$.
+  \end{tdefinition}
 
 \section{Algebraic closures}
 \subsection{The definition of an algebraic closure, and Zorn's Lemma}
-  \begin{definition}[Algebraically closed field, algebraic closure]
+  \begin{tdefinition}[Algebraically closed field, algebraic closure]
     Let $ M $ be a field. \begin{enumerate}[label=(\roman*)]
-      \item We say that $ M $ is \tun{algebraically closed} if every non-constant polynomial $ f\in M[t] $ has a root in $ M $.
+      \item We say that $ M $ is \tul{algebraically closed} if every non-constant polynomial $ f\in M[t] $ has a root in $ M $.
       \item We say that $ M $ is an algebraic closure of $ K $ if $ M:K $ is an algebraic field extension having the property that $ M $ is algebraically closed.
     \end{enumerate}
-  \end{definition}
+  \end{tdefinition}
 
-  \begin{definition}[Chain]
+  \begin{tdefinition}[Chain]
     Suppose that $ X $ is a nonempty, partially ordered set with $ \leq $ denoting the partial ordering.
-    A \tun{chain} $ C $ in $ X $ is a collection of elements $ \lt\{ a_i \rt\}_{i\in I} $ of $ X $ having the property that for every $ i,j\in I $, either $ a_i\leq a_j \tor a_j\leq a_i $.
-  \end{definition}
+    A \tul{chain} $ C $ in $ X $ is a collection of elements $ \lt\{ a_i \rt\}_{i\in I} $ of $ X $ having the property that for every $ i,j\in I $, either $ a_i\leq a_j \tor a_j\leq a_i $.
+  \end{tdefinition}
 
 \subsection{The existence of an algebraic closure}
-  \begin{definition}[Algebraic closure of $K$]
-    When $K$ is a field, an algebraic extension $\Kbar:K$ that is algebraically closed is called an \tun{algebraic closure} of $K$.
-  \end{definition}
+  \begin{tdefinition}[Algebraic closure of $K$]
+    When $K$ is a field, an algebraic extension $\Kbar:K$ that is algebraically closed is called an \tul{algebraic closure} of $K$.
+  \end{tdefinition}
 
 \section{Splitting field extensions}
-  \begin{definition}[Splitting field, \sfe]
+  \begin{tdefinition}[Splitting field, \sfe]
     Suppose that $ L:K $ is a field extension relative to the embedding $ \vphi : K\to L$, and $ f\in K[t]\setminus K $. \begin{enumerate}[label=(\roman*)]
-      \item We say that \tun{$ f $ splits over $ L $} if $ \vphi(f)=\lambda(t-\alpha_1)\cdots(t-\alpha_n) $, for some $ \lambda\in \vphi(K) $ and $ \llist{\alpha}{1}{n}\in L $.
-      \item Suppose that $ f $ splits over $ L $, and let $ M $ be a field with $ \vphi(K)\sseq M\sseq L $. We say that \tun{$ M:K $ is a splitting} \tun{field extension for $ f $} if $ M $ is the smallest subfield of $ L $ containing $ \vphi(K) $ over which $ f $ splits.
-      \item More generally, suppose that $ S\sseq K[t]\setminus K $ has the property that every $ f\in S $ splits over $ L $. Let $ M $ be a field with $ \vphi(K)\sseq M\sseq L $. We say that \tun{$ M:K $ is a \sfe~for $ S $} if $ M $ is the smallest subfield of $ L $ containing $ \vphi(K) $ over which every polynomial $ f\in S $ splits.
+      \item We say that \tul{$ f $ splits over $ L $} if $ \vphi(f)=\lambda(t-\alpha_1)\cdots(t-\alpha_n) $, for some $ \lambda\in \vphi(K) $ and $ \llist{\alpha}{1}{n}\in L $.
+      \item Suppose that $ f $ splits over $ L $, and let $ M $ be a field with $ \vphi(K)\sseq M\sseq L $. We say that \tul{$ M:K $ is a splitting} \tul{field extension for $ f $} if $ M $ is the smallest subfield of $ L $ containing $ \vphi(K) $ over which $ f $ splits.
+      \item More generally, suppose that $ S\sseq K[t]\setminus K $ has the property that every $ f\in S $ splits over $ L $. Let $ M $ be a field with $ \vphi(K)\sseq M\sseq L $. We say that \tul{$ M:K $ is a \sfe~for $ S $} if $ M $ is the smallest subfield of $ L $ containing $ \vphi(K) $ over which every polynomial $ f\in S $ splits.
     \end{enumerate}
-  \end{definition}
+  \end{tdefinition}
 
 \section{Normal extensions and composita}
 \subsection{Normal extensions}
-  \begin{definition}[Normal extension]
-    The extension $ L:K $ is \tun{normal} if it is algebraic, and every irreducible polynomial $ f\in K[t] $ either splits over $ L $ or has no root in $ L $.
-  \end{definition}
+  \begin{tdefinition}[Normal extension]
+    The extension $ L:K $ is \tul{normal} if it is algebraic, and every irreducible polynomial $ f\in K[t] $ either splits over $ L $ or has no root in $ L $.
+  \end{tdefinition}
 
 \subsection{Composita of field extensions}
-  \begin{definition}[Compositum]
+  \begin{tdefinition}[Compositum]
     Let $ K_1 $ and $ K_2 $ be fields contained in some field $ L $.
-    The \tun{compositum} of $ K_1 $ and $ K_2 $ in $ L $, denoted by $ K_1K_2 $, is the smallest subfield of $ L $ containing both $ K_1 $ and $ K_2 $.
-  \end{definition}
+    The \tul{compositum} of $ K_1 $ and $ K_2 $ in $ L $, denoted by $ K_1K_2 $, is the smallest subfield of $ L $ containing both $ K_1 $ and $ K_2 $.
+  \end{tdefinition}
 
 \section{Separability}
-  \begin{definition}[Separable]
+  \begin{tdefinition}[Separable]
     Let $ K $ be a field. \begin{enumerate}[label=(\roman*)]
-      \item An irreducible polynomial $ f\in K[t] $ is \tun{separable over $ K $} if it has no multiple roots, meaning that $ f=\lambda(t-\alpha_1)(t-\alpha_2)\cdots(t-\alpha_d) $, where $ \llist{\alpha}{1}{d}\in \Kbar $ are distinct.
-      \item A non-zero polynomial $ f\in K[t] $ is \tun{separable over $ K $} if its irreducible factors in $ K[t] $ are separable over $ K $.
-      \item When $ L:K $ is a field extension, we say that $ \alpha \in L $ is \tun{separable over $ K $} when $ \alpha $ is algebraic over $ K $ and $ m_\alpha(K) $ is separable.
-      \item An algebraic extension $ L:K $ is \tun{a separable extension} if every $ \alpha\in L $ is separable over $ K $.
+      \item An irreducible polynomial $ f\in K[t] $ is \tul{separable over $ K $} if it has no multiple roots, meaning that $ f=\lambda(t-\alpha_1)(t-\alpha_2)\cdots(t-\alpha_d) $, where $ \llist{\alpha}{1}{d}\in \Kbar $ are distinct.
+      \item A non-zero polynomial $ f\in K[t] $ is \tul{separable over $ K $} if its irreducible factors in $ K[t] $ are separable over $ K $.
+      \item When $ L:K $ is a field extension, we say that $ \alpha \in L $ is \tul{separable over $ K $} when $ \alpha $ is algebraic over $ K $ and $ m_\alpha(K) $ is separable.
+      \item An algebraic extension $ L:K $ is \tul{a separable extension} if every $ \alpha\in L $ is separable over $ K $.
     \end{enumerate}
-  \end{definition}
+  \end{tdefinition}
 
 \section{Inseparable polynomials, differentiation, and the Frobenius map}
 \subsection{Inseparable polynomials and differentiation}
-  \begin{definition}[Inseparable]
-    A polynomial $f \in K[t]$ is \tun{inseparable over $K$} if $f$ is not separable over $K$, meaning that $f$ has an irreducible factor $g \in K[t]$ having the property that $g$ has fewer than $\deg g$ distinct roots in $K$.
-  \end{definition}
+  \begin{tdefinition}[Inseparable]
+    A polynomial $f \in K[t]$ is \tul{inseparable over $K$} if $f$ is not separable over $K$, meaning that $f$ has an irreducible factor $g \in K[t]$ having the property that $g$ has fewer than $\deg g$ distinct roots in $K$.
+  \end{tdefinition}
 
-  \begin{definition}[Formal derivative]
-    We define the \tun{derivative operator} $ \mcD:K[t]\to K[t] $ by \begin{align*}
+  \begin{tdefinition}[Formal derivative]
+    We define the \tul{derivative operator} $ \mcD:K[t]\to K[t] $ by \begin{align*}
       \mcD\lt(\sum_{k=0}^{n}a_kt^k\rt) = \sum_{k=1}^{n}ka_kt^{k-1}.
     \end{align*}
-  \end{definition}
+  \end{tdefinition}
 
 \subsection{The Frobenius map}
-  \begin{definition}[Frobenius map]
+  \begin{tdefinition}[Frobenius map]
     Suppose that $ \char K = p > 0 $.
-    The \tun{Frobenius map} $ \phi:K\to K $ is defined by $ \phi(\alpha)=\alpha^p $.
-  \end{definition}
+    The \tul{Frobenius map} $ \phi:K\to K $ is defined by $ \phi(\alpha)=\alpha^p $.
+  \end{tdefinition}
 
 \section{The Primitive Element Theorem}
-  \begin{definition}[Simple extension]
+  \begin{tdefinition}[Simple extension]
     Suppose $ L:K $ is a field extension relative to the embedding $ \varphi:K\to L $.
-    We say that $ L:K $ is a \tun{simple extension} if there is some $ \gamma\in L $ having the property that $ L=\vphi(K)(\gamma) $.
-  \end{definition}
+    We say that $ L:K $ is a \tul{simple extension} if there is some $ \gamma\in L $ having the property that $ L=\vphi(K)(\gamma) $.
+  \end{tdefinition}
 
 \section{Fixed fields and Galois extensions}
-  \begin{definition}[Fixed field]
+  \begin{tdefinition}[Fixed field]
     Let $ L:K $ be a field extension.
     When $ G $ is a subgroup of $ \Aut(L) $, we define the fixed field of $ G $ to be \begin{align*}
       \Fix_L(G) = \lt\{ \alpha\in L : \sigma(\alpha) = \alpha \text{ for all } \sigma\in G \rt\}.
     \end{align*}
-  \end{definition}
+  \end{tdefinition}
 
-  \begin{definition}[Galois extension]
-    When $ L:K $ is a field extension, we say that $ L:K $ is a \tun{Galois extension} if it is an extension that is normal and separable.
-  \end{definition}
+  \begin{tdefinition}[Galois extension]
+    When $ L:K $ is a field extension, we say that $ L:K $ is a \tul{Galois extension} if it is an extension that is normal and separable.
+  \end{tdefinition}
 
 \section{The main theorems of Galois theory}
 \subsection{The Fundamental Theorem}
-  \begin{definition}
+  \begin{tdefinition}
     Suppose that $ L:K $ is a field extension.
     When $ G $ is a subgroup of $ \Aut(L) $, we write $ \phi(G) $ for $ \Fix_L(G) $, and when $ L:M:K_0 $ is a tower of field extensions with $ K_0=\phi(\Gal(L:K)) $, we write $ \gamma(M) $ for $ \Gal(L:M) $.
-  \end{definition}
+  \end{tdefinition}
 
-  \begin{definition}[Galois group of polynomial]
-    When $ f\in K[t] $ and $ L:K $ is a \sfe~for $ f $, we define the \tun{Galois group of the polynomial $ f $ over $ K $} to be $ \Gal_K(f) = \Gal(L:K) $.
-  \end{definition}
+  \begin{tdefinition}[Galois group of polynomial]
+    When $ f\in K[t] $ and $ L:K $ is a \sfe~for $ f $, we define the \tul{Galois group of the polynomial $ f $ over $ K $} to be $ \Gal_K(f) = \Gal(L:K) $.
+  \end{tdefinition}
 
 \section{Solvability by radicals: polynomials of degree 2, 3 and 4}
-  \begin{definition}[Radical element/extension]
+  \begin{tdefinition}[Radical element/extension]
     Suppose that $ L:K $ is a field extension, and $ \beta\in L $.
-    We say that $ \beta $ is \tun{radical} over $ K $ when $ \beta^n\in K $ for some $ n\in \N $ (so $ \beta=\alpha^{1/n} $ for some $ \alpha\in K $ and some $ n\in\N $).
-    We say that $ L:K $ is \tun{an extension by radicals} when there is a tower of field extensions $ L=L_r:L_{r-1}:\cdots:L_0=K $ such that $ L_i=L_{i-1}(\beta_i) $ with $ \beta_i $ radical over $ L_{i-1} $.
-    We say $ f\in K[t] $ is \tun{solvable by radicals} if there is a radical extension of $ K $ over which $ f $ splits.
-  \end{definition}
+    We say that $ \beta $ is \tul{radical} over $ K $ when $ \beta^n\in K $ for some $ n\in \N $ (so $ \beta=\alpha^{1/n} $ for some $ \alpha\in K $ and some $ n\in\N $).
+    We say that $ L:K $ is \tul{an extension by radicals} when there is a tower of field extensions $ L=L_r:L_{r-1}:\cdots:L_0=K $ such that $ L_i=L_{i-1}(\beta_i) $ with $ \beta_i $ radical over $ L_{i-1} $.
+    We say $ f\in K[t] $ is \tul{solvable by radicals} if there is a radical extension of $ K $ over which $ f $ splits.
+  \end{tdefinition}
 
 \section{Solvability and solubility}
-  \begin{definition}[Soluble group]
-    A finite group $ G $ is \tun{soluble} if there is a series of groups \begin{align*}
+  \begin{tdefinition}[Soluble group]
+    A finite group $ G $ is \tul{soluble} if there is a series of groups \begin{align*}
       \lt\{ \nf{id} \rt\} = G_0 \sgp G_1 \sgp \cdots\sgp G_n = G,
     \end{align*}
     with the property that $ G_i \nsgp G_{i+1} $ and $ \qg{G_{i+1}}{G_i} $ is abelian ($ 0\leq i < n $).
-  \end{definition}
+  \end{tdefinition}
 
-  \begin{definition}[Cyclic extension]
-    The extension $ L:K $ is \tun{cyclic} if $ L:K $ is a Galois extension and $ \Gal(L:K) $ is a cyclic group.
-  \end{definition}
+  \begin{tdefinition}[Cyclic extension]
+    The extension $ L:K $ is \tul{cyclic} if $ L:K $ is a Galois extension and $ \Gal(L:K) $ is a cyclic group.
+  \end{tdefinition}
 
 \end{document}

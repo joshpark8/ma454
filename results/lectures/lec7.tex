@@ -1,0 +1,38 @@
+\documentclass[a4paper]{article}
+\usepackage{asymptote}
+
+\input{preamble.tex}
+\input{letterfont.tex}
+\input{macros.tex}
+
+\begin{document}
+\section{Cyclotomic Polynomials}
+
+\begin{ttheorem}
+  For prime \( p \), we have \( x^p-1 = (x-1)(x^{p-1} + \cdots + 1) \) and \( \mu_{\veps_p}^\Q = x^{p-1} + \cdots + 1 \).
+\end{ttheorem}
+
+\begin{tdefinition}[\( n^{\text{th}} \) cyclotomic polynomial]
+  \begin{align*}
+    \Phi_n(x) = \prod_{\substack{\veps\in\sqrt[n]1\\\order{\veps}=n}} (x-\veps) = \frac{x^n-1}{\prod\limits_{\substack{d\mid n,d<n}}\Phi_d(x)}
+  \end{align*}
+\end{tdefinition}
+
+\begin{ttheorem}
+  \( \Phi_n \) is irreducible over \( \Q \).
+\end{ttheorem}
+
+\begin{tcorollary}
+  \begin{enumerate}[label=\nf{(\alph*)}]
+    \item \( \fdeg{\Q(\exp\left(\frac{2\pi i}{n}\right))}{\Q} = \vphi(n) \) (where \( \vphi \) is Euler's totient function);
+    \item \( \fdeg{\Q(\cos\left(\frac{2\pi }{n}\right))}{\Q} = \frac{1}{2}\vphi(n) \).
+    Furthermore, all algebraic conjugates of \( \cos \frac{2\pi}{n} \) are \( \cos \frac{2\pi k}{n} \) for \( \gcd(k,n)=1 \).
+    \item Let \( c = \frac{a+bi}{a-bi}\in \sqrt[\infty] 1 \), where \( a,b\in \Z \). Then \( c\in \lt\{ \pm i,\pm 1 \rt\} \)
+  \end{enumerate}
+\end{tcorollary}
+
+\begin{tlemma}
+  Let \( \F \) be a finite field. Then \( \F^\times = \F \setminus \lt\{ 0 \rt\} \) is a cyclic group.
+\end{tlemma}
+
+\end{document}

@@ -1,0 +1,44 @@
+\documentclass[a4paper]{article}
+\usepackage{asymptote}
+
+\input{preamble.tex}
+\input{letterfont.tex}
+\input{macros.tex}
+
+\begin{document}
+\section{Splitting fields, Abel-Ruffini}
+\begin{tdefinition}[Splitting field]
+  Let \( L:K \) with embedding \( \vphi:K\to L \) and \( f\in K[t]\setminus K \).
+  We say \tul{\( f \) splits over \( L \)} if \( \vphi(f) = c\prod\limits_{j=1}^n (x-\alpha_j) \) for \( \alpha_j \in L \) and \( c\in \vphi(K) \).
+  If \( f \) splits over \( L \) and \( \vphi(K)\sseq M\sseq L \), then we say that \( M:K \) is a \tul{\sfe} for \( f \) if \( M \) is the smallest subfield of \( L \) containing \( \vphi(K) \) over which \( f \) splits.
+\end{tdefinition}
+
+\begin{tlemma}
+  Let \( L:K \) be a \sfe~for \( f\in K[t] \) relative to the embedding \( \vphi:K\to L \), and let \( \alpha_j\in L \) be roots of \( \vphi(f) \).
+  Then \( L=\vphi(K)(\llist{\alpha}{1}{n}) \).
+\end{tlemma}
+
+\begin{tlemma}
+  Let \( L:K \) be a \sfe~for \( f\in K[t]\setminus K \).
+  Then \( \fdeg{L}{K}\leq (\deg f)! \).
+\end{tlemma}
+
+\begin{tlemma}
+  Let \( L:K \tand M:K \) be  \sfe s for \( f\in K[t]\setminus K \).
+  Then \( L\iso M \) (in particular, \( \fdeg{L}{K}=\fdeg{M}{K} \)).
+\end{tlemma}
+
+\begin{tdefinition}[Radical, radical extension, solvability by radicals]
+  Let \( L:K \) and \( \beta \in L \).
+  We say that \( \beta \) is \tul{radical} over \( K \) when \( \beta^n \in K \) for some \( n \in \N \) (so \( \beta = \alpha^{1/n} \) for some \( \alpha \in K \) and some \( n \in \N \)).
+  We say that \( L:K \) is \tul{an extension by radicals} when there is a tower of field extensions \( L = L_r : L_{r-1} : \cdots : L_0 = K \) such that \( L_i = L_{i-1}(\beta_i) \) with \( \beta_i \) radical over \( L_{i-1} \) (for \( 1 \leq i \leq r \)).
+  We say \( f \in K[t] \) is \tul{solvable by radicals} if there is a radical extension of \( K \) over which \( f \) splits.
+\end{tdefinition}
+
+\begin{ttheorem}[Abel-Ruffini]
+  Let \( K=\C(\llist{a}{1}{n}) \) where \llist{a}{1}{n} are formal variables.
+  Let \( f(x) = x^n+a_1x^{n-1}+\cdots+a_n \in K[x] \) be the generic polynomial of degree \( n\geq 5 \) over \( K \).
+  Then \( f(x) \) is not solvable by radicals.
+\end{ttheorem}
+
+\end{document}

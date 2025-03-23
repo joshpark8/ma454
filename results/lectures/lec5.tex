@@ -1,0 +1,42 @@
+\documentclass[a4paper]{article}
+\usepackage{asymptote}
+
+\input{preamble.tex}
+\input{letterfont.tex}
+\input{macros.tex}
+
+\begin{document}
+\section{Algebraic Conjugates}
+
+\begin{tlemma}
+  Let \( \F \) be a field with \( f\in \F[t] \) irreducible.
+  Then \( \fr{\F[t]}{(f)} \) is a field.
+\end{tlemma}
+
+\begin{tcorollary}
+  If \( L:K \) with \( \alpha\in L \) algebraic over \( K \), then \( \fr{K[t]}{(\mak)} \) is a field.
+\end{tcorollary}
+
+\begin{ttheorem}
+  Let $ K $ be a field, and suppose that $ f\in K[t] $ is irreducible.
+  Then there exists a field extension $ L:K $, with associated embedding $ \vphi:K[t]\to L[y] $, having the property that $ L $ contains a root of $ \vphi(f) $.
+\end{ttheorem}
+
+\begin{tdefinition}[Algebraic conjugate]
+  Suppose \( \alpha \) algebraic over \( K \) and \mak~factors as a product of linear polynomials over a field \( L\supseteq K \): \begin{align*}
+    \mak(x) = (x-\alpha_1)\cdots(x-\alpha_n),\quad \llist{\alpha}{1}{n}\in L.
+  \end{align*}
+  Then \llist{\alpha}{1}{n} are \tul{algebraic conjugates} of \( \alpha \).
+\end{tdefinition}
+
+\begin{tlemma}
+  Let \( (x-\alpha_1)\cdots(x-\alpha_n)\in K[x] \) and \( f(\bar y,\llist{x}{1}{n})\in K[\bar y,\llist{x}{1}{n}] \) be symmetric polynomial in \llist{x}{1}{n}.
+  Then \( f(\bar y,\llist{x}{1}{n}) \in K[\bar y]\).
+\end{tlemma}
+
+\begin{ttheorem}
+  Let \( \alpha \) be algebraic over \( K \) with algebraic conjugates \( \alpha=\llist{\alpha}{1}{n} \).
+  Then for all \( f\in K[x] \), the conjugates of \( f(\alpha) \) are exactly \( f(\alpha_1),\ldots,f(\alpha_n) \).
+\end{ttheorem}
+
+\end{document}
