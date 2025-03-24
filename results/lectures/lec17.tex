@@ -6,7 +6,46 @@
 \input{macros.tex}
 
 \begin{document}
-\section{}
+\section{Galois Fields II}
 
+\begin{ttheorem}
+  Let $ p $ be a prime, and let $ q=p^n $ for some $ n\in \N $.
+  Then: \begin{enumerate}[label=(\alph*)]
+    \item There exists a field $ \F_q $ of order $ q $, and this field is unique up to isomorphism.
+    \item All elements of $ \F_q $ satisfy the equation $ t^q=t $, and hence $ \F_q:\F_p $ is a \sfe~for $ t^q-t $.
+    \item There is a unique copy of $ \F_q $ inside any algebraically closed field containing $ \F_p $.
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{ttheorem}
+  Let \( p \) be a prime, and suppose that \( q=p^{n} \) for some \( n\in\N \).
+  Then: \begin{enumerate}[label=(\alph*)]
+    \item $ \Gal(\F_q:\F_p)\iso \qg{\Z}{n\Z} $;
+    \item The field $ \F_q $ contains a subfield of order $ p^d $ if and only if $ d\divs n $.
+      When $ d\divs n $, moreover, there is a unique subfield of $ \F_q $ of order $ p^d $.
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{tdefinition}[Norm, Trace]
+  Let \( p \) be a prime and let \( \alpha\in F_q \) where \( q=p^{n} \) for some \( n\in\N \).
+  Then we define
+  \begin{align*}
+    \Tr{\alpha} &= \alpha+\alpha^p + \cdots + \alpha^{p^{n-1}} \\
+    &= \alpha + \vphi(\alpha) + \cdots + \vphi^{n-1}(\alpha)
+  \end{align*}
+  and
+  \begin{align*}
+    \Norm{\alpha} &= \alpha\cdot\alpha^p  \cdots  \alpha^{p^{n-1}} = \alpha^{\frac{p^{n}-1}{p-1}} \\
+    &= \alpha\cdot \vphi(\alpha)\cdots \vphi^{n-1}(\alpha)
+  \end{align*}
+\end{tdefinition}
+
+\begin{tlemma}
+  Let \( p \) be a prime and let \( \alpha\in F_q \) where \( q=p^{n} \) for some \( n\in\N \).
+  \begin{enumerate}
+    \item For all \( \alpha\in \F_q \), one has \( \Tr{\alpha},\Norm{\alpha}\in \F_p \);
+    \item If \( p\neq 2 \), then \( \exists\alpha_1 \) such that \( \Tr{\alpha_1}\neq 0 \) and \( \exists \alpha_2(\neq 0) \) such that \( \Norm{\alpha_2}\neq 1 \).
+  \end{enumerate}
+\end{tlemma}
 
 \end{document}
