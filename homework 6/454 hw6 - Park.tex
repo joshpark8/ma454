@@ -14,40 +14,40 @@
 
 \setcounter{section}{6} % HW NUMBER
 \begin{exercise}
-Find Galois groups for the following polynomials $ f $ over $ \Q $:
+Find Galois groups for the following polynomials \( f \) over \( \Q \):
 \end{exercise}
 \begin{enumerate}
-\item $ (t\sq-3)(t\sq+1) $
+\item \( (t\sq-3)(t\sq+1) \)
   \begin{solution}
-    We first note that $ t\sq - 3 $ is irreducible by Eisenstein's Criterion with $ p=3 $, and $ t\sq + 1 $ is irreducible since $ -1 $ is not a square in $ \Q $.
-    Then, $ f $ has 4 roots: $ \alpha_{1,2} = \pm i $, $ \alpha_{3,4}=\pm\sqrt 3 $.
-    Since $ \deg(\mu_i^\Q) = 2 $ and $ \deg(\mu_{\sqrt{3}}^\Q) = 2 $, we have that $ \fdeg{\Q(i)}{\Q}=2 $ and $ \fdeg{\Q(\sqrt 3)}{\Q} = 2 $ respectively by the tower law.
-    Hence, for $ L=\Q(i,\sqrt 3) $, we have that $ \fdeg{L}{\Q} = \fdeg{L}{\Q(\sqrt 3)}\fdeg{\Q(\sqrt 3)}{\Q} = 4 $.
-    Suppose we have some non-constant polynomial $ P\in L[t] $ such that $ P(\alpha_1,\alpha_2,\alpha_3,\alpha_4)=0 $.
-    Let $ \sigma\in S_4 $ such that $(\alpha_{\sigma(1)},\alpha_{\sigma(2)},\alpha_{\sigma(3)},\alpha_{\sigma(4)})=0 $.
-    We know that $ \sigma $ can only permute algebraic conjugates, so $ \pm i \mapsto \mp i $ and $ \pm \sqrt 3 \mapsto \mp \sqrt 3 $.
-    Thus, the only options for $ \sigma $ are $ e,(12),(34),\tand (12)(34) $.
-    Hence $ \Gal_\Q(f) = \{e,(12),(34),(12)(34)\}\iso \Ztw\edp\Ztw $
+    We first note that \( t\sq - 3 \) is irreducible by Eisenstein's Criterion with \( p=3 \), and \( t\sq + 1 \) is irreducible since \( -1 \) is not a square in \( \Q \).
+    Then, \( f \) has 4 roots: \( \alpha_{1,2} = \pm i \), \( \alpha_{3,4}=\pm\sqrt 3 \).
+    Since \( \deg(\mu_i^\Q) = 2 \) and \( \deg(\mu_{\sqrt{3}}^\Q) = 2 \), we have that \( \fdeg{\Q(i)}{\Q}=2 \) and \( \fdeg{\Q(\sqrt 3)}{\Q} = 2 \) respectively by the tower law.
+    Hence, for \( L=\Q(i,\sqrt 3) \), we have that \( \fdeg{L}{\Q} = \fdeg{L}{\Q(\sqrt 3)}\fdeg{\Q(\sqrt 3)}{\Q} = 4 \).
+    Suppose we have some non-constant polynomial \( P\in L[t] \) such that \( P(\alpha_1,\alpha_2,\alpha_3,\alpha_4)=0 \).
+    Let \( \sigma\in S_4 \) such that \( (\alpha_{\sigma(1)},\alpha_{\sigma(2)},\alpha_{\sigma(3)},\alpha_{\sigma(4)})=0 \).
+    We know that \( \sigma \) can only permute algebraic conjugates, so \( \pm i \mapsto \mp i \) and \( \pm \sqrt 3 \mapsto \mp \sqrt 3 \).
+    Thus, the only options for \( \sigma \) are \( e,(12),(34),\tand (12)(34) \).
+    Hence \( \Gal_\Q(f) = \{e,(12),(34),(12)(34)\}\iso \Ztw\edp\Ztw \)
   \end{solution}
 
-\item $ t^4-t^2+1 $
+\item \( t^4-t^2+1 \)
   \begin{solution}
-    Note that $ t^4-t\sq+1 =\Phi_{12} $.
-    From lecture, we saw that $ \Gal_\Q(\Phi_n) \iso \ZZ n^* $, the multiplicative group of units mod n.
-    Noting that $ \ZZ{12}^*=\{1,5,7,11\} $, we can see that the order of each element is 2.
-    Thus $ \Gal_\Q(\Phi_n) \iso \ZZ{12}^* \iso \Ztw\edp\Ztw $.
+    Note that \( t^4-t\sq+1 =\Phi_{12} \).
+    From lecture, we saw that \( \Gal_\Q(\Phi_n) \iso \ZZ n^* \), the multiplicative group of units mod n.
+    Noting that \( \ZZ{12}^*=\{1,5,7,11\} \), we can see that the order of each element is 2.
+    Thus \( \Gal_\Q(\Phi_n) \iso \ZZ{12}^* \iso \Ztw\edp\Ztw \).
   \end{solution}
 
-\item $ t^4-2 $
+\item \( t^4-2 \)
   \begin{solution}
-    By Eisenstein's criterion with $ p=2 $, this polynomial is irreducible and the four roots are $ \alpha_{1,2} = \pm\sqrt[4]2, \alpha_{3,4}=\pm i\sqrt[4]2 $.
-    The \sfe for this polynomial is $ \Q(\sqrt[4]2,i):\Q $, so let $ L = \Q(\sqrt[4]2, i) $.
-    Since $ \fdeg{L}{\Q(i)} = 4 $ and $ \fdeg{\Q(i)}{\Q}=2 $, we have that $ \fdeg{L}{\Q} = 8 $ by the tower law.
-    We know any permutation of roots can only permute algebraic conjugates of the same minimum polynomial over $ \Q $.
-    Since $ \mu_{\sqrt[4]{2}}^\Q=t^4-2 $, it has conjugates $ \pm\sqrt[4]2,\pm i\sqrt[4]2 $.
-    Also $ \mu_i^\Q=t^2+1 $, so it has conjugates $ i,-i $.
-    Define a permutation $ \sigma $ such that $ \sigma(\sqrt[4]{2})=i\alpha $ and $ \sigma(i)=i $, and let $ \tau $ be complex conjugation.
-    This gives us that $ \sigma^k(\sqrt[4]2) = i^k\sqrt[4]{2} $, $ \sigma^4=e $, and $ \tau^2 = e $.
+    By Eisenstein's criterion with \( p=2 \), this polynomial is irreducible and the four roots are \( \alpha_{1,2} = \pm\sqrt[4]2, \alpha_{3,4}=\pm i\sqrt[4]2 \).
+    The \sfe for this polynomial is \( \Q(\sqrt[4]2,i):\Q \), so let \( L = \Q(\sqrt[4]2, i) \).
+    Since \( \fdeg{L}{\Q(i)} = 4 \) and \( \fdeg{\Q(i)}{\Q}=2 \), we have that \( \fdeg{L}{\Q} = 8 \) by the tower law.
+    We know any permutation of roots can only permute algebraic conjugates of the same minimum polynomial over \( \Q \).
+    Since \( \mu_{\sqrt[4]{2}}^\Q=t^4-2 \), it has conjugates \( \pm\sqrt[4]2,\pm i\sqrt[4]2 \).
+    Also \( \mu_i^\Q=t^2+1 \), so it has conjugates \( i,-i \).
+    Define a permutation \( \sigma \) such that \( \sigma(\sqrt[4]{2})=i\alpha \) and \( \sigma(i)=i \), and let \( \tau \) be complex conjugation.
+    This gives us that \( \sigma^k(\sqrt[4]2) = i^k\sqrt[4]{2} \), \( \sigma^4=e \), and \( \tau^2 = e \).
     Next, we have \begin{align*}
       \tau\circ\sigma\circ\tau(\sqrt[4]{2})=\tau\circ\sigma(\tau(\sqrt[4]{2}))=\tau\circ\sigma(\sqrt[4]{2})=\tau(i\,\sqrt[4]{2})=\tau(i)\,\tau(\sqrt[4]{2})=(-i)\sqrt[4]{2}
     \end{align*}
@@ -55,80 +55,80 @@ Find Galois groups for the following polynomials $ f $ over $ \Q $:
     \begin{align*}
       \sigma^{-1}(\sqrt[4]{2})=\sigma^3(\sqrt[4]{2})= i^3\,\sqrt[4]{2} = (-i)\sqrt[4]{2}.
     \end{align*}
-    Hence, $ \tau\sigma\tau = \sigma\inv $.
-    The identities $ \sigma^4 = e,\tau^2 = e $, and $ \tau\sigma\tau = \sigma\inv $ indicate that the Galois group of this polynomial is isomorphic to $ D_4 $, the dihedral group of 4 points.
-    Hence $ \Gal_\Q(f) \iso D_4 $.
+    Hence, \( \tau\sigma\tau = \sigma\inv \).
+    The identities \( \sigma^4 = e,\tau^2 = e \), and \( \tau\sigma\tau = \sigma\inv \) indicate that the Galois group of this polynomial is isomorphic to \( D_4 \), the dihedral group of 4 points.
+    Hence \( \Gal_\Q(f) \iso D_4 \).
   \end{solution}
 \end{enumerate}
 
 \stepcounter{exercise}
 \begin{subexercise}
-  Find $ \Gal_{\F_3\lt(t\sq\rt)}\lt(\F_3\lt(t\rt)\rt) $.
+  Find \( \Gal_{\F_3\lt(t\sq\rt)}\lt(\F_3\lt(t\rt)\rt) \).
 \end{subexercise}
 \begin{solution}
-  Let $ K = \F_3\lt(t\sq\rt)$ and $ L = \F_3\lt(t\rt) $.
-  In $ K[t] $, the element $ t $ is a root of the polynomial $ x^2-t^2 = (x+t)(x-t) $.
-  Any field automorphism $ \sigma\in \Gal_K(L) $ can only permute between algebraic conjugates, so the only two automorphisms are $ \sigma(t) = t $ and $ \sigma(t) = -t \equiv 2t \pmod 3 $.
-  Thus $ \Gal_{\F_3\lt(t\sq\rt)}\lt(\F_3\lt(t\rt)\rt) \iso \Ztw $.
+  Let \( K = \F_3\lt(t\sq\rt) \) and \( L = \F_3\lt(t\rt) \).
+  In \( K[t] \), the element \( t \) is a root of the polynomial \( x^2-t^2 = (x+t)(x-t) \).
+  Any field automorphism \( \sigma\in \Gal_K(L) \) can only permute between algebraic conjugates, so the only two automorphisms are \( \sigma(t) = t \) and \( \sigma(t) = -t \equiv 2t \pmod 3 \).
+  Thus \( \Gal_{\F_3\lt(t\sq\rt)}\lt(\F_3\lt(t\rt)\rt) \iso \Ztw \).
 \end{solution}
 
 \begin{subexercise}
-  Find $ \Gal_{\F_2\lt(t\sq\rt)}\lt(\F_2\lt(t\rt)\rt) $.
+  Find \( \Gal_{\F_2\lt(t\sq\rt)}\lt(\F_2\lt(t\rt)\rt) \).
 \end{subexercise}
 \begin{solution}
-  Similarly to the exercise above, the element $ t $ is a root of $ x\sq-t\sq = (x+t)(x-t) $.
-  However, note that $ -t \equiv t \pmod 2 $.
-  Thus the only automorphism possible is $ \sigma(t) = t $, whence $ \Gal_{\F_2\lt(t\sq\rt)}\lt(\F_2\lt(t\rt)\rt) = \tsgp $, the trivial group.
+  Similarly to the exercise above, the element \( t \) is a root of \( x\sq-t\sq = (x+t)(x-t) \).
+  However, note that \( -t \equiv t \pmod 2 \).
+  Thus the only automorphism possible is \( \sigma(t) = t \), whence \( \Gal_{\F_2\lt(t\sq\rt)}\lt(\F_2\lt(t\rt)\rt) = \tsgp \), the trivial group.
 \end{solution}
 
 \stepcounter{exercise}
 \begin{subexercise}
-  Let $K - M - L$ be a field extension and $ L:K $ is a normal extension.
-  Prove that $L:M$ is also a normal extension.
+  Let \( K - M - L \) be a field extension and \( L:K \) is a normal extension.
+  Prove that \( L:M \) is also a normal extension.
 \end{subexercise}
 \begin{solution}
-By theorem, $ L:K $ is normal \iff L is a \sf for some $ f\in K[t] $.
-By definition of $ K[t] $, $ f(t)=\sum\limits_{i=0}^n c_it^i $ for $ c_i\in K $.
-However, $ K-M\imp K\sseq M \imp k\in M \ \forall k\in K \imp f\in M[t]$.
-Hence all coefficients of $ f $ are contained in $ M $ and $ L $ is a \sf for some $ f\in M[t] $ \iff $ L:M $ is a normal extension.
+By theorem, \( L:K \) is normal \iff L is a \sf for some \( f\in K[t] \).
+By definition of \( K[t] \), \( f(t)=\sum\limits_{i=0}^n c_it^i \) for \( c_i\in K \).
+However, \( K-M\imp K\sseq M \imp k\in M \ \forall k\in K \imp f\in M[t] \).
+Hence all coefficients of \( f \) are contained in \( M \) and \( L \) is a \sf for some \( f\in M[t] \) \iff \( L:M \) is a normal extension.
 \end{solution}
 
 \begin{subexercise}
-  Give an example of three fields $K, M, L$ such that $\fdeg{L}{K} = 4$ and $ \fdeg{M}{K} = \fdeg{L}{M} = 2 $ (hence $ K-M $ and $ M-L $ are normal extensions) but $L : K$ is not a normal extension.
+  Give an example of three fields \( K, M, L \) such that \( \fdeg{L}{K} = 4 \) and \( \fdeg{M}{K} = \fdeg{L}{M} = 2 \) (hence \( K-M \) and \( M-L \) are normal extensions) but \( L : K \) is not a normal extension.
 \end{subexercise}
 \begin{solution}
-Consider the tower of fields $ \Q(\sqrt[4]2):\Q(\sqrt 2):\Q $.
-Observe that $ \mu_{\sqrt 2}^\Q(x) = x^2-2 $, whence $ \fdeg{\Q(\sqrt 2)}{\Q} = 2 $.
-Thus $ \Q(\sqrt 2):\Q $ is normal.
-Additionally, $ \mu_{\sqrt[4] 2}^{\Q(\sqrt 2)}(x) = x^2-\sqrt 2 $, whence $ \fdeg{\Q(\sqrt[4] 2)}{\Q(\sqrt 2)} = 2 $.
-Thus $ \Q(\sqrt[4] 2):\Q(\sqrt 2) $ is normal.
-By definition, $ L:K $ is normal extension if every $ f\in K[t] $ that has a root in $ L $ splits over $ L $.
-However upon inspecting the extension $ \Q(\sqrt[4]2):\Q $, we notice that $ \mu_{\sqrt[4]2}^\Q = x^4-2 $ has roots $ \pm\sqrt[4]2 \tand \pm i\sqrt[4]2 $.
-Since $ i\sqrt[4]2 \not\in \Q(\sqrt[4]2) $, the extension is thus not normal.
+Consider the tower of fields \( \Q(\sqrt[4]2):\Q(\sqrt 2):\Q \).
+Observe that \( \mu_{\sqrt 2}^\Q(x) = x^2-2 \), whence \( \fdeg{\Q(\sqrt 2)}{\Q} = 2 \).
+Thus \( \Q(\sqrt 2):\Q \) is normal.
+Additionally, \( \mu_{\sqrt[4] 2}^{\Q(\sqrt 2)}(x) = x^2-\sqrt 2 \), whence \( \fdeg{\Q(\sqrt[4] 2)}{\Q(\sqrt 2)} = 2 \).
+Thus \( \Q(\sqrt[4] 2):\Q(\sqrt 2) \) is normal.
+By definition, \( L:K \) is normal extension if every \( f\in K[t] \) that has a root in \( L \) splits over \( L \).
+However upon inspecting the extension \( \Q(\sqrt[4]2):\Q \), we notice that \( \mu_{\sqrt[4]2}^\Q = x^4-2 \) has roots \( \pm\sqrt[4]2 \tand \pm i\sqrt[4]2 \).
+Since \( i\sqrt[4]2 \not\in \Q(\sqrt[4]2) \), the extension is thus not normal.
 \end{solution}
 
 \begin{exercise}
-  Let $ L:K $ be a \sfe for a non-constant polynomial $ f\in K[t] $.
-  Prove that $ \order{\Gal_K(L)} $ divides $ (\deg f)! $.
+  Let \( L:K \) be a \sfe for a non-constant polynomial \( f\in K[t] \).
+  Prove that \( \order{\Gal_K(L)} \) divides \( (\deg f)! \).
 \end{exercise}
 \begin{solution}
-  Since $ L $ is the \sfe for $ f $ over $ K $, we know that $ \Gal_K(L) = \Gal_K(f) $.
-  By lemma, we have that $ \Gal_K(f)\leq S_{\deg f} $ and by Lagrange, $ \order{\Gal_K(f)} \divs \order{S_{\deg f}}=(\deg f)! $.
+  Since \( L \) is the \sfe for \( f \) over \( K \), we know that \( \Gal_K(L) = \Gal_K(f) \).
+  By lemma, we have that \( \Gal_K(f)\leq S_{\deg f} \) and by Lagrange, \( \order{\Gal_K(f)} \divs \order{S_{\deg f}}=(\deg f)! \).
 \end{solution}
 
 \stepcounter{exercise}
 \begin{subexercise}
-Let $ f = t\cb+t+1\in \F_2[t] $. Prove that $ \Gal_{\F_2}(f) $ is isomorphic to $ \Zth $.
+Let \( f = t\cb+t+1\in \F_2[t] \). Prove that \( \Gal_{\F_2}(f) \) is isomorphic to \( \Zth \).
 \end{subexercise}
 \begin{solution}
-We can see that $ f(1) = 1 + 1 + 1 \equiv 1 \pmod 2 \neq 0 $ and $ f(0) = 1 \neq 0 $, whence $ f $ is irreducible over $ \F_2 $.
-If $ \F_2(\alpha) $ is some extension field of $ \F_2 $ where $ \alpha $ is a root of $ f $, we know $ \fdeg{\F_2(\alpha)}{\F_2}=3 $.
-Moreover, an $ \F_2 $-homomorphism $ \sigma:\F_2(\alpha)\to \F_2 $ is unique to the destination of $ \alpha $, and we know $ \alpha $ can only be sent to its own algebraic conjugates, of which there are 3.
-Hence, $ \order{\Gal_{\F_2}(f)}=3 $, and the only group of order 3 is $ \Zth $.
+We can see that \( f(1) = 1 + 1 + 1 \equiv 1 \pmod 2 \neq 0 \) and \( f(0) = 1 \neq 0 \), whence \( f \) is irreducible over \( \F_2 \).
+If \( \F_2(\alpha) \) is some extension field of \( \F_2 \) where \( \alpha \) is a root of \( f \), we know \( \fdeg{\F_2(\alpha)}{\F_2}=3 \).
+Moreover, an \( \F_2 \)-homomorphism \( \sigma:\F_2(\alpha)\to \F_2 \) is unique to the destination of \( \alpha \), and we know \( \alpha \) can only be sent to its own algebraic conjugates, of which there are 3.
+Hence, \( \order{\Gal_{\F_2}(f)}=3 \), and the only group of order 3 is \( \Zth \).
 \end{solution}
 
 \begin{subexercise}
-Let $ f = t\cb+t\sq+1\in \F_2[t] $. Prove that $ \Gal_{\F_2}(f) $ is isomorphic to $ S_3 $.
+Let \( f = t\cb+t\sq+1\in \F_2[t] \). Prove that \( \Gal_{\F_2}(f) \) is isomorphic to \( S_3 \).
 \end{subexercise}
 \begin{solution}
 Typo?

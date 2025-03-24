@@ -20,43 +20,43 @@ Since ancient times, people have been interested in \tit{polynomial equations}:
 \begin{align}
   x^n + a_{1}x^{n-1} + \cdots + a_{n-1}x + a_n = 0\quad (n\geq 1),\label{eq:poly}
 \end{align}
-where the coefficients $ a_i $ are in, say, $ \bbR $.
+where the coefficients \( a_i \) are in, say, \( \bbR \).
 It was \'Evariste Galois (1811-1832) who characterized \eqref{eq:poly} that are \tit{solvable by radicals}, transforming elementary algebra to higher algebra.
 
-The case $ n=1 $ is a trivial.
-If $ n=2 $, we have get the general quadratic equation:
+The case \( n=1 \) is a trivial.
+If \( n=2 \), we have get the general quadratic equation:
 \begin{align*}
   ax^2+bx+c = 0\quad (a\neq 0).
 \end{align*}
-We can make the substitution $ x=y-\frac{b}{2a} $, which gives us
+We can make the substitution \( x=y-\frac{b}{2a} \), which gives us
 \begin{align*}
   y^2 = \frac{b^2-4ac}{4a^2} := \frac{D}{4a} \qiff y=\pm\frac{\sqrt D}{2a},
 \end{align*}
-hence $ x_{1,2} = \frac{-b\pm \sqrt D}{2a}$.
-Here, $ D $ is the \tit{discriminant} of the polynomial $ f(x) = ax^2+bx+c $.
+hence \( x_{1,2} = \frac{-b\pm \sqrt D}{2a} \).
+Here, \( D \) is the \tit{discriminant} of the polynomial \( f(x) = ax^2+bx+c \).
 
-One can check that $ D = (x_1-x_2)\sq\cdot a\sq $.
+One can check that \( D = (x_1-x_2)\sq\cdot a\sq \).
 More generally, if we have \begin{align*}
   f(x) = a_0x^n+a_{1}x^{n-1}+\cdots+a_{n-1}x+a_n,
 \end{align*}
 then the discriminant is given by \begin{align*}
   D = D(f) = \prod_{i<j}(x_i-x_j)^2\cdot a_0^{2n-2},
 \end{align*}
-where $ x_1, \ldots, x_n $ are the complex roots of $ f(x) = 0 $.
+where \( x_1, \ldots, x_n \) are the complex roots of \( f(x) = 0 \).
 
 \begin{example}
   Consider the cubic equation \begin{align*}
     f(x) = ax^3+bx^2+cx+d
-  \end{align*} where $ x_1, x_2, x_3 $ are solutions of $ f $. Then, \begin{align*}
+  \end{align*} where \( x_1, x_2, x_3 \) are solutions of \( f \). Then, \begin{align*}
     D = (x_1-x_2)^2\cdot(x_1-x_3)^2\cdot(x_2-x_3)^2 \cdot a^4
   \end{align*}
 \end{example}
 
-Why do we square? Consider the discriminant as a polynomial in $ x_1,\ldots,x_n $:
+Why do we square? Consider the discriminant as a polynomial in \( x_1,\ldots,x_n \):
 \begin{align*}
   D(x_1,\cdots,x_n) = \prod_{i<j}(x_i-x_j)^2.
 \end{align*}
-Then, $ D(x_1,\cdots,x_n) $ is a \tit{symmetric} polynomial, e.g. \begin{align*}
+Then, \( D(x_1,\cdots,x_n) \) is a \tit{symmetric} polynomial, e.g. \begin{align*}
   D(x_1,x_2) = (x_1-x_2)^2 = D(x_2,x_1) = b^2-4ac.
 \end{align*}
 
@@ -71,7 +71,7 @@ Then, $ D(x_1,\cdots,x_n) $ is a \tit{symmetric} polynomial, e.g. \begin{align*}
   \end{align*}
 \end{tdefinition}
 
-If we consider the group $ S_n $ of all permutations on $ n $ symbols, then $ \forall k, \forall w\in S_n $, \begin{align*}
+If we consider the group \( S_n \) of all permutations on \( n \) symbols, then \( \forall k, \forall w\in S_n \), \begin{align*}
   \sigma_k(x_1,\ldots,x_n) = \sigma_k(x_{w(1)},\ldots,x_{w(n)}).
 \end{align*}
 More generally,
@@ -85,7 +85,7 @@ Moreover, if \( \phi \) is a polynomial with coefficients in a ring \( R \) (\( 
 \end{ttheorem}
 
 \begin{example}
-  Let $ n=2 $, $ \phi(x_1,x_2) = x_1\sq+x_2\sq = (x_1\sq+x_2\sq)\sq - 2x_1x_2 $.
+  Let \( n=2 \), \( \phi(x_1,x_2) = x_1\sq+x_2\sq = (x_1\sq+x_2\sq)\sq - 2x_1x_2 \).
 \end{example}
 
 \begin{ttheorem}[Vieta Formula]
@@ -97,7 +97,7 @@ Moreover, if \( \phi \) is a polynomial with coefficients in a ring \( R \) (\( 
 \end{ttheorem}
 
 \begin{tcorollary}
-  If $ f\in R[x] $ where $ R $ is a ring and $ f(x) = x^n + a_{1}x^{n-1} + \cdots + a_{n-1}x + a_n $, then $ D(f)\in R[a_1,\ldots,a_n] $. That is, the discriminant is a polynomial in $ a_1,\ldots,a_n $ with coefficients from $ R $.
+  If \( f\in R[x] \) where \( R \) is a ring and \( f(x) = x^n + a_{1}x^{n-1} + \cdots + a_{n-1}x + a_n \), then \( D(f)\in R[a_1,\ldots,a_n] \). That is, the discriminant is a polynomial in \( a_1,\ldots,a_n \) with coefficients from \( R \).
 \end{tcorollary}
 
 \subsection{Cubic polynomials}
@@ -112,7 +112,7 @@ Suppose we modify our polynomial:
 \begin{align*}
   x^3+Ax^2+Bx+C &= \lt(\underbrace{x+\frac{A}{3}}_{y}\rt)^3+p\lt(x+\frac{A}{3}\rt) + q
 \end{align*}
-for some $ p,q $, so we can simply consider the equation $ x^3+px+q = 0 $
+for some \( p,q \), so we can simply consider the equation \( x^3+px+q = 0 \)
 
 \begin{align*}
   \lt(\underbrace{a+b}_x\rt)^3 = 3ab(a+b) + a^3+b^3 \\
