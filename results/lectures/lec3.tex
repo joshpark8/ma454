@@ -13,89 +13,89 @@
 \begin{document}
 \section{Field Extensions I}
 \begin{tdefinition}[Integral domain]
-  Let \(R\) be a commutative ring. Then \(R\) is \tul{an integral domain} if \(ab=0\) implies that \(a=0\) or \(b=0\) for all \(a,b\in R\).
+  Let \( R \) be a commutative ring. Then \( R \) is \tul{an integral domain} if \( ab=0 \) implies that \( a=0 \) or \( b=0 \) for all \( a,b\in R \).
 \end{tdefinition}
 
 \begin{tdefinition}[Euclidean domain]
-  Let \(R\) be an integral domain. Then \(R\) is a \tul{Euclidean domain} if there exists some function \(f:R\setminus\{0\}\to \mathbb{Z}_{\geq 0}\) such that for all \(a,b_{\not\equiv 0} \in R\), there exist elements \(q,r\in R\) such that \(a=qb+r\) where \(r=0\) or \(f(r)<f(b)\).
+  Let \( R \) be an integral domain. Then \( R \) is a \tul{Euclidean domain} if there exists some function \( f:R\setminus\{0\}\to \mathbb{Z}_{\geq 0} \) such that for all \( a,b_{\not\equiv 0} \in R \), there exist elements \( q,r\in R \) such that \( a=qb+r \) where \( r=0 \) or \( f(r)<f(b) \).
 \end{tdefinition}
 
 \begin{ttheorem}[B\'ezout's Identity]
-  Let $ R $ be a Euclidean domain. For $ a,b\in R $, there exists $ \alpha,\beta\in R $ such that $ \gcd(a,b) = \alpha a+\beta b $
+  Let \( R \) be a Euclidean domain. For \( a,b\in R \), there exists \( \alpha,\beta\in R \) such that \( \gcd(a,b) = \alpha a+\beta b \)
 \end{ttheorem}
 
 \begin{tdefinition}[Irreducible]
-  Let \({F}\) be a field, and \(f\in F[t]\setminus F\).
-  Then \(f\) is \tul{irreducible} if \(\not\exists g,h\in F[t]\setminus F\) of strictly smaller degree such that \(f=gh\).
+  Let \( {F} \) be a field, and \( f\in F[t]\setminus F \).
+  Then \( f \) is \tul{irreducible} if \( \not\exists g,h\in F[t]\setminus F \) of strictly smaller degree such that \( f=gh \).
 \end{tdefinition}
 
 \begin{tdefinition}[Unique factorization domain]
-  Let \(R\) be an integral domain.
-  Then \(R\) is \tul{a unique factorization domain (UFD)} if for irreducible \(p_i\in R\), any nonzero \(x\in R\) can be written uniquely (up to ordering) as \(x=p_1p_2\cdots p_k,\quad k\geq 1\).
+  Let \( R \) be an integral domain.
+  Then \( R \) is \tul{a unique factorization domain (UFD)} if for irreducible \( p_i\in R \), any nonzero \( x\in R \) can be written uniquely (up to ordering) as \( x=p_1p_2\cdots p_k,\quad k\geq 1 \).
 \end{tdefinition}
 
-\tbo{Fact:}\quad If $ R $ is an Euclidean domain, then $ R $ is a UFD (and PID)
+\tbo{Fact:}\quad If \( R \) is an Euclidean domain, then \( R \) is a UFD (and PID)
 
 \begin{tcorollary}
-  Let $ f\in \F[t] $ be a monic polynomial with $ \deg f\geq 1 $.
-  Then we can write $ f = f_1f_2\cdots f_k $ uniquely (up to ordering) for irreducible monic polynomials $ f_j $.
+  Let \( f\in \F[t] \) be a monic polynomial with \( \deg f\geq 1 \).
+  Then we can write \( f = f_1f_2\cdots f_k \) uniquely (up to ordering) for irreducible monic polynomials \( f_j \).
 \end{tcorollary}
 
 \begin{tdefinition}
-  Let $ R $ be a UFD.
-  When $ \llist{a}{0}{n}\in R $ are not all 0, we can generalize the \tul{greatest common divisor} of \llist{a}{0}{n} (written gcd(\llist{a}{0}{n})) any element $ c\in R $ satisfying \begin{enumerate}[label=(\roman*)]
-    \item $ c\divs a_i\ (0\leq i\leq n) $, and
-    \item if $ d\divs a_i\ (0\leq i\leq n) $, then $ d\divs c $.
+  Let \( R \) be a UFD.
+  When \( \llist{a}{0}{n}\in R \) are not all 0, we can generalize the \tul{greatest common divisor} of \llist{a}{0}{n} (written gcd(\llist{a}{0}{n})) any element \( c\in R \) satisfying \begin{enumerate}[label=(\roman*)]
+    \item \( c\divs a_i\ (0\leq i\leq n) \), and
+    \item if \( d\divs a_i\ (0\leq i\leq n) \), then \( d\divs c \).
   \end{enumerate}
-  When $ f=a_0+a_1X+\ldots +a_nX^n $ is a non-zero polynomial in $ R[X] $, we define a \tul{content} of $ f $ to be any $ \gcd $(\llist{a}{0}{n}).
-  We say that $ f\in R[X] $ is \tul{primitive} if $ f\neq 0 $ and the content of $ f $ is divisible only by units of $ R $.
+  When \( f=a_0+a_1X+\ldots +a_nX^n \) is a non-zero polynomial in \( R[X] \), we define a \tul{content} of \( f \) to be any \( \gcd (\llist{a}{0}{n}) \).
+  We say that \( f\in R[X] \) is \tul{primitive} if \( f\neq 0 \) and the content of \( f \) is divisible only by units of \( R \).
 \end{tdefinition}
 
 \begin{tlemma}[Gauss]
-  Suppose that $ R $ is a UFD with field of fractions $ Q $.
-  Suppose that $ f $ is a primitive element of $ R[X] $ with $ \deg f > 0 $.
-  Then $ f $ is irreducible in $ R[X] $ if and only if $ f $ is irreducible in $ Q $.
+  Suppose that \( R \) is a UFD with field of fractions \( Q \).
+  Suppose that \( f \) is a primitive element of \( R[X] \) with \( \deg f > 0 \).
+  Then \( f \) is irreducible in \( R[X] \) if and only if \( f \) is irreducible in \( Q \).
 \end{tlemma}
 
 \begin{ttheorem}[Eisenstein's Criterion]
-  Suppose that $ R $ is a UFD, and that $ f=a_0+a_1X+\ldots +a_nX^n \in R[X] $ is primitive.
-  Then provided that there is an irreducible element $ p $ of $ R $ having the property that \begin{enumerate}[label=(\roman*)]
-    \item $ p\divs a_i $ for $ 0\leq i < n $,
-    \item $ p\sq \ndivs a_0 $, and
-    \item $ p\ndivs a_n $,
+  Suppose that \( R \) is a UFD, and that \( f=a_0+a_1X+\ldots +a_nX^n \in R[X] \) is primitive.
+  Then provided that there is an irreducible element \( p \) of \( R \) having the property that \begin{enumerate}[label=(\roman*)]
+    \item \( p\divs a_i \) for \( 0\leq i < n \),
+    \item \( p\sq \ndivs a_0 \), and
+    \item \( p\ndivs a_n \),
   \end{enumerate}
-  then $ f $ is irreducible in $ R[X] $, and hence also in $ Q[X] $, where $ Q $ is the field of fractions of $ R $.
+  then \( f \) is irreducible in \( R[X] \), and hence also in \( Q[X] \), where \( Q \) is the field of fractions of \( R \).
 \end{ttheorem}
 
 \begin{tdefinition}[Field extension]
-  When $ K \tand L $ are fields, we say that $L$ is an \tul{extension} of $K$ if there is a \homo~$\vphi: K \to L$.
-  Then $ \vphi(K)\iso K $ and we write $ L:K $ or $ L/K $.
+  When \( K \) \tand \( L \) are fields, we say that \( L \) is an \tul{extension} of \( K \) if there is a \homo~\( \vphi: K \to L \).
+  Then \( \vphi(K)\iso K \) and we write \( L:K \) or \( L/K \).
 \end{tdefinition}
 
-\tbo{Fact:}\quad Suppose that $L$ is a field extension of $K$ with associated embedding $\vphi: K \to L$.
-  Then $L$ forms a vector space over $K$, under the operations \begin{align*}
+\tbo{Fact:}\quad Suppose that \( L \) is a field extension of \( K \) with associated embedding \( \vphi: K \to L \).
+  Then \( L \) forms a vector space over \( K \), under the operations \begin{align*}
     \nf{(vector addition) } \psi: L\times L &\to L \quad \text{given by} \quad (v_1,v_2) \mapsto v_1 + v_2 \\
     \nf{(scalar multiplication) } \tau : K\times  L &\to L \quad \text{given by} \quad (k,v) \mapsto \vphi(k)v.
   \end{align*}
 
 \begin{tdefinition}[Degree, finite extension]
-  Suppose that $L: K$ is a field extension.
-  We define the \tul{degree} of $L: K$ to be the dimension of $L$ as a vector space over K.
-  We use the notation $[L : K]$ to denote the degree of $L : K$.
-  Further, we say that $L : K$ is a \tul{finite extension} if $[L: K] <\infty$.
+  Suppose that \( L: K \) is a field extension.
+  We define the \tul{degree} of \( L: K \) to be the dimension of \( L \) as a vector space over K.
+  We use the notation \( [L : K] \) to denote the degree of \( L : K \).
+  Further, we say that \( L : K \) is a \tul{finite extension} if \( [L: K] <\infty \).
 \end{tdefinition}
 
 \begin{tdefinition}[Tower, intermediate field]
-  We say that $M : L : K$ is a \tul{tower} of field extensions if $M : L \tand L: K$ are field extensions, and in this case we say that $L$ is an \tul{intermediate field} (relative to the extension $M : K$)
+  We say that \( M : L : K \) is a \tul{tower} of field extensions if \( M : L \tand L: K \) are field extensions, and in this case we say that \( L \) is an \tul{intermediate field} (relative to the extension \( M : K \))
 \end{tdefinition}
 
 \begin{ttheorem}[The Tower Law]
-  Suppose that $ M :L: K $ is a tower of field extensions.
-  Then $ M : K $ is a field extension, and $ [M : K] = [M : L][L: K] $.
+  Suppose that \( M :L: K \) is a tower of field extensions.
+  Then \( M : K \) is a field extension, and \( [M : K] = [M : L][L: K] \).
 \end{ttheorem}
 
 \begin{tcorollary}
-  Suppose that $L:K$ is a field extension for which $[L: K]$ is a prime number.
-  Then whenever $L : M : K$ is a tower of field extensions with $K \sseq M \sseq L$, one has either $M= L \tor M= K$.
+  Suppose that \( L:K \) is a field extension for which \( [L: K] \) is a prime number.
+  Then whenever \( L : M : K \) is a tower of field extensions with \( K \sseq M \sseq L \), one has either \( M= L \tor M= K \).
 \end{tcorollary}
 \end{document}

@@ -8,10 +8,10 @@
 \begin{document}
 \section{Field Extensions II}
 \begin{tdefinition}[Smallest subring/subfield]
-  Let $ L:K $ with $ K\sseq L $.
+  Let \( L:K \) with \( K\sseq L \).
   \begin{enumerate}[label=(\roman*)]
-    \item When $\alpha\in L$, we denote by $K[\alpha]$ the \tul{smallest subring of $L$ containing $K$ and $\alpha$}, and by $K(\alpha)$ the \tul{smallest subfield of $L$ containing $K$ and $\alpha$};
-    \item More generally, when $A\sseq L$, we denote by $K[A]$ the \tul{smallest subring of $L$ containing $K \tand A$}, and by $K(A)$ the \tul{smallest subfield of $L$ containing $ K \tand A$}.
+    \item When \( \alpha\in L \), we denote by \( K[\alpha] \) the \tul{smallest subring of \( L \) containing \( K \) and \( \alpha \)}, and by \( K(\alpha) \) the \tul{smallest subfield of \( L \) containing \( K \) and \( \alpha \)};
+    \item More generally, when \( A\sseq L \), we denote by \( K[A] \) the \tul{smallest subring of \( L \) containing \( K \tand A \)}, and by \( K(A) \) the \tul{smallest subfield of \( L \) containing \( K \tand A \)}.
   \end{enumerate}
   Then \begin{align*}
     K[\alpha] &= \lt\{ \sum_{i=0}^{d}c_i\alpha^i : d\in \ZZ{\leq 0},\ c_0,\ldots,c_d\in K \rt\} \\
@@ -20,62 +20,62 @@
 \end{tdefinition}
 
 \begin{tdefinition}[Algebraic/transcendental element]
-  Suppose that $L: K$ is a field extension with associated embedding $ \vphi $.
-  Suppose also that $\alpha\in L$. \begin{enumerate}[label=(\roman*)]
-    \item We say \tul{$ \alpha $ is algebraic over K} if $\exists f_{\not\equiv 0} \in K[t]$ such that $ f(\alpha)=0 $.
-    \item If $\alpha$ is not algebraic over $K$, then we say \tul{$ \alpha $ is transcendental over $K$}.
-    \item When every element of $L$ is algebraic over $K$, we say that \tul{$L$ is algebraic over $K$}.
+  Suppose that \( L: K \) is a field extension with associated embedding \( \vphi \).
+  Suppose also that \( \alpha\in L \). \begin{enumerate}[label=(\roman*)]
+    \item We say \tul{\( \alpha \) is algebraic over K} if \( \exists f_{\not\equiv 0} \in K[t] \) such that \( f(\alpha)=0 \).
+    \item If \( \alpha \) is not algebraic over \( K \), then we say \tul{\( \alpha \) is transcendental over \( K \)}.
+    \item When every element of \( L \) is algebraic over \( K \), we say that \tul{\( L \) is algebraic over \( K \)}.
   \end{enumerate}
 \end{tdefinition}
 
 \begin{tdefinition}[Evaluation map]
-  Suppose that $L: K$ is a field extension with $K \sseq L$, and that $ \alpha\in L $.
-  We define the \tul{evaluation map} $E_\alpha : K[t] \to L$ by putting $E_\alpha(f) = f(\alpha)$ for each $f \in K[t]$.
+  Suppose that \( L: K \) is a field extension with \( K \sseq L \), and that \( \alpha\in L \).
+  We define the \tul{evaluation map} \( E_\alpha : K[t] \to L \) by putting \( E_\alpha(f) = f(\alpha) \) for each \( f \in K[t] \).
 \end{tdefinition}
 
 \begin{tdefinition}[Minimal polynomial]
-  Suppose that $L : K$ is a field extension with $K \sseq L$, and suppose that $\alpha\in L$ is algebraic over $K$.
-  Then the minimal polynomial of $ \alpha $ over $K$ is the unique monic polynomial $\mu_\alpha^K$ having the property that $ \ker(E_\alpha) = (m_\alpha(K))$.
+  Suppose that \( L : K \) is a field extension with \( K \sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
+  Then the minimal polynomial of \( \alpha \) over \( K \) is the unique monic polynomial \( \mu_\alpha^K \) having the property that \( \ker(E_\alpha) = (m_\alpha(K)) \).
 \end{tdefinition}
 
 \begin{tlemma}
   \begin{enumerate}
-    \item $ \mu_\alpha^K $ is irreducible over $ K $;
-    \item If $ f\in K[t] $ such that $ f(\alpha) = 0 $, then $ \mak\divs f $;
-    \item If $ f\in K[t] $ such that $ f(\alpha) = 0 $ and $ f $ is irreducible over $ K $, then $ \exists k\in K $ such that $ f=k\mak $.
+    \item \( \mu_\alpha^K \) is irreducible over \( K \);
+    \item If \( f\in K[t] \) such that \( f(\alpha) = 0 \), then \( \mak\divs f \);
+    \item If \( f\in K[t] \) such that \( f(\alpha) = 0 \) and \( f \) is irreducible over \( K \), then \( \exists k\in K \) such that \( f=k\mak \).
   \end{enumerate}
 \end{tlemma}
 
 \begin{ttheorem}
-  Let $L : K$ with $K \sseq L$, and suppose that $\alpha\in L$ is algebraic over $K$.
+  Let \( L : K \) with \( K \sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
   \begin{enumerate}[label=(\roman*)]
-    \item $ K[\alpha] $ is a field, and $ K[\alpha] = K(\alpha) $;
-    \item If $ n=\deg \mu_\alpha^K $, then $ \lt\{ 1,\alpha,\alpha^2,\ldots,\alpha^{n-1} \rt\} $ is a basis for $ K(\alpha) $ over $ K $ (\imp $ \fdeg{K(\alpha)}{K}=\deg \mu_\alpha^K $).
+    \item \( K[\alpha] \) is a field, and \( K[\alpha] = K(\alpha) \);
+    \item If \( n=\deg \mu_\alpha^K \), then \( \lt\{ 1,\alpha,\alpha^2,\ldots,\alpha^{n-1} \rt\} \) is a basis for \( K(\alpha) \) over \( K \) (\imp \( \fdeg{K(\alpha)}{K}=\deg \mu_\alpha^K \)).
   \end{enumerate}
 \end{ttheorem}
 
 \begin{ttheorem}[Rational Root Theorem]
-  Let $ \frac{p}{q} $ be a root of $ f= a_0t^n+\cdots + a_{n-1} t^{n-1} + a_n $, for $ a_j\in\Z $, where $ p\tand q $ are coprime.
-  Then $ p\divs a_n $ and $ q\divs a_0 $.
+  Let \( \frac{p}{q} \) be a root of \( f= a_0t^n+\cdots + a_{n-1} t^{n-1} + a_n \), for \( a_j\in\Z \), where \( p\tand q \) are coprime.
+  Then \( p\divs a_n \) and \( q\divs a_0 \).
 \end{ttheorem}
 
-\tbo{Note:}\quad If $ \alpha $ is transcendental over $ K $, then $ K(\alpha)\iso K(x) $ (where $ x $ is a formal variable).
+\tbo{Note:}\quad If \( \alpha \) is transcendental over \( K \), then \( K(\alpha)\iso K(x) \) (where \( x \) is a formal variable).
 
 \begin{tcorollary}
-  Let $L : K$ with $K \sseq L$, and suppose that $\alpha\in L$ is algebraic over $K$.
-  Then every element of $ K(\alpha) $ is algebraic over $ K $.
+  Let \( L : K \) with \( K \sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
+  Then every element of \( K(\alpha) \) is algebraic over \( K \).
 \end{tcorollary}
 
 \begin{tcorollary}
-  Let $ L:K $ with $ K\sseq L $.
-  Then $ \fdeg{L}{K} < \infty \iff L=K(\llist{\alpha}{1}{n}) $ for $ \alpha_j\in L $.
+  Let \( L:K \) with \( K\sseq L \).
+  Then \( \fdeg{L}{K} < \infty \iff L=K(\llist{\alpha}{1}{n}) \) for \( \alpha_j\in L \).
 \end{tcorollary}
 
 \begin{ttheorem}
-  Let $ L:K $ be a field extension, and define \begin{align*}
+  Let \( L:K \) be a field extension, and define \begin{align*}
     L^{\nf{alg}}=\{\alpha\in L : \alpha \text{ is algebraic over } K\}.
   \end{align*}
-  Then $ L^{\nf{alg}} $ is a subfield of $ L $.
+  Then \( L^{\nf{alg}} \) is a subfield of \( L \).
 \end{ttheorem}
 
 \end{document}

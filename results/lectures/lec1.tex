@@ -8,10 +8,10 @@
 \begin{document}
 \section{Introduction I}
 \begin{tdefinition}[Symmetric function]
-  A function $ \vphi(\llist{x}{1}{n}) $ is called symmetric if \begin{align*}
+  A function \( \vphi(\llist{x}{1}{n}) \) is called symmetric if \begin{align*}
     \varphi(x_1,\ldots,x_n) = \varphi(x_{\omega(1)},\ldots,x_{\omega(n)})
   \end{align*}
-  for all $ \omega\in S_n $.
+  for all \( \omega\in S_n \).
 \end{tdefinition}
 
 \begin{tdefinition}[Elementary symmetric polynomial]
@@ -26,7 +26,7 @@
 \end{tdefinition}
 
 \begin{ttheorem}
-  For any symmetric function $ \psi(\llist{x}{1}{n}) $, there exists a unique polynomial $ P(\llist{t}{1}{n}) $ such that $ \psi(\llist{x}{1}{n}) = P(\llist{\sigma}{1}{n}) $.
+  For any symmetric function \( \psi(\llist{x}{1}{n}) \), there exists a unique polynomial \( P(\llist{t}{1}{n}) \) such that \( \psi(\llist{x}{1}{n}) = P(\llist{\sigma}{1}{n}) \).
 \end{ttheorem}
 
 \tbo{Vieta formulae:}
@@ -36,7 +36,7 @@
   \end{align*}
 
 \begin{tcorollary}
-  The discriminant $ D $ of $ f\in R[x] $, where $ R $ is a ring and $ f= x^n+a_1x^{n-1}+\cdots + a_{n-1}x+a_n$, is a polynomial in $ \llist{a}{1}{n} $ and coefficients from $ R $ (i.e. $ D \in R[\llist{a}{1}{n}] $).
+  The discriminant \( D \) of \( f\in R[x] \), where \( R \) is a ring and \( f= x^n+a_1x^{n-1}+\cdots + a_{n-1}x+a_n\), is a polynomial in \( \llist{a}{1}{n} \) and coefficients from \( R \) (i.e. \( D \in R[\llist{a}{1}{n}] \)).
 \end{tcorollary}
 
 \tbo{Note:} \quad
@@ -45,19 +45,43 @@ Any cubic equation can be converted to a depressed cubic by \begin{align*}
 \end{align*}
 
 \tbo{Vieta's method:}\quad
-Using the trigonometric formula $ \cos 3\vphi = 4\cos\cb \vphi-3\cos\vphi $, we can solve certain cubic equations.
-For example, consider $ 4x\cb-3x=-\frac{1}{2} $.
-Let $ x=\cos \vphi $.
+Using the trigonometric formula \( \cos 3\vphi = 4\cos\cb \vphi-3\cos\vphi \), we can solve certain cubic equations.
+For example, consider \( 4x\cb-3x=-\frac{1}{2} \).
+Let \( x=\cos \vphi \).
 Then \begin{align*}
   \cos 3\vphi = -\frac{1}{2} &\iff 3\vphi = \pm \frac{2\pi}{3}+2\pi k \quad \text{for } k\in \Z \\
   &\iff \vphi = \pm\frac{2\pi}{9}+2\pi k \\
   &\iff x \in \lt\{ \cos\frac{2\pi}{9},\cos\frac{4\pi}{9},\cos\frac{8\pi}{9} \rt\}.
 \end{align*}
-In general, we can use this method to solve $ 4x\cb-3x=a \imp x=\cos\vphi,\ \cos 3\vphi $ and $ \cos:\C\to\C $ is now a complex function.
-For $ x\cb+px+q = 0 $, set $ x=ky $ such that $ \frac{k\cb}{pk} = \frac{-4}{3} \imp k = \pm\frac{\sqrt{-4p}}{3} $.
+In general, we can use this method to solve \( 4x\cb-3x=a \imp x=\cos\vphi,\ \cos 3\vphi \) and \( \cos:\C\to\C \) is now a complex function.
+For \( x\cb+px+q = 0 \), set \( x=ky \) such that \( \frac{k\cb}{pk} = \frac{-4}{3} \imp k = \pm\frac{\sqrt{-4p}}{3} \).
 
-\hl{\mbox{ferrari resolvent}}
+\begin{tdefinition}[Ferrari resolvent]
+  Let \( f(x) = x^4 + a x^3 + b x^2 + c x + d \in K[x] \) be a quartic polynomial over a field \( K \) of characteristic not 2.
+  We define the \tul{Ferrari resolvent} of \( f \) to be the associated cubic resolvent polynomial \( R(z) \in K[z] \) given by
+  \begin{align*}
+    R(z) = z^3 - 2b z^2 + (b^2 - 4d + a c) z - c^2 - a^2 d + 4b d.
+  \end{align*}
+  Solving the resolvent allows one to reduce solving \( f \) to solving a system of quadratics.
+\end{tdefinition}
 
-\hl{\mbox{lagrange mtd}}
+\tbo{Lagrange's method}:\quad Suppose \( f(x) = x^3 + px + q \) is a depressed cubic with roots \( x_1, x_2, x_3 \).
+    \tul{Lagrange's method} finds expressions involving the roots that take only a few values under permutation, then uses symmetry to connect them to the coefficients.
+
+    For instance, define
+    \[
+      y_1 = x_1 + \zeta x_2 + \zeta^2 x_3,
+    \]
+    where \( \zeta = e^{2\pi i/3} \) is a primitive cube root of unity. Then define
+    \[
+      y_2 = x_1 + \zeta^2 x_2 + \zeta x_3.
+    \]
+    These expressions are not symmetric, but they only take a few values when the \( x_i \)'s are permuted. In particular, \( y_1^3 \) and \( y_2^3 \) are symmetric functions of the roots and thus can be written as polynomials in \( p \) and \( q \).
+
+    Since the roots \( x_i \) are related to \( y_1 \) and \( y_2 \), we can use symmetric combinations such as
+    \[
+      x = \frac{1}{3}(y_1 + y_2)
+    \]
+    to recover the original roots of \( f(x) \).
 
 \end{document}

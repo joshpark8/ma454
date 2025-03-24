@@ -13,42 +13,45 @@
 \begin{document}
 \section{Introduction II}
 \begin{ttheorem}[Lagrange]
-  Let $ \vphi=\vphi(\llist{x}{1}{n}) $ and \begin{align*}
+  Let \( \vphi=\vphi(\llist{x}{1}{n}) \) and \begin{align*}
     \orb(\vphi) = \lt\{ \vphi^\omega = \vphi(x_{\omega(1)},\ldots,x_{\omega(n)}) \mid\omega\in S_n \rt\}.
   \end{align*}
-  Then $ \llist{y}{1}{k} $ are roots of some polynomial with degree $ \leq k $ whose coefficients depend on elementary symmetric polynomials \llist{\sigma}{1}{n} in a polynomial way.
+  Then \( \llist{y}{1}{k} \) are roots of some polynomial with degree \( \leq k \) whose coefficients depend on elementary symmetric polynomials \llist{\sigma}{1}{n} in a polynomial way.
 \end{ttheorem}
 
 \begin{ttheorem}[Lagrange]
-  Let $ \vphi,\psi\in K[\llist{x}{1}{n}] $ and $ G_\vphi=\lt\{ \omega\in S_n \mid \vphi^\omega=\vphi \rt\} \sgp G_\psi $.
-  Then $ \psi = R(\varphi) $ where $ R $ is a rational functon whose coefficients are symmetric functions on $ \llist{x}{1}{n} $.
+  Let \( \vphi,\psi\in K[\llist{x}{1}{n}] \) and \( G_\vphi=\lt\{ \omega\in S_n \mid \vphi^\omega=\vphi \rt\} \sgp G_\psi \).
+  Then \( \psi = R(\varphi) \) where \( R \) is a rational functon whose coefficients are symmetric functions on \( \llist{x}{1}{n} \).
 \end{ttheorem}
 
 \begin{tdefinition}[Group action]
-  Let \(G\) be a group and \(X\) be a set. The (left) group action of \(G\) on \(X\) is the map \(\cdot:G\times X\to X\) such that \begin{enumerate}
-    \item \(e_G\cdot x = x, \quad \forall x\in X\)
-    \item \(g\cdot (h\cdot x)=(g\cdot h)\cdot x,\quad \forall x\in X,\forall g,h\in G\)
+  Let \( G \) be a group and \( X \) be a set. The (left) group action of \( G \) on \( X \) is the map \( \cdot:G\times X\to X \) such that \begin{enumerate}
+    \item \( e_G\cdot x = x, \quad \forall x\in X \)
+    \item \( g\cdot (h\cdot x)=(g\cdot h)\cdot x,\quad \forall x\in X,\forall g,h\in G \)
   \end{enumerate}
 \end{tdefinition}
 
 \begin{tdefinition}[Orbit]
-  Let \(G\) be a group, \(X\) be a set, and \(x\in X\).
-  Then we define \tul{the orbit} of \(x\), \(G\cdot x = \text{orb}(x)\), as \(\{g\cdot x \ \mid \ g\in G\}\).
-  Moreover, \(\text{orb}(x)\subseteq X\).
+  Let \( G \) be a group, \( X \) be a set, and \( x\in X \).
+  Then we define \tul{the orbit} of \( x \), \( G\cdot x = \text{orb}(x) \), as \( \{g\cdot x \ \mid \ g\in G\} \).
+  Moreover, \( \text{orb}(x)\subseteq X \).
 \end{tdefinition}
 
 \begin{tdefinition}[Stabilizer]
-  Let \(G\) be a group, \(X\) be a set, and \(x\in X\).
-  Then we define \tul{the stabilizer} of \(x\), \(\text{stab}(x)\), as \(\{g\in G \ \mid \ g\cdot x = g\}\).
-  Moreover, \(\text{stab}(x)\leq G\).
+  Let \( G \) be a group, \( X \) be a set, and \( x\in X \).
+  Then we define \tul{the stabilizer} of \( x \), \( \text{stab}(x) \), as \( \{g\in G \ \mid \ g\cdot x = g\} \).
+  Moreover, \( \text{stab}(x)\leq G \).
 \end{tdefinition}
 
 \begin{ttheorem}
-  Let $ G $ be a finite group that acts on $ X $. Then for all $ x\in X $, $ \order{\orb(x)} \cdot \order{\stab(x)} = \order{G} $.
+  Let \( G \) be a finite group that acts on \( X \). Then for all \( x\in X \), \( \order{\orb(x)} \cdot \order{\stab(x)} = \order{G} \).
 \end{ttheorem}
 
 \begin{tdefinition}[Polynomial ring]
-  Let \(R\) be a commutative ring. Then the ring of polynomials with coefficients in \(R\) is \[R[t] = \left\{\sum_{i=0}^n c_it^i : n\in\mathbb{Z}_+, c_i\in R\right\}\]
+  Let \( R \) be a commutative ring. Then the ring of polynomials with coefficients in \( R \) is
+  \begin{align*}
+    R[t] = \left\{\sum_{i=0}^n c_it^i : n\in\mathbb{Z}_+, c_i\in R\right\}
+  \end{align*}
 \end{tdefinition}
 
 \end{document}

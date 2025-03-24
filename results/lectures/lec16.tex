@@ -9,74 +9,74 @@
 \begin{document}
 \section{Galois Fields I}
 \begin{tdefinition}[Formal derivative]
-  We define the \tul{derivative operator} $ \mcD:K[t]\to K[t] $ by \begin{align*}
+  We define the \tul{derivative operator} \( \mcD:K[t]\to K[t] \) by \begin{align*}
     \mcD\lt(\sum_{k=0}^{n}a_kt^k\rt) = \sum_{k=1}^{n}ka_kt^{k-1}.
   \end{align*}
 \end{tdefinition}
 
 \begin{ttheorem}
-  Let $ f\in K[t]\setminus K $, and let $ L:K $ be a \sfe~for $ f $.
-  Assume that $ K\sseq L $.
+  Let \( f\in K[t]\setminus K \), and let \( L:K \) be a \sfe~for \( f \).
+  Assume that \( K\sseq L \).
   Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
-    \item The polynomial $ f $ has a repeated root over $ L $;
-    \item There is some $ \alpha\in L $ for which $ f(\alpha)=0=(\mcD f)(\alpha) $;
-    \item There is some $ g\in K[t] $ having the property that $ \deg g \geq 1 $ and $ g $ divides both $ f $ and $ \mcD f $.
+    \item The polynomial \( f \) has a repeated root over \( L \);
+    \item There is some \( \alpha\in L \) for which \( f(\alpha)=0=(\mcD f)(\alpha) \);
+    \item There is some \( g\in K[t] \) having the property that \( \deg g \geq 1 \) and \( g \) divides both \( f \) and \( \mcD f \).
   \end{enumerate}
 \end{ttheorem}
 
 \begin{tdefinition}[Inseparable]
-  A polynomial $f \in K[t]$ is \tul{inseparable over $K$} if $f$ is not separable over $K$, meaning that $f$ has an irreducible factor $g \in K[t]$ having the property that $g$ has fewer than $\deg g$ distinct roots in $K$.
+  A polynomial \( f \in K[t] \) is \tul{inseparable over \( K \)} if \( f \) is not separable over \( K \), meaning that \( f \) has an irreducible factor \( g \in K[t] \) having the property that \( g \) has fewer than \( \deg g \) distinct roots in \( K \).
 \end{tdefinition}
 
 \begin{ttheorem}
-  Suppose that $ f\in K[t] $ is irreducible over $ K $.
-  Then $ f $ is inseparable over $ K $ if and only if $ \char K=p>0 $, and $ f \in K[t^p]$, which is to say that $ f=a_0+a_1t^p+\cdots+a_mt^{mp} $, for some $ \llist{a}{0}{m}\in K $.
+  Suppose that \( f\in K[t] \) is irreducible over \( K \).
+  Then \( f \) is inseparable over \( K \) if and only if \( \char K=p>0 \), and \( f \in K[t^p]\), which is to say that \( f=a_0+a_1t^p+\cdots+a_mt^{mp} \), for some \( \llist{a}{0}{m}\in K \).
 \end{ttheorem}
 
 \begin{tdefinition}[Frobenius map]
-  Suppose that $ \char K = p > 0 $.
-  The \tul{Frobenius map} $ \phi:K\to K $ is defined by $ \phi(\alpha)=\alpha^p $.
+  Suppose that \( \char K = p > 0 \).
+  The \tul{Frobenius map} \( \phi:K\to K \) is defined by \( \phi(\alpha)=\alpha^p \).
 \end{tdefinition}
 
 \begin{ttheorem}
-  Suppose that $ \char K = p > 0 $, and put $ F=\lt\{ c\cdot 1_K : c\in \Z \rt\} $.
-  Then $ F $ is a subfield (called the prime subfield) of $ K $, and $ F\iso \qg{\Z}{p\Z} $.
+  Suppose that \( \char K = p > 0 \), and put \( F=\lt\{ c\cdot 1_K : c\in \Z \rt\} \).
+  Then \( F \) is a subfield (called the prime subfield) of \( K \), and \( F\iso \qg{\Z}{p\Z} \).
 \end{ttheorem}
 
 \begin{tdefinition}[Fixed field]
-  Let $ L:K $ be a field extension.
-  When $ G $ is a subgroup of $ \Aut(L) $, we define the fixed field of $ G $ to be \begin{align*}
+  Let \( L:K \) be a field extension.
+  When \( G \) is a subgroup of \( \Aut(L) \), we define the fixed field of \( G \) to be \begin{align*}
     \Fix_L(G) = \lt\{ \alpha\in L : \sigma(\alpha) = \alpha \text{ for all } \sigma\in G \rt\}.
   \end{align*}
 \end{tdefinition}
 
 \begin{ttheorem}
-  Suppose that $ \char K = p>0 $, and let $ F $ be the prime subfield of $ K $.
-  Let $ \phi:K\to K $ denote the Frobenius map.
-  Then $ \phi $ is an injective homomorphism, and $ \Fix_\phi(K) = F $.
+  Suppose that \( \char K = p>0 \), and let \( F \) be the prime subfield of \( K \).
+  Let \( \phi:K\to K \) denote the Frobenius map.
+  Then \( \phi \) is an injective homomorphism, and \( \Fix_\phi(K) = F \).
 \end{ttheorem}
 
 \begin{tcorollary}
-  Suppose that $ \char K = p > 0 $ and $ K $ is algebraic over its prime subfield.
-  Then the Frobenius map is an automorphism of $ K $.
+  Suppose that \( \char K = p > 0 \) and \( K \) is algebraic over its prime subfield.
+  Then the Frobenius map is an automorphism of \( K \).
 \end{tcorollary}
 
 \begin{tcorollary}
-  Suppose that $ \char K = p > 0 $ and $ K $ is algebraic over its prime subfield.
-  Then all polynomials in $ K[t] $ are separable over $ K $.
+  Suppose that \( \char K = p > 0 \) and \( K \) is algebraic over its prime subfield.
+  Then all polynomials in \( K[t] \) are separable over \( K \).
 \end{tcorollary}
 
 \begin{tcorollary}[**]
-  Suppose that $ \char K = 0 $.
-  Then all polynomials in $ K[t] $ are separable over $ K $.
+  Suppose that \( \char K = 0 \).
+  Then all polynomials in \( K[t] \) are separable over \( K \).
 \end{tcorollary}
 
 \begin{ttheorem}
-  Suppose that $ \char K = p > 0 $. Let \begin{align*}
+  Suppose that \( \char K = p > 0 \). Let \begin{align*}
     f(t) = g(t^p) = a_0+a_1t^p+\cdots+a_{n-1}t^{(n-1)p}+t^{np}
   \end{align*}
-  be a non-constant monic polynomial over $ K $.
-  Then $ f(t) $ is irreducible in $ K[t] $ if and only if $ g(t) $ is irreducible in $ K[t] $ and not all the coefficients $ a_i $ are $ p $-th powers in $ K $.
+  be a non-constant monic polynomial over \( K \).
+  Then \( f(t) \) is irreducible in \( K[t] \) if and only if \( g(t) \) is irreducible in \( K[t] \) and not all the coefficients \( a_i \) are \( p \)-th powers in \( K \).
 \end{ttheorem}
 
 \end{document}

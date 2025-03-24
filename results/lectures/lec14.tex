@@ -5,63 +5,58 @@
 \input{letterfont.tex}
 \input{macros.tex}
 
-% \renewcommand{\arraystretch}{1.25} % space out table rows
-% \setlength{\parindent}{0pt}
-% \setlength{\parskip}{1em}
-% \linespread{1} % 1.3 for one-and-half spacing, 1.6 for double spacing
-
 \begin{document}
 \section{Separability}
 \begin{tdefinition}[Separable]
-  Let $ K $ be a field. \begin{enumerate}[label=(\roman*)]
-    \item An irreducible polynomial $ f\in K[t] $ is \tul{separable over $ K $} if it has no multiple roots, meaning that $ f=\lambda(t-\alpha_1)(t-\alpha_2)\cdots(t-\alpha_d) $, where $ \llist{\alpha}{1}{d}\in \Kbar $ are distinct.
-    \item A non-zero polynomial $ f\in K[t] $ is \tul{separable over $ K $} if its irreducible factors in $ K[t] $ are separable over $ K $.
-    \item When $ L:K $ is a field extension, we say that $ \alpha \in L $ is \tul{separable over $ K $} when $ \alpha $ is algebraic over $ K $ and $ \mu_\alpha^K $ is separable.
-    \item An algebraic extension $ L:K $ is \tul{a separable extension} if every $ \alpha\in L $ is separable over $ K $.
+  Let \( K \) be a field. \begin{enumerate}[label=(\roman*)]
+    \item An irreducible polynomial \( f\in K[t] \) is \tul{separable over \( K \)} if it has no multiple roots, meaning that \( f=\lambda(t-\alpha_1)(t-\alpha_2)\cdots(t-\alpha_d) \), where \( \llist{\alpha}{1}{d}\in \Kbar \) are distinct.
+    \item A non-zero polynomial \( f\in K[t] \) is \tul{separable over \( K \)} if its irreducible factors in \( K[t] \) are separable over \( K \).
+    \item When \( L:K \) is a field extension, we say that \( \alpha \in L \) is \tul{separable over \( K \)} when \( \alpha \) is algebraic over \( K \) and \( \mu_\alpha^K \) is separable.
+    \item An algebraic extension \( L:K \) is \tul{a separable extension} if every \( \alpha\in L \) is separable over \( K \).
   \end{enumerate}
 \end{tdefinition}
 
 \begin{tlemma}
-  Suppose that $ L:M:K $ is a tower of algebraic field extensions.
-  Assume that $ K\sseq M\sseq L\sseq \Kbar $, and suppose that $ f\in K[t]\setminus K $ satisfies the property that $ f $ is separable over $ K $.
-  If $ g\in M[t]\setminus M $ has the property that $ g\divs f $, then $ g $ is separable over $ M $.
-  Thus, if $ \alpha\in L $ is separable over $ K $ then $ \alpha $ is separable over $ M $, and if $ L:K $ is separable then so is $ L:M $.
+  Suppose that \( L:M:K \) is a tower of algebraic field extensions.
+  Assume that \( K\sseq M\sseq L\sseq \Kbar \), and suppose that \( f\in K[t]\setminus K \) satisfies the property that \( f \) is separable over \( K \).
+  If \( g\in M[t]\setminus M \) has the property that \( g\divs f \), then \( g \) is separable over \( M \).
+  Thus, if \( \alpha\in L \) is separable over \( K \) then \( \alpha \) is separable over \( M \), and if \( L:K \) is separable then so is \( L:M \).
 \end{tlemma}
 
 \begin{tlemma}
-Suppose that $ L:M $ is an algebraic field extension.
-  Let $ \alpha\in L $ and $ \sigma:M\to\Mbar $ be a \homo.
-  Then $ \sigma(m_\alpha(M)) $ is separable over $ \sigma(M) $ if and only if $ m_\alpha(M) $ is separable over $ M $.
+Suppose that \( L:M \) is an algebraic field extension.
+  Let \( \alpha\in L \) and \( \sigma:M\to\Mbar \) be a \homo.
+  Then \( \sigma(m_\alpha(M)) \) is separable over \( \sigma(M) \) if and only if \( m_\alpha(M) \) is separable over \( M \).
 \end{tlemma}
 
 \begin{ttheorem}
-  Let $ L:K $ be a finite extension with $ K\sseq L\sseq \Kbar $, whence $ L=K(\llist{\alpha}{1}{n}) $ for some $ \llist{\alpha}{1}{n}\in L $.
-  Put $ K_0=K $, and for $ 1\leq i\leq n $, set $ K_i=K_{i-1}(\alpha_i) $.
-  Finally, let $ \sigma_0:K\to\Kbar $ be the inclusion map. \begin{enumerate}[label=(\roman*)]
-    \item If $ \alpha_i $ is separable over $ K_{i-1} $ for $ 1\leq i\leq n $, then there are $ \fdeg{L}{K} $ ways to extend $ \sigma_0 $ to a \homo~$ \tau:L\to \Kbar $.
-    \item If $ \alpha_i $ is not separable over $ K_{i-1} $ for some $ i $ with $ 1\leq i\leq n $, then there are fewer than $ \fdeg{L}{K} $ ways to extend $ \sigma_0 $ to a \homo~$ \tau:L\to \Kbar $.
+  Let \( L:K \) be a finite extension with \( K\sseq L\sseq \Kbar \), whence \( L=K(\llist{\alpha}{1}{n}) \) for some \( \llist{\alpha}{1}{n}\in L \).
+  Put \( K_0=K \), and for \( 1\leq i\leq n \), set \( K_i=K_{i-1}(\alpha_i) \).
+  Finally, let \( \sigma_0:K\to\Kbar \) be the inclusion map. \begin{enumerate}[label=(\roman*)]
+    \item If \( \alpha_i \) is separable over \( K_{i-1} \) for \( 1\leq i\leq n \), then there are \( \fdeg{L}{K} \) ways to extend \( \sigma_0 \) to a \homo~\( \tau:L\to \Kbar \).
+    \item If \( \alpha_i \) is not separable over \( K_{i-1} \) for some \( i \) with \( 1\leq i\leq n \), then there are fewer than \( \fdeg{L}{K} \) ways to extend \( \sigma_0 \) to a \homo~\( \tau:L\to \Kbar \).
   \end{enumerate}
 \end{ttheorem}
 
 \begin{ttheorem}
-  Let $ L:K $ be a finite extension with $ L=K(\llist{\alpha}{1}{n}) $.
-  Set $ K_0=K $, and for $ 1\leq i\leq n $, inductively define $ K_i $ by putting $ K_i=K_{i-1}(\alpha_i) $.
+  Let \( L:K \) be a finite extension with \( L=K(\llist{\alpha}{1}{n}) \).
+  Set \( K_0=K \), and for \( 1\leq i\leq n \), inductively define \( K_i \) by putting \( K_i=K_{i-1}(\alpha_i) \).
   Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
-    \item the element $ \alpha_i $ is separable over $ K_{i-1} $ for $ 1\leq i\leq n $;
-    \item the element $ \alpha_i $ is separable over $ K $ for $ 1\leq i\leq n $;
-    \item the extension $ L:K $ is separable.
+    \item the element \( \alpha_i \) is separable over \( K_{i-1} \) for \( 1\leq i\leq n \);
+    \item the element \( \alpha_i \) is separable over \( K \) for \( 1\leq i\leq n \);
+    \item the extension \( L:K \) is separable.
   \end{enumerate}
 \end{ttheorem}
 
 \begin{tcorollary}
-  Suppose that $ L:K $ is a finite extension.
-  If $ L:K $ is a separable extension, then the number of $ K $-\homo~$ \sigma:L\to\Kbar $ is $ \fdeg{L}{K} $, and otherwise the number is smaller than $ \fdeg{L}{K} $.
+  Suppose that \( L:K \) is a finite extension.
+  If \( L:K \) is a separable extension, then the number of \( K \)-\homo~\( \sigma:L\to\Kbar \) is \( \fdeg{L}{K} \), and otherwise the number is smaller than \( \fdeg{L}{K} \).
 \end{tcorollary}
 
 \begin{tcorollary}
-  Suppose that $ f\in K[t]\setminus K $ and that $ L:K $ is a \sfe~for $ f $.
-  Then $ L:K $ is a separable extension if and only if $ f $ is separable over $ K $.
-  More generally, suppose that $ L:K $ is a \sfe~for $ S\sseq K[t]\setminus K $.
-  Then $ L:K $ is a separable extension if and only if each $ f\in S $ is separable over $ K $.
+  Suppose that \( f\in K[t]\setminus K \) and that \( L:K \) is a \sfe~for \( f \).
+  Then \( L:K \) is a separable extension if and only if \( f \) is separable over \( K \).
+  More generally, suppose that \( L:K \) is a \sfe~for \( S\sseq K[t]\setminus K \).
+  Then \( L:K \) is a separable extension if and only if each \( f\in S \) is separable over \( K \).
 \end{tcorollary}
 \end{document}
