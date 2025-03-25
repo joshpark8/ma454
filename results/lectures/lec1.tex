@@ -1,5 +1,4 @@
 \documentclass[a4paper]{article}
-\usepackage{asymptote}
 
 \input{preamble.tex}
 \input{letterfont.tex}
@@ -29,7 +28,7 @@
   For any symmetric function \( \psi(\llist{x}{1}{n}) \), there exists a unique polynomial \( P(\llist{t}{1}{n}) \) such that \( \psi(\llist{x}{1}{n}) = P(\llist{\sigma}{1}{n}) \).
 \end{ttheorem}
 
-\tbo{Vieta formulae:}
+\bd{Vieta formulae:}
   \begin{align*}
     x^n+a_1x^{n-1}+\cdots + a_{n-1}x+a_n &= (x-x_1)(x-x_2)\cdots(x-x_n) \\
     &= x^n-\sigma_1x^{n-1} + \sigma_2 x^{n-2} + \cdots + (-1)^n\sigma_n
@@ -39,12 +38,12 @@
   The discriminant \( D \) of \( f\in R[x] \), where \( R \) is a ring and \( f= x^n+a_1x^{n-1}+\cdots + a_{n-1}x+a_n\), is a polynomial in \( \llist{a}{1}{n} \) and coefficients from \( R \) (i.e. \( D \in R[\llist{a}{1}{n}] \)).
 \end{tcorollary}
 
-\tbo{Note:} \quad
+\bd{Note:} \quad
 Any cubic equation can be converted to a depressed cubic by \begin{align*}
   x\cb+Ax\sq+Bx+c = \left(x+\frac{A}{3}\right)\cb + p\left(x+\frac{A}{3}\right) + q.
 \end{align*}
 
-\tbo{Vieta's method:}\quad
+\bd{Vieta's method:}\quad
 Using the trigonometric formula \( \cos 3\vphi = 4\cos\cb \vphi-3\cos\vphi \), we can solve certain cubic equations.
 For example, consider \( 4x\cb-3x=-\frac{1}{2} \).
 Let \( x=\cos \vphi \).
@@ -58,15 +57,15 @@ For \( x\cb+px+q = 0 \), set \( x=ky \) such that \( \frac{k\cb}{pk} = \frac{-4}
 
 \begin{tdefinition}[Ferrari resolvent]
   Let \( f(x) = x^4 + a x^3 + b x^2 + c x + d \in K[x] \) be a quartic polynomial over a field \( K \) of characteristic not 2.
-  We define the \tul{Ferrari resolvent} of \( f \) to be the associated cubic resolvent polynomial \( R(z) \in K[z] \) given by
+  We define the \ul{Ferrari resolvent} of \( f \) to be the associated cubic resolvent polynomial \( R(z) \in K[z] \) given by
   \begin{align*}
     R(z) = z^3 - 2b z^2 + (b^2 - 4d + a c) z - c^2 - a^2 d + 4b d.
   \end{align*}
   Solving the resolvent allows one to reduce solving \( f \) to solving a system of quadratics.
 \end{tdefinition}
 
-\tbo{Lagrange's method}:\quad Suppose \( f(x) = x^3 + px + q \) is a depressed cubic with roots \( x_1, x_2, x_3 \).
-    \tul{Lagrange's method} finds expressions involving the roots that take only a few values under permutation, then uses symmetry to connect them to the coefficients.
+\bd{Lagrange's method}:\quad Suppose \( f(x) = x^3 + px + q \) is a depressed cubic with roots \( x_1, x_2, x_3 \).
+    \ul{Lagrange's method} finds expressions involving the roots that take only a few values under permutation, then uses symmetry to connect them to the coefficients.
 
     For instance, define
     \[

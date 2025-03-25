@@ -1,5 +1,4 @@
 \documentclass[a4paper]{article}
-\usepackage{asymptote}
 
 \input{preamble.tex}
 \input{letterfont.tex}
@@ -16,12 +15,12 @@
 \subsection*{Lecture 1} % tue jan 14
 \section{Introduction}
 \subsection{Polynomials}
-Since ancient times, people have been interested in \tit{polynomial equations}:
+Since ancient times, people have been interested in \it{polynomial equations}:
 \begin{align}
   x^n + a_{1}x^{n-1} + \cdots + a_{n-1}x + a_n = 0\quad (n\geq 1),\label{eq:poly}
 \end{align}
 where the coefficients \( a_i \) are in, say, \( \bbR \).
-It was \'Evariste Galois (1811-1832) who characterized \eqref{eq:poly} that are \tit{solvable by radicals}, transforming elementary algebra to higher algebra.
+It was \'Evariste Galois (1811-1832) who characterized \eqref{eq:poly} that are \it{solvable by radicals}, transforming elementary algebra to higher algebra.
 
 The case \( n=1 \) is a trivial.
 If \( n=2 \), we have get the general quadratic equation:
@@ -33,7 +32,7 @@ We can make the substitution \( x=y-\frac{b}{2a} \), which gives us
   y^2 = \frac{b^2-4ac}{4a^2} := \frac{D}{4a} \qiff y=\pm\frac{\sqrt D}{2a},
 \end{align*}
 hence \( x_{1,2} = \frac{-b\pm \sqrt D}{2a} \).
-Here, \( D \) is the \tit{discriminant} of the polynomial \( f(x) = ax^2+bx+c \).
+Here, \( D \) is the \it{discriminant} of the polynomial \( f(x) = ax^2+bx+c \).
 
 One can check that \( D = (x_1-x_2)\sq\cdot a\sq \).
 More generally, if we have \begin{align*}
@@ -56,7 +55,7 @@ Why do we square? Consider the discriminant as a polynomial in \( x_1,\ldots,x_n
 \begin{align*}
   D(x_1,\cdots,x_n) = \prod_{i<j}(x_i-x_j)^2.
 \end{align*}
-Then, \( D(x_1,\cdots,x_n) \) is a \tit{symmetric} polynomial, e.g. \begin{align*}
+Then, \( D(x_1,\cdots,x_n) \) is a \it{symmetric} polynomial, e.g. \begin{align*}
   D(x_1,x_2) = (x_1-x_2)^2 = D(x_2,x_1) = b^2-4ac.
 \end{align*}
 
@@ -76,7 +75,7 @@ If we consider the group \( S_n \) of all permutations on \( n \) symbols, then 
 \end{align*}
 More generally,
 \begin{tdefinition}[Symmetric function]
-  Let \( \phi(x_1, \ldots, x_n) \) be a function. Then \( \phi \) is \tit{symmetric} if \( \forall \) permutations \( \omega\in S_n \), \( \phi(x_1,\ldots, x_n) = \phi(x_{\omega(1)},\ldots,x_{\omega(n)})\).
+  Let \( \phi(x_1, \ldots, x_n) \) be a function. Then \( \phi \) is \it{symmetric} if \( \forall \) permutations \( \omega\in S_n \), \( \phi(x_1,\ldots, x_n) = \phi(x_{\omega(1)},\ldots,x_{\omega(n)})\).
 \end{tdefinition}
 
 \begin{ttheorem} For \( \forall \) symmetric function \( \phi \) \( \exists ! \) polynomial \( P(t_1, \ldots,t_n) \) such that \( \phi(x_1,\ldots,x_n) =P(\sigma_1,\ldots,\sigma_n)\).

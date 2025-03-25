@@ -1,14 +1,8 @@
 \documentclass[a4paper]{article}
-\usepackage{asymptote}
 
 \input{preamble.tex}
 \input{letterfont.tex}
 \input{macros.tex}
-
-% \renewcommand{\arraystretch}{1.25} % space out table rows
-% \setlength{\parindent}{0pt}
-% \setlength{\parskip}{1em}
-% \linespread{1} % 1.3 for one-and-half spacing, 1.6 for double spacing
 
 \begin{document}
 \section{Galois Groups I}
@@ -20,11 +14,10 @@
 \end{tdefinition}
 
 \begin{tlemma}
-  \( \Gal_K(f) \sgp S_n \)
-\end{tlemma}
-
-\begin{tlemma}
-  If \( K_1:K \), then \( \Gal_{K_1}(f)\sgp \Gal_K(f) \).
+\begin{enumerate}
+  \item \( \Gal_K(f) \sgp S_n \);
+  \item If \( K_1:K \), then \( \Gal_{K_1}(f)\sgp \Gal_K(f) \).
+\end{enumerate}
 \end{tlemma}
 
 \begin{tdefinition}
@@ -33,6 +26,18 @@
     \Gal_K(L) = \Gal(L:K) = \lt\{ \vphi\in\Aut(L) : \vphi\text{ is a K-\homo} \rt\}
   \end{align*}
 \end{tdefinition}
+
+\begin{tdefinition}[Galois automorphism on splitting field]
+  Let \( \sigma\in \Gal_K f \) where \( L \) is a splitting field for \( f \) over \( K \), and define \( \ul{\wh\sigma\in\Aut_K(L)} \) such that \( \wh\sigma(P(\llist{\alpha}{1}{n})) = P(\llist{\alpha}{\sigma(1)}{\sigma(n)}) \).
+\end{tdefinition}
+
+\begin{tlemma}
+  The map \( \psi(\sigma)=\wh\sigma \) is a group isomorphism.
+\end{tlemma}
+
+\begin{ttheorem}
+  If \( L:K \) is an algebraic extension and \( \sigma:L\to L \) is a \( K \)-\homo, then \( \sigma\in\Aut(L) \)
+\end{ttheorem}
 
 \begin{tlemma}
   Suppose that \( M:K \) is a normal extension.

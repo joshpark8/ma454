@@ -1,5 +1,4 @@
 \documentclass[a4paper]{article}
-\usepackage{asymptote}
 
 \input{preamble.tex}
 \input{letterfont.tex}
@@ -9,7 +8,7 @@
 \section{Algebraic Closure I}
 \begin{tdefinition}[Algebraically closed field, algebraic closure]
   Let \( M \) be a field. \begin{enumerate}[label=(\roman*)]
-    \item We say that \( M \) is \tul{algebraically closed} if every non-constant polynomial \( f\in M[t] \) has a root in \( M \).
+    \item We say that \( M \) is \ul{algebraically closed} if every non-constant polynomial \( f\in M[t] \) has a root in \( M \).
     \item We say that \( M \) is an algebraic closure of \( K \) if \( M:K \) is an algebraic field extension having the property that \( M \) is algebraically closed.
   \end{enumerate}
 \end{tdefinition}
@@ -26,10 +25,10 @@
 
 \begin{tdefinition}[Chain]
   Suppose that \( X \) is a nonempty, partially ordered set with \( \leq \) denoting the partial ordering.
-  A \tul{chain} \( C \) in \( X \) is a collection of elements \( \lt\{ a_i \rt\}_{i\in I} \) of \( X \) having the property that for every \( i,j\in I \), either \( a_i\leq a_j \tor a_j\leq a_i \).
+  A \ul{chain} \( C \) in \( X \) is a collection of elements \( \lt\{ a_i \rt\}_{i\in I} \) of \( X \) having the property that for every \( i,j\in I \), either \( a_i\leq a_j \tor a_j\leq a_i \).
 \end{tdefinition}
 
-\tbo{Zorn's Lemma:}\quad Suppose that \( X \) is a nonempty, partially ordered set with \( \leq \) the partial ordering.
+\bd{Zorn's Lemma:}\quad Suppose that \( X \) is a nonempty, partially ordered set with \( \leq \) the partial ordering.
 Suppose that every non-empty chain \( C \) in \( X \) has an upper bound in \( X \).
 Then \( X \) has at least one maximal element \( m \), meaning that if \( b\in X \) with \( m\leq b \), then \( b=m \).
 
@@ -49,8 +48,8 @@ Then \( X \) has at least one maximal element \( m \), meaning that if \( b\in X
 \begin{tdefinition}[Extension of field \homo, isomorphic field extensions]
   For \( i = 1 \tand 2 \), let \( L_i : K_i \) be a field extension relative to the embedding \( \vphi_i : K_i\to L_i \).
   Suppose that \( \sigma : K_1\to K_2 \) and \( \tau:L_1\to L_2 \) are isomorphisms.
-  We say that \tul{\( \tau \) extends \( \sigma \)} if \( \tau\circ\vphi_1 = \vphi_2\circ\sigma \).
-  In such circumstances, we say that \( L_1 : K_1 \tand L_2 : K_2 \) are \tul{isomorphic field extensions}.
+  We say that \ul{\( \tau \) extends \( \sigma \)} if \( \tau\circ\vphi_1 = \vphi_2\circ\sigma \).
+  In such circumstances, we say that \( L_1 : K_1 \tand L_2 : K_2 \) are \ul{isomorphic field extensions}.
   \begin{center}
     \begin{tikzcd}
       L_{1} \arrow[r, "\tau"]
@@ -63,12 +62,12 @@ Then \( X \) has at least one maximal element \( m \), meaning that if \( b\in X
       \arrow[u, "\vphi_{2}"]
     \end{tikzcd}
   \end{center}
-  When \( \sigma:K_1\to K_2 \) and \( \tau:L_1\to L_2 \) are \homo s (instead of isomorphisms), then \tul{\( \tau \) extends \( \sigma \) as a \homo~of fields} when the isomorphism \( \tau:L_1\to L_1' = \tau(L_1) \) extends the isomorphism \( \sigma:K_1\to K_1' = \sigma(K_1) \).
+  When \( \sigma:K_1\to K_2 \) and \( \tau:L_1\to L_2 \) are \homo s (instead of isomorphisms), then \ul{\( \tau \) extends \( \sigma \) as a \homo~of fields} when the isomorphism \( \tau:L_1\to L_1' = \tau(L_1) \) extends the isomorphism \( \sigma:K_1\to K_1' = \sigma(K_1) \).
 \end{tdefinition}
 
 \begin{tdefinition}[\(K\)-\homo]
   Let \( L : K \) be a field extension relative to the embedding \( \varphi : K \to L \), and let \( M \) be a subfield of \( L \) containing \( \varphi(K) \).
-  Then, when \( \sigma : M \to L \) is a \homo, we say that \( \sigma \) is a \tul{\(K\)-\homo} if \( \sigma \) leaves \( \varphi(K) \) pointwise fixed, which is to say that for all \( \alpha \in \varphi(K) \), one has \( \sigma(\alpha) = \alpha \).
+  Then, when \( \sigma : M \to L \) is a \homo, we say that \( \sigma \) is a \ul{\(K\)-\homo} if \( \sigma \) leaves \( \varphi(K) \) pointwise fixed, which is to say that for all \( \alpha \in \varphi(K) \), one has \( \sigma(\alpha) = \alpha \).
 \end{tdefinition}
 
 \begin{tlemma}
@@ -103,7 +102,7 @@ Then \( X \) has at least one maximal element \( m \), meaning that if \( b\in X
   \end{center}
 \end{ttheorem}
 
-\tbo{Note:}\quad When \( \tau:K_1(\alpha)\to K_2(\beta) \) is a \homo, and \( \tau \) extends the \homo~\( \sigma:K_1\to K_2 \), then \( \tau \) is completely determined by \( \sigma \) and the value of \( \tau(\alpha) \).
+\bd{Note:}\quad When \( \tau:K_1(\alpha)\to K_2(\beta) \) is a \homo, and \( \tau \) extends the \homo~\( \sigma:K_1\to K_2 \), then \( \tau \) is completely determined by \( \sigma \) and the value of \( \tau(\alpha) \).
 
 \begin{tcorollary}
   Let \( L:M \) be a field extension with \( M\sseq L \). Suppose that \( \sigma:M\to L \) is a \homo, and \( \alpha\in L \) is algebraic over \( M \).
