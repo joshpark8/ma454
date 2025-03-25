@@ -19,8 +19,8 @@
 \end{tdefinition}
 
 \begin{tdefinition}[Algebraic/transcendental element]
-  Suppose that \( L: K \) is a field extension with associated embedding \( \vphi \).
-  Suppose also that \( \alpha\in L \). \begin{enumerate}[label=(\roman*)]
+  Suppose that \( L: K \) is a field extension with \( K\sseq L \) and \( \alpha\in L \).
+  \begin{enumerate}[label=(\roman*)]
     \item We say \ul{\( \alpha \) is algebraic over K} if \( \exists f_{\not\equiv 0} \in K[t] \) such that \( f(\alpha)=0 \).
     \item If \( \alpha \) is not algebraic over \( K \), then we say \ul{\( \alpha \) is transcendental over \( K \)}.
     \item When every element of \( L \) is algebraic over \( K \), we say that \ul{\( L \) is algebraic over \( K \)}.
@@ -34,12 +34,12 @@
 
 \begin{tdefinition}[Minimal polynomial]
   Suppose that \( L : K \) is a field extension with \( K \sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
-  Then the minimal polynomial of \( \alpha \) over \( K \) is the unique monic polynomial \( \mu_\alpha^K \) having the property that \( \ker(E_\alpha) = (m_\alpha(K)) \).
+  Then the minimal polynomial of \( \alpha \) over \( K \) is the unique monic polynomial \( \mak \) having the property that \( \ker(E_\alpha) = (\mak) \).
 \end{tdefinition}
 
 \begin{tlemma}
   \begin{enumerate}
-    \item \( \mu_\alpha^K \) is irreducible over \( K \);
+    \item \( \mak \) is irreducible over \( K \);
     \item If \( f\in K[t] \) such that \( f(\alpha) = 0 \), then \( \mak\divs f \);
     \item If \( f\in K[t] \) such that \( f(\alpha) = 0 \) and \( f \) is irreducible over \( K \), then \( \exists k\in K \) such that \( f=k\mak \).
   \end{enumerate}
@@ -49,7 +49,7 @@
   Let \( L : K \) with \( K \sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
   \begin{enumerate}[label=(\roman*)]
     \item \( K[\alpha] \) is a field, and \( K[\alpha] = K(\alpha) \);
-    \item If \( n=\deg \mu_\alpha^K \), then \( \lt\{ 1,\alpha,\alpha^2,\ldots,\alpha^{n-1} \rt\} \) is a basis for \( K(\alpha) \) over \( K \) (\imp \( \fdeg{K(\alpha)}{K}=\deg \mu_\alpha^K \)).
+    \item If \( n=\deg \mak \), then \( \lt\{ 1,\alpha,\alpha^2,\ldots,\alpha^{n-1} \rt\} \) is a basis for \( K(\alpha) \) over \( K \) (\imp \( \fdeg{K(\alpha)}{K}=\deg \mak \)).
   \end{enumerate}
 \end{ttheorem}
 
