@@ -23,18 +23,18 @@
 \begin{solution}
   We notice \( f(t) = t^4+7t\sq+12 = (t^2+3)(t^2+4) \), so let \( g(t) = t^2+3 \) and \( h(t) = t^2+4 \).
   We have that \( h=(t-2i)(t+2i) \), and by the rational root test \( h \) is irreducible over \( \Q \).
-  Then \( h = \mu_{2i}^\Q \) and \( \Q(i)=M:\Q \) is the \sfe for \( h \) with degree 2.
+  Then \( h = \mu_{2i}^\Q \) and \( \Q(i)=M:\Q \) is the \sfe~for \( h \) with degree 2.
   Next, we have \( g = (t-i\sqrt 3)(t+i\sqrt 3) \), and by Eisenstein's criterion with \( p=3 \), \( g \) is irreducible.
-  Let \( L:M \) be the \sfe for \( g \).
+  Let \( L:M \) be the \sfe~for \( g \).
   We already have that \( i\in M \), so \( L=M(\sqrt 3) \) and \( \fdeg L M = 2 \).
-  Thus, \( L=\Q(i,\sqrt 3):\Q \) is the \sfe for \( f \) and by the Tower Law, \( \fdeg L \Q = \fdeg L M \fdeg M \Q = 2\cdot 2 = 4. \)
+  Thus, \( L=\Q(i,\sqrt 3):\Q \) is the \sfe~for \( f \) and by the Tower Law, \( \fdeg L \Q = \fdeg L M \fdeg M \Q = 2\cdot 2 = 4. \)
 \end{solution}
 
 \item \( t^4+t^2+12 \)
 \begin{solution}
   We notice \( f(t) = t^4+t^2+12 = (t^2-3)(t^2+4) \), so let \( g(t) = t^2-3 \) and \( h(t) = t^2+4 \).
   These are the same polynomials as in part 1, but this time the roots of \( g \) do not have an imaginary factor.
-  However, we note that this did not have any impact on our argument in part 1, whence \( L = \Q(i,\sqrt 3):\Q \) is again the \sfe for \( f \) and \( \fdeg{L}{\Q} = 4 \).
+  However, we note that this did not have any impact on our argument in part 1, whence \( L = \Q(i,\sqrt 3):\Q \) is again the \sfe~for \( f \) and \( \fdeg{L}{\Q} = 4 \).
 \end{solution}
 
 \item \( t^{2n}-2^n \), where \( n=3,4 \).
@@ -120,13 +120,13 @@ We have two cases, one in which \( f \) is reducible and one in which it is not.
 \begin{subproof}[Case 1 (\( f \) is irreducible).]
 Let \( \alpha \) be a root of \( f \).
 Then \( f \) factors as \( (t-\alpha)g \) for some polynomial \( g\in K(\alpha)[t] \) such that \( \deg g = n-1 \).
-Furthermore, we can see that \( L:K(\alpha) \) is a \sfe for \( g \).
+Furthermore, we can see that \( L:K(\alpha) \) is a \sfe~for \( g \).
 By our inductive hypothesis, \( \fdeg{L}{K(\alpha)} \) divides \( (n-1)! \).
 By lemma, the irreducibility of \( f \) implies \( f=\lambda\mu_\alpha^{K} \) for some constant \( \lambda\in K \), so \( \deg f = \deg \mu_\alpha^K = n \) and \( \fdeg{K(\alpha)}{K}=n \).
 Then by using the Tower Law, we can see that \( \fdeg{L}{K(\alpha)}\fdeg{K(\alpha)}{K} = \fdeg{L}{K} \) divides \( n(n-1)! = n! \).
 \end{subproof}
 \begin{subproof}[Case 2 (\( f \) is reducible).]
-  Let \( f = gh \) for polynomials \( g,h\in K[t] \),  \( M:K \) be a \sfe for \( g \), and \( L:M \) be a \sfe for \( h \).
+  Let \( f = gh \) for polynomials \( g,h\in K[t] \),  \( M:K \) be a \sfe~for \( g \), and \( L:M \) be a \sfe~for \( h \).
   Then we can say \( \deg g = d \) for some \( 1\leq d < n \) by def degree, hence \( \deg h = n-d \).
   By our inductive hypothesis, \( \fdeg{M}{K} \) divides \( d! \) and \( \fdeg{L}{M} \) divides \( (n-d)! \).
   Then by use of the Tower Law again, we can easily see that \( \fdeg{L}{M}\fdeg{M}{K} = \fdeg{L}{K} \) divides \( d!(n-d)! \).

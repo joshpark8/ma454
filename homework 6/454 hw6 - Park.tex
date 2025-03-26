@@ -41,7 +41,7 @@ Find Galois groups for the following polynomials \( f \) over \( \Q \):
 \item \( t^4-2 \)
   \begin{solution}
     By Eisenstein's criterion with \( p=2 \), this polynomial is irreducible and the four roots are \( \alpha_{1,2} = \pm\sqrt[4]2, \alpha_{3,4}=\pm i\sqrt[4]2 \).
-    The \sfe for this polynomial is \( \Q(\sqrt[4]2,i):\Q \), so let \( L = \Q(\sqrt[4]2, i) \).
+    The \sfe~for this polynomial is \( \Q(\sqrt[4]2,i):\Q \), so let \( L = \Q(\sqrt[4]2, i) \).
     Since \( \fdeg{L}{\Q(i)} = 4 \) and \( \fdeg{\Q(i)}{\Q}=2 \), we have that \( \fdeg{L}{\Q} = 8 \) by the tower law.
     We know any permutation of roots can only permute algebraic conjugates of the same minimum polynomial over \( \Q \).
     Since \( \mu_{\sqrt[4]{2}}^\Q=t^4-2 \), it has conjugates \( \pm\sqrt[4]2,\pm i\sqrt[4]2 \).
@@ -108,11 +108,11 @@ Since \( i\sqrt[4]2 \not\in \Q(\sqrt[4]2) \), the extension is thus not normal.
 \end{solution}
 
 \begin{exercise}
-  Let \( L:K \) be a \sfe for a non-constant polynomial \( f\in K[t] \).
+  Let \( L:K \) be a \sfe~for a non-constant polynomial \( f\in K[t] \).
   Prove that \( \order{\Gal_K(L)} \) divides \( (\deg f)! \).
 \end{exercise}
 \begin{solution}
-  Since \( L \) is the \sfe for \( f \) over \( K \), we know that \( \Gal_K(L) = \Gal_K(f) \).
+  Since \( L \) is the \sfe~for \( f \) over \( K \), we know that \( \Gal_K(L) = \Gal_K(f) \).
   By lemma, we have that \( \Gal_K(f)\leq S_{\deg f} \) and by Lagrange, \( \order{\Gal_K(f)} \divs \order{S_{\deg f}}=(\deg f)! \).
 \end{solution}
 

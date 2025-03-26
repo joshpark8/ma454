@@ -17,12 +17,12 @@ Let \( K = \Q \), \( M = \Q(2^{1/3}) \) and \( L = \Q(2^{1/3}, \sqrt 3, i) \).
 Prove that \( L:K \) and \( L:M \) are normal but \( M:K \) is not normal.
 \end{exercise}
 \begin{solution}
-We know that a field extension \( F_1:F_2 \) is normal iff it is a \sfe for some \( f\in F_2[t] \).
+We know that a field extension \( F_1:F_2 \) is normal iff it is a \sfe~for some \( f\in F_2[t] \).
 Consider the polynomial \( f(t) = (t^2-3)(t^2+1) \).
 Then, \begin{align*}
   f(t) &= (t+\sqrt 3)(t-\sqrt 3)(t+i)(t-i),
 \end{align*}
-whence \( L:M \) is a \sfe for \( f \).
+whence \( L:M \) is a \sfe~for \( f \).
 
 Next, consider \( g(t) = (t^2-3)(t^2+1)(t^3-2) \).
 Then, \begin{align*}
@@ -31,10 +31,10 @@ Then, \begin{align*}
 where \( \veps_3 = \exp\lt(\frac{2\pi}{3}i\rt) \).
 Notice, \begin{align*}
   \veps_3 &= \cos\lt(\frac{2\pi}{3}\rt) + i\sin\lt(\frac{2\pi}{3}\rt)    & \veps_3^2 &= \cos\lt(\frac{4\pi}{3}\rt) + i\sin\lt(\frac{4\pi}{3}\rt) \\
-          &= -\frac{1}{2}+i\frac{\sqrt 3}{2} & &= -\frac{1}{2}-i\frac{\sqrt 3}{2}\in \Q(2^{1/3},i,\sqrt 3) \\
-          &= \frac{1}{2}\lt(-1+i\sqrt 3\rt)\in \Q(3^{1/3},i,\sqrt 3) & &= \frac{1}{2}\lt(-1-i\sqrt 3\rt) \in \Q(2^{1/3},i,\sqrt 3).
+          &= -\frac{1}{2}+i\frac{\sqrt 3}{2} & &= -\frac{1}{2}-i\frac{\sqrt 3}{2} \\
+          &= \frac{1}{2}\lt(-1+i\sqrt 3\rt)\in \Q(2^{1/3},i,\sqrt 3) & &= \frac{1}{2}\lt(-1-i\sqrt 3\rt) \in \Q(2^{1/3},i,\sqrt 3).
 \end{align*}
-Thus \( L:K \) is a \sfe for \( f \), hence it is normal.
+Thus \( L:K \) is a \sfe~for \( f \), hence it is normal.
 
 By definition, an extension \( M:K \) is normal if \( \forall \alpha\in M \), the minimum polynomial of \( \alpha \) over \( K \), \( \mu_\alpha^K(t) \), splits over \( M[t] \).
 Obviously, \( \sqrt[3]2 \in \Q(2^{1/3}) \) by construction.
@@ -77,13 +77,13 @@ Thus \( M:K \) is not a normal extension by definiton.
   Prove that if \( f \) is separable, then \( L:K \) is separable.
 \end{subexercise}
 \begin{solution}
-  We are given that \( L:K \) is a \sfe for \( f \), and by theorem we know \( L=K(\llist{\alpha}{1}{n}) \) where \( \alpha_j\in L \) is a root of \( f \) for \( 1\leq j\leq n \).
+  We are given that \( L:K \) is a \sfe~for \( f \), and by theorem we know \( L=K(\llist{\alpha}{1}{n}) \) where \( \alpha_j\in L \) is a root of \( f \) for \( 1\leq j\leq n \).
   Then for each \( j \) the minimum polynomial of \( \alpha_j \) must divide \( f \), and thus \( \mu_{\alpha_j}^K \) is separable over \( K \) by separability of \( f \) and the definition of separable.
   Then \( \alpha_j \) is separable over \( K \) for each \( j \) and hence \( L:K \) is separable by theorem.
 \end{solution}
 
 \begin{exercise}
-  Let \( L:K \) be a \sfe for a polynomial \( f\in K[t] \).
+  Let \( L:K \) be a \sfe~for a polynomial \( f\in K[t] \).
   Then \( L:K \) is separable iff \( f \) is separable over \( K \).
 \end{exercise}
 \begin{solution}
