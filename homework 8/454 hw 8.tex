@@ -6,13 +6,13 @@
 \input{letterfont}
 \input{macros}
 
-\fancyhead[L]{\bd{Josh Park \\ Prof. Shkredov}}
+\fancyhead[L]{\bd{Josh Park \\ Prof. Ilya Shkredov}}
 \fancyhead[C]{\bd{MA 45401-H01 -- Galois Theory Honors \\ Homework \thesection~(Apr 4)}}
 \fancyhead[R]{\bd{Spring 2025 \\ Page \thepage}}
 
 \begin{document}
 \setcounter{section}{8} % HW NUMBER
-\begin{exercise}
+\begin{exercise} % PROBLEM 8.1
   Let \( K\sseq L \) be a \sfe~for some \( f\in K[t]\setminus K \).
   Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
     \item \( f \) has a repeated root over \( L \);
@@ -21,64 +21,90 @@
   \end{enumerate}
 \end{exercise}
 \begin{solution}
-\end{solution}
-\pagebreak
+  Let \( f = \lprod_{i=0}^{d}(t-\alpha_i)^{r_i} \) where \( \llist{\alpha}{1}{d} \) are roots of \( f \) and \( r_i\in \N \) for all \( i \).
 
-\begin{exercise}
+  ((i)\( \imp \)(ii)) Suppose \( f \in K[t]\setminus K \) has a repeated root in \( L \).
+  That is, \( f = \lprod_{i=0}^{d}(t-\alpha_i)^{r_i} \) where \( \llist{\alpha}{1}{d} \in L \) are roots of \( f \), \( r_j = n \geq 2 \) for some \( j \), and without loss of generality we can say \( j=0 \).
+  Then \( f=gh \) over \( L \) where \( g,h\in L[t]\setminus L \) of strictly smaller degree such that \( g=(t-\alpha_0)^n \) and \( h=\lprod_{i=1}^{d}(t-\alpha_i)^{r_i} \), whence
+  \begin{align*}
+  \mcD f &= \mcD(g)h + g\mcD(h)\\
+         &= n(t-\alpha_0)^{n-1}h + (t-\alpha_0)^{n}h' \\
+         &= (t-\alpha_0)[n(t-\alpha_0)^{n-2}h + (t-\alpha_0)^{n-1}h'].
+  \end{align*}
+  Thus \( f(\alpha_0) = \mcD f(\alpha_0) = 0 \).
+
+  ((i)\( \pmi \)(ii)) Suppose \( f \in K[t]\setminus K \) does \it{not} have repeated a root in \( L \).
+  That is, \( f = \lprod_{i=0}^{d}(t-\alpha_i) \) where \( \llist{\alpha}{0}{d} \in L \) are distinct roots of \( f \).
+  Let \( R_f = \{\llist{\alpha}{0}{d}\} \) be the set of all roots of \( f \).
+  Then it is easy to see that \begin{align*}
+    \mcD f(t) = \sum_{i=0}^{d}\left(\prod_{j\neq i} (t-\alpha_j)\right) \qimp \mcD f(\alpha_k) = \prod_{j\neq k} (\alpha_k-\alpha_j) \neq 0, \quad\forall \alpha_k\in R_f
+  \end{align*}
+  since \( \alpha_j\neq \alpha_k \) for all \( j\neq k \), so \( \not\exists \alpha\in L \) such that \( 0=f(\alpha)=(\mcD f)(\alpha) \).
+
+  ((ii)\( \imp \)(iii)) Suppose \(\exists\alpha\in L \tst \mcD f(\alpha)=f(\alpha)=0 \) for some \( f\in K[t]\setminus K \).
+  By definition of formal derivative, we know \( \mcD f \in K[t] \).
+  Moreover we are given that \( L \) is a \sfe~for \( f \), so \( L:K \) must be finite and hence algebraic.
+  Thus \( \exists\mak\in K[t] \), and by theorem we have that \( \mak\divs f \) and \( \mak \divs \mcD f \).
+
+  ((iii)\( \imp \)(ii)) Suppose \( \exists g\in K[t] \) with \( \deg g \geq 1 \) such that \( g \) divides both \( f \) and \( \mcD f \).
+  We know that \( f = \lprod_{i=0}^{d}(t-\alpha_i)^{r_i} \) where \( \llist{\alpha}{1}{d} \in L \) are roots of \( f \) and \( r_i \in \N \) for all \( i \).
+  Thus for \( g \) to divide \( f \) it must be divisible by some factor \( (t-\alpha_j) \) of \( f \) for some \( j \).
+  It follows that \( \mcD f \) must also be divisible by \( (t-\alpha_j) \), whence \( \alpha_j \) is a root of both \( \mcD f \tand f \).
+
+  Thus we have that (i) \iff~(ii) \iff~(iii).
+\end{solution}
+
+\begin{exercise} % PROBLEM 8.2
 Let \( K \) be a field, \( \char K = p > 0 \) and \( f\in K[t^p] \) is an irreducible polynomial over \( K \).
 Prove that \( f \) is inseparable.
 \end{exercise}
 \begin{solution}
+  Suppose \( f\in K[t^p] \).
+  Then \( f = \lsum_{i=0}^{d} a_i t^{ip} \).
 
 \end{solution}
-\pagebreak
 
-\begin{exercise}
+\begin{exercise} % PROBLEM 8.3
 Let \( K \) be a field, \( \char K = p > 0 \) and \( f\in K[t^p] \) is an irreducible polynomial over \( K \).
-Prove that there is \( g\in K[t] \) and a non-negative \( n \) such that \( f(t)=g\left(t^{p^n}\right) \) and \( g \) is  an irreducible and separable polynomial.
+Prove that there is \( g\in K[t] \) and a non-negative \( n \) such that \( f(t)=g\left(t^{p^n}\right) \) and \( g \) is an irreducible and separable polynomial.
 \end{exercise}
 \begin{solution}
 
 \end{solution}
-\pagebreak
 
-\begin{exercise}
+\begin{exercise} % PROBLEM 8.4
   Prove that \( \prod_{\alpha\in \Fq^*} \alpha = -1 \)
 \end{exercise}
 \begin{solution}
 
 \end{solution}
-\pagebreak
 
 \stepcounter{exercise}
-\begin{subexercise}
+\begin{subexercise} % PROBLEM 8.5.1
   Let \( \alpha\in\Fq \) and \( \alpha=\beta-\beta^p \) for some \( \beta\in\Fq \).
   Prove that \( \Tr \alpha = 0 \).
 \end{subexercise}
 \begin{solution}
 
 \end{solution}
-\pagebreak
 
-\begin{subexercise}
+\begin{subexercise} % PROBLEM 8.5.2
 Let \( \alpha\in\Fq \) and \( \alpha=\gamma^{1-p} \) for some nonzero \( \gamma\in\Fq \).
 Prove that \( \Norm \alpha = 1 \).
 \end{subexercise}
 \begin{solution}
 
 \end{solution}
-\pagebreak
 
-\begin{subexercise}
+\begin{subexercise} % PROBLEM 8.5.3
   Let \( \alpha\in\Fp \sseq \FF{p^n} \).
   Prove that \( \Tr \alpha = n\alpha \).
 \end{subexercise}
 \begin{solution}
 
 \end{solution}
-\pagebreak
 
-\begin{subexercise}
+\begin{subexercise} % PROBLEM 8.5.4
   Let \( \alpha\in\Fp \sseq \FF{p^n} \).
   Prove that \( \Norm \alpha = \alpha^n \).
 \end{subexercise}
