@@ -21,11 +21,11 @@
   \end{enumerate}
 \end{exercise}
 \begin{solution}
-  Let \( f = \lprod_{i=0}^{d}(t-\alpha_i)^{r_i} \) where \( \llist{\alpha}{1}{d} \) are roots of \( f \) and \( r_i\in \N \) for all \( i \).
+  % Let \( f = \prod_{i=0}^{d}(t-\alpha_i)^{r_i} \) where \( \llist{\alpha}{1}{d} \) are roots of \( f \) and \( r_i\in \N \) for all \( i \).
 
   ((i)\( \imp \)(ii)) Suppose \( f \in K[t]\setminus K \) has a repeated root in \( L \).
-  That is, \( f = \lprod_{i=0}^{d}(t-\alpha_i)^{r_i} \) where \( \llist{\alpha}{1}{d} \in L \) are roots of \( f \), \( r_j = n \geq 2 \) for some \( j \), and without loss of generality we can say \( j=0 \).
-  Then \( f=gh \) over \( L \) where \( g,h\in L[t]\setminus L \) of strictly smaller degree such that \( g=(t-\alpha_0)^n \) and \( h=\lprod_{i=1}^{d}(t-\alpha_i)^{r_i} \), whence
+  That is, \( f = \prod_{i=0}^{d}(t-\alpha_i)^{r_i} \) where \( \llist{\alpha}{0}{d} \in L \) are roots of \( f \), \( r_j = n \geq 2 \) for some \( j \), and without loss of generality we can say \( j=0 \).
+  Then \( f=gh \) over \( L \) where \( g,h\in L[t]\setminus L \) of strictly smaller degree such that \( g=(t-\alpha_0)^n \) and \( h=\prod_{i=1}^{d}(t-\alpha_i)^{r_i} \), whence
   \begin{align*}
   \mcD f &= \mcD(g)h + g\mcD(h)\\
          &= n(t-\alpha_0)^{n-1}h + (t-\alpha_0)^{n}h' \\
@@ -34,10 +34,10 @@
   Thus \( f(\alpha_0) = \mcD f(\alpha_0) = 0 \).
 
   ((i)\( \pmi \)(ii)) Suppose \( f \in K[t]\setminus K \) does \it{not} have repeated a root in \( L \).
-  That is, \( f = \lprod_{i=0}^{d}(t-\alpha_i) \) where \( \llist{\alpha}{0}{d} \in L \) are distinct roots of \( f \).
+  That is, \( f = \prod_{i=0}^{d}(t-\alpha_i) \) where \( \llist{\alpha}{0}{d} \in L \) are distinct roots of \( f \).
   Let \( R_f = \{\llist{\alpha}{0}{d}\} \) be the set of all roots of \( f \).
   Then it is easy to see that \begin{align*}
-    \mcD f(t) = \sum_{i=0}^{d}\left(\prod_{j\neq i} (t-\alpha_j)\right) \qimp \mcD f(\alpha_k) = \prod_{j\neq k} (\alpha_k-\alpha_j) \neq 0, \quad\forall \alpha_k\in R_f
+    \mcD f(t) = \sum_{i=1}^{d}\left(\prod_{j\neq i} (t-\alpha_j)\right) \qimp \mcD f(\alpha_k) = \prod_{j\neq k} (\alpha_k-\alpha_j) \neq 0, \quad\forall \alpha_k\in R_f
   \end{align*}
   since \( \alpha_j\neq \alpha_k \) for all \( j\neq k \), so \( \not\exists \alpha\in L \) such that \( 0=f(\alpha)=(\mcD f)(\alpha) \).
 
@@ -47,7 +47,7 @@
   Thus \( \exists\mak\in K[t] \), and by theorem we have that \( \mak\divs f \) and \( \mak \divs \mcD f \).
 
   ((iii)\( \imp \)(ii)) Suppose \( \exists g\in K[t] \) with \( \deg g \geq 1 \) such that \( g \) divides both \( f \) and \( \mcD f \).
-  We know that \( f = \lprod_{i=0}^{d}(t-\alpha_i)^{r_i} \) where \( \llist{\alpha}{1}{d} \in L \) are roots of \( f \) and \( r_i \in \N \) for all \( i \).
+  We know that \( f = \prod_{i=0}^{d}(t-\alpha_i)^{r_i} \) where \( \llist{\alpha}{0}{d} \in L \) are roots of \( f \) and \( r_i \in \N \) for all \( i \).
   Thus for \( g \) to divide \( f \) it must be divisible by some factor \( (t-\alpha_j) \) of \( f \) for some \( j \).
   It follows that \( \mcD f \) must also be divisible by \( (t-\alpha_j) \), whence \( \alpha_j \) is a root of both \( \mcD f \tand f \).
 
@@ -59,14 +59,14 @@ Let \( K \) be a field, \( \char K = p > 0 \) and \( f\in K[t^p] \) is an irredu
 Prove that \( f \) is inseparable.
 \end{exercise}
 \begin{solution}
-  Suppose \( f\in K[t^p] \).
-  Then \( f = \lsum_{i=0}^{d} a_i t^{ip} \).
+  Suppose \( f = \sum_{i=0}^{d} a_i t^{ip} \in K[t^p] \).
+  It follows that \( \mcD f = \sum_{i=1}^{d} a_i pi t^{i(p-1)} = p\sum_{i=1}^{d} a_i i t^{i(p-1)} = 0 \).
 
 \end{solution}
 
 \begin{exercise} % PROBLEM 8.3
 Let \( K \) be a field, \( \char K = p > 0 \) and \( f\in K[t^p] \) is an irreducible polynomial over \( K \).
-Prove that there is \( g\in K[t] \) and a non-negative \( n \) such that \( f(t)=g\left(t^{p^n}\right) \) and \( g \) is an irreducible and separable polynomial.
+Prove that if there is \( g\in K[t] \) and a non-negative \( n \) such that \( f(t)=g\left(t^{p^n}\right) \) and \( g \) is an irreducible and separable polynomial.
 \end{exercise}
 \begin{solution}
 

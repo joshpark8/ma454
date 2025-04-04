@@ -14,12 +14,11 @@
 \end{tdefinition}
 
 \begin{ttheorem}
-  Let \( f\in K[t]\setminus K \), and let \( L:K \) be a \sfe~for \( f \).
-  Assume that \( K\sseq L \).
+  Let \( f\in K[t]\setminus K \), and let \( L:K \) be a \sfe~for \( f \) with \( K\sseq L \).
   Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
-    \item The polynomial \( f \) has a repeated root over \( L \);
-    \item There is some \( \alpha\in L \) for which \( f(\alpha)=0=(\mcD f)(\alpha) \);
-    \item There is some \( g\in K[t] \) having the property that \( \deg g \geq 1 \) and \( g \) divides both \( f \) and \( \mcD f \).
+    \item \( f \) has a repeated root over \( L \);
+    \item There exists \( \alpha\in L \tst f(\alpha)=0=(\mcD f)(\alpha) \);
+    \item There exists \( g\in K[t] \) with \( \deg g \geq 1 \tst g \divs f \tand g\divs\mcD f \).
   \end{enumerate}
 \end{ttheorem}
 
@@ -28,13 +27,13 @@
 \end{tdefinition}
 
 \begin{ttheorem}
-  Suppose that \( f\in K[t] \) is irreducible over \( K \).
-  Then \( f \) is inseparable over \( K \) if and only if \( \char K=p>0 \), and \( f \in K[t^p]\), which is to say that \( f=a_0+a_1t^p+\cdots+a_mt^{mp} \), for some \( \llist{a}{0}{m}\in K \).
+  Suppose \( f\in K[t] \) is irreducible over \( K \).
+  Then \( f \) is inseparable over \( K \iff \char K=p>0 \tand f \in K[t^p]\).
 \end{ttheorem}
 
 \begin{tdefinition}[Frobenius map]
   Suppose that \( \char K = p > 0 \).
-  The \ul{Frobenius map} \( \phi:K\to K \) is defined by \( \phi(\alpha)=\alpha^p \).
+  The \ul{Frobenius map} \( \vphi:K\to K \) is defined by \( \vphi(\alpha)=\alpha^p \).
 \end{tdefinition}
 
 \begin{ttheorem}
@@ -43,16 +42,16 @@
 \end{ttheorem}
 
 \begin{tdefinition}[Fixed field]
-  Let \( L:K \) be a field extension.
-  When \( G \) is a subgroup of \( \Aut(L) \), we define the fixed field of \( G \) to be \begin{align*}
+  Let \( L:K \) be a field extension and \( G \sgp \Aut(L) \).
+  We define the \ul{fixed field of \( G \)} as \begin{align*}
     \Fix{L}{G} = \lt\{ \alpha\in L : \sigma(\alpha) = \alpha \text{ for all } \sigma\in G \rt\}.
   \end{align*}
 \end{tdefinition}
 
 \begin{ttheorem}
   Suppose that \( \char K = p>0 \), and let \( F \) be the prime subfield of \( K \).
-  Let \( \phi:K\to K \) denote the Frobenius map.
-  Then \( \phi \) is an injective homomorphism, and \( \Fix{\phi}{K} = F \).
+  Let \( \vphi:K\to K \) denote the Frobenius map.
+  Then \( \vphi \) is an injective homomorphism, and \( \Fix{\vphi}{K} = F \).
 \end{ttheorem}
 
 \begin{tcorollary}
