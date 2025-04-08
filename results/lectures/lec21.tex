@@ -6,5 +6,27 @@
 
 
 \begin{document}
+\section{Fundamental Theorem of Galois Theory II}
+\begin{ttheorem}\label{tm:gal-cor}
+  \begin{enumerate}
+    \item Let \( L:K \) be a Galois extension with \( G=\Gal_K L \).
+      Then \begin{align*}
+        \forall P\in \mcI(K,L), \quad &L^{G_P} = P \\
+        \forall H\in \mcS(G), \quad &G_{L^H} = H.
+      \end{align*}
+      Also, \( P_1\sseq P_2 \iff G_{P_1}\ge G_{P_2} \) and \( H_1 \le H_2 \iff L^{H_1}\supseteq L^{H_2} \) (by thm 1 lec 19)
+    \item For \( P\in I(K,L) \) suppose \( P:K \) is a normal extension.
+      Then \( G_P\pnsgp G \) and \( \Gal_K P \iso \qg{G}{G_P} \).
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{tlemma}
+  Let \( K-P-L \) be a tower of fields and \( g\in \Aut L \).
+  Then \( G_{gP} = gG_Pg\inv \).
+\end{tlemma}
+
+% \begin{proof}[Proof of Theorem \ref{tm:gal-cor} part 2.]
+
+% \end{proof}
 
 \end{document}
