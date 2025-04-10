@@ -2,9 +2,9 @@
 \setlength{\headheight}{22.50113pt}
 \addtolength{\topmargin}{-10.50113pt}
 
-\input{preamble}
-\input{letterfont}
-\input{macros}
+\usepackage{preamble}
+\usepackage{letterfont}
+\usepackage{macros}
 
 \fancyhead[L]{\bd{Josh Park \\ Prof. Shkredov}}
 \fancyhead[C]{\bd{MA 45401-H01 -- Galois Theory Honors \\ Homework \thesection~(Apr 4)}}
@@ -13,7 +13,7 @@
 \begin{document}
 \setcounter{section}{8} % HW NUMBER
 \begin{exercise}
-  Let \( K\sseq L \) be a \sfe~for some \( f\in K[t]\setminus K \).
+  Let \( K\subeq L \) be a \sfe~for some \( f\in K[t]\setminus K \).
   Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
     \item \( f \) has a repeated root over \( L \);
     \item \( \exists \alpha\in L \) s.t. \( 0=f(\alpha)=(\mcD f)(\alpha) \);
@@ -25,7 +25,7 @@
 \pagebreak
 
 \begin{exercise}
-Let \( K \) be a field, \( \char K = p > 0 \) and \( f\in K[t^p] \) is an irreducible polynomial over \( K \).
+Let \( K \) be a field, \( \chr K = p > 0 \) and \( f\in K[t^p] \) is an irreducible polynomial over \( K \).
 Prove that \( f \) is inseparable.
 \end{exercise}
 \begin{solution}
@@ -34,7 +34,7 @@ Prove that \( f \) is inseparable.
 \pagebreak
 
 \begin{exercise}
-Let \( K \) be a field, \( \char K = p > 0 \) and \( f\in K[t^p] \) is an irreducible polynomial over \( K \).
+Let \( K \) be a field, \( \chr K = p > 0 \) and \( f\in K[t^p] \) is an irreducible polynomial over \( K \).
 Prove that there is \( g\in K[t] \) and a non-negative \( n \) such that \( f(t)=g\left(t^{p^n}\right) \) and \( g \) is  an irreducible and separable polynomial.
 \end{exercise}
 \begin{solution}
@@ -70,7 +70,7 @@ Prove that \( \Norm \alpha = 1 \).
 \pagebreak
 
 \begin{subexercise}
-  Let \( \alpha\in\Fp \sseq \FF{p^n} \).
+  Let \( \alpha\in\Fp \subeq \FF{p^n} \).
   Prove that \( \Tr \alpha = n\alpha \).
 \end{subexercise}
 \begin{solution}
@@ -79,7 +79,7 @@ Prove that \( \Norm \alpha = 1 \).
 \pagebreak
 
 \begin{subexercise}
-  Let \( \alpha\in\Fp \sseq \FF{p^n} \).
+  Let \( \alpha\in\Fp \subeq \FF{p^n} \).
   Prove that \( \Norm \alpha = \alpha^n \).
 \end{subexercise}
 \begin{solution}

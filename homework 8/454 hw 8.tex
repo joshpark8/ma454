@@ -1,8 +1,8 @@
 \documentclass{article}
 
-\input{preamble}
-\input{letterfont}
-\input{macros}
+\usepackage{preamble}
+\usepackage{letterfont}
+\usepackage{macros}
 
 \fancyhead[L]{\bd{Josh Park \\ Prof. Ilya Shkredov}}
 \fancyhead[C]{\bd{MA 45401-H01 -- Galois Theory Honors \\ Homework \thesection~(Apr 4)}}
@@ -12,7 +12,7 @@
 \setcounter{section}{8} % HW NUMBER
 \begin{exercise} % PROBLEM 8.1
   \label{qs:one}
-  Let \( K\sseq L \) be a \sfe~for some \( f\in K[t]\setminus K \).
+  Let \( K\subeq L \) be a \sfe~for some \( f\in K[t]\setminus K \).
   Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
     \item \( f \) has a repeated root over \( L \);
     \item \( \exists \alpha\in L \) s.t. \( 0=f(\alpha)=(\mcD f)(\alpha) \);
@@ -53,7 +53,7 @@ Thus we have that (i) \iff~(ii) \iff~(iii).
 
 \begin{exercise} % PROBLEM 8.2
   \label{qs:two}
-Let \( K \) be a field, \( \char K = p > 0 \) and \( f\in K[t^p] \) is an irreducible polynomial over \( K \).
+Let \( K \) be a field, \( \chr K = p > 0 \) and \( f\in K[t^p] \) is an irreducible polynomial over \( K \).
 Prove that \( f \) is inseparable.
 \end{exercise}
 \begin{solution}
@@ -63,7 +63,7 @@ Prove that \( f \) is inseparable.
 \end{solution}
 
 \begin{exercise} % PROBLEM 8.3
-Let \( K \) be a field, \( \char K = p > 0 \) and \( f\in K[t^p] \) is an irreducible polynomial over \( K \).
+Let \( K \) be a field, \( \chr K = p > 0 \) and \( f\in K[t^p] \) is an irreducible polynomial over \( K \).
 Prove that there is \( g\in K[t] \) and a non-negative \( n \) such that \( f(t)=g\left(t^{p^n}\right) \) and \( g \) is an irreducible and separable polynomial.
 \end{exercise}
 \begin{solution}
@@ -139,7 +139,7 @@ Thus, \( \Norm \alpha = \frac{\gamma}{\gamma^{p^n}} \) and we know \( \gamma^{p^
 
 \begin{subexercise} % PROBLEM 8.5.3
   \label{qs:five-three}
-  Let \( \alpha\in\Fp \sseq \FF{p^n} \).
+  Let \( \alpha\in\Fp \subeq \FF{p^n} \).
   Prove that \( \Tr \alpha = n\alpha \).
 \end{subexercise}
 \begin{solution}
@@ -148,7 +148,7 @@ Thus \( \Tr \alpha = \sum_{i=0}^{n-1} \alpha^{p^i} = \sum_{i=0}^{n-1} \alpha = n
 \end{solution}
 
 \begin{subexercise} % PROBLEM 8.5.4
-  Let \( \alpha\in\Fp \sseq \FF{p^n} \).
+  Let \( \alpha\in\Fp \subeq \FF{p^n} \).
   Prove that \( \Norm \alpha = \alpha^n \).
 \end{subexercise}
 \begin{solution}

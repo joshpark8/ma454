@@ -1,8 +1,8 @@
 \documentclass[a4paper]{article}
 
-\input{preamble.tex}
-\input{letterfont.tex}
-\input{macros.tex}
+\usepackage{preamble}
+\usepackage{letterfont}
+\usepackage{macros}
 
 \begin{document}
 \section{extra}
@@ -15,11 +15,11 @@
 \end{tproposition}
 
 \begin{tproposition}
-  Suppose \( L: K \) is a field extension with \( K \sseq L \), and \( \alpha\in L \).  Then \( E_\alpha \) is a ring \homo.
+  Suppose \( L: K \) is a field extension with \( K \subeq L \), and \( \alpha\in L \).  Then \( E_\alpha \) is a ring \homo.
 \end{tproposition}
 
 \begin{tproposition}
-  Let \( L : K \) be a field extension with \( K \sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
+  Let \( L : K \) be a field extension with \( K \subeq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
   Then \begin{align*}
     I = ker(E_\alpha) = {f \in K[t] : f(\alpha) = 0}
   \end{align*}
@@ -39,16 +39,16 @@
 \end{ttheorem}
 
 \begin{tproposition}
-  Let \( L:K \) be a field extension with \( K\sseq L \).
-  Let \( A\sseq L \) and \begin{align*}
-    \mcC=\lt\{ C\sseq A : C \text{ is a finite set} \rt\}.
+  Let \( L:K \) be a field extension with \( K\subeq L \).
+  Let \( A\subeq L \) and \begin{align*}
+    \mcC=\lt\{ C\subeq A : C \text{ is a finite set} \rt\}.
   \end{align*}
   Then \( K(A)=\cup_{C\in\mcC}K(C) \).
   Further, when \( \fdeg{K(C)}{K}<\infty \) for all \( C\in \mcC \), then \( K(A):K \) is an algebraic extension.
 \end{tproposition}
 
 \begin{tproposition}
-  Let \( L : K \) be a field extension with \( K \sseq L \), and suppose that \( \alpha\in L \).
+  Let \( L : K \) be a field extension with \( K \subeq L \), and suppose that \( \alpha\in L \).
   Then \begin{align*}
     K[\alpha] = \lt\{ c_0 + c_1\alpha+\cdots+c_d \alpha^d : d\in \ZZ{\leq 0},\ c_0,\ldots,c_d\in K \rt\}
   \end{align*}
@@ -58,7 +58,7 @@
 \end{tproposition}
 
 \begin{tproposition}
-  Let \( L : K \) be a field extension with \( K \sseq L \), and suppose that \( \alpha\in L \).
+  Let \( L : K \) be a field extension with \( K \subeq L \), and suppose that \( \alpha\in L \).
   Then \( \alpha \) is algebraic over \( K \) if and only if \( \fdeg{K(\alpha)}{K}<\infty \).
 \end{tproposition}
 
@@ -66,12 +66,12 @@
 \begin{tdefinition}[Characteristic]
   Let \( K \) be a field with additive identity \( 0_K \) and multiplicative identity \( 1_K \).
   When \( n\in \N \), we write \( n\cdot 1_K \) to denote \( 1_K+\ldots+ 1_K \) (as an \( n \)-fold sum).
-  We define the \ul{characteristic} of \( K \), denoted by \( \char K \), to be the smallest positive integer \( m \) with the property that \( m\cdot 1_K = 0_K \);
+  We define the \ul{characteristic} of \( K \), denoted by \( \chr K \), to be the smallest positive integer \( m \) with the property that \( m\cdot 1_K = 0_K \);
   if no such integer \( m \) exists, we define the characteristic of K to be 0.
 \end{tdefinition}
 
 \begin{tproposition}
-  Let \( K \) be a field with \( \char{K} > 0 \). Then \( \char K \) is equal to a prime number \( p \), and then for all \( x\in K \) one has \( p\cdot x=0 \).
+  Let \( K \) be a field with \( \chr{K} > 0 \). Then \( \chr K \) is equal to a prime number \( p \), and then for all \( x\in K \) one has \( p\cdot x=0 \).
 \end{tproposition}
 
 \begin{ttheorem}[Localisation principle]
@@ -96,12 +96,12 @@
 \end{ttheorem}
 
 \begin{tcorollary}
-  Suppose that \( L:F \) and \( L:F' \) are finite extensions with \( F\sseq L\ tand F'\sseq L \), and further that \( \psi:F\to F' \) is an isomorphism.
+  Suppose that \( L:F \) and \( L:F' \) are finite extensions with \( F\subeq L\ tand F'\subeq L \), and further that \( \psi:F\to F' \) is an isomorphism.
   Then there are at most \( \fdeg{L}{F} \) ways to extend \( \psi \) to a \homo~from \( L \) into \( L \).
 \end{tcorollary}
 
 \begin{tcorollary}
-  Let \( L:K \) be a finite extension with \( K\sseq L \).
+  Let \( L:K \) be a finite extension with \( K\subeq L \).
   Suppose that \( \llist{\alpha}{1}{n}\in L \) and put \( L=K(\llist{\alpha}{1}{n}) \).
   Let \( K_0 = K \), and for \( 1\leq i\leq n \), let \( K_i = K_{i-1}(\alpha_i) \).
   Then every automorphism \( \tau \in \Gal(L:K) \) corresponds to a sequence of \homo s \( \llist{\sigma}{1}{n} \), having the property that \( \sigma_0:K\to L \) is the inclusion map, one has \( \sigma_n=\tau \), and for \( 1\leq i\leq n \), the map \( \sigma_i : K_i\to L \) is a \homo~extending \( \sigma_{i-1}:K_{i-1}\to L \).
@@ -119,7 +119,7 @@
 % \subsection{Properties of algebraic closures}
 
 \begin{tcorollary}
-  Suppose that \( \Kbar \) is an algebraic closure of \( K \), and assume that \( K\sseq \Kbar \).
+  Suppose that \( \Kbar \) is an algebraic closure of \( K \), and assume that \( K\subeq \Kbar \).
   Take \( \alpha\in \Kbar \) and suppose that \( \sigma:K\to \Kbar \) is a homomorphism.
   Then the number of distinct roots of \( \mu_\alpha^K \) in \( \Kbar \) is equal to the number of distinct roots of \( \sigma(\mu_\alpha^K) \) in \( \Kbar \).
 \end{tcorollary}
@@ -131,17 +131,17 @@
 
 \begin{tproposition}
   If \( L:K \) is an algebraic extension, then \( \Lbar \) is an algebraic closure of \( K \), and hence \( \Lbar\iso\Kbar \).
-  If in addition \( K\sseq L\sseq \Lbar \), then we can take \( \Kbar = \Lbar \).
+  If in addition \( K\subeq L\subeq \Lbar \), then we can take \( \Kbar = \Lbar \).
 \end{tproposition}
 
 \section{Splitting field extensions}
 \begin{tdefinition}[Splitting field, \sfe]
   Suppose that \( L:K \) is a field extension relative to the embedding \( \vphi : K\to L \), and \( f\in K[t]\setminus K \). \begin{enumerate}[label=(\roman*)]
     \item We say that \ul{\( f \) splits over \( L \)} if \( \vphi(f)=\lambda(t-\alpha_1)\cdots(t-\alpha_n) \), for some \( \lambda\in \vphi(K) \) and \( \llist{\alpha}{1}{n}\in L \).
-    \item Suppose that \( f \) splits over \( L \), and let \( M \) be a field with \( \vphi(K)\sseq M\sseq L \).
+    \item Suppose that \( f \) splits over \( L \), and let \( M \) be a field with \( \vphi(K)\subeq M\subeq L \).
       We say that \ul{\( M:K \) is a splitting field extension for \( f \)} if \( M \) is the smallest subfield of \( L \) containing \( \vphi(K) \) over which \( f \) splits.
-    \item More generally, suppose that \( S\sseq K[t]\setminus K \) has the property that every \( f\in S \) splits over \( L \).
-      Let \( M \) be a field with \( \vphi(K)\sseq M\sseq L \).
+    \item More generally, suppose that \( S\subeq K[t]\setminus K \) has the property that every \( f\in S \) splits over \( L \).
+      Let \( M \) be a field with \( \vphi(K)\subeq M\subeq L \).
       We say that \ul{M:K is a \sfe~for \( S \)} if \( M \) is the smallest subfield of \( L \) containing \( \vphi(K) \) over which every polynomial \( f\in S \) splits.
   \end{enumerate}
 \end{tdefinition}
@@ -158,7 +158,7 @@
 \end{tproposition}
 
 \begin{tproposition}
-  Given \( S\sseq K[t]\setminus K \), there exists a \sfe~\( L:K \) for \( S \), and \( L:K \) is an algebraic extension.
+  Given \( S\subeq K[t]\setminus K \), there exists a \sfe~\( L:K \) for \( S \), and \( L:K \) is an algebraic extension.
   More explicitly, suppose that \( \Kbar \) is an algebraic closure of \( K \), and that \( \Kbar:K \) is an extension relative to the embedding \( \vphi:\Kbar\to K \). Let
   \begin{align*}
     A=\lt\{ \alpha\in \Kbar : \alpha\text{ is a root of \( \vphi(f) \), for some } f\in S \rt\}.
@@ -173,7 +173,7 @@
 \end{ttheorem}
 
 \begin{ttheorem}
-  Suppose that \( S\sseq K[t]\setminus K \), and suppose that \( L:K \) and \( M:K \) are \sfe s for \( S \).
+  Suppose that \( S\subeq K[t]\setminus K \), and suppose that \( L:K \) and \( M:K \) are \sfe s for \( S \).
   Then \( L\iso M\tand \fdeg{L}{K}=\fdeg{M}{K} \).
 \end{ttheorem}
 
@@ -188,11 +188,11 @@
 % \subsection{Normal closures}
 \begin{ttheorem}
   Suppose that \( M:L:K \) is a tower of field extensions having the property that \( M:K \) is normal.
-  Assume that \( K\sseq L\sseq M \).
+  Assume that \( K\subeq L\subeq M \).
   Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
     \item the field extension \( L:K \) is normal;
     \item any \( K \)-\homo~of \( L \) into \( M \) is an automorphism of \( L \);
-    \item whenever \( \sigma:M\to M \) is a \( K \)-automorphism, then \( \sigma(L)\sseq L \).
+    \item whenever \( \sigma:M\to M \) is a \( K \)-automorphism, then \( \sigma(L)\subeq L \).
   \end{enumerate}
 \end{ttheorem}
 
@@ -226,7 +226,7 @@
 \end{ttheorem}
 
 \begin{ttheorem}
-  Suppose tht \( E:K \) and \( F:K \) are finite extensions with \( E\sseq L \) and \( F\sseq L \), where \( L \) is a field.
+  Suppose tht \( E:K \) and \( F:K \) are finite extensions with \( E\subeq L \) and \( F\subeq L \), where \( L \) is a field.
   \begin{enumerate}[label=(\alph*)]
     \item When \( E:K \) is separable, then so too is \( EF:F \);
     \item When \( E:K \) and \( F:K \) are both separable, then so too are \( EF:K \) and \( E\cap F:K \).
@@ -246,12 +246,12 @@
 
 \section{Fixed fields and Galois extensions}
 \begin{tproposition}
-  Let \( K,\ M \tand L \) be fields with \( K\sseq L \) and \( M\sseq L \).
+  Let \( K,\ M \tand L \) be fields with \( K\subeq L \) and \( M\subeq L \).
   Suppose that \( G\tand H \) are subgroups of \( \Aut(L) \).
   Then one has the following: \begin{enumerate}[label=(\alph*)]
-    \item if \( K\sseq M \), then \( \Gal(L:K) \geqslant \Gal(L:M) \);
-    \item if \( G\sgp H \), then \( \Fix{L}{G} \supseteq \Fix{L}{H} \);
-    \item one has \( K\sseq \Fix{L}{\Gal(L:K)} \);
+    \item if \( K\subeq M \), then \( \Gal(L:K) \geqslant \Gal(L:M) \);
+    \item if \( G\sgp H \), then \( \Fix{L}{G} \supeq \Fix{L}{H} \);
+    \item one has \( K\subeq \Fix{L}{\Gal(L:K)} \);
     \item one has \( G\sgp\Gal(L:\Fix{L}{G}) \);
     \item one has \( \Gal(L:K) = \Gal(L:\Fix{L}{\Gal(L:K)}) \);
     \item one has \( \Fix{L}{G} = \Fix{L}{\Gal(L:\Fix{L}{G})} \).
@@ -322,7 +322,7 @@
 \end{ttheorem}
 
 \begin{tlemma}
-  Suppose \( \char K = 0 \) and \( L:K \) is a radical extension.
+  Suppose \( \chr K = 0 \) and \( L:K \) is a radical extension.
   Then there exists an extension \( N:L \) such that \( N:K \) is normal and radical.
 \end{tlemma}
 
@@ -331,25 +331,25 @@
 \end{tdefinition}
 
 \begin{tlemma}
-  Suppose that \( \char K = 0 \) and let \( p \) be a prime number.
+  Suppose that \( \chr K = 0 \) and let \( p \) be a prime number.
   Also, let \( L:K \) be a \sfe~for \( t^p-1 \).
   Then \( \Gal(L:K) \) is cyclic, and hence \( L:K \) is a cyclic extension.
 \end{tlemma}
 
 \begin{tlemma}
-  Let \( \char K = 0 \) and suppose that \( n \) is an integer such that \( t^n-1 \) splits over \( K \).
+  Let \( \chr K = 0 \) and suppose that \( n \) is an integer such that \( t^n-1 \) splits over \( K \).
   Let \( L:K \) be a \sfe~for \( t^n-a \), for some \( a\in K \).
   Then \( \Gal(L:K) \) is abelian.
 \end{tlemma}
 
 \begin{ttheorem}
-  Let \( \char K = 0 \) and suppose that \( L:K \) is Galois.
+  Let \( \chr K = 0 \) and suppose that \( L:K \) is Galois.
   Suppose that there is an extension \( M:L \) with the property that \( M:K \) is radical.
   Then \( \Gal(L:K) \) is soluble.
 \end{ttheorem}
 
 \begin{tcorollary}
-  Suppose that \( \char K = 0 \).
+  Suppose that \( \chr K = 0 \).
   Then \( \Gal_K(f) \) is soluble whenever \( f\in K[t] \) is soluble by radicals.
 \end{tcorollary}
 
@@ -358,14 +358,14 @@
 \end{tcorollary}
 
 \begin{tlemma}
-  Let \( \char K = 0 \), and suppose that \( L:K \) is a cyclic extension of degree \( n \).
+  Let \( \chr K = 0 \), and suppose that \( L:K \) is a cyclic extension of degree \( n \).
   Suppose also that \( K \) contains a primitive \( n \)-th root of 1.
   Then there exists \( \theta \in K \) having the property that \( t^n -\theta \) is irreducible over \( K \), and \( L:K \) is a \sf~for \( t^n-\theta \).
   Further, if \( \beta \) is a root of \( t^n-\theta \) over \( L \), then \( L=K(\beta) \).
 \end{tlemma}
 
 \begin{ttheorem}
-  Let \( \char K = 0 \), and suppose that \( f\in K[t]\setminus K \).
+  Let \( \chr K = 0 \), and suppose that \( f\in K[t]\setminus K \).
   Then \( f \) is solvable by radicals whenever \( \Gal_K(f) \) is soluble.
 \end{ttheorem}
 

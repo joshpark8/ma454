@@ -1,8 +1,8 @@
 \documentclass[a4paper]{article}
 
-\input{preamble.tex}
-\input{letterfont.tex}
-\input{macros.tex}
+\usepackage{preamble}
+\usepackage{letterfont}
+\usepackage{macros}
 
 % \renewcommand{\arraystretch}{1.25} % space out table rows
 % \setlength{\parindent}{0pt}
@@ -102,6 +102,6 @@
 
 \begin{tcorollary}
   Suppose that \( L:K \) is a field extension for which \( [L: K] \) is a prime number.
-  Then whenever \( L : M : K \) is a tower of field extensions with \( K \sseq M \sseq L \), one has either \( M= L \tor M= K \).
+  Then whenever \( L : M : K \) is a tower of field extensions with \( K \subeq M \subeq L \), one has either \( M= L \tor M= K \).
 \end{tcorollary}
 \end{document}

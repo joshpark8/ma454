@@ -1,8 +1,8 @@
 \documentclass[a4paper]{article}
 
-\input{preamble.tex}
-\input{letterfont.tex}
-\input{macros.tex}
+\usepackage{preamble}
+\usepackage{letterfont}
+\usepackage{macros}
 
 
 \begin{document}
@@ -14,7 +14,7 @@
 \end{tdefinition}
 
 \begin{ttheorem}
-  Let \( f\in K[t]\setminus K \), and let \( L:K \) be a \sfe~for \( f \) with \( K\sseq L \).
+  Let \( f\in K[t]\setminus K \), and let \( L:K \) be a \sfe~for \( f \) with \( K\subeq L \).
   Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
     \item \( f \) has a repeated root over \( L \);
     \item There exists \( \alpha\in L \tst f(\alpha)=0=(\mcD f)(\alpha) \);
@@ -28,16 +28,16 @@
 
 \begin{ttheorem}
   Suppose \( f\in K[t] \) is irreducible over \( K \).
-  Then \( f \) is inseparable over \( K \iff \char K=p>0 \tand f \in K[t^p]\).
+  Then \( f \) is inseparable over \( K \iff \chr K=p>0 \tand f \in K[t^p]\).
 \end{ttheorem}
 
 \begin{tdefinition}[Frobenius map]
-  Suppose that \( \char K = p > 0 \).
+  Suppose that \( \chr K = p > 0 \).
   The \ul{Frobenius map} \( \vphi:K\to K \) is defined by \( \vphi(\alpha)=\alpha^p \).
 \end{tdefinition}
 
 \begin{ttheorem}
-  Suppose that \( \char K = p > 0 \), and put \( F=\lt\{ c\cdot 1_K : c\in \Z \rt\} \).
+  Suppose that \( \chr K = p > 0 \), and put \( F=\lt\{ c\cdot 1_K : c\in \Z \rt\} \).
   Then \( F \) is a subfield (called the prime subfield) of \( K \), and \( F\iso \qg{\Z}{p\Z} \).
 \end{ttheorem}
 
@@ -49,28 +49,28 @@
 \end{tdefinition}
 
 \begin{ttheorem}
-  Suppose that \( \char K = p>0 \), and let \( F \) be the prime subfield of \( K \).
+  Suppose that \( \chr K = p>0 \), and let \( F \) be the prime subfield of \( K \).
   Let \( \vphi:K\to K \) denote the Frobenius map.
   Then \( \vphi \) is an injective homomorphism, and \( \Fix{\vphi}{K} = F \).
 \end{ttheorem}
 
 \begin{tcorollary}
-  Suppose that \( \char K = p > 0 \) and \( K \) is algebraic over its prime subfield.
+  Suppose that \( \chr K = p > 0 \) and \( K \) is algebraic over its prime subfield.
   Then the Frobenius map is an automorphism of \( K \).
 \end{tcorollary}
 
 \begin{tcorollary}
-  Suppose that \( \char K = p > 0 \) and \( K \) is algebraic over its prime subfield.
+  Suppose that \( \chr K = p > 0 \) and \( K \) is algebraic over its prime subfield.
   Then all polynomials in \( K[t] \) are separable over \( K \).
 \end{tcorollary}
 
 \begin{tcorollary}[**]
-  Suppose that \( \char K = 0 \).
+  Suppose that \( \chr K = 0 \).
   Then all polynomials in \( K[t] \) are separable over \( K \).
 \end{tcorollary}
 
 \begin{ttheorem}
-  Suppose that \( \char K = p > 0 \). Let \begin{align*}
+  Suppose that \( \chr K = p > 0 \). Let \begin{align*}
     f(t) = g(t^p) = a_0+a_1t^p+\cdots+a_{n-1}t^{(n-1)p}+t^{np}
   \end{align*}
   be a non-constant monic polynomial over \( K \).

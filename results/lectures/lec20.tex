@@ -1,14 +1,19 @@
 \documentclass[a4paper]{article}
 
-\input{preamble.tex}
-\input{letterfont.tex}
-\input{macros.tex}
+\usepackage{preamble}
+\usepackage{letterfont}
+\usepackage{macros}
 
 \begin{document}
 \section{Fundamental Theorem of Galois Theory I}
 \begin{ttheorem}
-  Let \( L:K \) be a Galois extension and \( G=\Gal_K L \). Define \( \mcI(K,L) \) and \( \mcS(G) \) as the collection of all intermediate fields of \(L:K\) and the family of all subgroups of \( G \), respectively.
-  Then for all \( P\in \mcI(K,L) \) we have \( L^{G_P} = P \) and for all \( H\in \mcS(G) \) we have \( G_{L^H} = H \).
+  Let \( L:K \) be a Galois extension with \( G=\Gal_K L \).
+  Define \( \mcI(K,L) \) and \( \mcS(G) \) as the collection of all intermediate fields of \(L:K\) and the family of all subgroups of \( G \), respectively.
+  Then \begin{align*}
+    \forall P\in \mcI(K,L), \quad &L^{G_P} = P \\
+    \forall H\in \mcS(G), \quad &G_{L^H} = H.
+  \end{align*}
+  Also, \( P_1\subeq P_2 \iff G_{P_1}\ogp G_{P_2} \) and \( H_1 \sgp H_2 \iff L^{H_1}\supeq L^{H_2} \) (by Theorem 1 of Lecture 19)
 \end{ttheorem}
 % Let \(L:K\) be any extension and let \(G \subseteq \Aut(L)\).
 % Let \(\mathcal{I}(K,L)\) be the collection of all intermediate fields of \(L:K\) (i.e.\ all fields \(M\) with \(K \subseteq M \subseteq L\)),

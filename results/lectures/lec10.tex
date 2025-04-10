@@ -1,13 +1,13 @@
 \documentclass[a4paper]{article}
 
-\input{preamble.tex}
-\input{letterfont.tex}
-\input{macros.tex}
+\usepackage{preamble}
+\usepackage{letterfont}
+\usepackage{macros}
 
 \begin{document}
 \section{Algebraic Closure II}
 \begin{ttheorem}
-  Let \( L:K \) be an algebraic extension with \( K\sseq L \) and \( \vphi:K\to\Kbar \) be a \homo.
+  Let \( L:K \) be an algebraic extension with \( K\subeq L \) and \( \vphi:K\to\Kbar \) be a \homo.
   Then there exists an extension of \( \vphi \) to a homomorphism \( \psi:L\to\Kbar \).
 \end{ttheorem}
 
@@ -16,7 +16,7 @@
 \end{ttheorem}
 
 \begin{tcorollary}
-  Let \( L:K \) be an extension with \( K\sseq L \).
+  Let \( L:K \) be an extension with \( K\subeq L \).
   Suppose that \( g\in L[t] \) is irreducible over \( L \), and that \( g\divs f \) in \( L[t] \), where \( f\in K[t]\setminus \lt\{ 0 \rt\} \).
   The \( g \) divides a factor of \( f \) that is irreducible over \( K \).
 

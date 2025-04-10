@@ -1,8 +1,8 @@
 \documentclass[a4paper]{article}
 
-\input{preamble.tex}
-\input{letterfont.tex}
-\input{macros.tex}
+\usepackage{preamble}
+\usepackage{letterfont}
+\usepackage{macros}
 
 \begin{document}
 \section{Algebraic Closure I}
@@ -36,7 +36,7 @@ If every non-empty chain \( C \) in \( X \) has an upper bound in \( X \), then 
 \end{tcorollary}
 
 \begin{tlemma}
-  Let \( K \) be a field. Then there exists an algebraic extension \( E:K \), with \( K\sseq E \), having the property that \( E \) contains a root of every irreducible \( f\in K[t] \), and hence also every \( g\in K[t]\setminus K \).
+  Let \( K \) be a field. Then there exists an algebraic extension \( E:K \), with \( K\subeq E \), having the property that \( E \) contains a root of every irreducible \( f\in K[t] \), and hence also every \( g\in K[t]\setminus K \).
 \end{tlemma}
 
 \begin{ttheorem}[Existence of Algebraic Closures]
@@ -70,7 +70,7 @@ If every non-empty chain \( C \) in \( X \) has an upper bound in \( X \), then 
 \end{tdefinition}
 
 \begin{tlemma}
-  Suppose that \( L:K \) is a field extension with \( K\sseq L \), and that \( \tau:L\to L \) is a \( K \)-\homo.
+  Suppose that \( L:K \) is a field extension with \( K\subeq L \), and that \( \tau:L\to L \) is a \( K \)-\homo.
   Suppose that \( f\in K[t] \) has the property that \( \deg f \geq 1 \), and additionally that \( \alpha\in L \).
   \begin{enumerate}[label=(\roman*)]
     \item if \( f(\alpha) = 0 \), one has \( f(\tau(\alpha)) = 0 \);
@@ -80,7 +80,7 @@ If every non-empty chain \( C \) in \( X \) has an upper bound in \( X \), then 
 
 \begin{ttheorem}
   Let \( \sigma :K_1\to K_2 \) be a field isomorphism.
-  Suppose that \( L_i \) is a field with \( K_i\sseq L_i\ (i=1,2) \).
+  Suppose that \( L_i \) is a field with \( K_i\subeq L_i\ (i=1,2) \).
   Suppose also that \( \alpha\in L_1 \) is algebraic over \( K_1 \), and that \( \beta\in L_2 \) is algebraic over \( K_2 \).
   Then we can extend \( \sigma \) to an isomorphism \( \tau:K_1(\alpha)\to K_2(\beta) \) in such a manner that \( \tau(\alpha) = \beta \) if and only if \( m_\beta(K_2) = \sigma(m_\alpha(K_1)) \).
   \begin{center}
@@ -104,7 +104,7 @@ If every non-empty chain \( C \) in \( X \) has an upper bound in \( X \), then 
 \bd{Note:}\quad When \( \tau:K_1(\alpha)\to K_2(\beta) \) is a \homo, and \( \tau \) extends the \homo~\( \sigma:K_1\to K_2 \), then \( \tau \) is completely determined by \( \sigma \) and the value of \( \tau(\alpha) \).
 
 \begin{tcorollary}
-  Let \( L:M \) be a field extension with \( M\sseq L \). Suppose that \( \sigma:M\to L \) is a \homo, and \( \alpha\in L \) is algebraic over \( M \).
+  Let \( L:M \) be a field extension with \( M\subeq L \). Suppose that \( \sigma:M\to L \) is a \homo, and \( \alpha\in L \) is algebraic over \( M \).
   Then the number of ways we can extend \( \sigma \) to a \homo~\( \tau:M(\alpha)\to L \) is equal to the number of distinct roots of \( \sigma(m_\alpha(M)) \) that lie in \( L \).
 \end{tcorollary}
 

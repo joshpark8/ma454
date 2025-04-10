@@ -1,8 +1,8 @@
 \documentclass[a4paper]{article}
 
-\input{preamble.tex}
-\input{letterfont.tex}
-\input{macros.tex}
+\usepackage{preamble}
+\usepackage{letterfont}
+\usepackage{macros}
 
 \begin{document}
 \section{Algebraic Conjugates}
@@ -22,7 +22,7 @@
 \end{ttheorem}
 
 \begin{tdefinition}[Algebraic conjugate]
-  Suppose \( \alpha \) algebraic over \( K \) and \mak~factors as a product of linear polynomials over a field \( L\supseteq K \): \begin{align*}
+  Suppose \( \alpha \) algebraic over \( K \) and \mak~factors as a product of linear polynomials over a field \( L\supeq K \): \begin{align*}
     \mak(x) = (x-\alpha_1)\cdots(x-\alpha_n),\quad \llist{\alpha}{1}{n}\in L.
   \end{align*}
   Then \llist{\alpha}{1}{n} are \ul{algebraic conjugates} of \( \alpha \).

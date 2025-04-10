@@ -1,16 +1,16 @@
 \documentclass[a4paper]{article}
 
-\input{preamble.tex}
-\input{letterfont.tex}
-\input{macros.tex}
+\usepackage{preamble}
+\usepackage{letterfont}
+\usepackage{macros}
 
 \begin{document}
 \section{Field Extensions II}
 \begin{tdefinition}[Smallest subring/subfield]
-  Let \( L:K \) with \( K\sseq L \).
+  Let \( L:K \) with \( K\subeq L \).
   \begin{enumerate}[label=(\roman*)]
     \item When \( \alpha\in L \), we denote by \( K[\alpha] \) the \ul{smallest subring of \( L \) containing \( K \) and \( \alpha \)}, and by \( K(\alpha) \) the \ul{smallest subfield of \( L \) containing \( K \) and \( \alpha \)};
-    \item More generally, when \( A\sseq L \), we denote by \( K[A] \) the \ul{smallest subring of \( L \) containing \( K \tand A \)}, and by \( K(A) \) the \ul{smallest subfield of \( L \) containing \( K \tand A \)}.
+    \item More generally, when \( A\subeq L \), we denote by \( K[A] \) the \ul{smallest subring of \( L \) containing \( K \tand A \)}, and by \( K(A) \) the \ul{smallest subfield of \( L \) containing \( K \tand A \)}.
   \end{enumerate}
   Then \begin{align*}
     K[\alpha] &= \lt\{ \sum_{i=0}^{d}c_i\alpha^i : d\in \ZZ{\leq 0},\ c_0,\ldots,c_d\in K \rt\} \\
@@ -19,7 +19,7 @@
 \end{tdefinition}
 
 \begin{tdefinition}[Algebraic/transcendental element]
-  Suppose that \( L: K \) is a field extension with \( K\sseq L \) and \( \alpha\in L \).
+  Suppose that \( L: K \) is a field extension with \( K\subeq L \) and \( \alpha\in L \).
   \begin{enumerate}[label=(\roman*)]
     \item We say \ul{\( \alpha \) is algebraic over K} if \( \exists f_{\not\equiv 0} \in K[t] \) such that \( f(\alpha)=0 \).
     \item If \( \alpha \) is not algebraic over \( K \), then we say \ul{\( \alpha \) is transcendental over \( K \)}.
@@ -28,12 +28,12 @@
 \end{tdefinition}
 
 \begin{tdefinition}[Evaluation map]
-  Suppose that \( L: K \) is a field extension with \( K \sseq L \), and that \( \alpha\in L \).
+  Suppose that \( L: K \) is a field extension with \( K \subeq L \), and that \( \alpha\in L \).
   We define the \ul{evaluation map} \( E_\alpha : K[t] \to L \) by putting \( E_\alpha(f) = f(\alpha) \) for each \( f \in K[t] \).
 \end{tdefinition}
 
 \begin{tdefinition}[Minimal polynomial]
-  Suppose that \( L : K \) is a field extension with \( K \sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
+  Suppose that \( L : K \) is a field extension with \( K \subeq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
   Then the minimal polynomial of \( \alpha \) over \( K \) is the unique monic polynomial \( \mak \) having the property that \( \ker(E_\alpha) = (\mak) \).
 \end{tdefinition}
 
@@ -46,7 +46,7 @@
 \end{tlemma}
 
 \begin{ttheorem}
-  Let \( L : K \) with \( K \sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
+  Let \( L : K \) with \( K \subeq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
   \begin{enumerate}[label=(\roman*)]
     \item \( K[\alpha] \) is a field, and \( K[\alpha] = K(\alpha) \);
     \item If \( n=\deg \mak \), then \( \lt\{ 1,\alpha,\alpha^2,\ldots,\alpha^{n-1} \rt\} \) is a basis for \( K(\alpha) \) over \( K \) (\imp \( \fdeg{K(\alpha)}{K}=\deg \mak \)).
@@ -61,12 +61,12 @@
 \bd{Note:}\quad If \( \alpha \) is transcendental over \( K \), then \( K(\alpha)\iso K(x) \) (where \( x \) is a formal variable).
 
 \begin{tcorollary}
-  Let \( L : K \) with \( K \sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
+  Let \( L : K \) with \( K \subeq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
   Then every element of \( K(\alpha) \) is algebraic over \( K \).
 \end{tcorollary}
 
 \begin{tcorollary}
-  Let \( L:K \) with \( K\sseq L \).
+  Let \( L:K \) with \( K\subeq L \).
   Then \( \fdeg{L}{K} < \infty \iff L=K(\llist{\alpha}{1}{n}) \) for \( \alpha_j\in L \).
 \end{tcorollary}
 
