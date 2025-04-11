@@ -1,10 +1,44 @@
 \documentclass[a4paper]{article}
 
-\usepackage{preamble}
-\usepackage{letterfont}
-\usepackage{macros}
-
+\input{preamble}
+\input{letterfont}
+\input{macros}
 
 \begin{document}
+\section{Composita and further comments on FTGT}
+\begin{tdefinition}[Compositum]
+  Let \( K_1 \) and \( K_2 \) be fields contained in some field \( L \).
+  The \ul{compositum} of \( K_1 \) and \( K_2 \) in \( L \) (or the \ul{composite field}), denoted by \( K_1K_2 \), is the smallest subfield of \( L \) containing both \( K_1 \) and \( K_2 \).
+\end{tdefinition}
+
+\begin{tlemma}
+  Let \( K,E,F \sseq L \).
+  Then \begin{enumerate}
+    \item If \( E:K\tand F:K \) both finite, then \( \fdeg{EF}{K}<\infty \);
+    \item If \( E:K\tand F:K \) both normal, then \( E\cap F:K \) normal;
+    \item If \( E:K\tand F:K \) both finite and \( E:K \) normal, then \( EF:F \) normal;
+    \item If \( E:K\tand F:K \) both finite and normal, then \( EF:K\tand E\cap F:K \) both normal;
+    \item If \( E:K\tand F:K \) both normal, then \( EF:E\cap F \) is normal.
+  \end{enumerate}
+\end{tlemma}
+
+\begin{tdefinition}[Subnormal series]
+  Suppose \( \chr K = 0 \), \( \sqrt[\infty]{1}\subset K \), and \( K-L \) is a radical Galois extension.
+  That is, we have that \begin{align*}
+    K &= K_0 - K_1 - K_2 - \cdots - K_m = L,
+    \intertext{for \( K_j=K_{j-1}(r_j),r_j^{n_j}\in K_{j-1} \)}
+    \Gal_KL = G &= G_0 \ogp G_1 \ogp G_2 \ogp \cdots \ogp G_m = \left\{ Id. \right\}
+  \end{align*}
+  By assumption \( \sqrt[\infty]{1}\subset K \imp K_j:K_{j-1} \) is a normal extension, so \( G_j\nsgp G_{j-1} \) and we have \begin{align*}
+    \Gal_KL = G &= G_0 \pnogp G_1 \pnogp G_2 \pnogp \cdots \pnogp G_m = \left\{ Id. \right\}.
+  \end{align*}
+  This is called a \ul{subnormal series}.
+\end{tdefinition}
+
+\begin{tdefinition}[Soluble group]
+  A group \( G \) is \ul{soluble} if there exists a finite series of subgroups \begin{align*}
+    \left\{ Id. \right\} = G &= G_0 \sgp G_1 \sgp G_2 \sgp \cdots \sgp G_m = G
+  \end{align*}
+\end{tdefinition}
 
 \end{document}

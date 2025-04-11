@@ -1,8 +1,8 @@
 \documentclass[a4paper]{article}
 
-\usepackage{preamble}
-\usepackage{letterfont}
-\usepackage{macros}
+\input{preamble}
+\input{letterfont}
+\input{macros}
 
 
 \begin{document}
@@ -14,7 +14,7 @@
 \end{tdefinition}
 
 \begin{ttheorem}
-  Let \( f\in K[t]\setminus K \), and let \( L:K \) be a \sfe~for \( f \) with \( K\subeq L \).
+  Let \( f\in K[t]\setminus K \), and let \( L:K \) be a \sfe~for \( f \) with \( K\sseq L \).
   Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
     \item \( f \) has a repeated root over \( L \);
     \item There exists \( \alpha\in L \tst f(\alpha)=0=(\mcD f)(\alpha) \);

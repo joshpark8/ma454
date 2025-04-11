@@ -1,8 +1,8 @@
 \documentclass[a4paper]{article}
 
-\usepackage{preamble}
-\usepackage{letterfont}
-\usepackage{macros}
+\input{preamble}
+\input{letterfont}
+\input{macros}
 
 \begin{document}
 \section{Separability}
@@ -17,7 +17,7 @@
 
 \begin{tlemma}
   Suppose that \( L:M:K \) is a tower of algebraic field extensions.
-  Assume that \( K\subeq M\subeq L\subeq \Kbar \), and suppose that \( f\in K[t]\setminus K \) satisfies the property that \( f \) is separable over \( K \).
+  Assume that \( K\sseq M\sseq L\sseq \Kbar \), and suppose that \( f\in K[t]\setminus K \) satisfies the property that \( f \) is separable over \( K \).
   If \( g\in M[t]\setminus M \) has the property that \( g\divs f \), then \( g \) is separable over \( M \).
   Thus, if \( \alpha\in L \) is separable over \( K \) then \( \alpha \) is separable over \( M \), and if \( L:K \) is separable then so is \( L:M \).
 \end{tlemma}
@@ -30,7 +30,7 @@
 \end{tlemma}
 
 \begin{ttheorem}
-  Let \( L:K \) be a finite extension with \( K\subeq L\subeq \Kbar \), whence \( L=K(\llist{\alpha}{1}{n}) \) for some \( \llist{\alpha}{1}{n}\in L \).
+  Let \( L:K \) be a finite extension with \( K\sseq L\sseq \Kbar \), whence \( L=K(\llist{\alpha}{1}{n}) \) for some \( \llist{\alpha}{1}{n}\in L \).
   Put \( K_0=K \), and for \( 1\leq i\leq n \), set \( K_i=K_{i-1}(\alpha_i) \).
   Finally, let \( \sigma_0:K\to\Kbar \) be the inclusion map. \begin{enumerate}[label=(\roman*)]
     \item If \( \alpha_i \) is separable over \( K_{i-1} \) for \( 1\leq i\leq n \), then there are \( \fdeg{L}{K} \) ways to extend \( \sigma_0 \) to a \homo~\( \tau:L\to \Kbar \).
@@ -56,7 +56,7 @@
 \begin{tcorollary}
   Suppose that \( f\in K[t]\setminus K \) and that \( L:K \) is a \sfe~for \( f \).
   Then \( L:K \) is a separable extension \iff \( f \) is separable over \( K \).
-  More generally, suppose that \( L:K \) is a \sfe~for \( S\subeq K[t]\setminus K \).
+  More generally, suppose that \( L:K \) is a \sfe~for \( S\sseq K[t]\setminus K \).
   Then \( L:K \) is a separable extension \iff each \( f\in S \) is separable over \( K \).
 \end{tcorollary}
 \end{document}

@@ -1,8 +1,8 @@
 \documentclass{article}
 
-\usepackage{preamble}
-\usepackage{macros}
-\usepackage{letterfont}
+\input{preamble}
+\input{macros}
+\input{letterfont}
 
 \begin{document}
 \section{Field extensions and algebraic elements}
@@ -35,19 +35,19 @@
   \end{tdefinition}
 
   \begin{tdefinition}[Evaluation map]
-    Suppose that \( L: K \) is a field extension with \( K \subeq L \), and that \( \alpha\in L \).
+    Suppose that \( L: K \) is a field extension with \( K \sseq L \), and that \( \alpha\in L \).
     We define the \ul{evaluation map} \( E_\alpha : K[t] \to L \) by putting \( E_\alpha(f) = f(\alpha) \) for each \( f \in K[t] \).
   \end{tdefinition}
 
   \begin{tdefinition}[Minimal polynomial]
-    Suppose that \( L : K \) is a field extension with \( K \subeq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
+    Suppose that \( L : K \) is a field extension with \( K \sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
     Then the minimal polynomial of \( \alpha \) over \( K \) is the unique monic polynomial \( m_\alpha(K) \) in \( K[t] \) having the property that \( \ker(E_\alpha) = (m_\alpha(K)) \).
   \end{tdefinition}
 
   \begin{tdefinition}[Smallest subring/subfield]
-    Let \( L:K \) be a field extension with \( K\subeq L \). \begin{enumerate}[label=(\roman*)]
+    Let \( L:K \) be a field extension with \( K\sseq L \). \begin{enumerate}[label=(\roman*)]
       \item When \( \alpha\in L \), we denote by \( K[\alpha] \) the \ul{smallest subring of \( L \) containing \( K \) and \( \alpha \)}, and by \( K(\alpha) \) the \ul{smallest subfield of \( L \) containing \( K \) and \( \alpha \)};
-      \item More generally, when \( A\subeq L \), we denote by \( K[A] \) the \ul{smallest subring of \( L \) containing \( K \tand A \)}, and by \( K(A) \) the \ul{smallest subfield of \( L \) containing \( K \tand A \)}.
+      \item More generally, when \( A\sseq L \), we denote by \( K[A] \) the \ul{smallest subring of \( L \) containing \( K \tand A \)}, and by \( K(A) \) the \ul{smallest subfield of \( L \) containing \( K \tand A \)}.
     \end{enumerate}
   \end{tdefinition}
 
@@ -109,8 +109,8 @@
   \begin{tdefinition}[Splitting field, \sfe]
     Suppose that \( L:K \) is a field extension relative to the embedding \( \vphi : K\to L \), and \( f\in K[t]\setminus K \). \begin{enumerate}[label=(\roman*)]
       \item We say that \ul{\( f \) splits over \( L \)} if \( \vphi(f)=\lambda(t-\alpha_1)\cdots(t-\alpha_n) \), for some \( \lambda\in \vphi(K) \) and \( \llist{\alpha}{1}{n}\in L \).
-      \item Suppose that \( f \) splits over \( L \), and let \( M \) be a field with \( \vphi(K)\subeq M\subeq L \). We say that \ul{\( M:K \) is a splitting} \ul{field extension for \( f \)} if \( M \) is the smallest subfield of \( L \) containing \( \vphi(K) \) over which \( f \) splits.
-      \item More generally, suppose that \( S\subeq K[t]\setminus K \) has the property that every \( f\in S \) splits over \( L \). Let \( M \) be a field with \( \vphi(K)\subeq M\subeq L \). We say that \ul{\( M:K \) is a \sfe~for \( S \)} if \( M \) is the smallest subfield of \( L \) containing \( \vphi(K) \) over which every polynomial \( f\in S \) splits.
+      \item Suppose that \( f \) splits over \( L \), and let \( M \) be a field with \( \vphi(K)\sseq M\sseq L \). We say that \ul{\( M:K \) is a splitting} \ul{field extension for \( f \)} if \( M \) is the smallest subfield of \( L \) containing \( \vphi(K) \) over which \( f \) splits.
+      \item More generally, suppose that \( S\sseq K[t]\setminus K \) has the property that every \( f\in S \) splits over \( L \). Let \( M \) be a field with \( \vphi(K)\sseq M\sseq L \). We say that \ul{\( M:K \) is a \sfe~for \( S \)} if \( M \) is the smallest subfield of \( L \) containing \( \vphi(K) \) over which every polynomial \( f\in S \) splits.
     \end{enumerate}
   \end{tdefinition}
 

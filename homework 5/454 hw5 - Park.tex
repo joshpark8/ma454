@@ -2,9 +2,9 @@
 \setlength{\headheight}{22.50113pt}
 \addtolength{\topmargin}{-10.50113pt}
 
-\usepackage{preamble}
-\usepackage{letterfont}
-\usepackage{macros}
+\input{preamble}
+\input{letterfont}
+\input{macros}
 
 \fancyhead[L]{\bd{Josh Park \\ Prof. Shkredov}}
 \fancyhead[C]{\bd{MA 45401-H01 -- Galois Theory Honors \\ Homework 5 (Feb 28)}}
@@ -94,7 +94,7 @@ Thus \( \Q(3^{1/3},i,\sqrt 3):\Q \) is a \sfe~for \( f \), whence must be normal
 
 \begin{exercise} % PROBLEM 5.3
   Let \( L:K \) be a field extension. Then \( \bar K \) is isomorphic to \( \bar L \).
-  In addition, if \( K\ss L \subeq \bar L \), then \( \bar K = \bar L \).
+  In addition, if \( K\ss L \sseq \bar L \), then \( \bar K = \bar L \).
 \end{exercise}
 \begin{solution}
   Let \( \vphi_1:K\to L \) and \( \vphi_2:L\to \bar L \) be the monomorphisms corresponding to the field extensions \( L:K \tand \bar L:L \), respectively.
@@ -104,7 +104,7 @@ Thus \( \Q(3^{1/3},i,\sqrt 3):\Q \) is a \sfe~for \( f \), whence must be normal
   Thus, \( \bar L\iso \bar K \).
 
   Assume ad absurdum that we have some algebraic closure \( \bar K \) of \( K \) such that \( \order{\bar K} < \order{\bar L} \).
-  By definition of algebraic closure, we know that \( \bar K \) and \( \bar L \) are both algebraic extensions of \( K \), so \( K\subeq \bar K \) and \( K\subeq \bar L \).
+  By definition of algebraic closure, we know that \( \bar K \) and \( \bar L \) are both algebraic extensions of \( K \), so \( K\sseq \bar K \) and \( K\sseq \bar L \).
   Let \( \psi:K\hookrightarrow\bar L \) be the monomorphism corresponding to the extension \( \bar L:K \).
   By theorem, since \( \bar K:K \) is an algebraic extension, there exists an extension of \( \psi \) to another mono from \( \bar K \to \bar L \).
   Hence \( \bar L:\bar K \) is an algebraic extension with degree greater than 1, since \( \bar K \) is smaller than \( \bar L \).
@@ -113,7 +113,7 @@ Thus \( \Q(3^{1/3},i,\sqrt 3):\Q \) is a \sfe~for \( f \), whence must be normal
 \end{solution}
 
 \begin{exercise} % PROBLEM 5.4
-  Let \( K-L \) be a normal extension, \( K\subeq L\subeq \Kbar \).
+  Let \( K-L \) be a normal extension, \( K\sseq L\sseq \Kbar \).
   Then for any \( K \)-\homo~\( \tau:L\to \Kbar \) one has \( \tau(L) = L \).
 \end{exercise}
 \begin{solution}
@@ -122,7 +122,7 @@ Thus \( \Q(3^{1/3},i,\sqrt 3):\Q \) is a \sfe~for \( f \), whence must be normal
   Since \( \tau \) fixes all elements of \( K \) and \( \mu_\ell^K \) is a polynomial with coefficients in \( K \), we can see that \( \tau(\mu_\ell^K(\ell)) = \mu_\ell^K(\tau(\ell)) = 0 \).
   By theorem, the normality of \( L:K \) implies that all algebraic conjugates of \( \ell \) are in \( L \).
   Thus, we have that \( \tau(\ell)\in L \).
-  Since \( \ell \) is an arbitrary element of \( L \), this implies that \( \tau(L) \subeq L \).
+  Since \( \ell \) is an arbitrary element of \( L \), this implies that \( \tau(L) \sseq L \).
   By theorem, since \( L \) extends \( K \) and \( \tau:L\to L \) is a \( K \)-homomorphism, we have that \( \tau \) is an automorphism of \( L \).
   Thus \( \tau(L) = L \).
 \end{solution}

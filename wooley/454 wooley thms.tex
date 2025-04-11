@@ -1,8 +1,8 @@
 \documentclass{article}
 
-\usepackage{preamble}
-\usepackage{macros}
-\usepackage{letterfont}
+\input{preamble}
+\input{macros}
+\input{letterfont}
 
 \begin{document}
 \section{Field extensions and algebraic elements}
@@ -26,7 +26,7 @@
 
   \begin{tcorollary}
     Suppose that \( L:K \) is a field extension for which \( [L: K] \) is a prime number.
-    Then whenever \( L : M : K \) is a tower of field extensions with \( K \subeq M \subeq L \), one has either \( M= L \tor M= K \).
+    Then whenever \( L : M : K \) is a tower of field extensions with \( K \sseq M \sseq L \), one has either \( M= L \tor M= K \).
   \end{tcorollary}
 
 % \subsection{Algebraic elements}
@@ -39,7 +39,7 @@
   \end{tproposition}
 
   \begin{tproposition}
-    Suppose \( L: K \) is a field extension with \( K\subeq L \), and \( \alpha\in L \). Then the evaluation map
+    Suppose \( L: K \) is a field extension with \( K\sseq L \), and \( \alpha\in L \). Then the evaluation map
     \begin{align*}
       E_\alpha: K[t] \to L,\quad f\mapsto f(\alpha)
     \end{align*}
@@ -47,7 +47,7 @@
   \end{tproposition}
 
   \begin{tproposition}
-    Let \( L: K \) be a field extension with \( K\subeq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
+    Let \( L: K \) be a field extension with \( K\sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
     Then
     \begin{align*}
       I = \ker(E_\alpha) = \{ f \in K[t] : f(\alpha) = 0 \}
@@ -67,16 +67,16 @@
   \end{ttheorem}
 
   \begin{tproposition}
-    Let \( L:K \) be a field extension with \( K\subeq L \).
-    Let \( A\subeq L \) and
+    Let \( L:K \) be a field extension with \( K\sseq L \).
+    Let \( A\sseq L \) and
     \begin{align*}
-      \mcC=\{ C\subeq A : C \text{ is a finite set} \}.
+      \mcC=\{ C\sseq A : C \text{ is a finite set} \}.
     \end{align*}
     Then \( K(A)=\cup_{C\in\mcC}K(C) \). Further, when \( [K(C):K]<\infty \) for all \( C\in \mcC \), then \( K(A):K \) is an algebraic extension.
   \end{tproposition}
 
   \begin{tproposition}
-    Let \( L:K \) be a field extension with \( K\subeq L \), and suppose that \( \alpha\in L \).
+    Let \( L:K \) be a field extension with \( K\sseq L \), and suppose that \( \alpha\in L \).
     Then
     \begin{align*}
       K[\alpha] = \{ c_0 + c_1\alpha+\cdots+c_d \alpha^d : d\in \ZZ{\geq 0},\ c_0,\ldots,c_d\in K \},
@@ -88,7 +88,7 @@
   \end{tproposition}
 
   \begin{ttheorem}
-    Let \( L:K \) be a field extension with \( K\subeq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
+    Let \( L:K \) be a field extension with \( K\sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
     \begin{enumerate}[label=(\roman*)]
       \item The ring \( K[\alpha] \) is a field, and \( K[\alpha]=K(\alpha) \);
       \item Let \( n=\deg m_\alpha(K) \). Then \( \{1,\alpha,\alpha^2,\ldots,\alpha^{n-1}\} \) is a basis for \( K(\alpha) \) over \( K \), and hence \( [K(\alpha):K]=\deg m_\alpha(K) \).
@@ -96,17 +96,17 @@
   \end{ttheorem}
 
   \begin{tproposition}
-    Let \( L:K \) be a field extension with \( K\subeq L \), and suppose that \( \alpha\in L \).
+    Let \( L:K \) be a field extension with \( K\sseq L \), and suppose that \( \alpha\in L \).
     Then \( \alpha \) is algebraic over \( K \) if and only if \( [K(\alpha):K]<\infty \).
   \end{tproposition}
 
   \begin{tproposition}
-    Suppose that \( L:K \) is a field extension with \( K\subeq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
+    Suppose that \( L:K \) is a field extension with \( K\sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
     Then every element of \( K(\alpha) \) is algebraic over \( K \).
   \end{tproposition}
 
   \begin{ttheorem}
-    Let \( L:K \) be a field extension with \( K\subeq L \). Then the following are equivalent:
+    Let \( L:K \) be a field extension with \( K\sseq L \). Then the following are equivalent:
     \begin{enumerate}[label=(\roman*)]
       \item \( [L:K]<\infty \);
       \item The extension \( L:K \) is algebraic, and there exist \( \llist{\alpha}{1}{n}\in L \) having the property that \( L=K(\llist{\alpha}{1}{n}) \).
@@ -158,7 +158,7 @@
 
 \section{Extending field \homo s and the Galois group of an extension}
   \begin{tproposition}
-    Suppose that \( L:K \) is a field extension with \( K\subeq L \), and that \( \tau:L\to L \) is a \( K \)-\homo. Suppose that \( f\in K[t] \) has the property that \( \deg f\geq 1 \), and additionally that \( \alpha\in L \). Then
+    Suppose that \( L:K \) is a field extension with \( K\sseq L \), and that \( \tau:L\to L \) is a \( K \)-\homo. Suppose that \( f\in K[t] \) has the property that \( \deg f\geq 1 \), and additionally that \( \alpha\in L \). Then
     \begin{enumerate}[label=(\roman*)]
       \item if \( f(\alpha)=0 \), one has \( f(\tau(\alpha))=0 \);
       \item when \( \tau \) is a \( K \)-automorphism of \( L \), one has that \( f(\alpha)=0 \) if and only if \( f(\tau(\alpha))=0 \).
@@ -166,11 +166,11 @@
   \end{tproposition}
 
   \begin{ttheorem}
-    Let \( \sigma:K_1\to K_2 \) be a field isomorphism. Suppose that \( L_i \) is a field with \( K_i\subeq L_i\ (i=1,2) \). Suppose also that \( \alpha\in L_1 \) is algebraic over \( K_1 \), and that \( \beta\in L_2 \) is algebraic over \( K_2 \). Then we can extend \( \sigma \) to an isomorphism \( \tau:K_1(\alpha)\to K_2(\beta) \) in such a manner that \( \tau(\alpha)=\beta \) if and only if \( m_\beta(K_2)=\sigma(m_\alpha(K_1)) \).
+    Let \( \sigma:K_1\to K_2 \) be a field isomorphism. Suppose that \( L_i \) is a field with \( K_i\sseq L_i\ (i=1,2) \). Suppose also that \( \alpha\in L_1 \) is algebraic over \( K_1 \), and that \( \beta\in L_2 \) is algebraic over \( K_2 \). Then we can extend \( \sigma \) to an isomorphism \( \tau:K_1(\alpha)\to K_2(\beta) \) in such a manner that \( \tau(\alpha)=\beta \) if and only if \( m_\beta(K_2)=\sigma(m_\alpha(K_1)) \).
   \end{ttheorem}
 
   \begin{tcorollary}
-    Let \( L:M \) be a field extension with \( M\subeq L \). Suppose that \( \sigma:M\to L \) is a \homo, and \( \alpha\in L \) is algebraic over \( M \). Then the number of ways we can extend \( \sigma \) to a \homo~\( \tau:M(\alpha)\to L \) is equal to the number of distinct roots of \( \sigma(m_\alpha(M)) \) that lie in \( L \).
+    Let \( L:M \) be a field extension with \( M\sseq L \). Suppose that \( \sigma:M\to L \) is a \homo, and \( \alpha\in L \) is algebraic over \( M \). Then the number of ways we can extend \( \sigma \) to a \homo~\( \tau:M(\alpha)\to L \) is equal to the number of distinct roots of \( \sigma(m_\alpha(M)) \) that lie in \( L \).
   \end{tcorollary}
 
   \begin{ttheorem}
@@ -182,11 +182,11 @@
   \end{ttheorem}
 
   \begin{tcorollary}
-    Suppose that \( L:F \) and \( L:F' \) are finite extensions with \( F\subeq L\tand F'\subeq L \), and further that \( \psi:F\to F' \) is an isomorphism. Then there are at most \( [L:F] \) ways to extend \( \psi \) to a \homo~from \( L \) into \( L \).
+    Suppose that \( L:F \) and \( L:F' \) are finite extensions with \( F\sseq L\tand F'\sseq L \), and further that \( \psi:F\to F' \) is an isomorphism. Then there are at most \( [L:F] \) ways to extend \( \psi \) to a \homo~from \( L \) into \( L \).
   \end{tcorollary}
 
   \begin{tcorollary}
-    Let \( L:K \) be a finite extension with \( K\subeq L \). Suppose that \( \llist{\alpha}{1}{n}\in L \) and put \( L=K(\llist{\alpha}{1}{n}) \). Let \( K_0=K \), and for \( 1\leq i\leq n \), let \( K_i=K_{i-1}(\alpha_i) \). Then every automorphism \( \tau\in\Gal(L:K) \) corresponds to a sequence of \homo s \( \llist{\sigma}{1}{n} \), having the property that \( \sigma_0:K\to L \) is the inclusion map, one has \( \sigma_n=\tau \), and for \( 1\leq i\leq n \), the map \( \sigma_i:K_i\to L \) is a \homo~extending \( \sigma_{i-1}:K_{i-1}\to L \).
+    Let \( L:K \) be a finite extension with \( K\sseq L \). Suppose that \( \llist{\alpha}{1}{n}\in L \) and put \( L=K(\llist{\alpha}{1}{n}) \). Let \( K_0=K \), and for \( 1\leq i\leq n \), let \( K_i=K_{i-1}(\alpha_i) \). Then every automorphism \( \tau\in\Gal(L:K) \) corresponds to a sequence of \homo s \( \llist{\sigma}{1}{n} \), having the property that \( \sigma_0:K\to L \) is the inclusion map, one has \( \sigma_n=\tau \), and for \( 1\leq i\leq n \), the map \( \sigma_i:K_i\to L \) is a \homo~extending \( \sigma_{i-1}:K_{i-1}\to L \).
   \end{tcorollary}
 
 \section{Algebraic closures}
@@ -205,7 +205,7 @@
   \end{tproposition}
 
   \begin{lemma}
-    Let \( K \) be a field. Then there exists an algebraic extension \( E:K \), with \( K\subeq E \), having the property that \( E \) contains a root of every irreducible \( f\in K[t] \), and hence also every \( g\in K[t]\setminus\{ 0 \} \).
+    Let \( K \) be a field. Then there exists an algebraic extension \( E:K \), with \( K\sseq E \), having the property that \( E \) contains a root of every irreducible \( f\in K[t] \), and hence also every \( g\in K[t]\setminus\{ 0 \} \).
   \end{lemma}
 
   \begin{ttheorem}
@@ -217,11 +217,11 @@
   \end{tcorollary}
 
   \begin{ttheorem}
-    Let \( E \) be an algebraic extension of \( K \) with \( K\subeq E \), and let \( \Kbar \) be an algebraic closure of \( K \). Given a homomorphism \( \vphi:K\to \Kbar \), the map \( \vphi \) can be extended to a homomorphism from \( E \) into \( \Kbar \).
+    Let \( E \) be an algebraic extension of \( K \) with \( K\sseq E \), and let \( \Kbar \) be an algebraic closure of \( K \). Given a homomorphism \( \vphi:K\to \Kbar \), the map \( \vphi \) can be extended to a homomorphism from \( E \) into \( \Kbar \).
   \end{ttheorem}
 
   \begin{tcorollary}
-    Suppose that \( \Kbar \) is an algebraic closure of \( K \), and assume that \( K\subeq \Kbar \). Take \( \alpha\in \Kbar \) and suppose that \( \sigma:K\to \Kbar \) is a homomorphism. Then the number of distinct roots of \( m_\alpha(K) \) in \( \Kbar \) is equal to the number of distinct roots of \( \sigma(m_\alpha(K)) \) in \( \Kbar \).
+    Suppose that \( \Kbar \) is an algebraic closure of \( K \), and assume that \( K\sseq \Kbar \). Take \( \alpha\in \Kbar \) and suppose that \( \sigma:K\to \Kbar \) is a homomorphism. Then the number of distinct roots of \( m_\alpha(K) \) in \( \Kbar \) is equal to the number of distinct roots of \( \sigma(m_\alpha(K)) \) in \( \Kbar \).
   \end{tcorollary}
 
   \begin{tproposition}
@@ -233,11 +233,11 @@
   \end{tproposition}
 
   \begin{tproposition}
-    If \( L:K \) is an algebraic extension, then \( \Lbar \) is an algebraic closure of \( K \), and hence \( \Lbar\iso\Kbar \). If in addition \( K\subeq L\subeq \Lbar \), then we can take \( \Kbar = \Lbar \).
+    If \( L:K \) is an algebraic extension, then \( \Lbar \) is an algebraic closure of \( K \), and hence \( \Lbar\iso\Kbar \). If in addition \( K\sseq L\sseq \Lbar \), then we can take \( \Kbar = \Lbar \).
   \end{tproposition}
 
   \begin{tproposition}
-    Let \( L:K \) be an extension with \( K\subeq L \). Suppose that \( g\in L[t] \) is irreducible over \( L \), and that \( g\divs f \) in \( L[t] \), where \( f\in K[t]\setminus \{ 0 \} \). The \( g \) divides a factor of \( f \) that is irreducible over \( K \). Thus, there exists an irreducible \( h\in K[t] \) having the property that \( h\divs f \) in \( K[t] \), and \( g\divs h \) in \( L[t] \).
+    Let \( L:K \) be an extension with \( K\sseq L \). Suppose that \( g\in L[t] \) is irreducible over \( L \), and that \( g\divs f \) in \( L[t] \), where \( f\in K[t]\setminus \{ 0 \} \). The \( g \) divides a factor of \( f \) that is irreducible over \( K \). Thus, there exists an irreducible \( h\in K[t] \) having the property that \( h\divs f \) in \( K[t] \), and \( g\divs h \) in \( L[t] \).
   \end{tproposition}
 
 \section{Splitting field extensions}
@@ -250,7 +250,7 @@
   \end{tproposition}
 
   \begin{tproposition}
-    Given \( S\subeq K[t]\setminus K \), there exists a \sfe~\( L:K \) for \( S \), and \( L:K \) is an algebraic extension. More explicitly, suppose that \( \Kbar \) is an algebraic closure of \( K \), and that \( \Kbar:K \) is an extension relative to the embedding \( \vphi:\Kbar\to K \). Let
+    Given \( S\sseq K[t]\setminus K \), there exists a \sfe~\( L:K \) for \( S \), and \( L:K \) is an algebraic extension. More explicitly, suppose that \( \Kbar \) is an algebraic closure of \( K \), and that \( \Kbar:K \) is an extension relative to the embedding \( \vphi:\Kbar\to K \). Let
     \[
       A=\{ \alpha\in \Kbar : \alpha\text{ is a root of } \vphi(f) \text{ for some } f\in S \}.
     \]
@@ -262,17 +262,17 @@
   \end{ttheorem}
 
   \begin{ttheorem}
-    Suppose that \( S\subeq K[t]\setminus K \), and suppose that \( L:K \) and \( M:K \) are \sfe s for \( S \). Then \( L\iso M\tand [L:K]=[M:K] \).
+    Suppose that \( S\sseq K[t]\setminus K \), and suppose that \( L:K \) and \( M:K \) are \sfe s for \( S \). Then \( L\iso M\tand [L:K]=[M:K] \).
   \end{ttheorem}
 
 \section{Normal extensions and composita}
 % \subsection{Normal extensions and splitting field extensions}
   \begin{tproposition}
-    Suppose that \( L:K \) is a normal extension with \( K\subeq L\subeq \Kbar \). Then for any \( K \)-\homo~\( \tau:L\to \Kbar \), we have \( \tau(L)=L \).
+    Suppose that \( L:K \) is a normal extension with \( K\sseq L\sseq \Kbar \). Then for any \( K \)-\homo~\( \tau:L\to \Kbar \), we have \( \tau(L)=L \).
   \end{tproposition}
 
   \begin{tproposition}
-    An extension \( L:K \) is a finite, normal extension if and only if it is a \sfe~for some \( f\in K[t]\setminus K \). More generally, an extension \( L:K \) is normal if and only if it is a \sfe~for some \( S\subeq K[t]\setminus K \).
+    An extension \( L:K \) is a finite, normal extension if and only if it is a \sfe~for some \( f\in K[t]\setminus K \). More generally, an extension \( L:K \) is normal if and only if it is a \sfe~for some \( S\sseq K[t]\setminus K \).
   \end{tproposition}
 
   \begin{tproposition}
@@ -281,11 +281,11 @@
 
 % \subsection{Normal closures}
   \begin{ttheorem}
-    Suppose that \( M:L:K \) is a tower of field extensions having the property that \( M:K \) is normal. Assume that \( K\subeq L\subeq M \). Then the following are equivalent:
+    Suppose that \( M:L:K \) is a tower of field extensions having the property that \( M:K \) is normal. Assume that \( K\sseq L\sseq M \). Then the following are equivalent:
     \begin{enumerate}[label=(\roman*)]
       \item The field extension \( L:K \) is normal;
       \item Any \( K \)-\homo~of \( L \) into \( M \) is an automorphism of \( L \);
-      \item Whenever \( \sigma:M\to M \) is a \( K \)-automorphism, then \( \sigma(L)\subeq L \).
+      \item Whenever \( \sigma:M\to M \) is a \( K \)-automorphism, then \( \sigma(L)\sseq L \).
     \end{enumerate}
   \end{ttheorem}
 
@@ -312,7 +312,7 @@
 
 \section{Separability}
   \begin{tproposition}
-    Suppose that \( L:M:K \) is a tower of algebraic field extensions. Assume that \( K\subeq M\subeq L\subeq \Kbar \), and suppose that \( f\in K[t]\setminus K \) satisfies the property that \( f \) is separable over \( K \). If \( g\in M[t]\setminus M \) has the property that \( g\divs f \), then \( g \) is separable over \( M \). Thus, if \( \alpha\in L \) is separable over \( K \) then \( \alpha \) is separable over \( M \), and if \( L:K \) is separable then so is \( L:M \).
+    Suppose that \( L:M:K \) is a tower of algebraic field extensions. Assume that \( K\sseq M\sseq L\sseq \Kbar \), and suppose that \( f\in K[t]\setminus K \) satisfies the property that \( f \) is separable over \( K \). If \( g\in M[t]\setminus M \) has the property that \( g\divs f \), then \( g \) is separable over \( M \). Thus, if \( \alpha\in L \) is separable over \( K \) then \( \alpha \) is separable over \( M \), and if \( L:K \) is separable then so is \( L:M \).
   \end{tproposition}
 
   \begin{tproposition}
@@ -320,7 +320,7 @@
   \end{tproposition}
 
   \begin{ttheorem}
-    Let \( L:K \) be a finite extension with \( K\subeq L\subeq \Kbar \), whence \( L=K(\llist{\alpha}{1}{n}) \) for some \( \llist{\alpha}{1}{n}\in L \). Put \( K_0=K \), and for \( 1\leq i\leq n \), set \( K_i=K_{i-1}(\alpha_i) \). Finally, let \( \sigma_0:K\to\Kbar \) be the inclusion map.
+    Let \( L:K \) be a finite extension with \( K\sseq L\sseq \Kbar \), whence \( L=K(\llist{\alpha}{1}{n}) \) for some \( \llist{\alpha}{1}{n}\in L \). Put \( K_0=K \), and for \( 1\leq i\leq n \), set \( K_i=K_{i-1}(\alpha_i) \). Finally, let \( \sigma_0:K\to\Kbar \) be the inclusion map.
     \begin{enumerate}[label=(\roman*)]
       \item If \( \alpha_i \) is separable over \( K_{i-1} \) for \( 1\leq i\leq n \), then there are \( [L:K] \) ways to extend \( \sigma_0 \) to a \homo~\( \tau:L\to\Kbar \).
       \item If \( \alpha_i \) is not separable over \( K_{i-1} \) for some \( i \) with \( 1\leq i\leq n \), then there are fewer than \( [L:K] \) ways to extend \( \sigma_0 \) to a \homo~\( \tau:L\to\Kbar \).
@@ -341,7 +341,7 @@
   \end{tcorollary}
 
   \begin{tcorollary}
-    Suppose that \( f\in K[t]\setminus K \) and that \( L:K \) is a \sfe~for \( f \). Then \( L:K \) is a separable extension if and only if \( f \) is separable over \( K \). More generally, suppose that \( L:K \) is a \sfe~for \( S\subeq K[t]\setminus K \). Then \( L:K \) is a separable extension if and only if each \( f\in S \) is separable over \( K \).
+    Suppose that \( f\in K[t]\setminus K \) and that \( L:K \) is a \sfe~for \( f \). Then \( L:K \) is a separable extension if and only if \( f \) is separable over \( K \). More generally, suppose that \( L:K \) is a \sfe~for \( S\sseq K[t]\setminus K \). Then \( L:K \) is a separable extension if and only if each \( f\in S \) is separable over \( K \).
   \end{tcorollary}
 
   \begin{ttheorem}
@@ -349,7 +349,7 @@
   \end{ttheorem}
 
   \begin{ttheorem}
-    Suppose that \( E:K \) and \( F:K \) are finite extensions with \( E\subeq L \) and \( F\subeq L \), where \( L \) is a field.
+    Suppose that \( E:K \) and \( F:K \) are finite extensions with \( E\sseq L \) and \( F\sseq L \), where \( L \) is a field.
     \begin{enumerate}[label=(\alph*)]
       \item When \( E:K \) is separable, then so too is \( EF:F \);
       \item When \( E:K \) and \( F:K \) are both separable, then so too are \( EF:K \) and \( E\cap F:K \).
@@ -359,7 +359,7 @@
 \section{Inseparable polynomials, differentiation, and the Frobenius map}
 % \subsection{Inseparable polynomials and differentiation}
   \begin{ttheorem}
-    Let \( f\in K[t]\setminus K \), and let \( L:K \) be a \sfe~for \( f \). Assume that \( K\subeq L \). Then the following are equivalent:
+    Let \( f\in K[t]\setminus K \), and let \( L:K \) be a \sfe~for \( f \). Assume that \( K\sseq L \). Then the following are equivalent:
     \begin{enumerate}[label=(\roman*)]
       \item The polynomial \( f \) has a repeated root over \( L \);
       \item There is some \( \alpha\in L \) for which \( f(\alpha)=0=(\mcD f)(\alpha) \);
@@ -398,7 +398,7 @@
 
 \section{The Primitive Element Theorem}
   \begin{ttheorem}[The Primitive Element Theorem]
-    Let \( L:K \) be a finite, separable extension with \( K\subeq L \). Then \( L:K \) is a simple extension.
+    Let \( L:K \) be a finite, separable extension with \( K\sseq L \). Then \( L:K \) is a simple extension.
   \end{ttheorem}
 
   \begin{tcorollary}
@@ -407,11 +407,11 @@
 
 \section{Fixed fields and Galois extensions}
   \begin{tproposition}
-    Let \( K,\ M \tand L \) be fields with \( K\subeq L \) and \( M\subeq L \). Suppose that \( G\tand H \) are subgroups of \( \Aut(L) \). Then one has the following:
+    Let \( K,\ M \tand L \) be fields with \( K\sseq L \) and \( M\sseq L \). Suppose that \( G\tand H \) are subgroups of \( \Aut(L) \). Then one has the following:
     \begin{enumerate}[label=(\alph*)]
-      \item if \( K\subeq M \), then \( \Gal(L:K) \geqslant \Gal(L:M) \);
+      \item if \( K\sseq M \), then \( \Gal(L:K) \geqslant \Gal(L:M) \);
       \item if \( G\sgp H \), then \( \Fix_L(G)\supeq \Fix_L(H) \);
-      \item one has \( K\subeq \Fix_L(\Gal(L:K)) \);
+      \item one has \( K\sseq \Fix_L(\Gal(L:K)) \);
       \item one has \( G\sgp\Gal(L:\Fix_L(G)) \);
       \item one has \( \Gal(L:K) = \Gal(L:\Fix_L(\Gal(L:K))) \);
       \item one has \( \Fix_L(G) = \Fix_L(\Gal(L:\Fix_L(G))) \).

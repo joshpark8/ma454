@@ -1,8 +1,8 @@
 \documentclass[a4paper]{article}
 
-\usepackage{preamble}
-\usepackage{letterfont}
-\usepackage{macros}
+\input{preamble}
+\input{letterfont}
+\input{macros}
 
 
 \begin{document}
@@ -19,11 +19,11 @@
 \end{tdefinition}
 
 \begin{tlemma}
-  Let \( K,M \subeq L \) be fields and \( G, H \sgp \Aut(L) \).
+  Let \( K,M \sseq L \) be fields and \( G, H \sgp \Aut(L) \).
   Then \begin{enumerate}[label=\arabic*)]
-    \item if \( K\subeq M \), then \( \Gal(L:K) \ogp \Gal(L:M) \);
+    \item if \( K\sseq M \), then \( \Gal(L:K) \ogp \Gal(L:M) \);
     \item if \( G\sgp H \), then \( \Fix{L}{G} \supeq \Fix{L}{H} \);
-    \item \( K\subeq \Fix{L}{\Gal(L:K)} \);
+    \item \( K\sseq \Fix{L}{\Gal(L:K)} \);
     \item \( G\sgp\Gal(L:\Fix{L}{G}) \);
     \item \( \Gal(L:K) = \Gal(L:\Fix{L}{\Gal(L:K)}) \);
     \item \( \Fix{L}{G} = \Fix{L}{\Gal(L:\Fix{L}{G})} \).

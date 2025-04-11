@@ -2,9 +2,9 @@
 \setlength{\headheight}{22.50113pt}
 \addtolength{\topmargin}{-10.50113pt}
 
-\usepackage{preamble}
-\usepackage{letterfont}
-\usepackage{macros}
+\input{preamble}
+\input{letterfont}
+\input{macros}
 
 \fancyhead[L]{\bd{Josh Park \\ Prof. Shkredov}}
 \fancyhead[C]{\bd{MA 45401-H01 -- Galois Theory Honors \\ Homework \thesection~(Apr 4)}}
@@ -13,7 +13,7 @@
 \begin{document}
 \setcounter{section}{8} % HW NUMBER
 \begin{exercise}
-  Let \( K\subeq L \) be a \sfe~for some \( f\in K[t]\setminus K \).
+  Let \( K\sseq L \) be a \sfe~for some \( f\in K[t]\setminus K \).
   Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
     \item \( f \) has a repeated root over \( L \);
     \item \( \exists \alpha\in L \) s.t. \( 0=f(\alpha)=(\mcD f)(\alpha) \);
@@ -43,7 +43,7 @@ Prove that there is \( g\in K[t] \) and a non-negative \( n \) such that \( f(t)
 \pagebreak
 
 \begin{exercise}
-  Prove that \( \prod_{\alpha\in \Fq^*} \alpha = -1 \)
+  Prove that \( \prod_{\alpha\in \FF q^*} \alpha = -1 \)
 \end{exercise}
 \begin{solution}
 
@@ -52,7 +52,7 @@ Prove that there is \( g\in K[t] \) and a non-negative \( n \) such that \( f(t)
 
 \stepcounter{exercise}
 \begin{subexercise}
-  Let \( \alpha\in\Fq \) and \( \alpha=\beta-\beta^p \) for some \( \beta\in\Fq \).
+  Let \( \alpha\in\FF q \) and \( \alpha=\beta-\beta^p \) for some \( \beta\in\FF q \).
   Prove that \( \Tr \alpha = 0 \).
 \end{subexercise}
 \begin{solution}
@@ -61,7 +61,7 @@ Prove that there is \( g\in K[t] \) and a non-negative \( n \) such that \( f(t)
 \pagebreak
 
 \begin{subexercise}
-Let \( \alpha\in\Fq \) and \( \alpha=\gamma^{1-p} \) for some nonzero \( \gamma\in\Fq \).
+Let \( \alpha\in\FF q \) and \( \alpha=\gamma^{1-p} \) for some nonzero \( \gamma\in\FF q \).
 Prove that \( \Norm \alpha = 1 \).
 \end{subexercise}
 \begin{solution}
@@ -70,7 +70,7 @@ Prove that \( \Norm \alpha = 1 \).
 \pagebreak
 
 \begin{subexercise}
-  Let \( \alpha\in\Fp \subeq \FF{p^n} \).
+  Let \( \alpha\in\fp \sseq \FF{p^n} \).
   Prove that \( \Tr \alpha = n\alpha \).
 \end{subexercise}
 \begin{solution}
@@ -79,7 +79,7 @@ Prove that \( \Norm \alpha = 1 \).
 \pagebreak
 
 \begin{subexercise}
-  Let \( \alpha\in\Fp \subeq \FF{p^n} \).
+  Let \( \alpha\in\fp \sseq \FF{p^n} \).
   Prove that \( \Norm \alpha = \alpha^n \).
 \end{subexercise}
 \begin{solution}

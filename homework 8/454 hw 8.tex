@@ -1,8 +1,8 @@
 \documentclass{article}
 
-\usepackage{preamble}
-\usepackage{letterfont}
-\usepackage{macros}
+\input{preamble}
+\input{letterfont}
+\input{macros}
 
 \fancyhead[L]{\bd{Josh Park \\ Prof. Ilya Shkredov}}
 \fancyhead[C]{\bd{MA 45401-H01 -- Galois Theory Honors \\ Homework \thesection~(Apr 4)}}
@@ -12,7 +12,7 @@
 \setcounter{section}{8} % HW NUMBER
 \begin{exercise} % PROBLEM 8.1
   \label{qs:one}
-  Let \( K\subeq L \) be a \sfe~for some \( f\in K[t]\setminus K \).
+  Let \( K\sseq L \) be a \sfe~for some \( f\in K[t]\setminus K \).
   Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
     \item \( f \) has a repeated root over \( L \);
     \item \( \exists \alpha\in L \) s.t. \( 0=f(\alpha)=(\mcD f)(\alpha) \);
@@ -90,25 +90,25 @@ Hence our inductive procedure necessarily ends in some \( g_n \) with \( \mcD g_
 \end{solution}
 
 \begin{exercise} % PROBLEM 8.4
-  Prove that \( \prod_{\alpha\in \Fq^*} \alpha = -1 \)
+  Prove that \( \prod_{\alpha\in \FF q^*} \alpha = -1 \)
 \end{exercise}
 \begin{solution}
-By theorem, we have that every element of \( \Fq \) satisfies the equality \( t^q = t \).
-Then \( t^q-t = t(t^{q-1}-1) = 0 \) and we can factor out the zero root to see that every nonzero element of \( \Fq \) satisfies the relationship \( t^{q-1} = 1 \).
-Thus, every element of \( \Fq^* \) is a root of the polynomial \( x^{q-1}-1 = 0 \).
-Moreover, we know \( \Fq \) is a splitting field for \( t^q-t \), so it follows that \( \Fq^* \) is also a splitting field for \( x^{q-1}-1 \).
-Hence \( x^{q-1}-1 = \prod_{\alpha\in \Fq^*} (x-\alpha) \).
+By theorem, we have that every element of \( \FF q \) satisfies the equality \( t^q = t \).
+Then \( t^q-t = t(t^{q-1}-1) = 0 \) and we can factor out the zero root to see that every nonzero element of \( \FF q \) satisfies the relationship \( t^{q-1} = 1 \).
+Thus, every element of \( \FF q^* \) is a root of the polynomial \( x^{q-1}-1 = 0 \).
+Moreover, we know \( \FF q \) is a splitting field for \( t^q-t \), so it follows that \( \FF q^* \) is also a splitting field for \( x^{q-1}-1 \).
+Hence \( x^{q-1}-1 = \prod_{\alpha\in \FF q^*} (x-\alpha) \).
 Then by comparing constant terms, we can see that \begin{align*}
-  -1 = \prod_{\alpha\in \Fq^*} (-\alpha) = (-1)^{q-1}\prod_{\alpha\in \Fq^*} \alpha.
+  -1 = \prod_{\alpha\in \FF q^*} (-\alpha) = (-1)^{q-1}\prod_{\alpha\in \FF q^*} \alpha.
 \end{align*}
 We know \( q = p^n \) so obviously for \( p > 2 \) we have that \( q-1 \) must be even, and hence \( (-1)^{q-1}=1 \).
 If \( p = 2 \), then we have \( q-1 \) must be odd and \( (-1)^{q-1} = -1 \), but we know \( -1 = 1 \) in characteristic 2.
-Hence we have \( \prod_{\alpha\in \Fq^*} \alpha = -1 \).
+Hence we have \( \prod_{\alpha\in \FF q^*} \alpha = -1 \).
 \end{solution}
 
 \stepcounter{exercise}
 \begin{subexercise} % PROBLEM 8.5.1
-  Let \( \alpha\in\Fq \) and \( \alpha=\beta-\beta^p \) for some \( \beta\in\Fq \).
+  Let \( \alpha\in\FF q \) and \( \alpha=\beta-\beta^p \) for some \( \beta\in\FF q \).
   Prove that \( \Tr \alpha = 0 \).
 \end{subexercise}
 \begin{solution}
@@ -120,12 +120,12 @@ Since we are working in characteristic \( p \), this simplifies to \begin{align*
   &= (\beta-\beta^p) + (\beta^p - \beta^{p+1}) + \cdots + (\beta^{p^{n-2}}-\beta^{p^{n-1}}) + (\beta^{p^{n-1}}-\beta^{p^n}).
 \end{align*}
 Notice that all intermediate terms immediately cancel out, leaving us with \( \Tr \alpha = \beta - \beta^{p^n} \).
-Recall that every \( \gamma\in \Fq \) satisfies the equality \( \gamma=\gamma^q \), and since \( q=p^n \) we have \( \beta^{p^n} = \beta \) over \( \Fq \).
+Recall that every \( \gamma\in \FF q \) satisfies the equality \( \gamma=\gamma^q \), and since \( q=p^n \) we have \( \beta^{p^n} = \beta \) over \( \FF q \).
 Thus \( \Tr \alpha = \beta-\beta = 0 \).
 \end{solution}
 
 \begin{subexercise} % PROBLEM 8.5.2
-Let \( \alpha\in\Fq \) and \( \alpha=\gamma^{1-p} \) for some nonzero \( \gamma\in\Fq \).
+Let \( \alpha\in\FF q \) and \( \alpha=\gamma^{1-p} \) for some nonzero \( \gamma\in\FF q \).
 Prove that \( \Norm \alpha = 1 \).
 \end{subexercise}
 \begin{solution}
@@ -139,16 +139,16 @@ Thus, \( \Norm \alpha = \frac{\gamma}{\gamma^{p^n}} \) and we know \( \gamma^{p^
 
 \begin{subexercise} % PROBLEM 8.5.3
   \label{qs:five-three}
-  Let \( \alpha\in\Fp \subeq \FF{p^n} \).
+  Let \( \alpha\in\FF p \sseq \FF{p^n} \).
   Prove that \( \Tr \alpha = n\alpha \).
 \end{subexercise}
 \begin{solution}
-Given that \( \alpha\in\Fp \) we know \( \alpha^p = \alpha \), so \( \alpha^{p^k} = \lt(\alpha^{p}\rt)^{p^{k-1}} = \alpha^{p^{k-1}} \) and by induction, we find that \( \alpha^{p^k} = \alpha \) for all \( k\in\N \).
+Given that \( \alpha\in\FF p \) we know \( \alpha^p = \alpha \), so \( \alpha^{p^k} = \lt(\alpha^{p}\rt)^{p^{k-1}} = \alpha^{p^{k-1}} \) and by induction, we find that \( \alpha^{p^k} = \alpha \) for all \( k\in\N \).
 Thus \( \Tr \alpha = \sum_{i=0}^{n-1} \alpha^{p^i} = \sum_{i=0}^{n-1} \alpha = n\alpha \).
 \end{solution}
 
 \begin{subexercise} % PROBLEM 8.5.4
-  Let \( \alpha\in\Fp \subeq \FF{p^n} \).
+  Let \( \alpha\in\FF p \sseq \FF{p^n} \).
   Prove that \( \Norm \alpha = \alpha^n \).
 \end{subexercise}
 \begin{solution}
