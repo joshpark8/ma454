@@ -1,0 +1,82 @@
+\documentclass{article}
+
+\input{preamble}
+\input{letterfont}
+\input{macros}
+
+\fancyhead[L]{\bd{Josh Park \\ Prof. Ilya Shkredov}}
+\fancyhead[C]{\bd{MA 45401-H01 -- Galois Theory Honors \\ Homework \thesection~(Apr 11)}}
+\fancyhead[R]{\bd{Spring 2025 \\ Page \thepage}}
+
+\begin{document}
+\setcounter{section}{10} % HW NUMBER
+\begin{exercise}
+  Let \( K,E,F\sseq L \) be fields, \( E:K,F:K \) be finite extensions. Prove \begin{enumerate}[label=(\alph*)]
+    \item if \( E:K \) is separable, then \( EF:F \) is separable;
+    \item if \( E:K\tand F:K \) are both separable, then \( EF:K \tand E\cap F:K \) are both separable;
+    \item if \( E:K \) is Galois, then \( EF:F \) is Galois;
+    \item if \( E:K\tand F:K \) are both Galois, then \( EF:K\tand E\cap F:K \) are both Galois.
+  \end{enumerate}
+\end{exercise}
+\begin{enumerate}[label=(\alph*)]
+  \item \begin{solution}
+    Suppose \( E:F \) is separable.
+
+  \end{solution}
+  \item \begin{solution}
+    Suppose \( E:K\tand F:K \) are both separable.
+
+  \end{solution}
+  \item \begin{solution}
+    Suppose \( E:K \) is Galois.
+
+  \end{solution}
+  \item \begin{solution}
+    Suppose \( E:K\tand F:K \) are both Galois.
+
+  \end{solution}
+\end{enumerate}
+
+\begin{exercise}
+  \begin{enumerate}[label=(\alph*)]
+    \item Find the splitting field \( L \) of the polynomial \( f(t) = t^4 - 4t\sq + 5 \).
+    \item Prove that \( \fdeg{L}{\Q} \) is either 4 or 8.
+    \item Find 10 intermediate fields of the extension \( L:\Q \) and their degrees.
+    \item (for enthusiasts) Draw the lattice of subfields and corresponding lattice of subgroups of \( \Gal_\Q(f) \).
+  \end{enumerate}
+\end{exercise}
+\begin{enumerate}[label=(\alph*)]
+  \item \begin{solution}
+    Notice if we set \( t^4 - 4t\sq + 5 = 0 \), then we can subtract 1 to see \( t^4 - 4t\sq + 4 = (t^2 - 2)^2 = -1 \).
+    Hence \( t^2 - 2 = \pm i \) and \( t \in \left\{ \pm\sqrt{2\pm i} \right\} \).
+    We note that if \( w = \sqrt{a+bi} \) then \( w^2 = a+bi \) and \( \bar{w^2} = \bar{w}^2 = a-bi \), whence \( \bar w = \sqrt{a-bi} \).
+    That is, the square roots of complex conjugates are themselves complex conjugates.
+    So it is enough to construct \( L \) by adjoining \( \sqrt{2+i} \) to \( \Q \) and thus \( L = \Q(\sqrt{2+i}) \).
+  \end{solution}
+
+  \item \begin{solution}
+    Set \( x = \sqrt{2+i} \).
+    Then \begin{align*}
+      x^2 &= 2+i \\
+      x^2 - 2 &= i \\
+      x^4-4x+4 &= -1 \\
+      x^4-4x+5 &= 0
+    \end{align*}
+    Hence the minimum polynomial for \( \sqrt{2+i} \) is \( \mu_{\sqrt{2+i}}^\Q(x) = x^4-4x+5 = f(x) \).
+    The degree of a field extension is the degree of the minimum polynomial of the generator, so \( \fdeg{L}{\Q} = 4 \).
+  \end{solution}
+  \item \begin{solution}
+
+  \end{solution}
+  \item \begin{solution}
+
+  \end{solution}
+\end{enumerate}
+
+\begin{exercise}
+  Draw the lattice of subfields and corresponding lattice of subgroups of \( Gal_\Q(t^6 + 3) \). \it{Hint}: Use the calculations (and the notation, if you like) from Lecture 18.
+\end{exercise}
+\begin{solution}
+
+\end{solution}
+\end{document}

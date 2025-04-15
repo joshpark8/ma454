@@ -40,20 +40,20 @@ Find Galois groups for the following polynomials \( f \) over \( \Q \):
 
 \item \( t^4-2 \)
   \begin{solution}
-    By Eisenstein's criterion with \( p=2 \), this polynomial is irreducible and the four roots are \( \alpha_{1,2} = \pm\sqrt[4]2, \alpha_{3,4}=\pm i\sqrt[4]2 \).
-    The \sfe~for this polynomial is \( \Q(\sqrt[4]2,i):\Q \), so let \( L = \Q(\sqrt[4]2, i) \).
+    By Eisenstein's criterion with \( p=2 \), this polynomial is irreducible and the four roots are \( \alpha_{1,2} = \pm\fort 2, \alpha_{3,4}=\pm i\fort 2 \).
+    The \sfe~for this polynomial is \( \Q(\fort 2,i):\Q \), so let \( L = \Q(\fort 2, i) \).
     Since \( \fdeg{L}{\Q(i)} = 4 \) and \( \fdeg{\Q(i)}{\Q}=2 \), we have that \( \fdeg{L}{\Q} = 8 \) by the tower law.
     We know any permutation of roots can only permute algebraic conjugates of the same minimum polynomial over \( \Q \).
-    Since \( \mu_{\sqrt[4]{2}}^\Q=t^4-2 \), it has conjugates \( \pm\sqrt[4]2,\pm i\sqrt[4]2 \).
+    Since \( \mu_{\fort{2}}^\Q=t^4-2 \), it has conjugates \( \pm\fort 2,\pm i\fort 2 \).
     Also \( \mu_i^\Q=t^2+1 \), so it has conjugates \( i,-i \).
-    Define a permutation \( \sigma \) such that \( \sigma(\sqrt[4]{2})=i\alpha \) and \( \sigma(i)=i \), and let \( \tau \) be complex conjugation.
-    This gives us that \( \sigma^k(\sqrt[4]2) = i^k\sqrt[4]{2} \), \( \sigma^4=e \), and \( \tau^2 = e \).
+    Define a permutation \( \sigma \) such that \( \sigma(\fort{2})=i\alpha \) and \( \sigma(i)=i \), and let \( \tau \) be complex conjugation.
+    This gives us that \( \sigma^k(\fort 2) = i^k\fort{2} \), \( \sigma^4=e \), and \( \tau^2 = e \).
     Next, we have \begin{align*}
-      \tau\circ\sigma\circ\tau(\sqrt[4]{2})=\tau\circ\sigma(\tau(\sqrt[4]{2}))=\tau\circ\sigma(\sqrt[4]{2})=\tau(i\,\sqrt[4]{2})=\tau(i)\,\tau(\sqrt[4]{2})=(-i)\sqrt[4]{2}
+      \tau\circ\sigma\circ\tau(\fort{2})=\tau\circ\sigma(\tau(\fort{2}))=\tau\circ\sigma(\fort{2})=\tau(i\,\fort{2})=\tau(i)\,\tau(\fort{2})=(-i)\fort{2}
     \end{align*}
     and
     \begin{align*}
-      \sigma^{-1}(\sqrt[4]{2})=\sigma^3(\sqrt[4]{2})= i^3\,\sqrt[4]{2} = (-i)\sqrt[4]{2}.
+      \sigma^{-1}(\fort{2})=\sigma^3(\fort{2})= i^3\,\fort{2} = (-i)\fort{2}.
     \end{align*}
     Hence, \( \tau\sigma\tau = \sigma\inv \).
     The identities \( \sigma^4 = e,\tau^2 = e \), and \( \tau\sigma\tau = \sigma\inv \) indicate that the Galois group of this polynomial is isomorphic to \( D_4 \), the dihedral group of 4 points.
@@ -97,14 +97,14 @@ Hence all coefficients of \( f \) are contained in \( M \) and \( L \) is a \sf 
   Give an example of three fields \( K, M, L \) such that \( \fdeg{L}{K} = 4 \) and \( \fdeg{M}{K} = \fdeg{L}{M} = 2 \) (hence \( K-M \) and \( M-L \) are normal extensions) but \( L : K \) is not a normal extension.
 \end{subexercise}
 \begin{solution}
-Consider the tower of fields \( \Q(\sqrt[4]2):\Q(\sqrt 2):\Q \).
+Consider the tower of fields \( \Q(\fort 2):\Q(\sqrt 2):\Q \).
 Observe that \( \mu_{\sqrt 2}^\Q(x) = x^2-2 \), whence \( \fdeg{\Q(\sqrt 2)}{\Q} = 2 \).
 Thus \( \Q(\sqrt 2):\Q \) is normal.
-Additionally, \( \mu_{\sqrt[4] 2}^{\Q(\sqrt 2)}(x) = x^2-\sqrt 2 \), whence \( \fdeg{\Q(\sqrt[4] 2)}{\Q(\sqrt 2)} = 2 \).
-Thus \( \Q(\sqrt[4] 2):\Q(\sqrt 2) \) is normal.
+Additionally, \( \mu_{\fort 2}^{\Q(\sqrt 2)}(x) = x^2-\sqrt 2 \), whence \( \fdeg{\Q(\fort 2)}{\Q(\sqrt 2)} = 2 \).
+Thus \( \Q(\fort 2):\Q(\sqrt 2) \) is normal.
 By definition, \( L:K \) is normal extension if every \( f\in K[t] \) that has a root in \( L \) splits over \( L \).
-However upon inspecting the extension \( \Q(\sqrt[4]2):\Q \), we notice that \( \mu_{\sqrt[4]2}^\Q = x^4-2 \) has roots \( \pm\sqrt[4]2 \tand \pm i\sqrt[4]2 \).
-Since \( i\sqrt[4]2 \not\in \Q(\sqrt[4]2) \), the extension is thus not normal.
+However upon inspecting the extension \( \Q(\fort 2):\Q \), we notice that \( \mu_{\fort 2}^\Q = x^4-2 \) has roots \( \pm\fort 2 \tand \pm i\fort 2 \).
+Since \( i\fort 2 \not\in \Q(\fort 2) \), the extension is thus not normal.
 \end{solution}
 
 \begin{exercise}

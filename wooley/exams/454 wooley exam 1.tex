@@ -1,89 +1,54 @@
 \documentclass{article}
-\setlength{\headheight}{22.50113pt}
-\addtolength{\topmargin}{-10.50113pt}
 
 \input{preamble}
 \input{letterfont}
 \input{macros}
 
-\fancyhead[L]{\bd{Josh Park \\ Prof. Shkredov}}
-\fancyhead[C]{\bd{MA 45401-H01 -- Galois Theory Honors \\ Homework \thesection~(Apr 4)}}
+\fancyhead[L]{\bd{Josh Park \\ Prof. Ilya Shkredov}}
+\fancyhead[C]{\bd{MA 45401-H01 -- Galois Theory Honors \\ Exam \thesection~(Prof. Trevor Wooley, 2024)}}
 \fancyhead[R]{\bd{Spring 2025 \\ Page \thepage}}
 
 \begin{document}
-\setcounter{section}{8} % HW NUMBER
-\begin{exercise}
-  Let \( K\sseq L \) be a \sfe~for some \( f\in K[t]\setminus K \).
-  Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
-    \item \( f \) has a repeated root over \( L \);
-    \item \( \exists \alpha\in L \) s.t. \( 0=f(\alpha)=(\mcD f)(\alpha) \);
-    \item \( \exists g\in K[t] \), \( \deg g \geq 1 \) s.t. \( g \) divides both \( f \) and \( \mcD f \).
-  \end{enumerate}
-\end{exercise}
-\begin{solution}
-\end{solution}
-\pagebreak
+\setcounter{section}{1}
 
-\begin{exercise}
-Let \( K \) be a field, \( \chr K = p > 0 \) and \( f\in K[t^p] \) is an irreducible polynomial over \( K \).
-Prove that \( f \) is inseparable.
-\end{exercise}
-\begin{solution}
+\bd{Problem 1.} True or False
+\begin{enumerate}[label=(\alph*)]
+  \item There is a field isomorphism \( \varphi : \Q(\sqrt{-5}) \to \Q(\sqrt{5}) \).
+  \item There is a homomorphism of finite fields \( \psi : \F_3 \to \F_{37} \).
+  \item If \( L : K \) is a field extension, and \( \alpha, \beta \in L \) are distinct elements with the same minimal polynomial over \( K \), then \( K(\alpha) \) and \( K(\beta) \) are isomorphic fields.
+  \item It is not possible to construct, using compass and straightedge in the usual way, a length whose \(14\)th power is twice a given length.
+  \item The polynomial \( x^{36} + x^{35} + \dots + x + 1 \) is irreducible over \( \Q \).
+  \item If \( K \) is a field and \( \alpha \) is an element of an extension field \( L \) of \( K \), then every element of \( K(\alpha) \) can be expressed as a polynomial in \( \alpha \) with coefficients in \( K \).
+\end{enumerate}
 
-\end{solution}
-\pagebreak
 
-\begin{exercise}
-Let \( K \) be a field, \( \chr K = p > 0 \) and \( f\in K[t^p] \) is an irreducible polynomial over \( K \).
-Prove that there is \( g\in K[t] \) and a non-negative \( n \) such that \( f(t)=g\left(t^{p^n}\right) \) and \( g \) is  an irreducible and separable polynomial.
-\end{exercise}
-\begin{solution}
+\bd{Problem 2.}
+\begin{enumerate}[label=(\alph*)]
+  \item Let \( \varphi_1 : K_1 \to L_1 \), \( \varphi_2 : K_2 \to L_2 \) be embeddings and \( \sigma : K_1 \to K_2 \), \( \tau : L_1 \to L_2 \) isomorphisms. Define what it means for \( \tau \) to \it{extend} \( \sigma \).
+  \item Let \( L : M : K \) be a tower of field extensions. Define what it means for \( \sigma : M \to L \) to be a \it{\( K \)-homomorphism}.
+  \item Define what is meant by the \it{degree} of a field extension \( L : K \).
+  \item Define what is meant by the \it{minimal polynomial} of an algebraic element \( \alpha \in L \) over \( K \).
+\end{enumerate}
 
-\end{solution}
-\pagebreak
+\bd{Problem 3.} Let \( L : K \) be a field extension. Suppose that \( \alpha \in L \) is algebraic over \( K \) and \( \beta \in L \) is transcendental over \( K \). Suppose also that \( \alpha \notin K \). Show that \( K(\alpha, \beta) : K \) is not a simple field extension.
 
-\begin{exercise}
-  Prove that \( \prod_{\alpha\in \FF q^*} \alpha = -1 \)
-\end{exercise}
-\begin{solution}
+\bd{Problem 4.} Let \( \theta = \sqrt{3 + 3\thrt{6}} \), and write \( L = \Q(\theta) \).
+\begin{enumerate}[label=(\alph*)]
+  \item Calculate the minimal polynomial of \( \theta \) over \( \Q \), and hence determine the degree of \( L : \Q \).
+  \item Let \( f \in \Q[t] \) be a monic polynomial of degree \( 4 \). Suppose \( \alpha \in L \) satisfies \( f(\alpha) = 0 \). Is it possible for \( f \) to be irreducible over \( \Q \)? Justify your answer.
+  \item Suppose \( \beta, \gamma \in \C \) with \( \beta + \gamma \in \Q^{\text{alg}} \) and \( \beta \gamma \in \Q^{\text{alg}} \). Prove that \( \beta \) and \( \gamma \) are algebraic over \( \Q \).
+\end{enumerate}
 
-\end{solution}
-\pagebreak
+\bd{Problem 5.} Let \( L : \Q \) be an algebraic extension, and let \( \varphi : L \to L \) be a field homomorphism.
+\begin{enumerate}[label=(\alph*)]
+  \item Show that \( \varphi \) is a \( \Q \)-homomorphism.
+  \item Suppose \( \alpha \in L \). Show that the minimal polynomial of \( \alpha \) over \( \Q \) has \( \varphi^n(\alpha) \) as a root for each \( n \geq 0 \).
+  \item Let \( \alpha\in L \). Show that there is a positive integer \( d \) with the property that \( \varphi^d(\alpha) = \alpha \). Moreover, putting \( \beta = \alpha + \varphi(\alpha) + \cdots + \varphi^{d-1}(\alpha) \), with \( d \) taken to be the smallest such non-negative integer, show that \( \varphi \) is a \( \Q(\beta) \)-homomorphism of \( L \).
+\end{enumerate}
 
-\stepcounter{exercise}
-\begin{subexercise}
-  Let \( \alpha\in\FF q \) and \( \alpha=\beta-\beta^p \) for some \( \beta\in\FF q \).
-  Prove that \( \Tr \alpha = 0 \).
-\end{subexercise}
-\begin{solution}
-
-\end{solution}
-\pagebreak
-
-\begin{subexercise}
-Let \( \alpha\in\FF q \) and \( \alpha=\gamma^{1-p} \) for some nonzero \( \gamma\in\FF q \).
-Prove that \( \Norm \alpha = 1 \).
-\end{subexercise}
-\begin{solution}
-
-\end{solution}
-\pagebreak
-
-\begin{subexercise}
-  Let \( \alpha\in\FF p \sseq \FF{p^n} \).
-  Prove that \( \Tr \alpha = n\alpha \).
-\end{subexercise}
-\begin{solution}
-
-\end{solution}
-\pagebreak
-
-\begin{subexercise}
-  Let \( \alpha\in\FF p \sseq \FF{p^n} \).
-  Prove that \( \Norm \alpha = \alpha^n \).
-\end{subexercise}
-\begin{solution}
-
-\end{solution}
+\bd{Problem 6.} With \( t \) an indeterminate, let \( f \in \Z[t] \) be a polynomial of degree \( n \geq 1 \), and put \( K = \Q(f) \).
+\begin{enumerate}[label=(\alph*)]
+  \item Find a polynomial \( F \in K[X] \) with \( F(t) = 0 \), and deduce that \( \Q(t) : K \) is algebraic of degree at most \( n \).
+  \item Let \( g \in \Z[t] \), \( g \ne f \). Show there exists a non-zero polynomial \( H(X, Y) \in \Z[X, Y] \) with \( H(f(t), g(t)) = 0 \).
+\end{enumerate}
 \end{document}
-

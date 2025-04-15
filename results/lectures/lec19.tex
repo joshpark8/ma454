@@ -13,12 +13,7 @@
   \end{align*}
 \end{tdefinition}
 
-\begin{tdefinition}[Galois Extension]
-  Let \( L:K \) be a field extension.
-  Then \( L:K \) is a \ul{Galois extension} if it is normal and separable.
-\end{tdefinition}
-
-\begin{tlemma}
+\begin{ttheorem}
   Let \( K,M \sseq L \) be fields and \( G, H \sgp \Aut(L) \).
   Then \begin{enumerate}[label=\arabic*)]
     \item if \( K\sseq M \), then \( \Gal(L:K) \ogp \Gal(L:M) \);
@@ -28,7 +23,12 @@
     \item \( \Gal(L:K) = \Gal(L:\Fix{L}{\Gal(L:K)}) \);
     \item \( \Fix{L}{G} = \Fix{L}{\Gal(L:\Fix{L}{G})} \).
   \end{enumerate}
-\end{tlemma}
+\end{ttheorem}
+
+\begin{tdefinition}[Galois Extension]
+  Let \( L:K \) be a field extension.
+  Then \( L:K \) is a \ul{Galois extension} if it is normal and separable.
+\end{tdefinition}
 
 \begin{ttheorem}
   Let \( L:K \) be algebraic.
@@ -53,9 +53,9 @@
   Then \( L:M \) is Galois.
 \end{tcorollary}
 
-\begin{tproposition}
-  Let \( f \in K[t]\setminus K \) be separable.
-  Then \( \Gal_K(f)\sgp A_n \iff \sqrt D\in K \)
-\end{tproposition}
+% \begin{tproposition}
+%   Let \( f \in K[t]\setminus K \) be separable.
+%   Then \( \Gal_K(f)\sgp A_n \iff \sqrt D\in K \)
+% \end{tproposition}
 
 \end{document}
