@@ -7,7 +7,7 @@
 \begin{document}
 \section{Introduction I}
 \begin{tdefinition}[Symmetric function]
-  A function \( \vphi(\llist{x}{1}{n}) \) is called symmetric if \begin{align*}
+  A function \( \vphi(\llist{x}{1}{n}) \) is called \it{symmetric} if \begin{align*}
     \varphi(x_1,\ldots,x_n) = \varphi(x_{\omega(1)},\ldots,x_{\omega(n)})
   \end{align*}
   for all \( \omega\in S_n \).
@@ -17,9 +17,9 @@
   \begin{align*}
     \sigma_1 = \sigma_1(x_1,\ldots,x_n) &= x_1+\cdots+x_n \\
     \sigma_2 = \sigma_2(x_1,\ldots,x_n) &= x_1x_2+\cdots+x_1x_n+x_2x_3+\cdots+x_{n-1}x_n \\
-    \cdots \\
+    \vdots \\
     \sigma_k = \sigma_k(x_1,\ldots,x_n)&=\sum\limits_{1\leq i_1<i_2<\cdots<i_k\leq n}x_{i_1}\cdots x_{i_k} \\
-    \cdots \\
+    \vdots \\
     \sigma_n = \sigma_n(x_1,\ldots,x_n)&=\prod\limits_{i=1}^n x_i
   \end{align*}
 \end{tdefinition}
@@ -57,7 +57,7 @@ For \( x\cb+px+q = 0 \), set \( x=ky \) such that \( \frac{k\cb}{pk} = \frac{-4}
 
 \begin{tdefinition}[Ferrari resolvent]
   Let \( f(x) = x^4 + a x^3 + b x^2 + c x + d \in K[x] \) be a quartic polynomial over a field \( K \) of characteristic not 2.
-  We define the \ul{Ferrari resolvent} of \( f \) to be the associated cubic resolvent polynomial \( R(z) \in K[z] \) given by
+  We define the \it{Ferrari resolvent} of \( f \) to be the associated cubic resolvent polynomial \( R(z) \in K[z] \) given by
   \begin{align*}
     R(z) = z^3 - 2b z^2 + (b^2 - 4d + a c) z - c^2 - a^2 d + 4b d.
   \end{align*}
@@ -65,7 +65,7 @@ For \( x\cb+px+q = 0 \), set \( x=ky \) such that \( \frac{k\cb}{pk} = \frac{-4}
 \end{tdefinition}
 
 \bd{Lagrange's method}:\quad Suppose \( f(x) = x^3 + px + q \) is a depressed cubic with roots \( x_1, x_2, x_3 \).
-    \ul{Lagrange's method} finds expressions involving the roots that take only a few values under permutation, then uses symmetry to connect them to the coefficients.
+    \it{Lagrange's method} finds expressions involving the roots that take only a few values under permutation, then uses symmetry to connect them to the coefficients.
 
     For instance, define
     \[

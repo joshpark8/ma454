@@ -35,7 +35,7 @@
 
 \begin{ttheorem}
   Let \( K \) be a field, and suppose that \( f\in K[t] \) is irreducible.
-  Then there exists a field extension \( L:K \), with associated embedding \( \vphi:K[t]\to L[y] \), having the property that \( L \) contains a root of \( \vphi(f) \).
+  Then there exists a field extension \( L:K \), with associated embedding \( \vphi:K[t]\to L[y] \), such that \( L \) contains a root of \( \vphi(f) \).
 \end{ttheorem}
 
 \begin{tproposition}
@@ -66,7 +66,7 @@
 \begin{tdefinition}[Characteristic]
   Let \( K \) be a field with additive identity \( 0_K \) and multiplicative identity \( 1_K \).
   When \( n\in \N \), we write \( n\cdot 1_K \) to denote \( 1_K+\ldots+ 1_K \) (as an \( n \)-fold sum).
-  We define the \ul{characteristic} of \( K \), denoted by \( \chr K \), to be the smallest positive integer \( m \) with the property that \( m\cdot 1_K = 0_K \);
+  We define the \it{characteristic} of \( K \), denoted by \( \chr K \), to be the smallest positive integer \( m \) with the property that \( m\cdot 1_K = 0_K \);
   if no such integer \( m \) exists, we define the characteristic of K to be 0.
 \end{tdefinition}
 
@@ -104,7 +104,7 @@
   Let \( L:K \) be a finite extension with \( K\sseq L \).
   Suppose that \( \llist{\alpha}{1}{n}\in L \) and put \( L=K(\llist{\alpha}{1}{n}) \).
   Let \( K_0 = K \), and for \( 1\leq i\leq n \), let \( K_i = K_{i-1}(\alpha_i) \).
-  Then every automorphism \( \tau \in \Gal(L:K) \) corresponds to a sequence of \homo s \( \llist{\sigma}{1}{n} \), having the property that \( \sigma_0:K\to L \) is the inclusion map, one has \( \sigma_n=\tau \), and for \( 1\leq i\leq n \), the map \( \sigma_i : K_i\to L \) is a \homo~extending \( \sigma_{i-1}:K_{i-1}\to L \).
+  Then every automorphism \( \tau \in \Gal(L:K) \) corresponds to a sequence of \homo s \( \llist{\sigma}{1}{n} \), such that \( \sigma_0:K\to L \) is the inclusion map, one has \( \sigma_n=\tau \), and for \( 1\leq i\leq n \), the map \( \sigma_i : K_i\to L \) is a \homo~extending \( \sigma_{i-1}:K_{i-1}\to L \).
 \end{tcorollary}
 
 \section{Algebraic closures}
@@ -125,7 +125,7 @@
 \end{tcorollary}
 
 \begin{tproposition}
-  Suppose that \( L \) and \( M \) are fields having the property that \( L \) is algebraically closed, and \( \psi : L \to M \) is a homomorphism.
+  Suppose that \( L \) and \( M \) are fields such that \( L \) is algebraically closed, and \( \psi : L \to M \) is a homomorphism.
   Then \( \psi(L) \) is algebraically closed.
 \end{tproposition}
 
@@ -137,12 +137,12 @@
 \section{Splitting field extensions}
 \begin{tdefinition}[Splitting field, \sfe]
   Suppose that \( L:K \) is a field extension relative to the embedding \( \vphi : K\to L \), and \( f\in K[t]\setminus K \). \begin{enumerate}[label=(\roman*)]
-    \item We say that \ul{\( f \) splits over \( L \)} if \( \vphi(f)=\lambda(t-\alpha_1)\cdots(t-\alpha_n) \), for some \( \lambda\in \vphi(K) \) and \( \llist{\alpha}{1}{n}\in L \).
+    \item We say that \it{\( f \) splits over \( L \)} if \( \vphi(f)=\lambda(t-\alpha_1)\cdots(t-\alpha_n) \), for some \( \lambda\in \vphi(K) \) and \( \llist{\alpha}{1}{n}\in L \).
     \item Suppose that \( f \) splits over \( L \), and let \( M \) be a field with \( \vphi(K)\sseq M\sseq L \).
-      We say that \ul{\( M:K \) is a splitting field extension for \( f \)} if \( M \) is the smallest subfield of \( L \) containing \( \vphi(K) \) over which \( f \) splits.
+      We say that \it{\( M:K \) is a splitting field extension for \( f \)} if \( M \) is the smallest subfield of \( L \) containing \( \vphi(K) \) over which \( f \) splits.
     \item More generally, suppose that \( S\sseq K[t]\setminus K \) has the property that every \( f\in S \) splits over \( L \).
       Let \( M \) be a field with \( \vphi(K)\sseq M\sseq L \).
-      We say that \ul{M:K is a \sfe~for \( S \)} if \( M \) is the smallest subfield of \( L \) containing \( \vphi(K) \) over which every polynomial \( f\in S \) splits.
+      We say that \it{M:K is a \sfe~for \( S \)} if \( M \) is the smallest subfield of \( L \) containing \( \vphi(K) \) over which every polynomial \( f\in S \) splits.
   \end{enumerate}
 \end{tdefinition}
 
@@ -187,7 +187,7 @@
 
 \subsection{Normal closures}
 \begin{ttheorem}
-  Suppose that \( M:L:K \) is a tower of field extensions having the property that \( M:K \) is normal.
+  Suppose that \( M:L:K \) is a tower of field extensions such that \( M:K \) is normal.
   Assume that \( K\sseq L\sseq M \).
   Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
     \item the field extension \( L:K \) is normal;
@@ -199,12 +199,12 @@
 \subsection{Composita of field extensions}
 
 \begin{tproposition}
-  Suppose that \( E:K \) and \( F:K \) are finite extensions having the property that \( K,\ E\tand F \) are contained in a field \( L \).
+  Suppose that \( E:K \) and \( F:K \) are finite extensions such that \( K,\ E\tand F \) are contained in a field \( L \).
   Then \( EF:K \) is a finite extension.
 \end{tproposition}
 
 \begin{ttheorem}
-  Let \( E:K \) and \( F:K \) be finite extensions having the property that \( K,\ E\tand F \) are contained in a field \( L \). \begin{enumerate}[label=(\alph*)]
+  Let \( E:K \) and \( F:K \) be finite extensions such that \( K,\ E\tand F \) are contained in a field \( L \). \begin{enumerate}[label=(\alph*)]
     \item When \( E:K \) is normal, then \( EF:F \) is normal.
     \item When \( E:K \) and \( F:K \) are both normal, then \( EF:K \) and \( E\cap F:K \) are normal.
   \end{enumerate}
@@ -281,7 +281,7 @@
 \end{ttheorem}
 
 \begin{tdefinition}[Galois group of polynomial]
-  When \( f\in K[t] \) and \( L:K \) is a \sfe~for \( f \), we define the \ul{Galois group of the polynomial \( f \) over \( K \)} to be \( \Gal_K(f) = \Gal(L:K) \).
+  When \( f\in K[t] \) and \( L:K \) is a \sfe~for \( f \), we define the \it{Galois group of the polynomial \( f \) over \( K \)} to be \( \Gal_K(f) = \Gal(L:K) \).
 \end{tdefinition}
 
 \subsection{Non-examinable: consequences for composita and intersections}
@@ -290,7 +290,7 @@
 
 \section{Solvability and solubility}
 \begin{tdefinition}[Soluble group]
-  A finite group \( G \) is \ul{soluble} if there is a series of groups \begin{align*}
+  A finite group \( G \) is \it{soluble} if there is a series of groups \begin{align*}
     \lt\{ \nf{id} \rt\} = G_0 \sgp G_1 \sgp \cdots\sgp G_n = G,
   \end{align*}
   with the property that \( G_i \nsgp G_{i+1} \) and \( \qg{G_{i+1}}{G_i} \) is abelian (\( 0\leq i < n \)).
@@ -307,7 +307,7 @@
 \end{tlemma}
 
 \begin{tdefinition}[Cyclic extension]
-  The extension \( L:K \) is \ul{cyclic} if \( L:K \) is a Galois extension and \( \Gal(L:K) \) is a cyclic group.
+  The extension \( L:K \) is \it{cyclic} if \( L:K \) is a Galois extension and \( \Gal(L:K) \) is a cyclic group.
 \end{tdefinition}
 
 \begin{tlemma}
@@ -340,7 +340,7 @@
 \begin{tlemma}
   Let \( \chr K = 0 \), and suppose that \( L:K \) is a cyclic extension of degree \( n \).
   Suppose also that \( K \) contains a primitive \( n \)-th root of 1.
-  Then there exists \( \theta \in K \) having the property that \( t^n -\theta \) is irreducible over \( K \), and \( L:K \) is a \sf~for \( t^n-\theta \).
+  Then there exists \( \theta \in K \) such that \( t^n -\theta \) is irreducible over \( K \), and \( L:K \) is a \sf~for \( t^n-\theta \).
   Further, if \( \beta \) is a root of \( t^n-\theta \) over \( L \), then \( L=K(\beta) \).
 \end{tlemma}
 

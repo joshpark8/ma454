@@ -1,0 +1,60 @@
+\documentclass[a4paper]{article}
+
+\input{preamble}
+\input{letterfont}
+\input{macros}
+
+\begin{document}
+\section{Soluble Groups II}
+\begin{ttheorem}
+  Let \( G \) be a group.
+  Then the following are equivalent:
+  \begin{enumerate}
+    \item \( G \) is a soluble group;
+    \item \( \exists n\in \Z^{+} \tst G^{(n)} = \left\{ e \right\} \);
+    \item \( \exists \)dnormal series \begin{align*}
+      \left\{ Id. \right\} &= G_n \sgp G_{n-1} \sgp \cdots \sgp G_1 \sgp G_0 = G
+    \end{align*}
+    such that \( G_j \pnsgp G \) and all quotients \( \qg{G_{j-1}}{G_j} \) are abelian;
+    \item \( \exists \)subnormal series such that quotients \( \qg{G_{j-1}}{G_j} \) are abelian.
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{tremark}
+  Recall that \( G' = \cyc{[x,y] : x,y\in G} \) where \( [x,y] = xyx\inv y\inv \).
+  Equivalently,\begin{quote}
+    \vspace{-1.9em}\begin{texercise}
+      \( G' \) is a minimal normal subgroup of \( G \) such that \( \qg{G}{G'} \) is abelian.
+    \end{texercise}
+  \end{quote}
+  Finally, \( G^{(n)} = \left( G^{(n-1)} \right)' \) and \( \tgp = G^{(n)} \pnsgp G^{(n-1)} \pnsgp \cdots \pnsgp G' \pnsgp G \) is the \it{derived series} (not to be confused with \( G_{n+1} = [G_n, G]\), the \it{lower central series}).
+\end{tremark}
+
+\begin{tremark}
+?? don't understand this one
+\end{tremark}
+
+\begin{tlemma}
+  Let \( \vphi:G\mapsto H \) be an epimorphism.
+  Then \( \vphi(G') = H' \).
+\end{tlemma}
+
+\begin{tdefinition}[Composition series]
+  Let \( G \) be a group.
+  Then a \it{composition series} of \( G \) is a subnormal series of finite length
+  \begin{align*}
+    \left\{ Id. \right\} &= G_0 \pnsgp G_{1} \pnsgp \cdots \pnsgp G_{\ell-1} \pnsgp G_\ell = G
+  \end{align*}
+  such that \( \qg{G_j}{G_{j-1}} \) is a simple group for all \( j \).
+\end{tdefinition}
+
+\begin{ttheorem}[Jordan-H\"older]
+  Any 2 composition series of some group \( G \) are equivalent up to permutation and isomorphism.
+\end{ttheorem}
+
+\begin{ttheorem}
+  Let \( K \) be a field with \( \chr K \neq 2 \) and let \( f\in K[t] \) be a separable polynomial with splitting field \( L \).
+  Then \( f=0 \) is solvable by \nf{quadratic} radicals \iff~\( \fdeg{L}{K}=2^t \).
+\end{ttheorem}
+
+\end{document}

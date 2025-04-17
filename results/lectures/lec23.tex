@@ -1,0 +1,58 @@
+\documentclass[a4paper]{article}
+
+\input{preamble}
+\input{letterfont}
+\input{macros}
+
+\begin{document}
+\section{Soluble Groups I}
+
+\begin{tdefinition}[Soluble group]
+  A group \( G \) is \it{soluble} if there exists a finite series of subgroups \begin{align*}
+    \left\{ Id. \right\} &= G_n \sgp G_{n-1} \sgp \cdots \sgp G_0 = G
+  \end{align*}
+  such that \begin{enumerate}
+    \item \( G_j \pnsgp G_{j-1} \quad \forall 1\le j\le n \) and
+    \item \( \qg{G_{j-1}}{G_j} \) is cyclic \( \forall 1\le j\le n  \).
+  \end{enumerate}
+\end{tdefinition}
+
+\begin{texercise}
+  The Heisenberg group \( \begin{pmatrix}
+    1 & a &b \\ 0 &1 &c \\ 0 & 0 & 1
+  \end{pmatrix} \) is soluble.
+\end{texercise}
+
+\begin{tdefinition}[Simple group]
+  A group \( G \) is \it{simple} if \( G \) has no non-triival normal subgroups.
+\end{tdefinition}
+
+\begin{tlemma}
+  For \( n\geq 5 \) the group \( A_n \) is simple (and hence not soluble).
+\end{tlemma}
+
+\begin{texercise}
+  \( V_4 \) is the only non-trivial subgroup of \( A_4 \).
+\end{texercise}
+
+\begin{tlemma}
+  Let \( G \) be a group with \( G\nsgp G \) and \( A\sgp G \).
+  Then
+  \begin{enumerate}
+    \item \( (A\cap H)\nsgp A \) and \( \qg{A}{(A\cap H)}\iso \qg{(HA)}{H} \)
+    \item if \( H\sseq A \) and \( A\nsgp G \), then \( H\nsgp A \), \( (\qg{A}{H})\nsgp (\qg{G}{H}) \) and \( \qg{(\qg{G}{H})}{(\qg{A}{H})}\iso \qg{G}{A} \).
+  \end{enumerate}
+\end{tlemma}
+
+\begin{ttheorem}
+  \begin{enumerate}
+    \item If \( G \) is a soluble group with \( A\sgp G \), then \( A \) is soluble.
+    \item Let \( H\nsgp G \). Then \( G \) is soluble \iff~\( H\tand \qg{G}{H} \) are soluble.
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{tcorollary}
+  \( S_n \) is not soluble for \( n\geq 5 \).
+\end{tcorollary}
+
+\end{document}

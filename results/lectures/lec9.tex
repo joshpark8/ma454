@@ -8,8 +8,8 @@
 \section{Algebraic Closure I}
 \begin{tdefinition}[Algebraically closed field, algebraic closure]
   Let \( M \) be a field. \begin{enumerate}[label=(\roman*)]
-    \item We say that \( M \) is \ul{algebraically closed} if every non-constant polynomial \( f\in M[t] \) has a root in \( M \).
-    \item We say that \( M \) is an algebraic closure of \( K \) if \( M:K \) is an algebraic field extension having the property that \( M \) is algebraically closed.
+    \item We say that \( M \) is \it{algebraically closed} if every non-constant polynomial \( f\in M[t] \) has a root in \( M \).
+    \item We say that \( M \) is an algebraic closure of \( K \) if \( M:K \) is an algebraic field extension such that \( M \) is algebraically closed.
   \end{enumerate}
 \end{tdefinition}
 
@@ -25,7 +25,7 @@
 
 \begin{tdefinition}[Chain]
   Suppose that \( X \) is a nonempty, partially ordered set with \( \leq \) denoting the partial ordering.
-  A \ul{chain} \( C \) in \( X \) is a collection of elements \( \lt\{ a_i \rt\}_{i\in I} \) of \( X \) having the property that for every \( i,j\in I \), either \( a_i\leq a_j \tor a_j\leq a_i \).
+  A \it{chain} \( C \) in \( X \) is a collection of elements \( \lt\{ a_i \rt\}_{i\in I} \) of \( X \) such that for every \( i,j\in I \), either \( a_i\leq a_j \tor a_j\leq a_i \).
 \end{tdefinition}
 
 \bd{Zorn's Lemma:}\quad Suppose that \( X \) is a nonempty, partially ordered set with \( \leq \) the partial ordering.
@@ -36,19 +36,19 @@ If every non-empty chain \( C \) in \( X \) has an upper bound in \( X \), then 
 \end{tcorollary}
 
 \begin{tlemma}
-  Let \( K \) be a field. Then there exists an algebraic extension \( E:K \), with \( K\sseq E \), having the property that \( E \) contains a root of every irreducible \( f\in K[t] \), and hence also every \( g\in K[t]\setminus K \).
+  Let \( K \) be a field. Then there exists an algebraic extension \( E:K \), with \( K\sseq E \), such that \( E \) contains a root of every irreducible \( f\in K[t] \), and hence also every \( g\in K[t]\setminus K \).
 \end{tlemma}
 
 \begin{ttheorem}[Existence of Algebraic Closures]
   Suppose that \( K \) is a field.
-  Then there exists an algebraic extension \( \Kbar \) of \( K \) having the property that \( \Kbar \) is algebraically closed.
+  Then there exists an algebraic extension \( \Kbar \) of \( K \) such that \( \Kbar \) is algebraically closed.
 \end{ttheorem}
 
 \begin{tdefinition}[Extension of field \homo, isomorphic field extensions]
   For \( i = 1 \tand 2 \), let \( L_i : K_i \) be a field extension relative to the embedding \( \vphi_i : K_i\to L_i \).
   Suppose that \( \sigma : K_1\to K_2 \) and \( \tau:L_1\to L_2 \) are isomorphisms.
-  We say that \ul{\( \tau \) extends \( \sigma \)} if \( \tau\circ\vphi_1 = \vphi_2\circ\sigma \).
-  In such circumstances, we say that \( L_1 : K_1 \tand L_2 : K_2 \) are \ul{isomorphic field extensions}.
+  We say that \it{\( \tau \) extends \( \sigma \)} if \( \tau\circ\vphi_1 = \vphi_2\circ\sigma \).
+  In such circumstances, we say that \( L_1 : K_1 \tand L_2 : K_2 \) are \it{isomorphic field extensions}.
   \begin{center}
     \begin{tikzcd}
       L_{1} \arrow[r, "\tau"]
@@ -61,12 +61,12 @@ If every non-empty chain \( C \) in \( X \) has an upper bound in \( X \), then 
       \arrow[u, "\vphi_{2}"]
     \end{tikzcd}
   \end{center}
-  When \( \sigma:K_1\to K_2 \) and \( \tau:L_1\to L_2 \) are \homo s (instead of isomorphisms), then \ul{\( \tau \) extends \( \sigma \) as a \homo~of fields} when the isomorphism \( \tau:L_1\to L_1' = \tau(L_1) \) extends the isomorphism \( \sigma:K_1\to K_1' = \sigma(K_1) \).
+  When \( \sigma:K_1\to K_2 \) and \( \tau:L_1\to L_2 \) are \homo s (instead of isomorphisms), then \it{\( \tau \) extends \( \sigma \) as a \homo~of fields} when the isomorphism \( \tau:L_1\to L_1' = \tau(L_1) \) extends the isomorphism \( \sigma:K_1\to K_1' = \sigma(K_1) \).
 \end{tdefinition}
 
 \begin{tdefinition}[\(K\)-\homo]
   Let \( L : K \) be a field extension relative to the embedding \( \varphi : K \to L \), and let \( M \) be a subfield of \( L \) containing \( \varphi(K) \).
-  Then, when \( \sigma : M \to L \) is a \homo, we say that \( \sigma \) is a \ul{\(K\)-\homo} if \( \sigma \) leaves \( \varphi(K) \) pointwise fixed, which is to say that for all \( \alpha \in \varphi(K) \), one has \( \sigma(\alpha) = \alpha \).
+  Then, when \( \sigma : M \to L \) is a \homo, we say that \( \sigma \) is a \it{\(K\)-\homo} if \( \sigma \) leaves \( \varphi(K) \) pointwise fixed, which is to say that for all \( \alpha \in \varphi(K) \), one has \( \sigma(\alpha) = \alpha \).
 \end{tdefinition}
 
 \begin{tlemma}

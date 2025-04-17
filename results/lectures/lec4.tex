@@ -9,8 +9,8 @@
 \begin{tdefinition}[Smallest subring/subfield]
   Let \( L:K \) with \( K\sseq L \).
   \begin{enumerate}[label=(\roman*)]
-    \item When \( \alpha\in L \), we denote by \( K[\alpha] \) the \ul{smallest subring of \( L \) containing \( K \) and \( \alpha \)}, and by \( K(\alpha) \) the \ul{smallest subfield of \( L \) containing \( K \) and \( \alpha \)};
-    \item More generally, when \( A\sseq L \), we denote by \( K[A] \) the \ul{smallest subring of \( L \) containing \( K \tand A \)}, and by \( K(A) \) the \ul{smallest subfield of \( L \) containing \( K \tand A \)}.
+    \item When \( \alpha\in L \), we denote by \( K[\alpha] \) the \it{smallest subring of \( L \) containing \( K \) and \( \alpha \)}, and by \( K(\alpha) \) the \it{smallest subfield of \( L \) containing \( K \) and \( \alpha \)};
+    \item More generally, when \( A\sseq L \), we denote by \( K[A] \) the \it{smallest subring of \( L \) containing \( K \tand A \)}, and by \( K(A) \) the \it{smallest subfield of \( L \) containing \( K \tand A \)}.
   \end{enumerate}
   Then \begin{align*}
     K[\alpha] &= \lt\{ \sum_{i=0}^{d}c_i\alpha^i : d\in \ZZ{\leq 0},\ c_0,\ldots,c_d\in K \rt\} \\
@@ -21,20 +21,20 @@
 \begin{tdefinition}[Algebraic/transcendental element]
   Suppose that \( L: K \) is a field extension with \( K\sseq L \) and \( \alpha\in L \).
   \begin{enumerate}[label=(\roman*)]
-    \item We say \ul{\( \alpha \) is algebraic over K} if \( \exists f_{\not\equiv 0} \in K[t] \) such that \( f(\alpha)=0 \).
-    \item If \( \alpha \) is not algebraic over \( K \), then we say \ul{\( \alpha \) is transcendental over \( K \)}.
-    \item When every element of \( L \) is algebraic over \( K \), we say that \ul{\( L \) is algebraic over \( K \)}.
+    \item We say \it{\( \alpha \) is algebraic over K} if \( \exists f_{\not\equiv 0} \in K[t] \) such that \( f(\alpha)=0 \).
+    \item If \( \alpha \) is not algebraic over \( K \), then we say \it{\( \alpha \) is transcendental over \( K \)}.
+    \item When every element of \( L \) is algebraic over \( K \), we say that \it{\( L \) is algebraic over \( K \)}.
   \end{enumerate}
 \end{tdefinition}
 
 \begin{tdefinition}[Evaluation map]
   Suppose that \( L: K \) is a field extension with \( K \sseq L \), and that \( \alpha\in L \).
-  We define the \ul{evaluation map} \( E_\alpha : K[t] \to L \) by putting \( E_\alpha(f) = f(\alpha) \) for each \( f \in K[t] \).
+  We define the \it{evaluation map} \( E_\alpha : K[t] \to L \) by putting \( E_\alpha(f) = f(\alpha) \) for each \( f \in K[t] \).
 \end{tdefinition}
 
 \begin{tdefinition}[Minimal polynomial]
   Suppose that \( L : K \) is a field extension with \( K \sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
-  Then the minimal polynomial of \( \alpha \) over \( K \) is the unique monic polynomial \( \mak \) having the property that \( \ker(E_\alpha) = (\mak) \).
+  Then the minimal polynomial of \( \alpha \) over \( K \) is the unique monic polynomial \( \mak \) such that \( \ker(E_\alpha) = (\mak) \).
 \end{tdefinition}
 
 \begin{tlemma}

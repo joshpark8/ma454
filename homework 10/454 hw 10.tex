@@ -19,21 +19,46 @@
   \end{enumerate}
 \end{exercise}
 \begin{enumerate}[label=(\alph*)]
-  \item \begin{solution}
-    Suppose \( E:F \) is separable.
+  \item \label{qs:one-a} \begin{solution}
+    Suppose \( E:K \) is separable.
+    We are given that \( E:K\tand F:K \) are finite, so we can write \( E = K(\llist{\alpha}{1}{n}) \tand F = K(\llist{\beta}{1}{m}) \) for \( \alpha_i\in E \tand \beta_j\in F \).
+    Then the composite field \( EF \) becomes \begin{align*}
+      EF &= K(\llist{\alpha}{1}{n},\llist{\beta}{1}{m}) \\
+      &= F(\llist{\alpha}{1}{n}).
+    \end{align*}
+    Since \( E:K \) is finite it is also algebraic, hence the minimum polynomial for each element of \( E \) is well defined over \( K \), and similarly for \( EF:F \).
+    For any \( b\in F \), the minimal polynomial over \( F \) is \( x - b \), which has distinct roots, so \( b \) is separable over \( F \).
+    Hence it is enough to show that \( \llist{\alpha}{1}{n} \) is separable over \( F \).
 
+    We have that \( \mak \) is separable by hypothesis for all \( \alpha\in \left\{ \llist{\alpha}{1}{n} \right\} \).
+    Then \( \mak(x)\in K[x]\subseteq F[x] \) so \( \mu_\alpha^F \) divides \( \mak \) and thus \( \mu_\alpha^F \) is thus also separable, whence \( EF:F \) is separable.
   \end{solution}
-  \item \begin{solution}
+
+  \item \label{qs:one-b} \begin{solution}
     Suppose \( E:K\tand F:K \) are both separable.
-
+    Similarly to part \ref{qs:one-a}, we can write \begin{align*}
+      EF &= K(\llist{\alpha}{1}{n},\llist{\beta}{1}{m}),
+    \end{align*}
+    for \( \alpha_i\in E \tand \beta_j\in F \).
+    By definition, \( a \) is separable over \( K \) for all \( a\in E \), and similarly for \( b\in F \).
+    Then each \( \llist{\alpha}{1}{n}\in E,\ \llist{\beta}{1}{m}\in F \) is separable over \( K \).
+    By theorem an extension \( K(\llist{\gamma}{1}{k}):K \) is separable iff each \( \gamma_i \) is separable over \( K \).
+    Thus \( EF:K \) is separable.
+    Furthermore, we know \( E:K \) is separable and \( E\cap F\sseq E \), so \( E\cap F:K \) is separable by definition.
   \end{solution}
+
   \item \begin{solution}
     Suppose \( E:K \) is Galois.
-
+    Then \( E:K \) is normal and separable by definition.
+    Since \( E:K\tand F:K \) are both finite and \( E:K \) is normal, we have by lemma that \( EF:F \) is normal and by part \ref{qs:one-a}, \( EF:F \) is separable.
+    Thus \( EF:F \) is Galois.
   \end{solution}
+
   \item \begin{solution}
     Suppose \( E:K\tand F:K \) are both Galois.
-
+    Then \( E:K\tand F:K \) are both normal and separable by definition.
+    Since \( E:K\tand F:K \) are both finite and normal, we have by lemma that \( EF:K \tand  E\cap F:K \) are both normal and by part \ref{qs:one-b}, \( EF:K\tand E\cap F:K \) are both separable.
+    Thus \( EF:K\tand E\cap F:K \) are both Galois.
   \end{solution}
 \end{enumerate}
 
@@ -62,8 +87,7 @@
       x^4-4x+4 &= -1 \\
       x^4-4x+5 &= 0
     \end{align*}
-    Hence the minimum polynomial for \( \sqrt{2+i} \) is \( \mu_{\sqrt{2+i}}^\Q(x) = x^4-4x+5 = f(x) \).
-    The degree of a field extension is the degree of the minimum polynomial of the generator, so \( \fdeg{L}{\Q} = 4 \).
+    Hence the minimum polynomial for \( \sqrt{2+i} \) is \( \mu_{\sqrt{2+i}}^\Q(x) = x^4-4x+5 = f(x) \) and \( \fdeg{L}{\Q} = 4 \).
   \end{solution}
   \item \begin{solution}
 
