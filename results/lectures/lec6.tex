@@ -6,6 +6,64 @@
 
 \begin{document}
 \section{Ruler and Compass Constructions}
+\begin{tdefinition}[Constructible points/angles]
+  Let \( P_0 = (0,0)\tand P_1 = (1,0) \), and let \( \mcS_n = (P_0,\ldots,P_n) \).
+  Then \( P_{n+1} \) is a constructible point if it is the intersection of either \begin{enumerate}
+    \item two lines containing points in \( \mcS_n \);
+    \item two circles with centers in \( \mcS_n \);
+    \item a circle and line with center and endpoints in \( \mcS_n \).
+  \end{enumerate}
+  Similarly, an angle \( \theta \) is constructible if for some \( a\in \R \), there exists some constructible point \( x \) such that \( x^2 = a^2 \).
+\end{tdefinition}
+
+\begin{tlemma}
+  If \( n \)-gon constructible, then \( 2n \)-gon is constructible.
+\end{tlemma}
+
+\begin{tlemma}
+  If \( a,b,c \) constructible (or polyquadratic), then \( a\pm b,\ \frac{ab}{c},\tand \sqrt{ab} \) constructible.
+\end{tlemma}
+
+\begin{tfact}
+If \( m \)-gon and \( n \)-gon are constructible for coprime \( m,n \), then \( mn \)-gon is contructible.
+\end{tfact}
+
+\begin{tfact}
+  If \( p\geq \) prime, then \( p^k \)-gon constructible for \( k\in \N \).
+\end{tfact}
+
+\begin{ttheorem}[Gauss]
+  \begin{align*}
+    \cos \frac{2\pi}{17} = \frac{-1 + \sqrt{17}+\sqrt{34-2\sqrt{17}}+2\sqrt{17+3\sqrt{17}-\sqrt{34-2\sqrt{17}}}}{16}
+  \end{align*}
+\end{ttheorem}
+
+\begin{tcorollary}
+  The 17-gon is constructible.
+\end{tcorollary}
+
+\begin{tcorollary}
+  If \( a\in\R \) is constructible, then \( \fdeg{\Q(a)}{\Q}=2^n \) for some \( n\geq  \)
+\end{tcorollary}
+
+\begin{tcorollary}
+  Given a cube \( C_1 \) with volume \( V_1 \), it is impossible to construct a cube \( C_2 \) with volume \( 2V_2 \) by ruler and compass.
+  That is, the volume of a cube can not be duplicated by ruler and compass.
+\end{tcorollary}
+
+\begin{tcorollary}
+  An arbitrary angle cannot be trisected by ruler and compass.
+\end{tcorollary}
+
+\begin{ttheorem}[Gauss-Wantzel]
+  A regular \( n \)-gon is constructible \( \iff n=2^r \prod_{i=1}^s p_i \) for \( r\in\Z_{\geq 0} \) and Fermat primes \( p_i = 2^{\left( 2^k \right)}+1 \) for \( k\in \Z_{\geq 0} \).
+\end{ttheorem}
+
+\hl{TODO:} define \( V_n \)
+
+\begin{tlemma}
+  For all integers \( d \) and all \( d \)-periods \( \theta \), \( V_d = \Q(\theta) \).
+\end{tlemma}
 
 
 \end{document}
