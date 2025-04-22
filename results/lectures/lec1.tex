@@ -30,8 +30,11 @@
 
 \bd{Vieta formulae:}
   \begin{align*}
-    x^n+a_1x^{n-1}+\cdots + a_{n-1}x+a_n &= (x-x_1)(x-x_2)\cdots(x-x_n) \\
-    &= x^n-\sigma_1x^{n-1} + \sigma_2 x^{n-2} + \cdots + (-1)^n\sigma_n
+  r_1 + r_2 + \cdots + r_n &= -\frac{a_{n-1}}{a_n} \\
+  \sum_{1 \le i < j \le n} r_i r_j &= \frac{a_{n-2}}{a_n} \\
+  \sum_{1 \le i < j < k \le n} r_i r_j r_k &= -\frac{a_{n-3}}{a_n} \\
+  &\vdots \\
+  r_1 r_2 \cdots r_n &= (-1)^n \frac{a_0}{a_n}
   \end{align*}
 
 \begin{tcorollary}
