@@ -1,0 +1,158 @@
+\documentclass{article}
+
+\input{preamble}
+\input{letterfont}
+\input{macros}
+
+\fancyhead[L]{\bd{Josh Park \\ Prof. Ilya Shkredov}}
+\fancyhead[C]{\bd{MA 45401-H01 -- Galois Theory Honors \\ Homework \thesection~(Apr 4)}}
+\fancyhead[R]{\bd{Spring 2025 \\ Page \thepage}}
+
+\begin{document}
+\setcounter{section}{8} % HW NUMBER
+\begin{exercise} % PROBLEM 8.1
+  \label{qs:one}
+  Let \( K\sseq L \) be a \sfe~for some \( f\in K[t]\setminus K \).
+  Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
+    \item \( f \) has a repeated root over \( L \);
+    \item \( \exists \alpha\in L \) s.t. \( 0=f(\alpha)=(\mcD f)(\alpha) \);
+    \item \( \exists g\in K[t] \), \( \deg g \geq 1 \) s.t. \( g \) divides both \( f \) and \( \mcD f \).
+  \end{enumerate}
+\end{exercise}
+\begin{solution}
+((i)\( \imp \)(ii)) Suppose \( f \in K[t]\setminus K \) has a repeated root in \( L \).
+That is, \( f = \prod_{i=0}^{d}(t-\alpha_i)^{r_i} \) where \( \llist{\alpha}{0}{d} \in L \) are roots of \( f \), \( r_j = n \geq 2 \) for some \( j \), and without loss of generality we can say \( j=0 \).
+Then \( f=gh \) over \( L \) where \( g,h\in L[t]\setminus L \) of strictly smaller degree such that \( g=(t-\alpha_0)^n \) and \( h=\prod_{i=1}^{d}(t-\alpha_i)^{r_i} \), whence
+\begin{align*}
+\mcD f &= \mcD(g)h + g\mcD(h)\\
+        &= n(t-\alpha_0)^{n-1}h + (t-\alpha_0)^{n}h' \\
+        &= (t-\alpha_0)[n(t-\alpha_0)^{n-2}h + (t-\alpha_0)^{n-1}h'].
+\end{align*}
+Thus \( f(\alpha_0) = \mcD f(\alpha_0) = 0 \).
+
+((i)\( \pmi \)(ii)) Suppose \( f \in K[t]\setminus K \) does \it{not} have repeated a root in \( L \).
+That is, \( f = \prod_{i=0}^{d}(t-\alpha_i) \) where \( \llist{\alpha}{0}{d} \in L \) are distinct roots of \( f \).
+Let \( R_f = \{\llist{\alpha}{0}{d}\} \) be the set of all roots of \( f \).
+Then it is easy to see that \begin{align*}
+  \mcD f(t) = \sum_{i=1}^{d}\left(\prod_{j\neq i} (t-\alpha_j)\right) \qimp \mcD f(\alpha_k) = \prod_{j\neq k} (\alpha_k-\alpha_j) \neq 0, \quad\forall \alpha_k\in R_f
+\end{align*}
+since \( \alpha_j\neq \alpha_k \) for all \( j\neq k \), so \( \not\exists \alpha\in L \) such that \( 0=f(\alpha)=(\mcD f)(\alpha) \).
+
+((ii)\( \imp \)(iii)) Suppose \(\exists\alpha\in L \tst \mcD f(\alpha)=f(\alpha)=0 \) for some \( f\in K[t]\setminus K \).
+By definition of formal derivative, we know \( \mcD f \in K[t] \).
+Moreover we are given that \( L \) is a \sfe~for \( f \), so \( L:K \) must be finite and hence algebraic.
+Thus \( \exists\mak\in K[t] \), and by theorem we have that \( \mak\divs f \) and \( \mak \divs \mcD f \).
+
+((iii)\( \imp \)(ii)) Suppose \( \exists g\in K[t] \) with \( \deg g \geq 1 \) such that \( g \) divides both \( f \) and \( \mcD f \).
+We know that \( f = \prod_{i=0}^{d}(t-\alpha_i)^{r_i} \) where \( \llist{\alpha}{0}{d} \in L \) are roots of \( f \) and \( r_i \in \N \) for all \( i \).
+Thus for \( g \) to divide \( f \) it must be divisible by some factor \( (t-\alpha_j) \) of \( f \) for some \( j \).
+It follows that \( \mcD f \) must also be divisible by \( (t-\alpha_j) \), whence \( \alpha_j \) is a root of both \( \mcD f \tand f \).
+
+Thus we have that (i) \iff~(ii) \iff~(iii).
+\end{solution}
+
+\begin{exercise} % PROBLEM 8.2
+  \label{qs:two}
+Let \( K \) be a field, \( \chr K = p > 0 \) and \( f\in K[t^p] \) is an irreducible polynomial over \( K \).
+Prove that \( f \) is inseparable.
+\end{exercise}
+\begin{solution}
+  Suppose \( f = \sum_{i=0}^{d} a_i t^{ip} \in K[t^p] \) is irreducible over \( K \).
+  By definition of the formal derivative, \( \mcD f = \sum_{i=1}^{d} a_i pi t^{i(p-1)} = p\sum_{i=1}^{d} a_i i t^{i(p-1)} = 0 \).
+  Then by exercise \ref{qs:one} it follows that \( f \) is inseparable over \( K \).
+\end{solution}
+
+\begin{exercise} % PROBLEM 8.3
+Let \( K \) be a field, \( \chr K = p > 0 \) and \( f\in K[t^p] \) is an irreducible polynomial over \( K \).
+Prove that there is \( g\in K[t] \) and a non-negative \( n \) such that \( f(t)=g\left(t^{p^n}\right) \) and \( g \) is an irreducible and separable polynomial.
+\end{exercise}
+\begin{solution}
+We first notice that by Exercise \ref{qs:two}, we have that \( f \) is inseparable over \( K \).
+We know \( f = \sum_{i=0}^{d} a_i t^{ip} \in K[t^p] \) so let \( g(t^{p^n}) = \sum_{i=0}^{d} a_i \lt(t^{p^n}\rt)^i \), which is obviously equivalent to \( f \) for \( n=1 \in \ZZ{\ge 0} \).
+Thus \( f(t) = g\lt(t^{p^n}\rt) \) for some \( g\in K[t] \) and \( n\in \ZZ{\ge 0} \).
+
+Suppose then that \( g \) is reducible in \( K[t] \), which is to say that \( g=\ol g_1\ol g_2 \) for \( \ol g_1,\ol g_2\in K[t]\setminus K \) of strictly lesser degree than \( g \), and without loss of generality \( \deg \ol g_1\geq \deg \ol g_2 \geq 1 \).
+Then \begin{align*}
+  f(t) = g(t^p) = \ol g_1(t^p)\ol g_2(t^p) = f_1(t)f_2(t)
+\end{align*}
+where \( f_i(t) = \ol g_i(t^p)\in K[t^p] \) for \( i = 1,2 \).
+Hence \( f \) is reducible if \( g \) is reducible, and by contrapositive the irreduciblity of \( f \) implies irreducibility of \( g \).
+
+If \( \mcD g(t) \neq 0 \), then \( g \) is separable and we are done.
+Else, assume we have shown that \( f(t) = g_n\lt(t^{p^{n+1}}\rt) \in K[t^p] \) for \( 1\le k \le n \).
+If \( \mcD g_n(t) \neq 0 \), then \( g_n \) is separable and we are done.
+Else, \( g_n(t) = g_{n+1}(t^p) \) by Exercise \ref{qs:one}.
+
+Notice that \( \deg f=\deg g_n\lt(t^{p^n}\rt) = (\deg g_n)\cdot p^n \in \N \) and we know \( p\neq 0 \), so obviously \( \deg f > \deg g > \deg g_1 > \cdots > \deg g_n \) and \( \deg g_n = \frac{\deg f}{p^n} \).
+Eventually we must have either \( \mcD g_n \neq 0 \) or \( \deg g_n = 1 \) and we note that in the latter case, \( g_n\in K[t^p] \) contradicts that \( f \) is irreducible.
+
+Hence our inductive procedure necessarily ends in some \( g_n \) with \( \mcD g_n \neq 0 \), whence \( g_n \) is separable over \( K \).
+\end{solution}
+
+\begin{exercise} % PROBLEM 8.4
+  Prove that \( \prod_{\alpha\in \FF q^*} \alpha = -1 \)
+\end{exercise}
+\begin{solution}
+By theorem, we have that every element of \( \FF q \) satisfies the equality \( t^q = t \).
+Then \( t^q-t = t(t^{q-1}-1) = 0 \) and we can factor out the zero root to see that every nonzero element of \( \FF q \) satisfies the relationship \( t^{q-1} = 1 \).
+Thus, every element of \( \FF q^* \) is a root of the polynomial \( x^{q-1}-1 = 0 \).
+Moreover, we know \( \FF q \) is a splitting field for \( t^q-t \), so it follows that \( \FF q^* \) is also a splitting field for \( x^{q-1}-1 \).
+Hence \( x^{q-1}-1 = \prod_{\alpha\in \FF q^*} (x-\alpha) \).
+Then by comparing constant terms, we can see that \begin{align*}
+  -1 = \prod_{\alpha\in \FF q^*} (-\alpha) = (-1)^{q-1}\prod_{\alpha\in \FF q^*} \alpha.
+\end{align*}
+We know \( q = p^n \) so obviously for \( p > 2 \) we have that \( q-1 \) must be even, and hence \( (-1)^{q-1}=1 \).
+If \( p = 2 \), then we have \( q-1 \) must be odd and \( (-1)^{q-1} = -1 \), but we know \( -1 = 1 \) in characteristic 2.
+Hence we have \( \prod_{\alpha\in \FF q^*} \alpha = -1 \).
+\end{solution}
+
+\stepcounter{exercise}
+\begin{subexercise} % PROBLEM 8.5.1
+  Let \( \alpha\in\FF q \) and \( \alpha=\beta-\beta^p \) for some \( \beta\in\FF q \).
+  Prove that \( \Tr \alpha = 0 \).
+\end{subexercise}
+\begin{solution}
+By definition of trace, we have \begin{align*}
+  \Tr{\alpha} = \sum_{i=0}^{n-1} \alpha^{p^i} = \sum_{i=0}^{n-1}(\beta-\beta^p)^{p^i}.
+\end{align*}
+Since we are working in characteristic \( p \), this simplifies to \begin{align*}
+  \Tr \alpha &= \sum_{i=0}^{n-1}\beta^{p^i}-(\beta^p)^{p^i} = \sum_{i=0}^{n-1}\beta^{p^i}-\beta^{p^{i+1}} \\
+  &= (\beta-\beta^p) + (\beta^p - \beta^{p+1}) + \cdots + (\beta^{p^{n-2}}-\beta^{p^{n-1}}) + (\beta^{p^{n-1}}-\beta^{p^n}).
+\end{align*}
+Notice that all intermediate terms immediately cancel out, leaving us with \( \Tr \alpha = \beta - \beta^{p^n} \).
+Recall that every \( \gamma\in \FF q \) satisfies the equality \( \gamma=\gamma^q \), and since \( q=p^n \) we have \( \beta^{p^n} = \beta \) over \( \FF q \).
+Thus \( \Tr \alpha = \beta-\beta = 0 \).
+\end{solution}
+
+\begin{subexercise} % PROBLEM 8.5.2
+Let \( \alpha\in\FF q \) and \( \alpha=\gamma^{1-p} \) for some nonzero \( \gamma\in\FF q \).
+Prove that \( \Norm \alpha = 1 \).
+\end{subexercise}
+\begin{solution}
+By definition of norm we have \begin{align*}
+  \Norm{\alpha} &= \prod_{i=0}^{n-1} \alpha^{p^i} = \prod_{i=0}^{n-1} \lt(\gamma^{1-p}\rt)^{p^i} = \prod_{i=0}^{n-1} \frac{\gamma^i}{\gamma^{p^{i+1}}} \\
+  &= \lt(\frac{\gamma}{\gamma^p}\rt) \cdot \lt(\frac{\gamma^p}{\gamma^{p^2}}\rt) \cdot \lt(\frac{\gamma^{p^2}}{\gamma^{p^3}}\rt) \cdots \lt(\frac{\gamma^{p^{n-1}}}{\gamma^{p^n}}\rt)
+\end{align*}
+Similarly to before, everything cancels out except the numerator of the first term and the denominator of the last.
+Thus, \( \Norm \alpha = \frac{\gamma}{\gamma^{p^n}} \) and we know \( \gamma^{p^n} = \gamma \) so \( \Norm \alpha = \frac{\gamma}{\gamma} = 1 \).
+\end{solution}
+
+\begin{subexercise} % PROBLEM 8.5.3
+  \label{qs:five-three}
+  Let \( \alpha\in\FF p \sseq \FF{p^n} \).
+  Prove that \( \Tr \alpha = n\alpha \).
+\end{subexercise}
+\begin{solution}
+Given that \( \alpha\in\FF p \) we know \( \alpha^p = \alpha \), so \( \alpha^{p^k} = \lt(\alpha^{p}\rt)^{p^{k-1}} = \alpha^{p^{k-1}} \) and by induction, we find that \( \alpha^{p^k} = \alpha \) for all \( k\in\N \).
+Thus \( \Tr \alpha = \sum_{i=0}^{n-1} \alpha^{p^i} = \sum_{i=0}^{n-1} \alpha = n\alpha \).
+\end{solution}
+
+\begin{subexercise} % PROBLEM 8.5.4
+  Let \( \alpha\in\FF p \sseq \FF{p^n} \).
+  Prove that \( \Norm \alpha = \alpha^n \).
+\end{subexercise}
+\begin{solution}
+  By the same reasoning as Exercise \ref{qs:five-three}, we have \( \Norm \alpha = \prod_{i=0}^{n-1} \alpha^{p^i} = \prod_{i=0}^{n-1} \alpha = \alpha^n \).
+\end{solution}
+\end{document}
+

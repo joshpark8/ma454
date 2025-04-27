@@ -1,0 +1,20 @@
+\documentclass{standalone}
+
+\usepackage{tikz-cd}
+
+\begin{document}
+    \begin{tikzcd}[column sep=2em,row sep=2em]
+      K_{2}
+        \arrow[r, "\varphi_{2}"]
+        \arrow[d, "\sigma"]
+      & K_{2}(\beta)
+        \arrow[r, hookrightarrow, "\iota_{2}"]
+        \arrow[d, "\tau"]
+      & L_{2} \\[1em]
+      K_{1}
+        \arrow[r, "\varphi_{1}"]
+      & K_{1}(\alpha)
+        \arrow[r, hookrightarrow, "\iota_{1}"]
+      & L_{1}
+    \end{tikzcd}
+\end{document}
