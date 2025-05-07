@@ -43,4 +43,24 @@ Then \( P \) is \it{resolvent invariant} for \( G \) if \( P^{g} = P \iff g\in G
     h_k(\llist{x}{1}{k}) = c_1x_1+\cdots+c_kx_k
   \end{align*}
   has the property \begin{align*}
-    h_k^a(\llist{\alpha}{1}{k}) = h_k^b(
+    h_k^a(\llist{\alpha}{1}{k}) = h_k^b(\llist{\alpha}{1}{k}) \iff x_i^{a} = x_i^{b} \mathrm{ for } i = 1,\ldots,k,
+  \end{align*}
+  where \( a,b\in S_n \) are any permutations.
+\end{tlemma}
+
+\begin{ttheorem}
+  Let \( \order{K}=\infty \), \( f\in K[t] \) be a separable polynomial, and \( G\sgp S_n \).
+  Then there exists a resultant \( R_{G,f} (z) \) with no multiple roots.
+\end{ttheorem}
+
+\begin{ttheorem}
+  Let \( \order{K} = \infty \) and \( f\in K[t] \) be irreducible and separable with \( \deg f = 4 \).
+  Then \begin{enumerate}
+    \item \( \sqrt D \not\in K\) and \( R_{V_4}^{(f)} \) has no roots in \( K \imp G\iso S_4 \) or \( G\iso Z_4 \)
+    \item \( \sqrt D \in K\) and \( R_{V_4}^{(f)} \) has no roots in \( K \imp G\iso A_4 \)
+    \item \( \sqrt D \in K\) and \( R_{V_4}^{(f)} \) has a roots in \( K \imp G\iso V_4 \)
+    \item \( \sqrt D \not\in K\) and \( R_{V_4}^{(f)} \) has no roots in \( K \imp G\iso S_4 \) or \( G\iso D_4 \)
+  \end{enumerate}
+  **Exercise**, the point is to show that computing each \( R^{(f)}_{V_4,D_4,Z_4,A_4} \) is not necessary
+\end{ttheorem}
+\end{document}
