@@ -1,0 +1,38 @@
+\documentclass[a4paper]{article}
+
+\input{preamble}
+\input{letterfont}
+\input{macros}
+
+\begin{document}
+\section{Final remarks I}
+\begin{tdefinition}[Sylvester matrix]
+
+\end{tdefinition}
+
+\begin{tdefinition}[Resultant]
+
+\end{tdefinition}
+
+\begin{ttheorem}
+  Let \( \alpha_i \) be roots of \( f \) and \( \beta_j \) be roots of \( g \).
+  Then \begin{align*}
+    R(f,g) &= a_0^m b_0^n \prod_i(\alpha_i-\beta_j) \\
+    &= a_0^m \prod_i g(\alpha_i) = b_0^n \prod_i f(\beta_i)
+  \end{align*} \hl{R?}
+\end{ttheorem}
+
+\begin{tcorollary}
+  \begin{enumerate}
+    \item \( R(f,g) = (-1)^{\deg f \cdot \deg g}R(g,f) \)
+    \item If \( f = gq + r \imp R(f,g) = b_0^{\deg f - \deg R} R(r,g) \)
+    \item \( R(f,gh) = R(f,g)R(f,h) \)
+  \end{enumerate}
+\end{tcorollary}
+
+\begin{tcorollary}
+  Let \( f(t) = a_0 t^{n} + \cdots + a_n,\ a_0\neq 0 \).
+  Then \( R(f,f') = (-1)^{\frac{n(n-1)}{2}}\prod_{i<j}(\alpha_i-\alpha_j)\sq \)
+\end{tcorollary}
+
+\end{document}

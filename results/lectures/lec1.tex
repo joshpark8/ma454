@@ -28,14 +28,18 @@
   For any symmetric function \( \psi(\llist{x}{1}{n}) \), there exists a unique polynomial \( P(\llist{t}{1}{n}) \) such that \( \psi(\llist{x}{1}{n}) = P(\llist{\sigma}{1}{n}) \).
 \end{ttheorem}
 
-\bd{Vieta formulae:}
+\begin{tdefinition}[Vieta formulae]
+Suppose \( f(t) = t^{n} + a_{n-1} t^{n-1} + \cdots + a_{0} \) has roots \( \llist{r}{1}{n} \).
+Then,
   \begin{align*}
-  r_1 + r_2 + \cdots + r_n &= -\frac{a_{n-1}}{a_n} \\
-  \sum_{1 \le i < j \le n} r_i r_j &= \frac{a_{n-2}}{a_n} \\
-  \sum_{1 \le i < j < k \le n} r_i r_j r_k &= -\frac{a_{n-3}}{a_n} \\
+  r_1 + r_2 + \cdots + r_n &= -a_{n-1} \\
+  \sum_{1 \le i < j \le n} r_i r_j &= a_{n-2} \\
   &\vdots \\
-  r_1 r_2 \cdots r_n &= (-1)^n \frac{a_0}{a_n}
+  \sum_{1 \le i_1 < i_2 < \dots < i_k \le n} r_{i_{1}}r_{i_{2}}\cdots r_{i_{k}} &= (-1)^k a_{n-k} \\
+  &\vdots \\
+  r_1 r_2 \cdots r_n &= (-1)^n a_0
   \end{align*}
+\end{tdefinition}
 
 \begin{tcorollary}
   The discriminant \( D \) of \( f\in R[x] \), where \( R \) is a ring and \( f= x^n+a_1x^{n-1}+\cdots + a_{n-1}x+a_n\), is a polynomial in \( \llist{a}{1}{n} \) and coefficients from \( R \) (i.e. \( D \in R[\llist{a}{1}{n}] \)).

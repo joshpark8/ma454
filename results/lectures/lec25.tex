@@ -5,5 +5,36 @@
 \input{macros}
 
 \begin{document}
+\section{Solvability by radicals and Galois theory I}
 
+\begin{ttheorem}
+  Let \( K \) be a field with \( \chr K = 0 \).
+  Then \( f\in K[t] \) is solvable by radicals \( \iff \) \( \Gal_K(f) \) is soluble.
+\end{ttheorem}
+
+\begin{tlemma}
+  Let \( \chr K = 0 \) and \( R:K \) be a radical extension.
+  Then there exists a tower \( K-R-N \) such that \( N:K \) is normal and radical.
+\end{tlemma}
+
+\begin{tdefinition}[Cyclic extension]
+  Let \( L \) be the splitting field of some polynomial \( f \) over \( K \).
+  If \( \Gal(L:K) \) is a cyclic group, then \( L:K \) is a \it{cyclic} extension.
+\end{tdefinition}
+
+\begin{tlemma}
+  Let \( \chr K = 0 \) and let \( n \) be a positive integer such that \( t^n-1 \) splits over \( K \), and let \( L:K \) be the \sfe~for \( t^{n}-a \) for some \( a\in K \).
+  Then \( \Gal(L:K) \) is abelian.
+\end{tlemma}
+
+\begin{ttheorem}
+  Let \( \chr K = 0 \) and \( L:K \) be Galois.
+  Suppose there exists some extension \( M:L \) such that \( M:K \) is normal.
+  Then \( \Gal(L:K) \) is soluble.
+\end{ttheorem}
+
+\begin{tcorollary}
+  Let \( \chr K = 0 \).
+  Then \( f\in K[t] \) is SBR \( \imp \) \( \Gal_K(f) \) is soluble.
+\end{tcorollary}
 \end{document}

@@ -1,0 +1,40 @@
+\documentclass[a4paper]{article}
+
+\input{preamble}
+\input{letterfont}
+\input{macros}
+
+\begin{document}
+\section{Solvability by radicals and Galois theory II}
+\begin{tlemma}
+  Let \( p \) be prime and \( G\sgp S_p \) such that \( G \) acts transitivley on \( \left\{ 1,\dots,p \right\} \).
+  Then \( G \) contains a cycle of order \( p \).
+\end{tlemma}
+
+\begin{ttheorem}
+  Let \( \chr K = 0 \) and \( f\in K[t]\setminus K \).
+  Then \( \Gal_K(f) \) is soluble \( \imp \) \( f \) is SBR.
+\end{ttheorem}
+
+\begin{tlemma}[Wooley 14.8]
+  Let \( \chr K = 0 \), and suppose that \( L:K \) is a cyclic extension of degree \( n \).
+  Suppose also that \( K \) contains a primitive \( n \)-th root of 1.
+  Then there exists \( \theta \in K \) having the property that \( t^n -\theta \) is irreducible over \( K \), and \( L:K \) is a \sf~for \( t^n-\theta \).
+  Further, if \( \beta \) is a root of \( t^n-\theta \) over \( L \), then \( L=K(\beta) \).
+\end{tlemma}
+
+\begin{ttheorem}[Abel-Galois]
+  Let \( \chr K = 0 \) and \( f\in K[t] \) be irreducible over \( K \) with \( \deg f = p \).
+  Then following are equivalent
+  \begin{enumerate}
+    \item \( f \) is SBR over \( K \);
+    \item \( \Gal_K(f) \) is conjugated to a subgroup of \( \Aff(\FF p) \);
+    \item for the splitting field \( L \) of \( f \), one has \( L = K(\alpha_i,\alpha_j) \) where \( \alpha_i,\alpha_j \) are any two destinct roots of \( f \).
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{tlemma}
+  Let \( \tgp \neq N \nsgp G \sgp S_p \) for \( p \) prime.
+  If \( G \) is a transitive group, then \( N \) is a transitive group.
+\end{tlemma}
+\end{document}

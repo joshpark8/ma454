@@ -1,0 +1,46 @@
+\documentclass[a4paper]{article}
+
+\input{preamble}
+\input{letterfont}
+\input{macros}
+
+\begin{document}
+\section{Final remarks II}
+\begin{tdefinition}[Resolvent invariant]
+Let \( G\sgp S_n \) and \( P\in K[\llist{x}{1}{n}] \).
+Then \( P \) is \it{resolvent invariant} for \( G \) if \( P^{g} = P \iff g\in G \).
+\end{tdefinition}
+
+\begin{tlemma}
+  Let \( P \) be resolvent invariant for \( G \).
+  Then \begin{enumerate}
+    \item \( P^a = P^b \iff ab\inv \in G \) (obvious: \( P^a = P^b \iff P^{ab\inv} = P \))
+    \item \( P^a \) is resolvent invariant for \( a\inv G a \)
+  \end{enumerate}
+\end{tlemma}
+
+\begin{tcorollary}
+  Let \( S_n = \sqcup_j a_j G \).
+  Then \( P \) is resolvent invariant for \( G \iff P^{a_j} \) are distinct.
+\end{tcorollary}
+
+\begin{tdefinition}[Resolvent]
+  Let \( P \) be a resolvent polynomial for \( G\sgp S_n \) and \( S_n = \sqcup_{j=1}^{s} a_j G \).
+  Then \begin{align*}
+    R_G(z) = R_G(z,\llist{x}{1}{n}) = (z-P^{a_1})\cdots(z-P^{a_s})
+  \end{align*}
+  is a \it{resolvent} for \( G \) (depends on \( P \)).
+\end{tdefinition}
+
+\begin{tlemma}
+  Let \( G\sgp S_n \), \( f\in K[t] \) be a separable polynomial.
+  If \( \Gal_K(f) \sgp G \) (and its conjugation), then \( \exists \jmath\in K \) such that \( R_{G,f}(\jmath) = 0 \)
+\end{tlemma}
+
+\begin{tlemma}
+  Let \( \order{K}=\infty \) and \( f\in K[t] \) be a separable polynomial.
+  Then \( \exists \llist{c}{1}{n}\in K \) such that for all \( k \), \begin{align*}
+    h_k(\llist{x}{1}{k}) = c_1x_1+\cdots+c_kx_k
+  \end{align*}
+  has the property \begin{align*}
+    h_k^a(\llist{\alpha}{1}{k}) = h_k^b(
