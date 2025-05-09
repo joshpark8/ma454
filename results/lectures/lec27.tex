@@ -7,11 +7,32 @@
 \begin{document}
 \section{Final remarks I}
 \begin{tdefinition}[Sylvester matrix]
-
+Let \(f(x)=a_{0}+a_{1}x+\dots+a_{m}x^{m}\) and \(g(x)=b_{0}+b_{1}x+\dots+b_{n}x^{n}\) be two polynomials in \(\mathbb{K}[x]\).
+The \it{Sylvester matrix} of \( f\tand g \), denoted \(S(f,g)\), is the \((m+n)\times(m+n)\) matrix whose first \(n\) rows are the coefficients of \(f\) shifted right, and whose last \(m\) rows are the coefficients of \(g\) shifted right.
+Concretely,
+\begin{align*}
+  S(f,g) &= \begin{pmatrix}
+  a_{m}  & a_{m-1} & \cdots & a_{0}  & 0      & \cdots & 0      \\
+  0      & a_{m}   & a_{m-1}& \cdots & a_{0}  & \ddots & \vdots \\
+  \vdots & \ddots  & \ddots & \ddots & \vdots & \ddots & 0      \\
+  0      & \cdots  & 0      & a_{m}  & a_{m-1}& \cdots & a_{0}  \\
+  b_{n}  & b_{n-1} & \cdots & b_{0}  & 0      & \cdots & 0      \\
+  0      & b_{n}   & b_{n-1}& \cdots & b_{0}  & \ddots & \vdots \\
+  \vdots & \ddots  & \ddots & \ddots & \vdots & \ddots & 0      \\
+  0      & \cdots  & 0      & b_{n}  & b_{n-1}& \cdots & b_{0}
+\end{pmatrix}.
+\end{align*}
 \end{tdefinition}
 
 \begin{tdefinition}[Resultant]
-
+The \it{resultant} of \(f\) and \(g\) is
+\begin{align*}
+  R(f,g) &= \det\left(S(f,g)\right).
+\end{align*}
+Equivalently, if \(\alpha_{1},\dots,\alpha_{m}\) are the roots of \(f\) in an algebraic closure of \(\mathbb{K}\), then
+\begin{align*}
+  R(f,g) &= a_{m}^{n}\prod_{i=1}^{m}g(\alpha_{i}).
+\end{align*}
 \end{tdefinition}
 
 \begin{ttheorem}
@@ -19,7 +40,7 @@
   Then \begin{align*}
     R(f,g) &= a_0^m b_0^n \prod_i(\alpha_i-\beta_j) \\
     &= a_0^m \prod_i g(\alpha_i) = b_0^n \prod_i f(\beta_i)
-  \end{align*} \hl{R?}
+  \end{align*}
 \end{ttheorem}
 
 \begin{tcorollary}

@@ -1,0 +1,1286 @@
+\documentclass{article}
+
+\input{preamble}
+\input{letterfont}
+\input{macros}
+
+\title{MA 45401-H01: Galois Theory Honors\\Definitions and Results}
+\author{Prof. Ilya Shkredov\\Transcribed by Josh Park}
+\date{Last updated \today}
+
+\fancyhead[L]{\bd{Josh Park \\ Prof. Ilya Shkredov}}
+\fancyhead[C]{\bd{MA 45401-H01 -- Galois Theory Honors\\Definitions and Results}}
+\fancyhead[R]{\bd{Spring 2025\\Page \thepage}}
+
+\begin{document}
+\section{Introduction I}
+\stepcounter{section}
+% \begin{tdefinition}[Symmetric function]
+%   A function \( \vphi(\llist{x}{1}{n}) \) is called \it{symmetric} if \begin{align*}
+%     \varphi(x_1,\ldots,x_n) = \varphi(x_{\omega(1)},\ldots,x_{\omega(n)})
+%   \end{align*}
+%   for all \( \omega\in S_n \).
+% \end{tdefinition}
+
+% \begin{tdefinition}[Elementary symmetric polynomial]
+%   \begin{align*}
+%     \sigma_1 = \sigma_1(x_1,\ldots,x_n) &= x_1+\cdots+x_n \\
+%     \sigma_2 = \sigma_2(x_1,\ldots,x_n) &= x_1x_2+\cdots+x_1x_n+x_2x_3+\cdots+x_{n-1}x_n \\
+%     &\dots \\
+%     \sigma_k = \sigma_k(x_1,\ldots,x_n)&=\sum\limits_{1\leq i_1<i_2<\cdots<i_k\leq n}x_{i_1}\cdots x_{i_k} \\
+%     &\dots \\
+%     \sigma_n = \sigma_n(x_1,\ldots,x_n)&=\prod\limits_{i=1}^n x_i
+%   \end{align*}
+% \end{tdefinition}
+
+\begin{ttheorem}
+  For any symmetric function \( \psi(\llist{x}{1}{n}) \), there exists a unique polynomial \( P(\llist{t}{1}{n}) \) such that \( \psi(\llist{x}{1}{n}) = P(\llist{\sigma}{1}{n}) \).
+\end{ttheorem}
+
+\begin{tdefinition}[Vieta formulae]
+Suppose \( f(t) = t^{n} + a_{n-1} t^{n-1} + \cdots + a_{0} \) has roots \( \llist{r}{1}{n} \).
+Then,
+  \begin{align*}
+  r_1 + r_2 + \cdots + r_n &= -a_{n-1} \\
+  \sum_{1 \le i < j \le n} r_i r_j &= a_{n-2} \\
+  &\vdots \\
+  \sum_{1 \le i_1 < i_2 < \dots < i_k \le n} r_{i_{1}}r_{i_{2}}\cdots r_{i_{k}} &= (-1)^k a_{n-k} \\
+  &\vdots \\
+  r_1 r_2 \cdots r_n &= (-1)^n a_0
+  \end{align*}
+\end{tdefinition}
+
+% \begin{tcorollary}
+%   The discriminant \( D \) of \( f\in R[x] \), where \( R \) is a ring and \( f= x^n+a_1x^{n-1}+\cdots + a_{n-1}x+a_n\), is a polynomial in \( \llist{a}{1}{n} \) and coefficients from \( R \) (i.e. \( D \in R[\llist{a}{1}{n}] \)).
+% \end{tcorollary}
+
+\bd{Note:} \quad
+Any cubic equation can be converted to a depressed cubic by \begin{align*}
+  x\cb+Ax\sq+Bx+c = \left(x+\frac{A}{3}\right)\cb + p\left(x+\frac{A}{3}\right) + q.
+\end{align*}
+
+\begin{ttheorem}[Vieta's method]
+Using the trigonometric identity \( \cos 3\vphi = 4\cos\cb \vphi-3\cos\vphi \), we can solve certain cubic equations.
+For example, consider \( 4x\cb-3x=-\frac{1}{2} \).
+Let \( x=\cos \vphi \).
+Then \begin{align*}
+  \cos 3\vphi = -\frac{1}{2} &\iff 3\vphi = \pm \frac{2\pi}{3}+2\pi k \quad \text{for } k\in \Z \\
+  &\iff \vphi = \pm\frac{2\pi}{9}+2\pi k \\
+  &\iff x \in \lt\{ \cos\frac{2\pi}{9},\cos\frac{4\pi}{9},\cos\frac{8\pi}{9} \rt\}.
+\end{align*}
+In general, we can use this method to solve \( 4x\cb-3x=a \imp x=\cos\vphi,\ \cos 3\vphi \) and \( \cos:\C\to\C \) is now a complex function.
+For \( x\cb+px+q = 0 \), set \( x=ky \) such that \( \frac{k\cb}{pk} = \frac{-4}{3} \imp k = \pm\frac{\sqrt{-4p}}{3} \).
+\end{ttheorem}
+
+\begin{tdefinition}[Ferrari's resolvent]
+  Let \( f(x) = x^4 + a x^2 + b x + c \), and assume \( b\sq-4ac\neq 0 \).
+  Consider a parameter \( y \).
+  Then \begin{align*}
+    f(x) &= \left( x\sq + \frac{y}{2} \right)\sq + (a-y)x\sq + bx + c - \frac{y\sq}{4} \\
+     \imp D &= b\sq - 4(a-y)\left( c-\frac{y\sq}{4} = 0 \right)
+  \end{align*}
+  and hence we obtain \it{Ferrari' resolvent}:
+  \begin{align*}
+    y\cb-ay\sq -4cy + 4ac - b\sq = 0
+  \end{align*}
+  Solving the resolvent allows one to reduce solving \( f \) to solving a system of quadratics.
+\end{tdefinition}
+
+\section{Introduction II}
+\stepcounter{section}
+\begin{ttheorem}[Lagrange]
+  Let \( \vphi=\vphi(\llist{x}{1}{n}) \) and \begin{align*}
+    \orb(\vphi) = \lt\{ \vphi^\omega = \vphi(x_{\omega(1)},\ldots,x_{\omega(n)}) \mid\omega\in S_n \rt\}.
+  \end{align*}
+  Then \( \llist{y}{1}{k} \) are roots of some polynomial with degree \( \leq k \) whose coefficients depend on elementary symmetric polynomials \llist{\sigma}{1}{n} in a polynomial way.
+\end{ttheorem}
+
+\begin{ttheorem}[Lagrange]
+  Let \( \vphi,\psi\in K[\llist{x}{1}{n}] \) and \( G_\vphi=\lt\{ \omega\in S_n \mid \vphi^\omega=\vphi \rt\} \sgp G_\psi \).
+  Then \( \psi = R(\varphi) \) where \( R \) is a rational function whose coefficients are symmetric functions on \( \llist{x}{1}{n} \).
+\end{ttheorem}
+
+% \begin{tdefinition}[Group action]
+%   Let \( G \) be a group and \( X \) be a set. The (left) group action of \( G \) on \( X \) is the map \( \cdot:G\times X\to X \) such that \begin{enumerate}
+%     \item \( e_G\cdot x = x, \quad \forall x\in X \)
+%     \item \( g\cdot (h\cdot x)=(g\cdot h)\cdot x,\quad \forall x\in X,\forall g,h\in G \)
+%   \end{enumerate}
+% \end{tdefinition}
+
+% \begin{tdefinition}[Orbit]
+%   Let \( G \) be a group, \( X \) be a set, and \( x\in X \).
+%   Then we define \it{the orbit} of \( x \), \( G\cdot x = \text{orb}(x) \), as \( \{g\cdot x \ \mid \ g\in G\} \).
+%   Moreover, \( \text{orb}(x)\subseteq X \).
+% \end{tdefinition}
+
+% \begin{tdefinition}[Stabilizer]
+%   Let \( G \) be a group, \( X \) be a set, and \( x\in X \).
+%   Then we define \it{the stabilizer} of \( x \), \( \text{stab}(x) \), as \( \{g\in G \ \mid \ g\cdot x = x\} \).
+%   Moreover, \( \text{stab}(x)\leq G \).
+% \end{tdefinition}
+
+\begin{ttheorem}
+  Let \( G \) be a finite group that acts on \( X \). Then for all \( x\in X \), \( \order{\orb(x)} \cdot \order{\stab(x)} = \order{G} \).
+\end{ttheorem}
+
+% \begin{tdefinition}[Polynomial ring]
+%   Let \( R \) be a commutative ring. Then the ring of polynomials with coefficients in \( R \) is
+%   \begin{align*}
+%     R[t] = \left\{\sum_{i=0}^n c_it^i : n\in\mathbb{Z}_+, c_i\in R\right\}
+%   \end{align*}
+% \end{tdefinition}
+
+\section{Field Extensions I}
+\stepcounter{section}
+% \begin{tdefinition}[Integral domain]
+%   Let \( R \) be a commutative ring. Then \( R \) is \it{an integral domain} if \( ab=0 \) implies that \( a=0 \) or \( b=0 \) for all \( a,b\in R \).
+% \end{tdefinition}
+
+% \begin{tdefinition}[Euclidean domain]
+%   Let \( R \) be an integral domain. Then \( R \) is a \it{Euclidean domain} if there exists some function \( f:R\setminus\{0\}\to \mathbb{Z}_{\geq 0} \) such that for all \( a,b_{\not\equiv 0} \in R \), there exist elements \( q,r\in R \) such that \( a=qb+r \) where \( r=0 \) or \( f(r)<f(b) \).
+% \end{tdefinition}
+
+% \begin{ttheorem}[B\'ezout's Identity]
+%   Let \( R \) be a Euclidean domain. For \( a,b\in R \), there exists \( \alpha,\beta\in R \) such that \( \gcd(a,b) = \alpha a+\beta b \)
+% \end{ttheorem}
+
+% \begin{tdefinition}[Irreducible]
+%   Let \( {F} \) be a field, and \( f\in F[t]\setminus F \).
+%   Then \( f \) is \it{irreducible} if \( \not\exists g,h\in F[t]\setminus F \) of strictly smaller degree such that \( f=gh \).
+% \end{tdefinition}
+
+% \begin{tdefinition}[Unique factorization domain]
+%   Let \( R \) be an integral domain.
+%   Then \( R \) is \it{a unique factorization domain (UFD)} if for irreducible \( p_i\in R \), any nonzero \( x\in R \) can be written uniquely (up to ordering) as \( x=p_1p_2\cdots p_k,\quad k\geq 1 \).
+% \end{tdefinition}
+
+% \bd{Fact:}\quad If \( R \) is an Euclidean domain, then \( R \) is a UFD (and PID)
+
+% \begin{tcorollary}
+%   Let \( f\in \F[t] \) be a monic polynomial with \( \deg f\geq 1 \).
+%   Then we can write \( f = f_1f_2\cdots f_k \) uniquely (up to ordering) for irreducible monic polynomials \( f_j \).
+% \end{tcorollary}
+
+% \begin{tdefinition}[GCD]
+%   Let \( R \) be a UFD.
+%   When \( \llist{a}{0}{n}\in R \) are not all 0, we can generalize the \it{greatest common divisor} of \llist{a}{0}{n} (written gcd(\llist{a}{0}{n})) any element \( c\in R \) satisfying \begin{enumerate}[label=(\roman*)]
+%     \item \( c\divs a_i\ (0\leq i\leq n) \), and
+%     \item if \( d\divs a_i\ (0\leq i\leq n) \), then \( d\divs c \).
+%   \end{enumerate}
+%   When \( f=\sum_{j=0}^{d}a_jx^j\in R[x] \) is a non-zero polynomial, we define a \it{content} of \( f \) to be any \( \gcd (\llist{a}{0}{d}) \) and \( \gcd(f) = \gcd(\llist{a}{0}{d}) \).
+%   We say that \( f\in R[X] \) is \it{primitive} if \( f\neq 0 \) and the content of \( f \) is divisible only by units of \( R \).
+% \end{tdefinition}
+
+\begin{tlemma}[Gauss]
+  \( \gcd(fg) = \gcd f \cdot \gcd g\)
+\end{tlemma}
+
+\begin{tcorollary}
+  \( f\in\Z[t] \) is irreducible \iff~\( f \) is irreducible over \( \Q[t] \)
+\end{tcorollary}
+
+\begin{tcorollary}
+  If \( R \) is a UFD with field of fractions \( Q \) and \( f \in R[X] \) with \( \deg f > 0 \), then \( f \) is irreducible in \( R[X] \) \iff~\( f \) is irreducible in \( Q \).
+\end{tcorollary}
+
+\begin{ttheorem}[Eisenstein's Criterion]
+  Let \( R \) be a UFD with field of fractions \( Q \) and let \( f=a_0+a_1X+\ldots +a_nX^n \in R[X] \) with \( \gcd(f) = 1 \).
+  Suppose there exists an irreducible element \( p \in R \) such that
+  \begin{center}
+      (i)\ \(p\mid a_i\) for \(0\le i<n\), \qquad
+      (ii)\ \(p^2\nmid a_0\), \qquad
+      (iii)\ \(p\nmid a_n\)
+  \end{center}
+  then \( f \) is irreducible in \( R[X] \) (and hence also in \( Q[X] \)).
+\end{ttheorem}
+
+% \begin{tdefinition}[Field extension]
+%   Let \( L \tand K \) be fields.
+%   Then \( L \) is an \it{extension} of \( K \) if there exists a \homo~\( \vphi: K \to L \).
+%   Then we write \( L:K \) or \( L/K \), \( \vphi(K)\iso K \) and identify \( \vphi(K) \) with \( K \).
+% \end{tdefinition}
+
+% \bd{Fact:}\quad Suppose that \( L \) is a field extension of \( K \) with associated embedding \( \vphi: K \to L \).
+%   Then \( L \) forms a vector space over \( K \), under the operations \begin{align*}
+%     \nf{(vector addition) } \psi: L\times L &\to L \quad \text{given by} \quad (v_1,v_2) \mapsto v_1 + v_2 \\
+%     \nf{(scalar multiplication) } \tau : K\times  L &\to L \quad \text{given by} \quad (k,v) \mapsto \vphi(k)v.
+%   \end{align*}
+
+% \begin{tdefinition}[Degree, finite extension]
+%   Let \( L: K \).
+%   Then the \it{degree} of \( L: K \) is \( \fdeg{L}{K}=\dim L \) over \( K \) as a vector space.
+%   We say that \( L : K \) is a \it{finite extension} if \( [L: K] <\infty \).
+% \end{tdefinition}
+
+% \begin{tdefinition}[Tower, intermediate field]
+%   We say that \( M : L : K \) is a \it{tower} of field extensions if \( M : L \tand L: K \) are field extensions, and in this case we say that \( L \) is an \it{intermediate field} (relative to the extension \( M : K \))
+% \end{tdefinition}
+
+% \begin{ttheorem}[The Tower Law]
+%   Suppose that \( M :L: K \) is a tower of field extensions.
+%   Then \( M : K \) is a field extension, and \( [M : K] = [M : L][L: K] \).
+% \end{ttheorem}
+
+% \begin{tcorollary}
+%   Suppose that \( L:K \) is a field extension for which \( [L: K] \) is a prime number.
+%   Then whenever \( L : M : K \) is a tower of field extensions with \( K \sseq M \sseq L \), one has either \( M= L \tor M= K \).
+% \end{tcorollary}
+
+\section{Field Extensions II}
+\stepcounter{section}
+% \begin{tdefinition}[Smallest subring/subfield]
+%   Let \( L:K \) with \( K\sseq L \).
+%   \begin{enumerate}[label=(\roman*)]
+%     \item When \( \alpha\in L \), we denote by \( K[\alpha] \) the \it{smallest subring of \( L \) containing \( K \) and \( \alpha \)}, and by \( K(\alpha) \) the \it{smallest subfield of \( L \) containing \( K \) and \( \alpha \)};
+%     \item More generally, when \( A\sseq L \), we denote by \( K[A] \) the \it{smallest subring of \( L \) containing \( K \tand A \)}, and by \( K(A) \) the \it{smallest subfield of \( L \) containing \( K \tand A \)}.
+%   \end{enumerate}
+%   Then \begin{align*}
+%     K[\alpha] &= \lt\{ \sum_{i=0}^{d}c_i\alpha^i : d\in \ZZ{\leq 0},\ c_0,\ldots,c_d\in K \rt\} \\
+%     K(\alpha) &= \lt\{ f/g : f,g\in K[\alpha], g\neq 0 \rt\}.
+%   \end{align*}
+% \end{tdefinition}
+
+% \begin{tdefinition}[Algebraic/transcendental element]
+%   Suppose that \( L: K \) is a field extension with \( K\sseq L \) and \( \alpha\in L \).
+%   \begin{enumerate}[label=(\roman*)]
+%     \item We say \it{\( \alpha \) is algebraic over K} if \( \exists f_{\not\equiv 0} \in K[t] \) such that \( f(\alpha)=0 \).
+%     \item If \( \alpha \) is not algebraic over \( K \), then we say \it{\( \alpha \) is transcendental over \( K \)}.
+%     \item When every element of \( L \) is algebraic over \( K \), we say that \it{\( L \) is algebraic over \( K \)}.
+%   \end{enumerate}
+% \end{tdefinition}
+
+% \begin{tdefinition}[Evaluation map]
+%   Suppose that \( L: K \) is a field extension with \( K \sseq L \), and that \( \alpha\in L \).
+%   We define the \it{evaluation map} \( E_\alpha : K[t] \to L \) by putting \( E_\alpha(f) = f(\alpha) \) for each \( f \in K[t] \).
+% \end{tdefinition}
+
+% \begin{tdefinition}[Minimal polynomial]
+%   Suppose that \( L : K \) is a field extension with \( K \sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
+%   Then the minimal polynomial of \( \alpha \) over \( K \) is the unique monic polynomial \( \mak \) such that \( \ker(E_\alpha) = (\mak) \).
+% \end{tdefinition}
+
+% \begin{tlemma}
+%   \begin{enumerate}
+%     \item \( \mak \) is irreducible over \( K \);
+%     \item If \( f\in K[t] \) such that \( f(\alpha) = 0 \), then \( \mak\divs f \);
+%     \item If \( f\in K[t] \) such that \( f(\alpha) = 0 \) and \( f \) is irreducible over \( K \), then \( \exists k\in K \) such that \( f=k\mak \).
+%   \end{enumerate}
+% \end{tlemma}
+
+\begin{ttheorem}
+  Let \( L : K \) with \( K \sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
+  \begin{enumerate}[label=(\roman*)]
+    \item \( K[\alpha] \) is a field, and \( K[\alpha] = K(\alpha) \);
+    \item If \( n=\deg \mak \), then \( \lt\{ 1,\alpha,\alpha^2,\ldots,\alpha^{n-1} \rt\} \) is a basis for \( K(\alpha) \) over \( K \) (\imp \( \fdeg{K(\alpha)}{K}=\deg \mak \)).
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{ttheorem}[Rational Root Theorem]
+  Let \( \frac{p}{q} \) be a root of \( f= a_0t^n+\cdots + a_{n-1} t^{n-1} + a_n \), for \( a_j\in\Z \), where \( p\tand q \) are coprime.
+  Then \( p\divs a_n \) and \( q\divs a_0 \).
+\end{ttheorem}
+
+% \bd{Note:}\quad If \( \alpha \) is transcendental over \( K \), then \( K(\alpha)\iso K(x) \) (where \( x \) is a formal variable).
+
+% \begin{tcorollary}
+%   Let \( L : K \) with \( K \sseq L \), and suppose that \( \alpha\in L \) is algebraic over \( K \).
+%   Then every element of \( K(\alpha) \) is algebraic over \( K \).
+% \end{tcorollary}
+
+% \begin{tcorollary}
+%   Let \( L:K \) with \( K\sseq L \).
+%   Then \( \fdeg{L}{K} < \infty \iff L=K(\llist{\alpha}{1}{n}) \) for \( \alpha_j\in L \).
+% \end{tcorollary}
+
+% \begin{ttheorem}
+%   Let \( L:K \) be a field extension, and define \begin{align*}
+%     L^{\nf{alg}}=\{\alpha\in L : \alpha \text{ is algebraic over } K\}.
+%   \end{align*}
+%   Then \( L^{\nf{alg}} \) is a subfield of \( L \).
+% \end{ttheorem}
+
+\section{Algebraic Conjugates}
+\stepcounter{section}
+
+% \begin{tlemma}
+%   Let \( \F \) be a field with \( f\in \F[t] \) irreducible.
+%   Then \( \qr{\F[t]}{(f)} \) is a field.
+% \end{tlemma}
+
+\begin{tcorollary}
+  If \( L:K \) with \( \alpha\in L \) algebraic over \( K \), then \( \qr{K[t]}{(\mak)} \) is a field.
+\end{tcorollary}
+
+\begin{ttheorem}
+  Let \( K \) be a field, and suppose that \( f\in K[t] \) is irreducible.
+  Then there exists a field extension \( L:K \), with associated embedding \( \vphi:K[t]\to L[y] \), such that \( L \) contains a root of \( \vphi(f) \).
+\end{ttheorem}
+
+% \begin{tdefinition}[Algebraic conjugate]
+%   Suppose \( \alpha \) is algebraic over \( K \) and \mak~factors as a product of linear polynomials over a field \( L\supeq K \): \begin{align*}
+%     \mak(x) = (x-\alpha_1)\cdots(x-\alpha_n),\quad \llist{\alpha}{1}{n}\in L.
+%   \end{align*}
+%   Then \llist{\alpha}{1}{n} are \it{algebraic conjugates} of \( \alpha \).
+% \end{tdefinition}
+
+\begin{tlemma}
+  Let \( \left( x-\alpha_1 \right)\cdots\left( x-\alpha_n \right)\in K[x] \) and \( f\left(\bar y,\llist{x}{1}{n}\right)\in K\left[\bar y,\llist{x}{1}{n}\right] \) be symmetric polynomial in \llist{x}{1}{n}.
+  Then \( f\left(\bar y,\llist{x}{1}{n}\right) \in K[\bar y] \).
+\end{tlemma}
+
+\begin{ttheorem}
+  Let \( \alpha \) be algebraic over \( K \) with algebraic conjugates \( \alpha=\llist{\alpha}{1}{n} \).
+  Then for all \( f\in K[x] \), the conjugates of \( f(\alpha) \) are exactly \( f(\alpha_1),\ldots,f(\alpha_n) \).
+\end{ttheorem}
+
+\section{Ruler and Compass Constructions}
+\stepcounter{section}
+% \begin{tdefinition}[Constructible points/angles]
+%   Let \( P_0 = (0,0)\tand P_1 = (1,0) \), and let \( \mcS_n = (P_0,\ldots,P_n) \).
+%   Then \( P_{n+1} \) is a constructible point if it is the intersection of either \begin{enumerate}
+%     \item two lines containing points in \( \mcS_n \);
+%     \item two circles with centers in \( \mcS_n \);
+%     \item a circle and line with center and endpoints in \( \mcS_n \).
+%   \end{enumerate}
+%   Similarly, an angle \( \theta \) is constructible if for some \( a\in \R \), there exists some constructible point \( x \) such that \( x^2 = a^2 \).
+% \end{tdefinition}
+
+% \begin{tlemma}
+%   If \( n \)-gon constructible, then \( 2n \)-gon is constructible.
+% \end{tlemma}
+
+\begin{tlemma}
+  If \( a,b,c \) constructible (or polyquadratic), then \( a\pm b,\ \frac{ab}{c},\tand \sqrt{ab} \) constructible.
+\end{tlemma}
+
+\begin{tfact}
+If \( m \)-gon and \( n \)-gon are constructible for coprime \( m,n \), then \( mn \)-gon is contructible.
+\end{tfact}
+
+\begin{tfact}
+  If \( p\geq \) prime, then \( p^k \)-gon constructible for \( k\in \N \).
+\end{tfact}
+
+% \begin{ttheorem}[Gauss]
+%   \begin{align*}
+%     \cos \frac{2\pi}{17} = \frac{-1 + \sqrt{17}+\sqrt{34-2\sqrt{17}}+2\sqrt{17+3\sqrt{17}-\sqrt{34-2\sqrt{17}}}}{16}
+%   \end{align*}
+% \end{ttheorem}
+
+\begin{tcorollary}
+  The 17-gon is constructible.
+\end{tcorollary}
+
+\begin{tcorollary}
+  If \( a\in\R \) is constructible, then \( \fdeg{\Q(a)}{\Q}=2^n \) for some \( n\geq  \)
+\end{tcorollary}
+
+% \begin{tcorollary}
+%   Given a cube \( C_1 \) with volume \( V_1 \), it is impossible to construct a cube \( C_2 \) with volume \( 2V_2 \) by ruler and compass.
+%   That is, the volume of a cube can not be duplicated by ruler and compass.
+% \end{tcorollary}
+
+% \begin{tcorollary}
+%   An arbitrary angle cannot be trisected by ruler and compass.
+% \end{tcorollary}
+
+\begin{ttheorem}[Gauss-Wantzel]
+  A regular \( n \)-gon is constructible \( \iff n=2^r p_1p_2\cdots p_s \) for \( r\in\Z_{\geq 0} \) and Fermat primes \( p_i = 2^{\left( 2^k \right)}+1 \) for \( k\in \Z_{\geq 0} \).
+\end{ttheorem}
+
+% \hl{TODO:} define \( V_n \)
+
+% \begin{tlemma}
+%   For all integers \( d \) and all \( d \)-periods \( \theta \), \( V_d = \Q(\theta) \).
+% \end{tlemma}
+
+
+\section{Cyclotomic Polynomials}
+\stepcounter{section}
+
+\begin{ttheorem}
+  For prime \( p \), we have \( x^p-1 = (x-1)(x^{p-1} + \cdots + 1) \) and \( \mu_{\veps_p}^\Q = x^{p-1} + \cdots + 1 \).
+\end{ttheorem}
+
+\begin{tdefinition}[\( n^{\text{th}} \) cyclotomic polynomial]
+  \begin{align*}
+    \Phi_n(x) = \prod_{\substack{\veps\in\sqrt[n]1\\\order{\veps}=n}} (x-\veps) = \frac{x^n-1}{\prod\limits_{\substack{d\mid n,d<n}}\Phi_d(x)}
+  \end{align*}
+\end{tdefinition}
+
+\begin{ttheorem}
+  \( \Phi_n \) is irreducible over \( \Q \).
+\end{ttheorem}
+
+\begin{tcorollary}
+  \begin{enumerate}[label=\nf{(\alph*)}]
+    \item \( \fdeg{\Q(\exp\left(\frac{2\pi i}{n}\right))}{\Q} = \vphi(n) \) (where \( \vphi \) is Euler's totient function);
+    \item \( \fdeg{\Q(\cos\left(\frac{2\pi }{n}\right))}{\Q} = \frac{1}{2}\vphi(n) \).
+    Furthermore, all algebraic conjugates of \( \cos \frac{2\pi}{n} \) are \( \cos \frac{2\pi k}{n} \) for \( \gcd(k,n)=1 \).
+    \item Let \( c = \frac{a+bi}{a-bi}\in \infrt 1 \), where \( a,b\in \Z \). Then \( c\in \lt\{ \pm i,\pm 1 \rt\} \)
+  \end{enumerate}
+\end{tcorollary}
+
+% \begin{tlemma}
+%   Let \( \F \) be a finite field. Then \( \F^\times = \F \setminus \lt\{ 0 \rt\} \) is a cyclic group.
+% \end{tlemma}
+
+\section{Splitting Fields, Abel-Ruffini}
+\stepcounter{section}
+% \begin{tdefinition}[Splitting field]
+%   Let \( L:K \) with embedding \( \vphi:K\to L \) and \( f\in K[t]\setminus K \).
+%   We say \it{\( f \) splits over \( L \)} if \( \vphi(f) = c\prod\limits_{j=1}^n (x-\alpha_j) \) for \( \alpha_j \in L \) and \( c\in \vphi(K) \).
+%   We say that \( M:K \) is a \it{\sfe} for \( f \) if \( f \) splits over \( L \), \( \vphi(K)\sseq M\sseq L \), and \( M \) is the smallest subfield of \( L \) containing \( \vphi(K) \) over which \( f \) splits.
+% \end{tdefinition}
+
+\begin{tlemma}
+  Let \( L:K \) be a \sfe~for \( f\in K[t] \) relative to the embedding \( \vphi:K\to L \), and let \( \alpha_j\in L \) be roots of \( \vphi(f) \).
+  Then \( L=\vphi(K)(\llist{\alpha}{1}{n}) \).
+\end{tlemma}
+
+\begin{tlemma}
+  Let \( L:K \) be a \sfe~for \( f\in K[t]\setminus K \).
+  Then \( \fdeg{L}{K}\leq (\deg f)! \).
+\end{tlemma}
+
+% \begin{tlemma}
+%   Let \( L:K \tand M:K \) be  \sfe s for \( f\in K[t]\setminus K \).
+%   Then \( L\iso M \) (in particular, \( \fdeg{L}{K}=\fdeg{M}{K} \)).
+% \end{tlemma}
+
+\begin{tdefinition}[Radical]
+  Let \( L:K \) and \( \beta \in L \).
+  We say that \( \beta \) is \it{radical} over \( K \) when \( \beta^n \in K \) for some \( n \in \N \) (so \( \beta = \alpha^{1/n} \) for some \( \alpha \in K \) and some \( n \in \N \)).
+\end{tdefinition}
+
+\begin{tdefinition}[Radical extension]
+    We say that \( L:K \) is \it{an extension by radicals} when there is a tower of field extensions \( L = L_r : L_{r-1} : \cdots : L_0 = K \) such that \( L_i = L_{i-1}(\beta_i) \) with \( \beta_i \) radical over \( L_{i-1} \) (for \( 1 \leq i \leq r \)).
+\end{tdefinition}
+
+\begin{tdefinition}[Solvable by radicals]
+    We say \( f \in K[t] \) is \it{solvable by radicals} if there is a radical extension of \( K \) over which \( f \) splits.
+\end{tdefinition}
+
+\begin{ttheorem}[Abel-Ruffini]
+  Let \( K=\C(\llist{a}{1}{n}) \) where \llist{a}{1}{n} are formal variables.
+  Let \( f(x) = x^n+a_1x^{n-1}+\cdots+a_n \in K[x] \) be the generic polynomial of degree \( n\geq 5 \) over \( K \).
+  Then \( f(x) \) is not solvable by radicals.
+\end{ttheorem}
+
+\section{Algebraic Closure I}
+\stepcounter{section}
+\begin{tdefinition}[Algebraically closed field, algebraic closure]
+  Let \( M \) be a field. \begin{enumerate}[label=(\roman*)]
+    \item We say that \( M \) is \it{algebraically closed} if every non-constant polynomial \( f\in M[t] \) has a root in \( M \).
+    \item We say that \( M \) is an algebraic closure of \( K \) if \( M:K \) is an algebraic field extension such that \( M \) is algebraically closed.
+  \end{enumerate}
+\end{tdefinition}
+
+\begin{tlemma}
+  Let \( M \) be a field.
+  The following are equivalent: \begin{enumerate}[label=(\roman*)]
+    \item The field \( M \) is algebraically closed;
+    \item every non-constant polynomial \( f\in M[t] \) factors in \( M[t] \) as a product of linear factors;
+    \item every irreducible polynomial in \( M[t] \) has degree 1;
+    \item the only algebraic extension of \( M \) containing \( M \) is itself.
+  \end{enumerate}
+\end{tlemma}
+
+% \begin{tdefinition}[Chain]
+%   Suppose that \( X \) is a nonempty, partially ordered set with \( \leq \) denoting the partial ordering.
+%   A \it{chain} \( C \) in \( X \) is a collection of elements \( \lt\{ a_i \rt\}_{i\in I} \) of \( X \) such that for every \( i,j\in I \), either \( a_i\leq a_j \tor a_j\leq a_i \).
+% \end{tdefinition}
+
+% \bd{Zorn's Lemma:}\quad Suppose that \( X \) is a nonempty, partially ordered set with \( \leq \) the partial ordering.
+% If every non-empty chain \( C \) in \( X \) has an upper bound in \( X \), then \( X \) has at least one maximal element \( m \) (i.e. \( b\in X \) with \( m\leq b \)\imp\( b=m \)).
+
+% \begin{tcorollary}
+%   Any proper ideal \( A \) of a commutative ring \( R \) is contained in a maximal ideal.
+% \end{tcorollary}
+
+% \begin{tlemma}
+%   Let \( K \) be a field.
+%   Then there exists an algebraic extension \( E:K \), with \( K\sseq E \), such that \( E \) contains a root of every irreducible \( f\in K[t] \), and hence also every \( g\in K[t]\setminus K \).
+% \end{tlemma}
+
+% \begin{ttheorem}[Existence of Algebraic Closures]
+%   Suppose that \( K \) is a field.
+%   Then there exists an algebraic extension \( \Kbar \) of \( K \) such that \( \Kbar \) is algebraically closed.
+% \end{ttheorem}
+
+\begin{tdefinition}[Extension of field \homo, isomorphic field extensions]
+  For \( i = 1 \tand 2 \), let \( L_i : K_i \) be a field extension relative to the embedding \( \vphi_i : K_i\to L_i \).
+  Suppose that \( \sigma : K_1\to K_2 \) and \( \tau:L_1\to L_2 \) are isomorphisms.
+  We say that \it{\( \tau \) extends \( \sigma \)} if \( \tau\circ\vphi_1 = \vphi_2\circ\sigma \).
+  In such circumstances, we say that \( L_1 : K_1 \tand L_2 : K_2 \) are \it{isomorphic field extensions}.
+  \begin{center}
+    \begin{tikzcd}
+      L_{1} \arrow[r, "\tau"]
+      & L_{2} \\[1em]  % extra vertical space
+      K_{1}
+      \arrow[r, "\sigma"]
+      \arrow[u, "\vphi_{1}"]
+      \arrow[ru, dashed]   % dashed diagonal arrow
+      & K_{2}
+      \arrow[u, "\vphi_{2}"]
+    \end{tikzcd}
+  \end{center}
+  When \( \sigma:K_1\to K_2 \) and \( \tau:L_1\to L_2 \) are \homo s (instead of isomorphisms), then \it{\( \tau \) extends \( \sigma \) as a \homo~of fields} when the isomorphism \( \tau:L_1\to L_1' = \tau(L_1) \) extends the isomorphism \( \sigma:K_1\to K_1' = \sigma(K_1) \).
+\end{tdefinition}
+
+% \begin{tdefinition}[\(K\)-\homo]
+%   Let \( L : K \) be a field extension relative to the embedding \( \varphi : K \to L \), and let \( M \) be a subfield of \( L \) containing \( \varphi(K) \).
+%   Then, when \( \sigma : M \to L \) is a \homo, we say that \( \sigma \) is a \it{\(K\)-\homo} if \( \sigma \) leaves \( \varphi(K) \) pointwise fixed, which is to say that for all \( \alpha \in \varphi(K) \), one has \( \sigma(\alpha) = \alpha \).
+% \end{tdefinition}
+
+\begin{tlemma}
+  Suppose that \( L:K \) is a field extension with \( K\sseq L \), and that \( \tau:L\to L \) is a \( K \)-\homo.
+  Suppose that \( f\in K[t] \) has the property that \( \deg f \geq 1 \), and additionally that \( \alpha\in L \).
+  \begin{enumerate}[label=(\roman*)]
+    \item if \( f(\alpha) = 0 \), one has \( f(\tau(\alpha)) = 0 \);
+    \item if \( \tau \) is a \( K \)-automorphism of \( L \), then \( f(\alpha) = 0 \iff f(\tau(\alpha)) = 0 \).
+  \end{enumerate}
+\end{tlemma}
+
+\begin{ttheorem}
+  Let \( \sigma :K_1\to K_2 \) be a field isomorphism.
+  Suppose that \( L_i \) is a field with \( K_i\sseq L_i\ (i=1,2) \).
+  Suppose also that \( \alpha\in L_1 \) is algebraic over \( K_1 \), and that \( \beta\in L_2 \) is algebraic over \( K_2 \).
+  Then we can extend \( \sigma \) to an isomorphism \( \tau:K_1(\alpha)\to K_2(\beta) \) in such a manner that \( \tau(\alpha) = \beta \) if and only if \( \mu_\beta^{K_2} = \sigma(\mu_\alpha^{K_1}) \).
+  \begin{center}
+    \begin{tikzcd}[column sep=2em,row sep=2em]
+      K_{2}
+        \arrow[r, "\varphi_{2}"]
+        \arrow[d, "\sigma"]
+      & K_{2}(\beta)
+        \arrow[r, hookrightarrow, "\iota_{2}"]
+        \arrow[d, "\tau"]
+      & L_{2} \\[1em]
+      K_{1}
+        \arrow[r, "\varphi_{1}"]
+      & K_{1}(\alpha)
+        \arrow[r, hookrightarrow, "\iota_{1}"]
+      & L_{1}
+    \end{tikzcd}
+  \end{center}
+\end{ttheorem}
+
+\bd{Note:}\quad When \( \tau:K_1(\alpha)\to K_2(\beta) \) is a \homo, and \( \tau \) extends the \homo~\( \sigma:K_1\to K_2 \), then \( \tau \) is completely determined by \( \sigma \) and the value of \( \tau(\alpha) \).
+
+\begin{tcorollary}
+  Let \( L:M \) be a field extension with \( M\sseq L \). Suppose that \( \sigma:M\to L \) is a \homo, and \( \alpha\in L \) is algebraic over \( M \).
+  Then the number of ways we can extend \( \sigma \) to a \homo~\( \tau:M(\alpha)\to L \) is equal to the number of distinct roots of \( \sigma(\mu_\alpha^{M}) \) that lie in \( L \).
+\end{tcorollary}
+
+\section{Algebraic Closure II}
+\stepcounter{section}
+\begin{ttheorem}
+  Let \( L:K \) be an algebraic extension with \( K\sseq L \) and \( \vphi:K\to\Kbar \) be a \homo.
+  Then there exists an extension of \( \vphi \) to a homomorphism \( \psi:L\to\Kbar \).
+\end{ttheorem}
+
+\begin{ttheorem}
+  If \( L \) and \( M \) are both algebraic closures of \( K \), then \( L \iso M \).
+\end{ttheorem}
+
+\begin{tcorollary}
+  Let \( L:K \) be an extension with \( K\sseq L \).
+  Suppose that \( g\in L[t] \) is irreducible over \( L \), and that \( g\divs f \) in \( L[t] \), where \( f\in K[t]\setminus \lt\{ 0 \rt\} \).
+  Then \( g \) divides a factor of \( f \) that is irreducible over \( K \).
+  Thus, there exists an irreducible \( h\in K[t] \) such that \( h\divs f \) in \( K[t] \), and \( g\divs h \) in \( L[t] \).
+\end{tcorollary}
+
+\begin{tdefinition}[Normal extension]
+  The extension \( L:K \) is \it{normal} if it is algebraic, and every irreducible polynomial \( f\in K[t] \) either splits over \( L \) or has no root in \( L \).
+\end{tdefinition}
+
+% \begin{ttheorem}
+%   \( K(\alpha):K \) is normal \iff~all conjugates of \( \alpha \) are contained in \( K(\alpha) \).
+% \end{ttheorem}
+
+\begin{ttheorem}
+  A finite extension \( L:K \) is normal \iff~\( L \) is a \sfe~for some \( f\in K[t]\setminus K \).
+\end{ttheorem}
+\section{Galois Groups I}
+\stepcounter{section}
+% \begin{tdefinition}[Galois group of polynomial]
+%   Let \( L=K(\alpha_1,\ldots,\alpha_n) \) and let \( P(\alpha_1,\ldots,\alpha_n) \) where \( P\in K[\alpha_1,\ldots,\alpha_n] \) is an element of \( L \).
+%   Then we define \begin{align*}
+%     \Gal_K(f)=\left\{\sigma\in S_n\mid \forall P\in K[\alpha_1,\ldots,\alpha_n], \text{ if } P(\alpha_1,\ldots,\alpha_n)=0 \text{ then } P(\alpha_{\sigma(1)},\ldots,\alpha_{\sigma(n)})\right\}
+%   \end{align*}
+% \end{tdefinition}
+
+% \begin{tlemma}
+% \begin{enumerate}
+%   \item \( \Gal_K(f) \sgp S_n \);
+%   \item If \( K_1:K \), then \( \Gal_{K_1}(f)\sgp \Gal_K(f) \).
+% \end{enumerate}
+% \end{tlemma}
+
+\begin{tdefinition}[Galois group of a field extension]
+  Let \( L:K \) be a field extension.
+  Then \begin{align*}
+    \Gal_K(L) = \Gal(L:K) = \lt\{ \vphi\in\Aut(L) : \vphi\text{ is a K-\homo} \rt\}.
+  \end{align*}
+\end{tdefinition}
+
+% \begin{tdefinition}[Galois automorphism on splitting field]
+%   Let \( \sigma\in \Gal_K f \) where \( L \) is a splitting field for \( f \) over \( K \), and define \it{\( \wh\sigma\in\Aut_K(L) \)} such that \( \wh\sigma(P(\llist{\alpha}{1}{n})) = P(\llist{\alpha}{\sigma(1)}{\sigma(n)}) \).
+% \end{tdefinition}
+
+% \begin{tlemma}
+%   The map \( \psi(\sigma)=\wh\sigma \) is a group isomorphism.
+% \end{tlemma}
+\vspace{-.75em}
+\begin{ttheorem}
+  If \( L:K \) is an algebraic extension and \( \sigma:L\to L \) is a \( K \)-\homo, then \( \sigma\in\Aut(L) \)
+\end{ttheorem}
+
+\begin{tlemma}
+  Suppose that \( M:K \) is a normal extension.
+  Then: \begin{enumerate}[label=(\alph*)]
+    \item for any \( \sigma\in\Gal(M:K) \) and \( \alpha\in M \), we have \( \mu_{\sigma(\alpha)}^K=\mu_\alpha^K \);
+    \item for any \( \alpha,\beta\in M \) with \( \mu_\alpha^K=\mu_\beta^K \), there exists \( \tau\in\Gal(M:K) \) such that \( \tau(\alpha)=\beta \).
+  \end{enumerate}
+\end{tlemma}
+\section{Galois Groups II}
+\stepcounter{section}
+\begin{tlemma}
+  Suppose that \( L:K \) is a normal extension with \( K\sseq L\sseq \Kbar \).
+  Then for any \( K \)-\homo~\( \tau:L\to \Kbar \), we have \( \tau(L) = L \).
+\end{tlemma}
+
+\begin{tlemma}
+  For \( n\geq 2 \), \( S_n \) is generated by \begin{enumerate}
+    \item transpositions \( (ij) \);
+    \item transpositions \( (1i) \);
+    \item adjacent transpositions \( (12),(23),\ldots,(n-1, n) \);
+    \item \( (12)\tand (12\ldots n) \);
+    \item \( (12)\tand (23\ldots n) \);
+    \item \( (ij)\tand (i\ldots i_p) \) where \( p \) is prime.
+  \end{enumerate}
+\end{tlemma}
+
+\begin{tlemma}
+  Let \( (i_1\ldots i_k)\in S_n \).
+  Then for all \( \sigma\in S_n \), one has \( \sigma(i_1\ldots i_k)\sigma\inv = (\sigma(i_1)\ldots\sigma(i_k)) \).
+\end{tlemma}
+
+\bd{Note:}\quad \( \order{Gal_K(f)} = \fdeg{L}{K} \) where \( L:K \) is a \sfe~for \( f \).
+
+\section{Galois Groups III}
+\stepcounter{section}
+\begin{ttheorem}[Kronecker]
+  Let \( p \geq 3 \) be a prime and \( f\in \Q[x] \) be irreducible over \( \Q \) with \( \deg f = p \).
+  If the equation \( f(x) = 0 \) is solvable by radicals, then the number of real roots of \( f \) is 1 or \( p \).
+\end{ttheorem}
+
+\begin{tlemma}
+  Let \( p \) be prime and \( G\sgp S_p \) such that \( G \) acts transitively on \( \lt\{ 1,\ldots,p \rt\} \).
+  Then \( G \) contains a cycle of order \( p \).
+\end{tlemma}
+
+\begin{ttheorem}
+  If \( L:K \) is a finite extension, then \( \order{\Gal_K(L)} \leq \fdeg{L}{K} \).
+\end{ttheorem}
+
+\section{Separability}
+\stepcounter{section}
+% \begin{tdefinition}[Separable]
+%   Let \( K \) be a field. \begin{enumerate}[label=(\roman*)]
+%     \item An irreducible polynomial \( f\in K[t] \) is \it{separable over \( K \)} if it has no multiple roots, meaning that \( f=\lambda(t-\alpha_1)(t-\alpha_2)\cdots(t-\alpha_d) \), where \( \llist{\alpha}{1}{d}\in \Kbar \) are distinct.
+%     \item A non-zero polynomial \( f\in K[t] \) is \it{separable over \( K \)} if its irreducible factors in \( K[t] \) are separable over \( K \).
+%     \item When \( L:K \) is a field extension, we say that \( \alpha \in L \) is \it{separable over \( K \)} when \( \alpha \) is algebraic over \( K \) and \( \mu_\alpha^K \) is separable.
+%     \item An algebraic extension \( L:K \) is \it{a separable extension} if every \( \alpha\in L \) is separable over \( K \).
+%   \end{enumerate}
+% \end{tdefinition}
+
+\begin{tlemma}
+  Suppose that \( L:M:K \) is a tower of algebraic field extensions.
+  Assume that \( K\sseq M\sseq L\sseq \Kbar \), and suppose that \( f\in K[t]\setminus K \) satisfies the property that \( f \) is separable over \( K \).
+  If \( g\in M[t]\setminus M \) has the property that \( g\divs f \), then \( g \) is separable over \( M \).
+  Thus, if \( \alpha\in L \) is separable over \( K \) then \( \alpha \) is separable over \( M \), and if \( L:K \) is separable then so is \( L:M \).
+\end{tlemma}
+
+\begin{tlemma}
+  \begin{enumerate}
+    \item If \( L:M \) is an algebraic field extension, \( \alpha\in L \) and \( \sigma:M\to\Mbar \) is a \homo, then \( \sigma(\mu_\alpha^M) \) is separable over \( \sigma(M) \) \iff~\( \mu_\alpha^M  \) is separable over \( M \).
+    \item If \( L:K \) is a \sfe~for \( f\in K[t] \) and \( f \) is separable over \( K \), then \( L:K \) is separable.
+  \end{enumerate}
+\end{tlemma}
+
+\begin{ttheorem}
+  Let \( L:K \) be a finite extension with \( K\sseq L\sseq \Kbar \), whence \( L=K(\llist{\alpha}{1}{n}) \) for some \( \llist{\alpha}{1}{n}\in L \).
+  Put \( K_0=K \), and for \( 1\leq i\leq n \), set \( K_i=K_{i-1}(\alpha_i) \).
+  Finally, let \( \sigma_0:K\to\Kbar \) be the inclusion map. \begin{enumerate}[label=(\roman*)]
+    \item If \( \alpha_i \) is separable over \( K_{i-1} \) for \( 1\leq i\leq n \), then there are \( \fdeg{L}{K} \) ways to extend \( \sigma_0 \) to a \homo~\( \tau:L\to \Kbar \).
+    \item If \( \alpha_i \) is not separable over \( K_{i-1} \) for some \( i \) with \( 1\leq i\leq n \), then there are fewer than \( \fdeg{L}{K} \) ways to extend \( \sigma_0 \) to a \homo~\( \tau:L\to \Kbar \).
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{ttheorem}
+  Let \( L:K \) be a finite extension with \( L=K(\llist{\alpha}{1}{n}) \).
+  Set \( K_0=K \), and for \( 1\leq i\leq n \), inductively define \( K_i \) by putting \( K_i=K_{i-1}(\alpha_i) \).
+  Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
+    \item the element \( \alpha_i \) is separable over \( K_{i-1} \) for \( 1\leq i\leq n \);
+    \item the element \( \alpha_i \) is separable over \( K \) for \( 1\leq i\leq n \);
+    \item the extension \( L:K \) is separable.
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{tcorollary}
+  Suppose that \( L:K \) is a finite extension.
+  If \( L:K \) is a separable extension, then the number of \( K \)-\homo~\( \sigma:L\to\Kbar \) is \( \fdeg{L}{K} \), and otherwise the number is smaller than \( \fdeg{L}{K} \).
+\end{tcorollary}
+
+\begin{tcorollary}
+  Suppose that \( f\in K[t]\setminus K \) and that \( L:K \) is a \sfe~for \( f \).
+  Then \( L:K \) is a separable extension \iff~\( f \) is separable over \( K \).
+  % More generally, suppose that \( L:K \)  a \sfe~for \( S\sseq K[t]\setminus K \).
+  % Then \( L:K \) is a separable extension \iff~each \( f\in S \) is separable over \( K \).
+\end{tcorollary}
+
+\section{The Primitive Element Theorem}
+\stepcounter{section}
+% \begin{tdefinition}[Simple extension]
+%   Suppose \( L:K \) is a field extension relative to the embedding \( \varphi:K\to L \).
+%   We say that \( L:K \) is a \it{simple extension} if there is some \( \gamma\in L \) such that \( L=\vphi(K)(\gamma) \).
+% \end{tdefinition}
+
+\begin{ttheorem}[The Primitive Element Theorem]
+  If \( L:K \) is a finite, separable extension with \( K\sseq L \), then \( L:K \) is a simple extension.
+\end{ttheorem}
+
+\begin{tcorollary}
+  Suppose that \( L:K \) is an algebraic, separable extension, and suppose that for every \( \alpha\in L \), the polynomial \( \mu_\alpha^K \) has degree at most \( n \) over \( K \).
+  Then \( \fdeg{L}{K}\leq n \).
+\end{tcorollary}
+
+\bd{Fact:}\quad Let \( L:K \) be a normal extension and let \( \deg(\mak)\leq n \) for all \( \alpha\in L \).
+Then \( \fdeg{L}{K}\leq n \).
+
+% \begin{tcorollary}
+%   If \( f\in K[t] \) is irreducible over \( K \), then \( \Gal_K(f) \) acts transitively on the roots of \( f \).
+% \end{tcorollary}
+
+\section{Galois Fields I}
+\stepcounter{section}
+\begin{tdefinition}[Formal derivative]
+  We define the \it{derivative operator} \( \mcD:K[t]\to K[t] \) by \begin{align*}
+    \mcD\lt(\sum_{k=0}^{n}a_kt^k\rt) = \sum_{k=1}^{n}ka_kt^{k-1}.
+  \end{align*}
+\end{tdefinition}
+
+\begin{ttheorem}
+  Let \( f\in K[t]\setminus K \), and let \( L:K \) be a \sfe~for \( f \) with \( K\sseq L \).
+  Then the following are equivalent: \begin{enumerate}[label=(\roman*)]
+    \item \( f \) has a repeated root over \( L \);
+    \item There exists \( \alpha\in L \tst f(\alpha)=0=(\mcD f)(\alpha) \);
+    \item There exists \( g\in K[t] \) with \( \deg g \geq 1 \tst g \divs f \tand g\divs\mcD f \).
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{tdefinition}[Inseparable]
+  A polynomial \( f \in K[t] \) is \it{inseparable over \( K \)} if \( f \) is not separable over \( K \), i.e. \( f \) has an irreducible factor \( g \in K[t] \) such that \( g \) has fewer than \( \deg g \) distinct roots in \( K \).
+\end{tdefinition}
+
+\begin{ttheorem}
+  Suppose \( f\in K[t] \) is irreducible over \( K \).
+  Then \( f \) is inseparable over \( K \iff \chr K=p>0 \tand f \in K[t^p]\).
+\end{ttheorem}
+
+\begin{tdefinition}[Frobenius map]
+  Suppose that \( \chr K = p > 0 \).
+  The \it{Frobenius map} \( \vphi:K\to K \) is defined by \( \vphi(\alpha)=\alpha^p \).
+\end{tdefinition}
+
+\begin{ttheorem}
+  Suppose that \( \chr K = p > 0 \), and put \( F=\lt\{ c\cdot 1_K : c\in \Z \rt\} \).
+  Then \( F \) is a subfield (called the prime subfield) of \( K \), and \( F\iso \qg{\Z}{p\Z} \).
+\end{ttheorem}
+
+\begin{tdefinition}[Fixed field]
+  Let \( L:K \) be a field extension and \( G \sgp \Aut(L) \).
+  We define the \it{fixed field of \( G \)} as \begin{align*}
+    \Fix{L}{G} = \lt\{ \alpha\in L : \sigma(\alpha) = \alpha \text{ for all } \sigma\in G \rt\}.
+  \end{align*}
+\end{tdefinition}
+
+\begin{ttheorem}
+  Suppose that \( \chr K = p>0 \), and let \( F \) be the prime subfield of \( K \).
+  Let \( \vphi:K\to K \) denote the Frobenius map.
+  Then \( \vphi \) is an injective homomorphism, and \( \Fix{\vphi}{K} = F \).
+\end{ttheorem}
+
+\begin{tcorollary}
+  Suppose that \( \chr K = p > 0 \) and \( K \) is algebraic over its prime subfield.
+  Then the Frobenius map is an automorphism of \( K \).
+\end{tcorollary}
+
+\begin{tcorollary}
+  Suppose that \( \chr K = p > 0 \) and \( K \) is algebraic over its prime subfield.
+  Then all polynomials in \( K[t] \) are separable over \( K \).
+\end{tcorollary}
+
+\begin{tcorollary}[**]
+  Suppose that \( \chr K = 0 \).
+  Then all polynomials in \( K[t] \) are separable over \( K \).
+\end{tcorollary}
+
+\begin{ttheorem}
+  Suppose that \( \chr K = p > 0 \). Let \begin{align*}
+    f(t) = g(t^p) = a_0+a_1t^p+\cdots+a_{n-1}t^{(n-1)p}+t^{np}
+  \end{align*}
+  be a non-constant monic polynomial over \( K \).
+  Then \( f(t) \) is irreducible in \( K[t] \) if and only if \( g(t) \) is irreducible in \( K[t] \) and not all the coefficients \( a_i \) are \( p \)-th powers in \( K \).
+\end{ttheorem}
+
+\section{Galois Fields II}
+\stepcounter{section}
+
+\begin{ttheorem}
+  Let \( p \) be a prime, and let \( q=p^n \) for some \( n\in \N \).
+  Then: \begin{enumerate}[label=(\alph*)]
+    \item There exists a field \( \F_q \) of order \( q \), and this field is unique up to isomorphism.
+    \item All elements of \( \F_q \) satisfy the equation \( t^q=t \), and hence \( \F_q:\F_p \) is a \sfe~for \( t^q-t \).
+    \item There is a unique copy of \( \F_q \) inside any algebraically closed field containing \( \F_p \).
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{ttheorem}
+  Let \( p \) be a prime, and suppose that \( q=p^{n} \) for some \( n\in\N \).
+  Then: \begin{enumerate}[label=(\alph*)]
+    \item \( \Gal(\F_q:\F_p)\iso \qg{\Z}{n\Z} \);
+    \item The field \( \F_q \) contains a subfield of order \( p^d \) if and only if \( d\divs n \).
+      When \( d\divs n \), moreover, there is a unique subfield of \( \F_q \) of order \( p^d \).
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{tdefinition}[Norm, Trace]
+  Let \( p \) be a prime and let \( \alpha\in F_q \) where \( q=p^{n} \) for some \( n\in\N \).
+  Then we define
+  \begin{align*}
+    \Tr{\alpha} &= \alpha+\alpha^p + \cdots + \alpha^{p^{n-1}} \\
+    &= \alpha + \vphi(\alpha) + \cdots + \vphi^{n-1}(\alpha)
+  \end{align*}
+  and
+  \begin{align*}
+    \Norm{\alpha} &= \alpha\cdot\alpha^p  \cdots  \alpha^{p^{n-1}} = \alpha^{\frac{p^{n}-1}{p-1}} \\
+    &= \alpha\cdot \vphi(\alpha)\cdots \vphi^{n-1}(\alpha)
+  \end{align*}
+\end{tdefinition}
+
+\begin{tlemma}
+  Let \( p \) be a prime and let \( \alpha\in F_q \) where \( q=p^{n} \) for some \( n\in\N \).
+  \begin{enumerate}
+    \item For all \( \alpha\in \F_q \), one has \( \Tr{\alpha},\Norm{\alpha}\in \F_p \);
+    \item If \( p\neq 2 \), then \( \exists\alpha_1 \) such that \( \Tr{\alpha_1}\neq 0 \) and \( \exists \alpha_2(\neq 0) \) such that \( \Norm{\alpha_2}\neq 1 \).
+  \end{enumerate}
+\end{tlemma}
+
+\stepcounter{section}
+\section{Fixed Fields}
+\stepcounter{section}
+\begin{tdefinition}[Fixed field]
+  Let \( L:K \) be a field extension and \( G\sgp \Aut(L) \). Then the \it{fixed field} of \( G \) is \begin{align*}
+    \Fix{L}{G} = L^G = \{\alpha\in L : g\alpha= \alpha\ \forall g\in G\}
+  \end{align*}
+\end{tdefinition}
+
+\begin{ttheorem}
+  Let \( K,M \sseq L \) be fields and \( G, H \sgp \Aut(L) \).
+  Then \begin{enumerate}[label=\arabic*)]
+    \item if \( K\sseq M \), then \( \Gal(L:K) \ogp \Gal(L:M) \);
+    \item if \( G\sgp H \), then \( \Fix{L}{G} \supeq \Fix{L}{H} \);
+    \item \( K\sseq \Fix{L}{\Gal(L:K)} \);
+    \item \( G\sgp\Gal(L:\Fix{L}{G}) \);
+    \item \( \Gal(L:K) = \Gal(L:\Fix{L}{\Gal(L:K)}) \);
+    \item \( \Fix{L}{G} = \Fix{L}{\Gal(L:\Fix{L}{G})} \).
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{tdefinition}[Galois Extension]
+  Let \( L:K \) be a field extension.
+  Then \( L:K \) is a \it{Galois extension} if it is normal and separable.
+\end{tdefinition}
+
+\begin{ttheorem}
+  Let \( L:K \) be algebraic.
+  Then \( L:K \) is Galois \iff~\( K=\Fix{L}{\Gal_K(L)} \)
+\end{ttheorem}
+
+\begin{ttheorem}
+  Suppose that \( L \) is a field, \( G\sgp \Aut(L) \tst \order{G}<\infty\), and put \( K=\Fix{L}{G} \).
+  Then \( L:K \) is a finite Galois extension with \( \fdeg{L}{K}=\order{\Gal(L:K)} \), and furthermore \( G=\Gal_K(L) \).
+\end{ttheorem}
+
+\begin{ttheorem}
+  Let \( L:K \) be finite.
+  \begin{enumerate}
+    \item If \( L:K \) is a Galois extension, then \( \order{\Gal(L:K)}=\fdeg{L}{K} \) and \( K=\Fix{L}{\Gal(L:K)} \).
+    \item If \( L:K \) is not Galois, then \( \order{\Gal(L:K)}<\fdeg{L}{K} \) and \( K \) is a proper subfield of \( \Fix{L}{\Gal(L:K)} \).
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{tcorollary}
+  Let \( L:M:K \) be a tower such that \( L:K \) is Galois.
+  Then \( L:M \) is Galois.
+\end{tcorollary}
+
+% \begin{tproposition}
+%   Let \( f \in K[t]\setminus K \) be separable.
+%   Then \( \Gal_K(f)\sgp A_n \iff \sqrt D\in K \)
+% \end{tproposition}
+
+\section{Fundamental Theorem of Galois Theory I}
+\stepcounter{section}
+\begin{ttheorem}[Fundamental Theorem of Galois Theory, Part 1]
+  Let \( L:K \) be a Galois extension with \( G = \Gal(L:K) \).
+  Define \( \mcI(K,L) \) and \( \mcS(G) \) as the set of all intermediate fields of \( L:K \) and the set of all subgroups of \( G \), respectively.
+  For all \( P\in \mcI(K,L) \), we have \( P = L^{G_P} \) where \( G_P = \Aut_P(L)\)
+  Then \begin{align*}
+    \forall P\in \mcI(K,L), \quad &L^{G_P} = P,\\
+    \forall H\in \mcS(G), \quad &G_{L^H} = H,
+  \end{align*}
+  Also, \( P_1\sseq P_2 \iff G_{P_1}\ogp G_{P_2} \) and \( H_1 \sgp H_2 \iff L^{H_1}\supeq L^{H_2} \). % by Theorem 1 of Lecture 19
+\end{ttheorem}
+\section{Fundamental Theorem of Galois Theory II}
+\stepcounter{section}
+\begin{ttheorem}[Fundamental Theorem of Galois Theory, Part 2]
+  For all \( P\in \mcI(K,L) \), we have \( P:K \) is a normal extension \iff~\( G_P\pnsgp G \).
+  Then, \( \Gal_K P \iso \qg{G}{G_P} \).
+\end{ttheorem}
+
+\begin{tlemma}
+  Let \( K-P-L \) be a tower of fields and \( g\in \Aut L \).
+  Then \( G_{gP} = gG_Pg\inv \).
+\end{tlemma}
+
+\begin{tremark}
+  Let \( L:P:K \) be a tower of fields, where \( \fdeg{L}{K} = \fdeg{L}{P}\fdeg{P}{K} \).
+  Then \( \id:G_P:G \) is a tower of groups, where \( \index{G}{G_P}\cdot\order{G_P} \).
+  That is, for all \( P\sgp L \) we have \( \fdeg{P}{K}=\index{G}{G_P} \) and \( \fdeg{L}{P} = \order{G_P} \).
+\end{tremark}
+
+% \begin{proof}[Proof of Theorem \ref{tm:gal-cor} part 2.]
+
+% \end{proof}
+
+\section{Composita}
+\stepcounter{section}
+\begin{tremark}
+  Let \( A,B \) be sets. Then \( A\cap B \) can be expressed using only the operation \( \sseq \).
+  Notice \( A\cap B \sseq A,B \) and \( A\cap B \) is the maximal set with this property: \begin{align*}
+    \forall C \nf{ such that } C\sseq A,B \qimp C\sseq A\cap B.
+  \end{align*}
+  Let \( H_1,H_2\sgp G \).
+  Then \( H_1\cap H_2 \sgp G \) is the \it{maximal} subgroup contained in both \( H_1 \tand H_2 \).
+  Hence by the Galois correspondence we have \( L^{H_1\cap H_2} \) is the \it{minimal} subfield of \( L \) containing both \( L^{H_1} \) and \( L^{H_2} \).
+\end{tremark}
+
+\begin{tdefinition}[Compositum]
+  Let \( K_1 \) and \( K_2 \) be fields contained in some field \( L \).
+  The \it{compositum} of \( K_1 \) and \( K_2 \) in \( L \) (or the \it{composite field}), denoted by \( K_1K_2 \), is the smallest subfield of \( L \) containing both \( K_1 \) and \( K_2 \).
+\end{tdefinition}
+
+\begin{tlemma}
+  Let \( K,E,F \sseq L \).
+  Then \begin{enumerate}
+    \item \( E:K,\ F:K \) finite \( \imp \) \( EF:K \) finite;
+    \item \( E:K,\ F:K \) normal \( \imp \) \( E\cap F:K \) normal;
+    \item \( E:K,\ F:K \) finite and \( E:K \) normal \( \imp \) \( EF:F \) normal;
+    \item \( E:K,\ F:K \) finite and normal \( \imp \) \( EF:K,\ E\cap F:K \) normal;
+    \item \( E:K,\ F:K \) normal \( \imp \) \( EF:E\cap F \) normal.
+  \end{enumerate}
+\end{tlemma}
+\section{Soluble Groups I}
+\stepcounter{section}
+
+\begin{tdefinition}[Soluble group]
+  A group \( G \) is \it{soluble} if there exists a finite series of subgroups \begin{align*}
+    \left\{ Id. \right\} &= G_n \sgp G_{n-1} \sgp \cdots \sgp G_0 = G
+  \end{align*}
+  such that \begin{enumerate}
+    \item \( G_j \pnsgp G_{j-1} \ \forall 1\le j\le n \) and
+    \item \( \qg{G_{j-1}}{G_j} \) is cyclic \( \forall 1\le j\le n  \).
+  \end{enumerate}
+\end{tdefinition}
+
+% \begin{texercise}
+%   The Heisenberg group \( \begin{pmatrix}
+%     1 & a &b \\ 0 &1 &c \\ 0 & 0 & 1
+%   \end{pmatrix} \) is soluble.
+% \end{texercise}
+
+\begin{tdefinition}[Simple group]
+  A group \( G \) is \it{simple} if \( G \) has no non-trival normal subgroups.
+\end{tdefinition}
+
+\begin{tlemma}
+  For \( n\geq 5 \) the group \( A_n \) is simple (and hence not soluble).
+\end{tlemma}
+
+% \begin{texercise}
+%   \( V_4 \) is the only non-trivial subgroup of \( A_4 \).
+% \end{texercise}
+
+\begin{tlemma}
+  Let \( G \) be a group with \( H\nsgp G \) and \( A\sgp G \).
+  Then
+  \begin{enumerate}
+    \item \( (A\cap H)\nsgp A \) and \( \qg{A}{(A\cap H)}\iso \qg{(HA)}{H} \)
+    \item if \( H\sseq A \) and \( A\nsgp G \), then \( H\nsgp A \), \( (\qg{A}{H})\nsgp (\qg{G}{H}) \) and \( \qg{(\qg{G}{H})}{(\qg{A}{H})}\iso \qg{G}{A} \).
+  \end{enumerate}
+\end{tlemma}
+
+\begin{ttheorem}
+  \begin{enumerate}
+    \item If \( G \) is a soluble group with \( A\sgp G \), then \( A \) is soluble.
+    \item Let \( H\nsgp G \). Then \( G \) is soluble \iff~\( H\tand \qg{G}{H} \) are soluble.
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{tcorollary}
+  \( S_n \) is not soluble for \( n\geq 5 \).
+\end{tcorollary}
+
+\begin{tcorollary}
+  All \( p \)-groups are soluble (i.e. groups \( G \) such that \( \order{G} = p^n \) for some prime \( p \))
+\end{tcorollary}
+
+\section{Soluble Groups II}
+\stepcounter{section}
+\begin{ttheorem}[Theorem - Definition]
+  Let \( G \) be a group.
+  Then the following are equivalent:
+  \begin{enumerate}
+    \item[0.] \( G \) is a (finite) soluble group;
+    \item There exists some \( n\in \Z^{+} \tst G^{(n)} = \left\{ e \right\} \);
+    \item There exists a normal series \begin{align*}
+      \left\{ Id. \right\} &= G_n \pnsgp G_{n-1} \pnsgp \cdots \pnsgp G_1 \pnsgp G_0 = G
+    \end{align*}
+    such that all quotients \( \qg{G_{j-1}}{G_j} \) are abelian;
+    \item There exists a subnormal series such that quotients \( \qg{G_{j-1}}{G_j} \) are abelian.
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{tdefinition}[Derived group]
+  Let \( G \) be a group.
+  Then the \it{derivative of G} is \( G' = \cyc{[x,y] : x,y\in G} = [G,G] \) where \( [x,y] = xyx\inv y\inv \) is the \it{commutator} of \( x\tand y \), and \( (G')' = G'' \).
+\end{tdefinition}
+
+% \begin{texercise}
+%   \( G'\nsgp G \), \( \qg{G}{G'} \) abelian
+% \end{texercise}
+
+% \begin{texercise}
+%   \( G' \) is a minimal normal subgroup of \( G \) such that \( \qg{G}{G'} \) is abelian.
+% \end{texercise}
+
+\begin{tdefinition}[Derived series]
+  The \it{derived series} of \( G \) is \( G^{(n)} = \left( G^{(n-1)} \right)' \) and \( \tgp = G^{(n)} \pnsgp G^{(n-1)} \pnsgp \cdots \pnsgp G' \pnsgp G \) (not to be confused with \( G_{n+1} = [G_n, G]\), the \it{lower central series}).
+\end{tdefinition}
+
+\begin{tlemma}
+  Let \( \vphi:G\mapsto H \) be an epimorphism.
+  Then \( \vphi(G') = H' \).
+\end{tlemma}
+
+\begin{tdefinition}[Composition series]
+  Let \( G \) be a group.
+  Then a \it{composition series} of \( G \) is a subnormal series of finite length
+  \begin{align*}
+    \left\{ Id. \right\} &= G_0 \pnsgp G_{1} \pnsgp \cdots \pnsgp G_{\ell-1} \pnsgp G_\ell = G
+  \end{align*}
+  such that \( \qg{G_j}{G_{j-1}} \) is a simple group for all \( j \).
+\end{tdefinition}
+
+\begin{ttheorem}[Jordan-H\"older]
+  Any 2 composition series of some group \( G \) are equivalent up to permutation and isomorphism.
+\end{ttheorem}
+
+\begin{ttheorem}
+  Let \( K \) be a field with \( \chr K \neq 2 \) and let \( f\in K[t] \) be a separable polynomial with splitting field \( L \).
+  Then \( f=0 \) is solvable by \it{quadratic} radicals \iff~\( \fdeg{L}{K}=2^t \).
+\end{ttheorem}
+
+\section{Solvability by radicals and Galois theory I}
+\stepcounter{section}
+
+\begin{ttheorem}
+  Let \( K \) be a field with \( \chr K = 0 \).
+  Then \( f\in K[t] \) is solvable by radicals \( \iff \) \( \Gal_K(f) \) is soluble.
+\end{ttheorem}
+
+\begin{tlemma}
+  Let \( \chr K = 0 \) and \( R:K \) be a radical extension.
+  Then there exists a tower \( K-R-N \) such that \( N:K \) is normal and radical.
+\end{tlemma}
+
+\begin{tdefinition}[Cyclic extension]
+  Let \( L \) be the splitting field of some polynomial \( f \) over \( K \).
+  If \( \Gal(L:K) \) is a cyclic group, then \( L:K \) is a \it{cyclic} extension.
+\end{tdefinition}
+
+\begin{tlemma}
+  Let \( \chr K = 0 \) and let \( n \) be a positive integer such that \( t^n-1 \) splits over \( K \), and let \( L:K \) be the \sfe~for \( t^{n}-a \) for some \( a\in K \).
+  Then \( \Gal(L:K) \) is abelian.
+\end{tlemma}
+
+\begin{ttheorem}
+  Let \( \chr K = 0 \) and \( L:K \) be Galois.
+  Suppose there exists some extension \( M:L \) such that \( M:K \) is normal.
+  Then \( \Gal(L:K) \) is soluble.
+\end{ttheorem}
+
+\begin{tcorollary}
+  Let \( \chr K = 0 \).
+  Then \( f\in K[t] \) is SBR \( \imp \) \( \Gal_K(f) \) is soluble.
+\end{tcorollary}
+\section{Solvability by radicals and Galois theory II}
+\stepcounter{section}
+\begin{tlemma}
+  Let \( p \) be prime and \( G\sgp S_p \) such that \( G \) acts transitivley on \( \left\{ 1,\dots,p \right\} \).
+  Then \( G \) contains a cycle of order \( p \).
+\end{tlemma}
+
+\begin{ttheorem}
+  Let \( \chr K = 0 \) and \( f\in K[t]\setminus K \).
+  Then \( \Gal_K(f) \) is soluble \( \imp \) \( f \) is SBR.
+\end{ttheorem}
+
+\begin{tlemma}[Wooley 14.8]
+  Let \( \chr K = 0 \), and suppose that \( L:K \) is a cyclic extension of degree \( n \).
+  Suppose also that \( K \) contains a primitive \( n \)-th root of 1.
+  Then there exists \( \theta \in K \) having the property that \( t^n -\theta \) is irreducible over \( K \), and \( L:K \) is a \sf~for \( t^n-\theta \).
+  Further, if \( \beta \) is a root of \( t^n-\theta \) over \( L \), then \( L=K(\beta) \).
+\end{tlemma}
+
+\begin{ttheorem}[Abel-Galois]
+  Let \( \chr K = 0 \) and \( f\in K[t] \) be irreducible over \( K \) with \( \deg f = p \).
+  Then following are equivalent
+  \begin{enumerate}
+    \item \( f \) is SBR over \( K \);
+    \item \( \Gal_K(f) \) is conjugated to a subgroup of \( \Aff(\FF p) \);
+    \item for the splitting field \( L \) of \( f \), one has \( L = K(\alpha_i,\alpha_j) \) where \( \alpha_i,\alpha_j \) are any two destinct roots of \( f \).
+  \end{enumerate}
+\end{ttheorem}
+
+\begin{tlemma}
+  Let \( \tgp \neq N \nsgp G \sgp S_p \) for \( p \) prime.
+  If \( G \) is a transitive group, then \( N \) is a transitive group.
+\end{tlemma}
+
+\section{Final remarks I}
+\stepcounter{section}
+\begin{tdefinition}[Sylvester matrix]
+Let \(f(x)=a_{0}+a_{1}x+\dots+a_{m}x^{m}\) and \(g(x)=b_{0}+b_{1}x+\dots+b_{n}x^{n}\) be two polynomials in \(\mathbb{K}[x]\).
+The \it{Sylvester matrix} \(S(f,g)\) is the \((m+n)\times(m+n)\) matrix whose first \(n\) rows are the coefficients of \(f\) shifted right, and whose last \(m\) rows are the coefficients of \(g\) shifted right.
+Concretely,
+\begin{align*}
+S(f,g) &= \begin{pmatrix}
+a_{m}  & a_{m-1} & \cdots & a_{0}  & 0      & \cdots & 0      \\
+0      & a_{m}   & a_{m-1}& \cdots & a_{0}  & \ddots & \vdots \\
+\vdots & \ddots  & \ddots & \ddots & \vdots & \ddots & 0      \\
+0      & \cdots  & 0      & a_{m}  & a_{m-1}& \cdots & a_{0}  \\
+b_{n}  & b_{n-1} & \cdots & b_{0}  & 0      & \cdots & 0      \\
+0      & b_{n}   & b_{n-1}& \cdots & b_{0}  & \ddots & \vdots \\
+\vdots & \ddots  & \ddots & \ddots & \vdots & \ddots & 0      \\
+0      & \cdots  & 0      & b_{n}  & b_{n-1}& \cdots & b_{0}
+\end{pmatrix}.
+\end{align*}
+\end{tdefinition}
+
+\begin{tdefinition}[Resultant]
+With notation as above, the \it{resultant} of \(f\) and \(g\) is
+\begin{align*}
+R(f,g) &= \det\left(S(f,g)\right).
+\end{align*}
+Equivalently, if \(\alpha_{1},\dots,\alpha_{m}\) are the roots of \(f\) in an algebraic closure of \(\mathbb{K}\), then
+\begin{align*}
+R(f,g) &= a_{m}^{n}\prod_{i=1}^{m}g(\alpha_{i}).
+\end{align*}
+\end{tdefinition}
+
+\begin{ttheorem}
+  Let \( \alpha_i \) be roots of \( f \) and \( \beta_j \) be roots of \( g \).
+  Then \begin{align*}
+    R(f,g) &= a_0^m b_0^n \prod_i(\alpha_i-\beta_j) \\
+    &= a_0^m \prod_i g(\alpha_i) = b_0^n \prod_i f(\beta_i)
+  \end{align*}
+\end{ttheorem}
+
+\begin{tcorollary}
+  \begin{enumerate}
+    \item \( R(f,g) = (-1)^{\deg f \cdot \deg g}R(g,f) \)
+    \item If \( f = gq + r \imp R(f,g) = b_0^{\deg f - \deg R} R(r,g) \)
+    \item \( R(f,gh) = R(f,g)R(f,h) \)
+  \end{enumerate}
+\end{tcorollary}
+
+\begin{tcorollary}
+  Let \( f(t) = a_0 t^{n} + \cdots + a_n,\ a_0\neq 0 \).
+  Then \( R(f,f') = (-1)^{\frac{n(n-1)}{2}}\prod_{i<j}(\alpha_i-\alpha_j)\sq \)
+\end{tcorollary}
+
+\section{Final remarks II}
+\stepcounter{section}
+\begin{tdefinition}[Resolvent invariant]
+Let \( G\sgp S_n \) and \( P\in K[\llist{x}{1}{n}] \).
+Then \( P \) is \it{resolvent invariant} for \( G \) if \( P^{g} = P \iff g\in G \).
+\end{tdefinition}
+
+\begin{tlemma}
+  Let \( P \) be resolvent invariant for \( G \).
+  Then \begin{enumerate}
+    \item \( P^a = P^b \iff ab\inv \in G \) (obvious: \( P^a = P^b \iff P^{ab\inv} = P \))
+    \item \( P^a \) is resolvent invariant for \( a\inv G a \)
+  \end{enumerate}
+\end{tlemma}
+
+\begin{tcorollary}
+  Let \( S_n = \sqcup_j a_j G \).
+  Then \( P \) is resolvent invariant for \( G \iff P^{a_j} \) are distinct.
+\end{tcorollary}
+
+\begin{tdefinition}[Resolvent]
+  Let \( P \) be a resolvent polynomial for \( G\sgp S_n \) and \( S_n = \sqcup_{j=1}^{s} a_j G \).
+  Then \begin{align*}
+    R_G(z) = R_G(z,\llist{x}{1}{n}) = (z-P^{a_1})\cdots(z-P^{a_s})
+  \end{align*}
+  is a \it{resolvent} for \( G \) (depends on \( P \)).
+\end{tdefinition}
+
+\begin{tlemma}
+  Let \( G\sgp S_n \), \( f\in K[t] \) be a separable polynomial.
+  If \( \Gal_K(f) \sgp G \) (and its conjugation), then \( \exists \jmath\in K \) such that \( R_{G,f}(\jmath) = 0 \)
+\end{tlemma}
+
+\begin{tlemma}
+  Let \( \order{K}=\infty \) and \( f\in K[t] \) be a separable polynomial.
+  Then \( \exists \llist{c}{1}{n}\in K \) such that for all \( k \), \begin{align*}
+    h_k(\llist{x}{1}{k}) = c_1x_1+\cdots+c_kx_k
+  \end{align*}
+  has the property \begin{align*}
+    h_k^a(\llist{\alpha}{1}{k}) = h_k^b(\llist{\alpha}{1}{k}) \iff x_i^{a} = x_i^{b} \mathrm{ for } i = 1,\ldots,k,
+  \end{align*}
+  where \( a,b\in S_n \) are any permutations.
+\end{tlemma}
+
+\begin{ttheorem}
+  Let \( \order{K}=\infty \), \( f\in K[t] \) be a separable polynomial, and \( G\sgp S_n \).
+  Then there exists a resultant \( R_{G,f} (z) \) with no multiple roots.
+\end{ttheorem}
+
+\begin{ttheorem}
+  Let \( \order{K} = \infty \) and \( f\in K[t] \) be irreducible and separable with \( \deg f = 4 \).
+  Then \begin{enumerate}
+    \item \( \sqrt D \not\in K\) and \( R_{V_4}^{(f)} \) has no roots in \( K \imp G\iso S_4 \) or \( G\iso Z_4 \)
+    \item \( \sqrt D \in K\) and \( R_{V_4}^{(f)} \) has no roots in \( K \imp G\iso A_4 \)
+    \item \( \sqrt D \in K\) and \( R_{V_4}^{(f)} \) has a roots in \( K \imp G\iso V_4 \)
+    \item \( \sqrt D \not\in K\) and \( R_{V_4}^{(f)} \) has no roots in \( K \imp G\iso S_4 \) or \( G\iso D_4 \)
+  \end{enumerate}
+  **Exercise**, the point is to show that computing each \( R^{(f)}_{V_4,D_4,Z_4,A_4} \) is not necessary
+\end{ttheorem}
+
+\end{document}

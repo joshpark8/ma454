@@ -17,9 +17,9 @@
   \begin{align*}
     \sigma_1 = \sigma_1(x_1,\ldots,x_n) &= x_1+\cdots+x_n \\
     \sigma_2 = \sigma_2(x_1,\ldots,x_n) &= x_1x_2+\cdots+x_1x_n+x_2x_3+\cdots+x_{n-1}x_n \\
-    \vdots \\
+    &\vdots \\
     \sigma_k = \sigma_k(x_1,\ldots,x_n)&=\sum\limits_{1\leq i_1<i_2<\cdots<i_k\leq n}x_{i_1}\cdots x_{i_k} \\
-    \vdots \\
+    &\vdots \\
     \sigma_n = \sigma_n(x_1,\ldots,x_n)&=\prod\limits_{i=1}^n x_i
   \end{align*}
 \end{tdefinition}
@@ -50,8 +50,8 @@ Any cubic equation can be converted to a depressed cubic by \begin{align*}
   x\cb+Ax\sq+Bx+c = \left(x+\frac{A}{3}\right)\cb + p\left(x+\frac{A}{3}\right) + q.
 \end{align*}
 
-\bd{Vieta's method:}\quad
-Using the trigonometric formula \( \cos 3\vphi = 4\cos\cb \vphi-3\cos\vphi \), we can solve certain cubic equations.
+\begin{ttheorem}[Vieta's method]
+Using the trigonometric identity \( \cos 3\vphi = 4\cos\cb \vphi-3\cos\vphi \), we can solve certain cubic equations.
 For example, consider \( 4x\cb-3x=-\frac{1}{2} \).
 Let \( x=\cos \vphi \).
 Then \begin{align*}
@@ -61,33 +61,19 @@ Then \begin{align*}
 \end{align*}
 In general, we can use this method to solve \( 4x\cb-3x=a \imp x=\cos\vphi,\ \cos 3\vphi \) and \( \cos:\C\to\C \) is now a complex function.
 For \( x\cb+px+q = 0 \), set \( x=ky \) such that \( \frac{k\cb}{pk} = \frac{-4}{3} \imp k = \pm\frac{\sqrt{-4p}}{3} \).
+\end{ttheorem}
 
-\begin{tdefinition}[Ferrari resolvent]
-  Let \( f(x) = x^4 + a x^3 + b x^2 + c x + d \in K[x] \) be a quartic polynomial over a field \( K \) of characteristic not 2.
-  We define the \it{Ferrari resolvent} of \( f \) to be the associated cubic resolvent polynomial \( R(z) \in K[z] \) given by
+\begin{tdefinition}[Ferrari's resolvent]
+  Let \( f(x) = x^4 + a x^2 + b x + c \), and assume \( b\sq-4ac\neq 0 \).
+  Consider a parameter \( y \).
+  Then \begin{align*}
+    f(x) &= \left( x\sq + \frac{y}{2} \right)\sq + (a-y)x\sq + bx + c - \frac{y\sq}{4} \\
+     \imp D &= b\sq - 4(a-y)\left( c-\frac{y\sq}{4} = 0 \right)
+  \end{align*}
+  and hence we obtain \it{Ferrari' resolvent}:
   \begin{align*}
-    R(z) = z^3 - 2b z^2 + (b^2 - 4d + a c) z - c^2 - a^2 d + 4b d.
+    y\cb-ay\sq -4cy + 4ac - b\sq = 0.
   \end{align*}
   Solving the resolvent allows one to reduce solving \( f \) to solving a system of quadratics.
 \end{tdefinition}
-
-\bd{Lagrange's method}:\quad Suppose \( f(x) = x^3 + px + q \) is a depressed cubic with roots \( x_1, x_2, x_3 \).
-    \it{Lagrange's method} finds expressions involving the roots that take only a few values under permutation, then uses symmetry to connect them to the coefficients.
-
-    For instance, define
-    \[
-      y_1 = x_1 + \zeta x_2 + \zeta^2 x_3,
-    \]
-    where \( \zeta = e^{2\pi i/3} \) is a primitive cube root of unity. Then define
-    \[
-      y_2 = x_1 + \zeta^2 x_2 + \zeta x_3.
-    \]
-    These expressions are not symmetric, but they only take a few values when the \( x_i \)'s are permuted. In particular, \( y_1^3 \) and \( y_2^3 \) are symmetric functions of the roots and thus can be written as polynomials in \( p \) and \( q \).
-
-    Since the roots \( x_i \) are related to \( y_1 \) and \( y_2 \), we can use symmetric combinations such as
-    \[
-      x = \frac{1}{3}(y_1 + y_2)
-    \]
-    to recover the original roots of \( f(x) \).
-
 \end{document}
